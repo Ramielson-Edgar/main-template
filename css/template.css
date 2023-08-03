@@ -6894,8 +6894,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     position: relative;
     z-index: 1;
     color: var(--white);
+}
+
+
+.security-funds-hero,
+.security-funds-bg,
+.awards-carousel .owl-item.center .award-carousel__item {
     background: linear-gradient(137deg, #1976D2 21.28%, #64B5F6 100%);
 }
+
 
 .security-fund-bg {
     position: absolute;
@@ -6904,10 +6911,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     z-index: -1;
 }
 
-.security-funds-bg {
-    background: linear-gradient(137deg, #1976D2 21.28%, #64B5F6 100%);
-}
-
+ 
 
 .section-header.security-insurance .section-header__title ,
 .section-header.security-hero .section-header__title {
@@ -6921,8 +6925,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
  
-
-
 .section-header.security-hero .section-header__description {
     color: var(--white);
 }
@@ -6934,16 +6936,10 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
+.security-funds-features,
 .security-funds-trust {
     background: var(--white);
 }
-
-
-.section-header.security-trust .section-header__description,
-.section-header.security-trust {
-    margin-bottom: 0;
-}
-
 
  
 .section-header.security-reliability .section-header__title,
@@ -6966,7 +6962,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .grid.benefits-trust {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .grid.benefits-trust .grid__item {
@@ -6977,16 +6972,19 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     padding: 50px 30px;
 }
 
+.grid.benefits-trust .grid__item,
+.grid.security-features .grid__item,
+.list.logo .list__item:first-child {
+    margin-right: 10px;
+}
+
 .grid.benefits-trust .grid__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    border: 1px solid #EFEFEF;
+    border: 1px solid var(--white);
     border-radius: 20px;
-    margin-right: 10px;
-
-    transition: all .3s ease-in;
 }
 
 .grid.benefits-trust .grid__item:hover {
@@ -7010,7 +7008,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .benefits-trust__text {
     font-size: var(--font-size-14);
     color: var(--grey700);
-    margin-bottom: 0;
 }
 
 
@@ -7030,30 +7027,26 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     z-index: var(--z-index-minus);
 }
 
-.section-header.security-reliability,
-.section-header.security-insurance {
-    margin-bottom: 0;
-}
+ 
 
-
-.section-header.security-insurance a {
+.security-funds-insurance__link {
     display: inline-block;
     margin-bottom: 40px;
     color: var(--blue500);
 }
 
 
-.section-header.security-insurance a .icon-arrow-right {
-    transition: transform .3s ease-in;
+.security-funds-insurance__link .icon-arrow-right {
     fill: var(--blue500);
     margin-left: 5px;
 }
 
+ 
 .section-header.security-insurance .section-header__description {
     margin-bottom: 25px;
 }
 
-.section-header.security-insurance a:hover .icon-arrow-right {
+.security-funds-insurance__link:hover .icon-arrow-right {
     transform: translateX(4px);
 }
 
@@ -7063,14 +7056,16 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     grid-template-columns: repeat(2, 145px);
 }
 
-.list.logo .list__item:first-child {
-    margin-right: 10px;
+.list.logo .list__item,
+.list.logo .list__item,
+.grid.benefits-trust .grid__item{
+    transition: all .3s ease-in;
 }
+
 
 .list.logo .list__item {
     border-radius: 17px;
-    background: #FFF;
-    transition: all .3s ease-in;
+    background: var(--white);
     padding: 27px 22px;
 }
 
@@ -7079,17 +7074,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     box-shadow: -10px 14px 40px 0px rgba(9, 19, 69, 0.03);
 }
 
-.security-funds-features {
-    background: var(--white);
-}
-
-.section-header.security-features {
-    text-align: center;
-}
  
-.section-header.security-features .section-header__description {
-    max-width: 100%;
-}
 
 .grid.security-features {
     flex-wrap: wrap;
@@ -7104,9 +7089,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .grid.security-features .grid__item {
     position: relative;
     padding: 30px;
-    box-shadow: 25px 25px 25px -10px rgba(9, 19, 69, 0.02);
     margin-right: 10px;
     border-radius: 10px;
+    box-shadow: 25px 25px 25px -10px rgba(9, 19, 69, 0.02);
 }
 
 
@@ -7123,9 +7108,11 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     left: 0;
     top: 0;
 
+    content: "";
+
     width: 3px;
     height: 100%;
-    content: "";
+
     background: var(--blue500);
 }
 
@@ -7134,11 +7121,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     justify-content: center;
     align-items: center;
 
-    background: var(--blue-bg-color);
     width: 70px;
     height: 70px;
+
     border-radius: 50%;
     margin-bottom: 20px;
+    background: var(--blue-bg-color);
 }
 
 
@@ -7154,7 +7142,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .security-features__text {
     font-size: var(--font-size-14);
     color: var(--grey700);
-    margin-bottom: 0;
 }
 
 
@@ -7165,10 +7152,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     background-size: cover;
 }
 
+.section-header.security-features,
 .section-header.security-award {
     text-align: center;
 }
 
+.section-header.security-features .section-header__description,
 .section-header.security-reliability .section-header__description,
 .section-header.security-award .section-header__description {
     max-width: 100%;
@@ -7183,9 +7172,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     font-weight: var(--font-weight-700);
 }
 
-.award-carousel__date {
-    margin-bottom: 0;
-}
 
 .award-carousel__nomination {
     font-size: .9rem;
@@ -7193,19 +7179,22 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
 .award-carousel__company {
-    font-weight: 300;
     font-size: .813rem;
+    font-weight: 300;
     line-height: 1.1;
+
     margin-bottom: 12px;
 }
 
 .award-carousel__item {
     position: relative;
     display: flex;
+
+    height: 220px;
+
     background: var(--white);
     border-radius: 10px;
     padding: 30px;
-    height: 220px;
 }
 
 .award-carousel__icon {
@@ -7223,10 +7212,16 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .awards-carousel .owl-item.center .award-carousel__item {
     color: var(--white);
-    background: linear-gradient(136deg, #1976D2 0%, #479DE8 100%);
     box-shadow: 23px 19px 50px -12px rgba(9, 19, 69, 0.20);
 }
 
+.award-carousel__date,
+.benefits-trust__text,
+.security-features__text,
+.section-header.security-insurance,
+.section-header.security-reliability,
+.section-header.security-trust,
+.section-header.security-trust .section-header__description,
 .section-header.security-award .section-header__description,
 .section-header.security-award {
     margin-bottom: 0;
@@ -9131,7 +9126,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         display: none;
     }
 
- 
 
     .security-features-carousel .owl-stage {
         padding-bottom: 70px;
@@ -10605,14 +10599,14 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-inline: auto;
     }
 
+
     .section-header.security-hero .section-header__title {
         font-size: 1.5rem;
     }
 
-
-    .security-features__text,
     .benefits-trust__text,
-    .section-header.security-insurance a,
+    .security-features__text,
+    .security-funds-insurance__link,
     .section-header.security-features .section-header__description,
     .section-header.security-award .section-header__description,
     .section-header.security-reliability .section-header__description,
