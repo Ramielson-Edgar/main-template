@@ -6962,6 +6962,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .grid.benefits-trust {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .grid.benefits-trust .grid__item {
@@ -6983,7 +6984,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     flex-direction: column;
     justify-content: center;
 
-    border: 1px solid var(--white);
+    border: 1px solid  #EFEFEF;
     border-radius: 20px;
 }
 
@@ -7058,7 +7059,8 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .list.logo .list__item,
 .list.logo .list__item,
-.grid.benefits-trust .grid__item{
+.grid.benefits-trust .grid__item,
+.security-funds-insurance__link .icon-arrow-right{
     transition: all .3s ease-in;
 }
 
