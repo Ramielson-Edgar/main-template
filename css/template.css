@@ -7337,7 +7337,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 .awards-hero {
-    background: url('../images/award-hero.jpg'), #3C99DF;
+    background: url('../themes/custom/adrofx_theme/images/award-hero.jpg'), #3C99DF;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7519,7 +7519,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 @media (min-width: 1500px) {
     .awards-hero {
-        background: url('../images/award-hero-1920.png'), linear-gradient(180deg, rgba(43, 135, 211, 1) 0%, rgba(43, 135, 211, 1) 56%, rgba(59, 154, 225, 1) 74%);
+        background: url('../themes/custom/adrofx_theme/images/award-hero-1920.png'), linear-gradient(180deg, rgba(43, 135, 211, 1) 0%, rgba(43, 135, 211, 1) 56%, rgba(59, 154, 225, 1) 74%);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
@@ -7530,7 +7530,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         .awards-hero {
-            background: url('../images/award-hero@x2.png'), linear-gradient(180deg, rgba(43, 135, 211, 1) 0%, rgba(43, 135, 211, 1) 56%, rgba(59, 154, 225, 1) 74%);
+            background: url('../themes/custom/adrofx_theme/images/award-hero@x2.png'), linear-gradient(180deg, rgba(43, 135, 211, 1) 0%, rgba(43, 135, 211, 1) 56%, rgba(59, 154, 225, 1) 74%);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: contain;
@@ -7952,7 +7952,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
     .awards-hero {
-        background: url('../images/award-hero-1200.jpg'), #3C99DF;
+        background: url('../themes/custom/adrofx_theme/images/award-hero-1200.jpg'), #3C99DF;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -8609,7 +8609,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
     .awards-hero {
-        background: url('../images/award-hero-900.jpg'), #3D9BE1;
+        background: url('../themes/custom/adrofx_theme/images/award-hero-900.jpg'), #3D9BE1;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -9583,7 +9583,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
     .awards-hero {
-        background: url('../images/award-hero-700.jpg'), #3C99DF;
+        background: url('../themes/custom/adrofx_theme/images/award-hero-700.jpg'), #3C99DF;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -11235,7 +11235,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
     .awards-hero {
-        background: url('../images/award-hero-500.jpg'), #3C99DF;
+        background: url('../themes/custom/adrofx_theme/images/award-hero-500.jpg'), #3C99DF;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
