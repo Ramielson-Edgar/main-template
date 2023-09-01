@@ -7345,6 +7345,19 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
+@media (min-device-pixel-ratio: 2),
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .awards-hero {
+        background: url('../themes/custom/adrofx_theme/images/award-hero@x2.jpg'), #2B87D4;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+
 .awards-hero,
 .section-header.awards .section-header__description {
     color: var(--white);
@@ -7454,6 +7467,54 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     margin-bottom: 0;
 }
 
+.awards-step-icons,
+.awards-step__img-container {
+    position: relative;
+}
+ 
+.awards-step-icons {
+    z-index: 3;
+}
+
+.awards-step-phone-right,
+.awards-step-phone-left {
+    position: absolute;
+    top:40px;
+    left:0;
+    z-index: 2;
+}
+
+.awards-step-phone-right{
+    left: unset;
+    right: 0;
+    z-index: 1;
+}
+
+
+@keyframes phone-fly {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+ 
+.awards-step-phone-left {
+    animation: phone-fly 6s ease-in-out -3s infinite;
+}
+
+.awards-step-phone-right {
+    animation: phone-fly 6s ease-in-out -6s infinite;
+}
+ 
 
 .awards-step {
     color: var(--white);
@@ -7517,26 +7578,11 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     max-width: 25rem;
 }
 
-@media (min-width: 1500px) {
+
+@media (min-width:1500px) {
     .awards-hero {
-        background: url('../themes/custom/adrofx_theme/images/award-hero-1920.png'), linear-gradient(180deg, rgba(43, 135, 211, 1) 0%, rgba(43, 135, 211, 1) 56%, rgba(59, 154, 225, 1) 74%);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
+        padding: 9rem 0;
     }
-
-    @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-        .awards-hero {
-            background: url('../themes/custom/adrofx_theme/images/award-hero@x2.png'), linear-gradient(180deg, rgba(43, 135, 211, 1) 0%, rgba(43, 135, 211, 1) 56%, rgba(59, 154, 225, 1) 74%);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-        }
-    }
-
 }
 
 @media (max-width: 1199.98px) {
@@ -8619,6 +8665,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         max-width: 100%;
     }
 
+    .awards-supporting {
+        padding: 70px 0;
+    }
 
 }
 
@@ -11146,6 +11195,13 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         height: 50px;
     }
 
+ 
+    .awards-step-phone-left,
+    .awards-step-phone-right {
+        width: 60%;
+        height: auto;
+    }
+
     .awards-step__text,
     .awards-step__container,
     .section-header.supporting .text-gradient {
@@ -11235,14 +11291,14 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
     .awards-hero {
-        background: url('../themes/custom/adrofx_theme/images/award-hero-500.jpg'), #3C99DF;
-        background-position: center center;
-        background-size: cover;
+        background-position: top;
         background-repeat: no-repeat;
+        background-size: 580px;
     }
 
-
-
+    .section-header.awards {
+        margin-top: 220px;
+    }
 
 }
 
@@ -11448,7 +11504,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .list.support .support__link {
         padding: 15px;
     }
-
 }
 
 @supports (backdrop-filter: blur(20px)) {
