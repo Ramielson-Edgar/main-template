@@ -611,6 +611,7 @@ a:hover {
     color: #fff;
 }
 
+
 .btn-base-lg {
     padding: 10px 40px;
 }
@@ -623,6 +624,9 @@ a:hover {
     padding: 10px 20px;
 }
 
+.btn-base-xl {
+    padding: 10px 60px;
+}
 
 .btn-base {
     display: inline-block;
@@ -742,6 +746,17 @@ a:hover {
     border: 1px solid #651FFF;
     background-color: transparent;
 }
+
+.btn-red-outline {
+    color: var(--red400);
+    border: 1px solid var(--red400);
+}
+
+.btn-red-outline:hover {
+    color: var(--white);
+    background: var(--red400);
+}
+
 
 .toolbar-oriented .toolbar-bar {
     z-index: 10000;
@@ -7250,6 +7265,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     text-align: center;
 }
 
+.section-header.start .section-header__description,
 .section-header.security-features .section-header__description,
 .section-header.security-reliability .section-header__description,
 .section-header.security-award .section-header__description {
@@ -7471,7 +7487,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .awards-step__img-container {
     position: relative;
 }
- 
+
 .awards-step-icons {
     z-index: 3;
 }
@@ -7479,12 +7495,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .awards-step-phone-right,
 .awards-step-phone-left {
     position: absolute;
-    top:40px;
-    left:0;
+    top: 40px;
+    left: 0;
     z-index: 2;
 }
 
-.awards-step-phone-right{
+.awards-step-phone-right {
     left: unset;
     right: 0;
     z-index: 1;
@@ -7506,7 +7522,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 }
 
- 
+
 .awards-step-phone-left {
     animation: phone-fly 6s ease-in-out -3s infinite;
 }
@@ -7514,7 +7530,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .awards-step-phone-right {
     animation: phone-fly 6s ease-in-out -6s infinite;
 }
- 
+
 
 .awards-step {
     color: var(--white);
@@ -7578,6 +7594,386 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     max-width: 25rem;
 }
 
+
+.cashback-hero {
+    padding: 20px 0;
+}
+
+.section-header.hero-cashback .section-header__title {
+    font-size: clamp(1.50rem, calc(0.31rem + 3.31vw), 2.88rem);
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+
+.section-header.start .section-header__description,
+.section-header.structure .section-header__description,
+.section-header.features .section-header__description,
+.section-header.hero-cashback .section-header__description {
+    margin-bottom: 25px;
+    max-width: 100%;
+}
+
+.buttons-container.cashback {
+    margin-bottom: 50px;
+}
+
+.short-offer.cashback {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper.cashback-benefits,
+.wrapper.short-offer {
+    display: inherit;
+    flex-direction: column;
+
+    width: auto;
+    min-height: auto;
+    background: none;
+
+    margin-left: -30px;
+}
+
+
+.list.cashback-users .list__item {
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.list.cashback-users .list__item:nth-child(3),
+.list.cashback-users .list__item:nth-child(2) {
+    position: relative;
+    left: -30px;
+}
+
+.list.cashback-users .list__item:nth-child(3) {
+    left: -50px;
+}
+
+
+.short-offer__title,
+.short-offer__description {
+    margin-bottom: 0;
+}
+
+.short-offer__title {
+    font-size: 1.125rem;
+}
+
+.short-offer__description {
+    color: var(--grey700);
+}
+
+.short-offer__description::first-letter {
+    text-transform: uppercase;
+}
+
+
+.list.structure,
+.list.cashback-benefits,
+.list.cashback-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list.cashback-features .list__item {
+    overflow: hidden;
+    position: relative;
+    flex-basis: calc(100%/3);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.list.cashback-benefits .list__item {
+    border-radius: 10px;
+}
+
+.list.structure .list__item,
+.list.cashback-features .list__item {
+    transition: all .3s cubic-bezier(0.1, 0.7, 0.6, 0.9);
+}
+
+
+.list.cashback-features .list__item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    content: "";
+    width: 0%;
+    height: 5px;
+    background: var(--green);
+    transition: all 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+}
+
+.list.cashback-features .list__item:hover::before {
+    width: 100%;
+}
+
+.list.cashback-features .list__item:hover {
+    transform: translateY(-8px);
+    box-shadow: -10px 39px 50px -10px rgba(9, 19, 69, 0.10);
+}
+
+
+.cashback-benefits__img-container,
+.cashback-features__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 4.375rem;
+    height: 4.375rem;
+
+    background: #F0F8FF;
+    border-radius: 50%;
+}
+
+
+.cashback-benefits__img-container,
+.cashback-features__img-container,
+.structure__img-container {
+    margin-bottom: 1.25rem;
+}
+
+.cashback-features__title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.cashback-features__text {
+    font-size: var(--font-size-14);
+    line-height: 1.5rem;
+    color: var(--grey700);
+}
+
+
+.cashback-structure {
+    position: relative;
+    background: var(--white);
+    z-index: 2;
+}
+
+.structure-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70%;
+
+    z-index: -1;
+}
+
+.list.structure {
+    margin-bottom: 3.125rem;
+}
+
+.list.structure .list__item {
+    overflow: hidden;
+    position: relative;
+    display: inherit;
+    flex-basis: calc(100%/3 - 10px);
+    flex-direction: column;
+    justify-content: center;
+
+
+    background: var(--white);
+    padding: 3.125rem 1.25rem;
+    border-radius: 1.25rem;
+    box-shadow: 16px 43px 70px 0px rgba(9, 19, 69, 0.05);
+    z-index: 2;
+}
+
+.list.structure .list__item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    content: "";
+
+    width: 100%;
+    height: 1%;
+    z-index: -1;
+
+    background: var(--blue400);
+    transition: height 400ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+}
+
+.list.structure .list__item:hover {
+    color: var(--white);
+}
+
+.list.structure .list__item:hover::before {
+    height: 100%;
+}
+
+.list.structure .list__item:last-child::before {
+    content: unset;
+}
+
+
+.list.structure .list__item .structure__img-container svg {
+    fill: var(--dark-text);
+    stroke: var(--dark-text);
+}
+
+.list.structure .list__item:hover .structure__img-container svg,
+.list.structure .list__item:last-child .structure__img-container svg {
+    stroke: var(--white);
+    fill: var(--white);
+}
+
+
+.list.structure .list__item:last-child,
+.list.structure .list__item:hover .structure__text,
+.list.structure .list__item:last-child .structure__text {
+    color: var(--white);
+}
+
+.list.structure .list__item:hover .structure__description,
+.list.structure .list__item:last-child .structure__description {
+    color: var(--blue400);
+    background: var(--white);
+}
+
+
+.list.structure .list__item:hover {
+    transform: translateY(-8px);
+}
+
+.structure__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.563rem;
+}
+
+.structure__description {
+    display: inline-block;
+    color: var(--blue500);
+    padding: 0.313rem 0.625rem;
+    border-radius: 0.188rem;
+    background: #E4F3FF;
+    margin-bottom: 1.375rem;
+}
+
+.structure__text {
+    font-size: 0.938rem;
+    color: var(--grey700);
+}
+
+
+.cashback-banner {
+    border-radius: 1.875rem;
+    background: linear-gradient(101deg, #1976D2 -25.28%, #A6D7FF 100.53%);
+    padding-top: 4.375rem;
+}
+
+.cashback-banner__title {
+    font-size: var(--font-size-50-24);
+    color: var(--white);
+    margin-left: 82px;
+}
+
+.splide__list.available-accounts .splide__slide {
+    display: flex;
+    align-items: center;
+}
+
+.splide__list.available-accounts .available-accounts__img-container {
+    position: relative;
+    margin-right: 30px;
+ 
+}
+
+.splide__list.available-accounts .splide__slide .available-accounts__img-container img {
+    transform: translateY(0%);
+    filter: drop-shadow( 0px 30px 30px  rgba(9, 19, 69, .20));
+}
+
+@keyframes icon-account-levitation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+.splide__list.available-accounts .splide__slide.is-active  .available-accounts__img-container img{
+    animation: icon-account-levitation 6s ease-in-out 0s infinite;
+}
+
+
+.splide__list.available-accounts .splide__slide .link {
+    color: var(--grey700);
+}
+
+.splide__list.available-accounts .splide__slide .available-accounts__icon {
+    fill: var(--grey700);
+}
+
+.splide__list.available-accounts .splide__slide.is-active .available-accounts__icon {
+    fill: var(--white);
+    transition: all .3s ease-in;
+}
+
+.splide__list.available-accounts .splide__slide.is-active .link:hover .available-accounts__icon {
+    transform: translateX(5px);
+}
+
+
+.splide__list.available-accounts .splide__slide.is-active .link,
+.splide__list.available-accounts .splide__slide.is-active .available-accounts__title {
+    color: var(--white);
+}
+
+.available-accounts__title {
+    font-size: clamp(3.13rem, calc(1.50rem + 4.51vw), 5.00rem);
+    margin-left: -3px;
+}
+
+.list.cashback-benefits .list__item {
+    flex-basis: calc(100%/4 - 5px);
+    background: var(--white);
+    padding: 0.938rem 1.25rem;
+}
+
+.cashback-benefits__title {
+    font-size: 1.125rem;
+}
+
+.cashback-benefits__text {
+    font-size: 0.813rem;
+    line-height: 1.5rem;
+    color: var(--grey700);
+}
+
+.cashback-features__text,
+.cashback-benefits__text {
+    margin-bottom: 0;
+}
+
+
+.wrapper.cashback-benefits {
+    background: var(--blue-bg-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-left: unset;
+}
+
+.cashback-start {
+    padding-top: 1.875rem;
+}
 
 @media (min-width:1500px) {
     .awards-hero {
@@ -8036,6 +8432,14 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         max-width: 20rem;
     }
 
+
+    .section-header.hero-cashback .section-header__title {
+        font-size: 2.2rem;
+    }
+
+    .cashback-benefits__title {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 991.98px) {
@@ -8669,6 +9073,28 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         padding: 70px 0;
     }
 
+
+    
+    .section-header.hero-cashback .section-header__title {
+        font-size: 2rem;
+    }
+
+
+  
+    .list.cashback-features .list__item {
+        flex-basis: calc(100% / 2);
+    }
+
+    .list.cashback-benefits .list__item,
+    .list.structure .list__item {
+        flex-basis: calc(100% / 2 - 5px);
+    }
+
+    .list.cashback-benefits .list__item:nth-child(-n + 2),
+    .list.structure .list__item:nth-child(-n +2) {
+        margin-bottom: 10px;
+    }
+ 
 }
 
 @media all and (min-width: 992px) {
@@ -9670,6 +10096,21 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         border-right: unset;
     }
 
+
+    .section-header.hero-cashback,
+    .section-header.start {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+
+    .section-header.hero-cashback .section-header__title {
+        font-size: 2rem;
+    }
+
+    .list.cashback-features .list__item {
+        padding: 1.25rem 0.938rem;
+    }
 
 }
 
@@ -11099,6 +11540,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
+    .section-header.hero-cashback .section-header__title,
     .section-header.security-hero .section-header__title {
         font-size: 1.5rem;
     }
@@ -11109,6 +11551,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .section-header__description,
     .security-funds-insurance__link,
     .buttons-container.awards-step .text,
+
     .section-header.security-features .section-header__description,
     .section-header.security-award .section-header__description,
     .section-header.security-reliability .section-header__description,
@@ -11124,6 +11567,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .awards-advantages__title,
     .section-title.awards-step,
     .section-title.awards-step,
+    .cashback-features__title,
+
+
     .section-header.supporting .section-header__title,
     .section-header.supporting .section-header__title,
     .section-header.security-award .section-header__title,
@@ -11161,9 +11607,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         font-size: 1rem;
     }
 
-    .buttons-container a {
+    /* .buttons-container a {
         padding: 10px 10px;
-    }
+    } */
 
     .list.awards-step .list__item {
         flex-basis: 100%;
@@ -11195,7 +11641,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         height: 50px;
     }
 
- 
+
     .awards-step-phone-left,
     .awards-step-phone-right {
         width: 60%;
@@ -11247,6 +11693,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     .awards-step__title,
     .section-title.awards-step,
+    .section-header.start .section-header__title,
     .section-header.supporting .section-header__title,
     .section-title.trophy {
         line-height: 1.1;
@@ -11300,6 +11747,107 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-top: 220px;
     }
 
+
+ 
+    .list.structure .list__item,
+    .list.cashback-features .list__item,
+    .list.cashback-benefits .list__item {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+
+  
+    .buttons-container.cashback .btn-red-outline,
+    .buttons-container.start .btn-red-outline,
+    .buttons-container.structure .btn-red-outline,
+    .buttons-container.structure .btn-blue-white {
+        padding: 10px 30px;
+    }
+
+
+    .list.cashback-benefits .list__item:last-child{
+        margin-bottom: 0;
+    }
+ 
+
+    .cashback-features__title {
+        margin-bottom: 9px;
+    }
+
+
+    .section-header.hero-cashback {
+        align-items: center;
+    }
+
+    
+    .section-header.hero-cashback,
+    .section-title.cashback {
+        text-align: center;
+    }
+
+    .section-header.features  .section-header__title,
+    .section-header.start .section-header__title,
+    .section-header.structure .section-header__title,
+    .section-title.cashback {
+        font-size: 1.125rem;
+    }
+
+
+
+    .cashback-benefits__img-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .wrapper.short-offer {
+        text-align: left;
+    }
+
+    .cashback-banner__title {
+        margin-left: 30px;
+    }
+
+    .cashback-banner {
+        padding-top: 3.125rem;
+    }
+
+    .list.structure .list__item {
+        padding:1.875rem  1.125rem;
+    }
+
+    .structure__img-container svg {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .splide__list.available-accounts .splide__slide {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .available-accounts__img-container img {
+         width: auto;
+        height: 150px;
+    }
+
+    
+    .section-header .section-header__title {
+        font-size: 1.125rem;
+        line-height: 1.1;
+     }
+
+     
+     .section-header .section-header__title,
+     .section-header .section-header__descrription {
+        margin-bottom: 7px;
+     }
+
+     .section-header .section-header__descrription {
+        font-size: 0.813rem;
+        line-height: 21px;
+     }
+
 }
 
 @media (max-width: 428px) {
@@ -11337,6 +11885,10 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .list.awards-advantages .list__item:nth-child(2) {
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+
+    .cashback-banner__title {
+        font-size: clamp(1.13rem, calc(-1.06rem + 10.91vw), 1.50rem);
     }
 
 
@@ -11412,6 +11964,22 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .benefits-trust__title {
         font-size: 1.125rem;
     }
+
+   .short-offer.cashback {
+    flex-direction: column;
+   }
+
+   .list.cashback-users {
+    margin-bottom: 20px;
+   }
+
+   .wrapper.short-offer {
+    text-align: center;
+   }
+
+   .section-header.hero-cashback .section-header__title {
+    font-size: 1.375rem;
+   }
 }
 
 @media (max-width: 320px) {
