@@ -7327,6 +7327,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .award-carousel__date,
 .benefits-trust__text,
 .section-header.awards,
+.section-header.start,
 .security-features__text,
 .section-header.security-insurance,
 .section-header.security-reliability,
@@ -7507,7 +7508,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
-@keyframes phone-fly {
+@keyframes smooth-fly {
     0% {
         transform: translateY(0);
     }
@@ -7524,11 +7525,11 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
 .awards-step-phone-left {
-    animation: phone-fly 6s ease-in-out -3s infinite;
+    animation: smooth-fly 6s ease-in-out -3s infinite;
 }
 
 .awards-step-phone-right {
-    animation: phone-fly 6s ease-in-out -6s infinite;
+    animation: smooth-fly 6s ease-in-out -6s infinite;
 }
 
 
@@ -7596,6 +7597,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .cashback-start,
 .cashback-hero {
+    background: -o-radial-gradient(70% 50%, 207px 207px, rgba(66, 165, 245, 0.10) 0%, rgba(66, 165, 245, 0.00) 100%), var(--blue-bg-color);
     background: radial-gradient(207px 207px at 70% 50%, rgba(66, 165, 245, 0.10) 0%, rgba(66, 165, 245, 0.00) 100%), var(--blue-bg-color);
     background-position: center center, center center;
     background-size: 1140px auto, 100% 100%;
@@ -7608,39 +7610,43 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     padding: 20px 0;
 }
 
-.cashback-hero__icon {
+.cashback-icon {
     position: absolute;
     top: 0;
     left: 0;
+ 
 }
 
 .card-center {
-    animation: phone-fly 6s ease-in-out -3s infinite;
+    position: relative;
+    animation: smooth-fly 6s ease-in-out -3s infinite;
     z-index: 3;
-}
  
+}
+
 .card-left {
-    animation: phone-fly 6s ease-in-out -5s infinite;
+    animation: smooth-fly 6s ease-in-out -5s infinite;
     z-index: 1;
+ 
 }
 
 .card-right {
-    animation: phone-fly 6s ease-in-out -7s infinite;
+    animation: smooth-fly 6s ease-in-out -7s infinite;
     z-index: 2;
 }
 
 .card-icons {
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
     width: auto;
     height: 100%;
 }
 
- 
 
-.section-header.hero-cashback .section-header__title {
+
+.cashback-header.hero .section-title {
     font-size: clamp(1.50rem, calc(0.31rem + 3.31vw), 2.88rem);
     line-height: normal;
     text-transform: capitalize;
@@ -7649,8 +7655,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .section-header.start .section-header__description,
 .section-header.structure .section-header__description,
-.section-header.features .section-header__description,
-.section-header.hero-cashback .section-header__description {
+.section-header.features .section-header__description {
     margin-bottom: 25px;
     max-width: 100%;
 }
@@ -7692,11 +7697,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     left: -50px;
 }
 
-
-.short-offer__title,
-.short-offer__description {
-    margin-bottom: 0;
-}
 
 .short-offer__title {
     font-size: 1.125rem;
@@ -7744,8 +7744,10 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     display: inline-block;
     content: "";
+
     width: 0%;
     height: 5px;
+
     background: var(--green);
     transition: all 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
 }
@@ -7909,9 +7911,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .cashback-banner {
     border-radius: 1.875rem;
+    background: -o-linear-gradient(349deg, #1976D2 -25.28%, #A6D7FF 100.53%);
     background: linear-gradient(101deg, #1976D2 -25.28%, #A6D7FF 100.53%);
     padding-top: 3.375rem;
-
 }
 
 .cashback-banner__title {
@@ -7936,26 +7938,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     transform: translateY(0%);
     filter: drop-shadow(0px 30px 30px rgba(9, 19, 69, .20));
 }
-
-/* 
-@keyframes icon-account-levitation {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
-} */
-
-/* .splide__list.available-accounts .splide__slide.is-active .available-accounts__img-container img {
-    animation: icon-account-levitation 6s ease-in-out 0s infinite;
-} */
 
 
 .splide__list.available-accounts .splide__slide .link {
@@ -8020,40 +8002,41 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     padding-top: 1.875rem;
 }
 
-.strart-man {
+
+.cashback-start-hero {
     position: relative;
     z-index: 2;
-} 
+}
 
-.card-center.bottom-left,
-.card-center.top-right,
-.card-center.top {
+.card-bottom-left,
+.card-top-right,
+.card-top {
     z-index: 1;
 }
 
-.card-center.bottom-right {
+.card-bottom-right {
     z-index: 3;
 }
 
 
-.card-center.bottom-left{
-    animation: phone-fly 6s ease-in-out -6s infinite;
+.card-bottom-left {
+    animation: smooth-fly 6s ease-in-out -6s infinite;
 }
 
-.card-center.top-right {
-    animation: phone-fly 6s ease-in-out -5s infinite;
+.card-top-right {
+    animation: smooth-fly 6s ease-in-out -5s infinite;
 }
 
-.card-center.top {
-    animation: phone-fly 6s ease-in-out -2s infinite;
+.card-top {
+    animation: smooth-fly 6s ease-in-out -2s infinite;
 }
 
-.card-center.bottom-right {
-    animation: phone-fly 6s ease-in-out -7s infinite;
+.card-bottom-right {
+    animation: smooth-fly 6s ease-in-out -7s infinite;
 }
 
 
- 
+
 @media (min-width:1500px) {
     .awards-hero {
         padding: 9rem 0;
@@ -8514,6 +8497,29 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     .cashback-benefits__title {
         font-size: 1rem;
+    }
+
+    
+    .card-center {
+        position: relative;
+        animation: smooth-fly 6s ease-in-out 0s infinite;
+        z-index: 3;
+     
+    }
+    
+    .card-left {
+        animation: smooth-fly 6s ease-in-out -1s infinite;
+        z-index: 2;
+     
+    }
+    
+    .card-right {
+        animation: smooth-fly 6s ease-in-out -2s infinite;
+        z-index: 1;
+    }
+    
+    .card-icons {
+      z-index: 4;
     }
 }
 
@@ -9149,12 +9155,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-
-    .section-header.hero-cashback .section-header__title {
+    .cashback-header.hero .section-title {
         font-size: 2rem;
     }
-
-
 
     .list.cashback-features .list__item {
         flex-basis: calc(100% / 2);
@@ -10172,14 +10175,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-    .section-header.hero-cashback,
+    .cashback-header.hero,
     .section-header.start {
         align-items: flex-start;
         text-align: left;
     }
 
 
-    .section-header.hero-cashback .section-header__title {
+
+    .cashback-header.hero .section-title {
         font-size: 2rem;
     }
 
@@ -10189,12 +10193,16 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     .cashback-hero,
     .cashback-start {
+        background: -o-radial-gradient(50% 30%, 207px 207px, rgba(66, 165, 245, 0.10) 0%, rgba(66, 165, 245, 0.00) 100%), var(--blue-bg-color);
         background: radial-gradient(207px 207px at 50% 30%, rgba(66, 165, 245, 0.10) 0%, rgba(66, 165, 245, 0.00) 100%), var(--blue-bg-color);
         background-position: center center, center center;
         background-size: 720px auto, 100% 100%;
         background-repeat: no-repeat, repeat;
     }
 
+    .cashback-header.hero {
+        margin-top: 3rem;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -11623,7 +11631,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-    .section-header.hero-cashback .section-header__title,
     .section-header.security-hero .section-header__title {
         font-size: 1.5rem;
     }
@@ -11646,10 +11653,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     .trophy__title,
     .awards-step__title,
-    .section-title.trophy,
     .awards-advantages__title,
-    .section-title.awards-step,
-    .section-title.awards-step,
     .cashback-features__title,
 
 
@@ -11858,25 +11862,18 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-    .section-header.hero-cashback {
-        align-items: center;
+    .short-offer.cashback {
+        justify-content: center;
     }
 
-
-    .section-header.hero-cashback,
-    .section-title.cashback {
+    
+    .section-title.cashback-benefits,
+    .cashback-header.hero {
         text-align: center;
     }
 
-    .section-header.features .section-header__title,
-    .section-header.start .section-header__title,
-    .section-header.structure .section-header__title,
-    .section-title.cashback {
-        font-size: 1.125rem;
-    }
-
-
-
+ 
+ 
     .cashback-benefits__img-container {
         width: 50px;
         height: 50px;
@@ -11915,6 +11912,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
+    .section-title,
     .section-header .section-header__title {
         font-size: 1.125rem;
         line-height: 1.1;
@@ -11929,6 +11927,10 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .section-header .section-header__descrription {
         font-size: 0.813rem;
         line-height: 21px;
+    }
+
+    .section-header.start {
+        margin-top: 3rem;
     }
 
 }
@@ -12060,7 +12062,8 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         text-align: center;
     }
 
-    .section-header.hero-cashback .section-header__title {
+
+    .cashback-header.hero .section-title {
         font-size: 1.375rem;
     }
 }
