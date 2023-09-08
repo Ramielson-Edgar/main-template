@@ -404,26 +404,18 @@ a:hover {
 }
 
 .text-gradient {
-    /* background-image: linear-gradient(93.51deg, #0E51FD 3.75%, #65BDFD 129.59%); */
+    background-image: -o-linear-gradient(356.49deg, var(--blue500) 3.75%, var(--blue400) 129.59%);
     background-image: linear-gradient(93.51deg, var(--blue500) 3.75%, var(--blue400) 129.59%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
     background-size: 300%;
-    animation: header-gradient 5s infinite alternate;
+    -webkit-animation: header-gradient 5s infinite alternate;
+            animation: header-gradient 5s infinite alternate;
 }
 
-/* KEY FRAMES  */
-@keyframes header-gradient {
-    0% {
-        background-position: left;
-    }
 
-    100% {
-        background-position: right;
-    }
-}
 
 @keyframes scale {
     0% {
@@ -447,16 +439,59 @@ a:hover {
     }
 }
 
-@keyframes button-gradient {
+@-webkit-keyframes scale {
     0% {
-        background-position: left;
+        -webkit-transform: scale(1) translateY(5px);
+                transform: scale(1) translateY(5px);
     }
 
     100% {
-        background-position: right;
+        -webkit-transform: scale(1) translateY(0px);
+                transform: scale(1) translateY(0px);
+    }
+
+    40% {
+        -webkit-transform: scale(1) translateY(5px);
+                transform: scale(1) translateY(5px);
+    }
+
+    15% {
+        -webkit-transform: scale(1.1) translateY(5px);
+                transform: scale(1.1) translateY(5px);
+    }
+
+    25% {
+        -webkit-transform: scale(1) translateY(0px);
+                transform: scale(1) translateY(0px);
     }
 }
+@keyframes scale {
+    0% {
+        -webkit-transform: scale(1) translateY(5px);
+                transform: scale(1) translateY(5px);
+    }
 
+    100% {
+        -webkit-transform: scale(1) translateY(0px);
+                transform: scale(1) translateY(0px);
+    }
+
+    40% {
+        -webkit-transform: scale(1) translateY(5px);
+                transform: scale(1) translateY(5px);
+    }
+
+    15% {
+        -webkit-transform: scale(1.1) translateY(5px);
+                transform: scale(1.1) translateY(5px);
+    }
+
+    25% {
+        -webkit-transform: scale(1) translateY(0px);
+                transform: scale(1) translateY(0px);
+    }
+}
+ 
 
 /*FlOW */
 .split {
@@ -7508,17 +7543,38 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
-@keyframes smooth-fly {
+@-webkit-keyframes smooth-fly {
     0% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
     }
 
     100% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+
+}
+
+@keyframes smooth-fly {
+    0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 
 }
@@ -7617,25 +7673,25 @@ html[lang="ru"] .liquidity-providers .main-information-header {
  
 }
 
-.card-center {
+.cashback-hero-center{
     position: relative;
     animation: smooth-fly 6s ease-in-out -3s infinite;
     z-index: 3;
  
 }
 
-.card-left {
+.cashback-hero-left {
     animation: smooth-fly 6s ease-in-out -5s infinite;
     z-index: 1;
  
 }
 
-.card-right {
+.cashback-hero-right {
     animation: smooth-fly 6s ease-in-out -7s infinite;
     z-index: 2;
 }
 
-.card-icons {
+.cashback-hero-icons {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -7919,7 +7975,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .cashback-banner__title {
     font-size: var(--font-size-30-16);
     color: var(--white);
-    margin-left: 82px;
+    margin-left: 3rem;
     margin-bottom: 2rem;
 }
 
@@ -8008,30 +8064,30 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     z-index: 2;
 }
 
-.card-bottom-left,
-.card-top-right,
-.card-top {
+.cashback-bottom-left,
+.cashback-top-right,
+.cashback-top {
     z-index: 1;
 }
 
-.card-bottom-right {
+.cashback-bottom-right {
     z-index: 3;
 }
 
 
-.card-bottom-left {
+.cashback-bottom-left {
     animation: smooth-fly 6s ease-in-out -6s infinite;
 }
 
-.card-top-right {
+.cashback-top-right {
     animation: smooth-fly 6s ease-in-out -5s infinite;
 }
 
-.card-top {
+.cashback-top {
     animation: smooth-fly 6s ease-in-out -2s infinite;
 }
 
-.card-bottom-right {
+.cashback-bottom-right {
     animation: smooth-fly 6s ease-in-out -7s infinite;
 }
 
@@ -8500,25 +8556,25 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
     
-    .card-center {
+    .cashback-hero-center {
         position: relative;
         animation: smooth-fly 6s ease-in-out 0s infinite;
         z-index: 3;
      
     }
     
-    .card-left {
+    .cashback-hero-left {
         animation: smooth-fly 6s ease-in-out -1s infinite;
         z-index: 2;
      
     }
     
-    .card-right {
+    .cashback-hero-right {
         animation: smooth-fly 6s ease-in-out -2s infinite;
         z-index: 1;
     }
     
-    .card-icons {
+    .cashback-hero-icons{
       z-index: 4;
     }
 }
