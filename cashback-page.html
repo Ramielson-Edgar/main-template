@@ -818,15 +818,20 @@
                 const cashbackClients = document.querySelectorAll(".list.cashback-users .list__item");
                 const shortOffer = document.querySelector('.wrapper.short-offer')
 
-
                 for (i = 0; i < cashbackClients.length; i++) {
 
                     const position = cashbackClients[i].style.left = `${40 * i}px`
                     const opacity = cashbackClients[i].style.opacity = `${1 + i}`
+
+                    const paddingLeft = shortOffer.style.transform = `translateX(${10}%)`
+                    const opacityOffer = shortOffer.style.opacity = `${100}%`
+
+                    if (window.innerWidth <= 575) {
+                        cashbackClients[i].style.left = `${30 * i}px`
+                        shortOffer.style.transform = `translateX(${0}%)`
+                    }
                 }
 
-                const paddingLeft = shortOffer.style.paddingLeft = `${32}%`
-                const opacity = shortOffer.style.opacity = `${100}%`
             }
 
             cashbackOfferAnimation()

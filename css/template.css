@@ -3730,7 +3730,7 @@ body:not(.page-node-type-periodical_publication) .slider .carousel-item {
 
 .right-sidebar .right-articles .item a {
     display: grid;
-    grid-template-areas: "image date""image title";
+    grid-template-areas: "image date" "image title";
     grid-column-gap: 15px;
     grid-row-gap: 5px;
     justify-content: start;
@@ -5470,7 +5470,7 @@ body:not(.page-node-type-periodical_publication) .slider .carousel-item {
     background: var(--grey100);
     position: relative;
     display: grid;
-    grid-template-areas: "icon title""icon description";
+    grid-template-areas: "icon title" "icon description";
     grid-template-columns: 1fr 4fr;
     grid-column-gap: 30px;
 }
@@ -7779,11 +7779,13 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .list.cashback-users {
     min-height: 60px;
+    min-width: 150px;
 }
 
 .wrapper.short-offer {
+    position: relative;
     opacity: 0%;
-    padding-left: 25%;
+    transform: translateX(-15%);
     transition: all 500ms cubic-bezier(0.1, 0.7, 0.6, 0.9) .3s;
 }
 
@@ -8593,6 +8595,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-bottom: 10px;
     }
 
+
+    .cashback-hero-center {
+        filter: drop-shadow(0px 80px 50px rgba(9, 19, 69, .08));
+    }
+
+    .cashback-hero-right {
+        filter: drop-shadow(0px 80px 50px rgba(9, 19, 69, .05));
+    }
+
 }
 
 @media (max-width: 991.98px) {
@@ -9238,12 +9249,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
     .list-features.cashback-features .list-features__item,
-    .list-features.cashback-structure .list-features__item {
+    .list-features.cashback-system .list-features__item {
         flex-basis: calc(100% / 2 - 5px);
     }
 
     .list-features.cashback-benefits .list-features__item:nth-child(-n + 2),
-    .list-features.cashback-structure .list-features__item:nth-child(-n +2) {
+    .list-features.cashback-system .list-features__item:nth-child(-n +2) {
         margin-bottom: 10px;
     }
 
@@ -11937,7 +11948,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-
     .buttons-container.cashback .btn-red-outline,
     .buttons-container.start .btn-red-outline,
     .buttons-container.cashback-system .btn-red-outline,
@@ -11954,7 +11964,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .cashback-header.hero {
         text-align: center;
     }
-
 
 
     .wrapper.short-offer {
@@ -12009,6 +12018,34 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     .section-header.start {
         margin-top: 3rem;
+    }
+
+    .list.cashback-users {
+        min-width: calc(3 * 43px);
+    }
+ 
+
+    .list.cashback-users .list__item {
+        width: 43px;
+        height: 43px;
+    }
+
+    
+
+    .short-offer.cashback {
+        min-height: 100%;
+        max-width: 320px;
+        margin-inline: auto;
+ 
+    }
+
+    .short-offer__description {
+        font-size: 0.813rem;
+    }
+
+    .wrapper.short-offer {
+        width: 100%;
+        height: 100%;
     }
 
 }
@@ -12128,18 +12165,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         font-size: 1.125rem;
     }
 
-    .short-offer.cashback {
-        flex-direction: column;
-    }
-
-    .list.cashback-users {
-        margin-bottom: 20px;
-    }
-
-    .wrapper.short-offer {
-        text-align: center;
-    }
-
+ 
 
     .cashback-header.hero .section-title {
         font-size: 1.375rem;
