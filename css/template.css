@@ -113,7 +113,7 @@
 
     /*BG COLOR */
     --white-bg-color: #fff;
-    --blue-bg-color: #F6F8FF;
+    --blue-bg-color: #F4F7FE;
     --slider-arrow: #4850e5;
     --grey-light-bg: #fcfcfc;
     --allpips-bt-color: #843fff;
@@ -7695,6 +7695,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     background-size: 1140px auto, 100% 100%;
     background-repeat: no-repeat, repeat;
 }
+ 
 
 .cashback-hero {
     overflow: hidden;
