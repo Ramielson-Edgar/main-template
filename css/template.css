@@ -7670,6 +7670,19 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
  
 
+.cash-back-hero {
+    background: url('../themes/custom/adrofx_theme/images/cashback-banner-xl.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .cashback-hero {
     overflow: hidden;
     position: relative;
@@ -8081,10 +8094,36 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     filter: drop-shadow(-38px 75px 50px rgba(9, 19, 69, 0.20));
 }
 
+.section-header.test .section-header__title {
+    font-size: 51px;
+    line-height: 1.1;
+    color: var(--white);
+}
 
-
+.section-header.test .section-header__description {
+    color: var(--white);
+    font-size: 24px;
+}
  
 @media (max-width: 1199.98px) {
+
+    .section-header.test .section-header__title {
+        font-size: 45px;
+    }
+    
+.cash-back-hero {
+    background: url('../themes/custom/adrofx_theme/images/cashback-banner-lg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 530px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
     /*for ru version*/
     html[lang="ru"] .platforms .platforms-list {
@@ -8575,6 +8614,18 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 @media (max-width: 991.98px) {
+
+    .cash-back-hero {
+        background: url('../themes/custom/adrofx_theme/images/cashback-banner-md.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 470px;
+    
+ 
+    }
+    
+ 
     .award-why-list {
         grid-template-columns: repeat(2, 340px);
         gap: 30px;
@@ -9246,7 +9297,29 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 @media (max-width: 767.98px) {
+    .section-header.test {
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+    }
 
+    .section-header.test .section-header__title {
+        font-size: 25px;
+    }
+
+    .section-header.test .section-header__description {
+        font-size: 1rem;
+    }
+
+    .cash-back-hero {
+        background: url('../themes/custom/adrofx_theme/images/cashback-banner-sm.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 360px;
+    }
+    
+ 
     /* PROMO  */
     .insurance-promo-slider__header {
         font-size: 27px;
@@ -10259,6 +10332,30 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 @media (max-width: 575.98px) {
+
+    
+    .section-header.test  {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 320px;
+    }
+
+    .section-header.test .section-header__title {
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .cash-back-hero {
+        background: url('../themes/custom/adrofx_theme/images/cashback-banner-xs.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 600px;
+    }
+
+    /* banner-test */
+
     .award-why-list {
         grid-template-columns: 1fr;
         gap: 20px;
