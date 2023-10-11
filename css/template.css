@@ -8011,12 +8011,18 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .list-features.cashback-system .list-features__body {
     display: flex;
     flex-direction: column;
-    flex-basis: 240px;
+    flex-basis: 160px;
+}
+
+
+
+.list-features.cashback-system .list-features__item:last-child .list-features__body{
+    flex-basis: 190px;
 }
 
 
 .list-features.cashback-system .list-features__title {
-    font-size: var(--font-size-50-24);
+    font-size: var(--font-size-30-16);
     text-transform: uppercase;
     color: var(--blue500);
  
