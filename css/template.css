@@ -693,7 +693,7 @@ a:hover {
 }
 
 
-.btn-base:hover::before {
+/* .btn-base:hover::before {
     transform: translateX(0);
 }
 
@@ -714,7 +714,7 @@ a:hover {
     transition: .3s ease-in-out;
     transition-property: color, transform;
     z-index: 2;
-}
+} */
 
 
 
@@ -783,9 +783,9 @@ a:hover {
     color: var(--white);
 }
 
-.btn-red-green::before {
+/* .btn-red-green::before {
     background: var(--green);
-}
+} */
 
 .btn-red-green:hover,
 .btn-red-green:active {
