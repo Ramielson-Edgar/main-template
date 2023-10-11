@@ -8011,7 +8011,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .list-features.cashback-system .list-features__body {
     display: flex;
     flex-direction: column;
-    flex-basis: 230px;
+    flex-basis: 240px;
 }
 
 
@@ -8019,12 +8019,13 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     font-size: var(--font-size-50-24);
     text-transform: uppercase;
     color: var(--blue500);
-    flex-grow: 1;
+ 
 }
 
 .list-features.cashback-system .list-features__text {
     font-size: var(--font-size-16);
     line-height: 30px;
+    flex-grow: 1;
 }
 
 .list-features.cashback-system .list-features__title span {
