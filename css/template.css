@@ -753,10 +753,14 @@ a:hover {
     border: 1px solid var(--red400);
 }
 
+.btn-green-red {
+    background: var(--green);
+}
 
 .btn-green-red:hover,
 .btn-green-red:focus,
 .btn-green-red:active {
+    color: var(--white);
     background: #EF5350;
 }
 
@@ -7454,24 +7458,33 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
-.awards-hero {
+/* .awards-hero {
     background: url('../themes/custom/adrofx_theme/images/award-banner.jpg'), #3C99DF;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 6.25rem 0;
+} */
+
+.awards-hero {
+    background: url('../themes/custom/adrofx_theme/images/award-hero-background@x2.png'), #0C356A;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+/* 
 @media (min-device-pixel-ratio: 2),
 (min-resolution: 192dpi),
 (min-resolution: 2dppx) {
     .awards-hero {
-        background: url('../themes/custom/adrofx_theme/images/award-hero@2x.png'), #3C99DF;
+        background: url('../themes/custom/adrofx_theme/images/award-hero-background@2x.png'), #0C356A;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 2480px;
+            background-size: cover;
     }
-}
+} */
 
 
 
@@ -7480,7 +7493,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     color: var(--white);
 }
 
-
+.section-header.awards .btn-red-green {
+    background: #F54337;
+}
 
 
 .awards-benefits__container {
@@ -7655,6 +7670,10 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
 .awards-step {
+    background: url('/themes/custom/adrofx_theme/images/award-hero-background@x2.png'), #0C356A;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover;
     color: var(--white);
 }
 
@@ -7679,7 +7698,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     height: 70px;
 
     font-family: "Roboto-bold";
-    color: var(--blue500);
+    color: #0C356A;
     font-size: 1.25rem;
 
     margin-bottom: 1.25rem;
@@ -7697,6 +7716,54 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     font-size: var(--font-size-14);
     line-height: normal;
 }
+
+
+
+/* UPDATE */
+.list-features.awards-step {
+    margin-bottom: 2.5rem;
+}
+
+.list-features.awards-step {
+    justify-content: space-between;
+}
+
+.list-features.awards-step .list-features__item {
+    flex-basis: calc(100% / 3 - 10px);
+}
+
+.list-features.awards-step .list-features__header {
+    font-family: "Roboto-bold";
+    color: #0C356A;
+    font-size: 1.25rem;
+
+    background: var(--white);
+    margin-bottom: 1.25rem;
+}
+
+.list-features.awards-step  .list-features__title {
+    font-size: var(--font-size-20);
+    line-height: normal;
+}
+
+.list-features.awards-step  .list-features__text {
+    font-size: var(--font-size-14);
+    line-height: normal;
+}
+
+
+.list-features.awards-step  .list-features__title,
+.list-features.awards-step  .list-features__text  {
+    color: var(--white);
+}
+
+.section-title.awards-step,
+.list-features.awards-step,
+.buttons-container.awards-step {
+    background: none;
+}
+
+
 
 .buttons-container.awards-step .text {
     margin-bottom: 2rem;
@@ -8160,6 +8227,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     filter: drop-shadow(-38px 75px 50px rgba(9, 19, 69, 0.20));
 }
 
+
 .section-header.test .section-header__title {
     font-size: 51px;
     line-height: 1.1;
@@ -8191,25 +8259,7 @@ body {
 }
 
 @media (max-width: 1199.98px) {
-
-    .section-header.test .section-header__title {
-        font-size: 45px;
-    }
-
-    .cash-back-hero {
-        background: url('../themes/custom/adrofx_theme/images/cashback-banner-lg.jpg');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 530px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-
+ 
     /*for ru version*/
     html[lang="ru"] .platforms .platforms-list {
         max-width: 380px;
@@ -8620,12 +8670,12 @@ body {
         font-size: 1.25rem;
     }
 
-    .awards-hero {
+    /* .awards-hero {
         background: url('../themes/custom/adrofx_theme/images/award-hero-1200.jpg'), #3C99DF;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-    }
+    } */
 
     .section-header.awards .section-header__title {
         font-size: 2.5rem;
@@ -8716,8 +8766,6 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         height: 470px;
-
-
     }
 
 
@@ -9284,14 +9332,25 @@ body {
     }
 
 
+    /* UPDATE */
+    .awards-hero {
+      padding-top: 50px;
+    }
+
     .section-header.awards .section-header__title {
-        font-size: 2.5rem;
+        font-size:2rem;
     }
 
     .section-header.awards .section-header__description {
         font-size: 0.875rem;
         line-height: 1.313rem;
     }
+
+    .section-header.awards .section-header__description,
+    .section-header.awards .section-header__title{
+        margin-bottom: 15px;
+    }
+
 
     .awards-advantages__title {
         font-size: 1.125rem;
@@ -9335,13 +9394,7 @@ body {
         height: 100%;
         object-fit: contain;
     }
-
-    .awards-hero {
-        background: url('../themes/custom/adrofx_theme/images/award-hero-900.jpg'), #3D9BE1;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
+ 
 
     .section-title.awards-step {
         max-width: 100%;
@@ -10360,17 +10413,30 @@ body {
         padding: 70px 0 0 0;
     }
 
-    .awards-hero {
+    /* .awards-hero {
         background: url('../themes/custom/adrofx_theme/images/award-hero-700.jpg'), #3C99DF;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-    }
+    } */
 
-    .section-header.awards {
+    /* .section-header.awards {
         text-align: left;
         align-items: flex-start;
         margin-top: 300px;
+    } */
+
+    .awards-hero {
+       padding-top: 0;
+       padding-bottom: 70px;
+    }
+
+
+    .section-header.awards {
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        margin-top: 50px;
     }
 
     .list.awards-advantages .list__item {
@@ -11947,6 +12013,10 @@ body {
         padding: 10px 10px;
     } */
 
+
+
+    /* OLD */
+
     .list.awards-step .list__item {
         flex-basis: 100%;
         display: flex;
@@ -11972,10 +12042,46 @@ body {
         gap: 10px;
     }
 
+
+    /* ADD */
+    .list-features.awards-step .list-features__item {
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .list-features.awards-step .list-features__item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .list-features.awards-step  .list-features__header {
+        flex: 0 0 50px;
+
+        width: 50px;
+        height: 50px;
+
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .list-features.awards-step  .list-features__body {
+        flex: 1 1 auto;
+    }
+
+    .list-features.awards-step  .list-features__item {
+       flex-basis: 100%;
+    }
+    
+ 
+    .section-title.awards-step {
+        line-height: 1.1;
+    }
+
     .awards-step__container {
         width: 50px;
         height: 50px;
     }
+ 
 
 
     .awards-step-phone-left,
@@ -11991,8 +12097,16 @@ body {
     }
 
 
+    .buttons-container.awards-step {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
     .buttons-container.awards-step .btn-base-lg {
-        padding: 10px 34px;
+        padding: 10px 43px;
         margin-bottom: 10px;
     }
 
@@ -12073,7 +12187,9 @@ body {
         margin-bottom: 50px;
     }
 
-    .awards-hero {
+
+    /* REMOVE */
+    /* .awards-hero {
         background-position: top;
         background-repeat: no-repeat;
         background-size: 430px;
@@ -12081,7 +12197,7 @@ body {
 
     .section-header.awards {
         margin-top: 130px;
-    }
+    } */
 
 
     /* list features component need to add */
