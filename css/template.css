@@ -7670,7 +7670,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
 .awards-step {
-    background: url('/themes/custom/adrofx_theme/images/award-hero-background@x2.png'), #0C356A;
+    background: url('../themes/custom/adrofx_theme/images/award-hero-background@x2.png'), #0C356A;
     background-repeat: no-repeat, no-repeat;
     background-position: center, center;
     background-size: cover;
