@@ -66,6 +66,10 @@
     font-style: normal;
     font-display: block;
 }
+/* 
+roulette promo pop up font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
+ 
 
 [class^="icon-"],
 [class*=" icon-"] {
@@ -8250,14 +8254,118 @@ body {
     background: var(--white);
 }
 
-.video-container {
-    overflow: hidden;
-    border-radius: 30px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+/* roulette */
+
+
+.modal.roulette .modal-content {
+    text-align: center;
+    border-radius: 60px;
+    background: url('../themes/custom/adrofx_theme/img/roulette-pop-up-background.png'), var(--white);
+    background-repeat: no-repeat;
+    background-position: tpp center;
+    background-size: 540px 341px;
+    padding: 30px;
 }
 
+.modal.roulette .modal-header {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border-bottom: unset;
+}
+
+.modal.roulette .modal-header .close {
+    float: unset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    text-shadow: unset;
+    color: var(--white);
+    font-weight: 400;
+
+    border-radius: 50%;
+    background: rgba(255, 132, 132, 0.47);
+    margin: 0;
+    margin-left: auto;
+}
+
+
+ 
+
+.modal.roulette .modal-body .modal-title,
+.modal.roulette  .modal-body .modal-title + .modal-text,
+.modal.roulette .modal-header .modal-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+.modal.roulette .modal-header .modal-title{
+    font-size: 55px;
+}
+
+
+.modal.roulette .modal-body .modal-title {
+    font-size: 40px;
+    color: #1F1F1F;
+    line-height: 1.2;
+    color: var(--blue500);
+
+    margin-bottom: 14px;
+}
+
+.modal.roulette .modal-body .modal-title + .modal-text {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #093D2C;
+    text-transform: capitalize;
+    padding: 13px 25px;
+    border-radius: 100px;
+    border: 2px dashed #4CD7AB;
+    background:rgba(76, 215, 171, 0.28);
+    margin-bottom: 15px;
+}
+
+.modal.roulette .modal-header .modal-text {
+    color: #383838;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+ 
+.modal.roulette .button-green {
+    color: var(--white);
+    text-transform: capitalize;
+    border-radius: 100px;
+    border: 1px solid #4CD7AB;
+    background: #4CD7AB;
+    box-shadow: 0px 21px 50px -5px rgba(68, 206, 162, 0.50);
+   
+}
+ 
+.modal.roulette .animation-container > div{
+    position: relative;
+    z-index: 3;
+}
+
+ 
+.confetti-animation {
+    position: absolute; 
+     top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+ 
 @media (max-width: 1199.98px) {
  
     /*for ru version*/
@@ -9334,7 +9442,8 @@ body {
 
     /* UPDATE */
     .awards-hero {
-      padding-top: 50px;
+      /* padding-top: 50px; */
+      padding: 70px 0;
     }
 
     .section-header.awards .section-header__title {
@@ -10426,10 +10535,7 @@ body {
         margin-top: 300px;
     } */
 
-    .awards-hero {
-       padding-top: 0;
-       padding-bottom: 70px;
-    }
+ 
 
 
     .section-header.awards {

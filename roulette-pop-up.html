@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/template.css">
+</head>
+
+<body>
+
+  <main>
+
+    <button id="modal-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal roulette" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 class="modal-title" id="exampleModalLabel">congratulations!</h2>
+            <p class="modal-text">You Won!</p>
+
+            <div>
+              <dotlottie-player id="lottie" class="confetti-animation"
+                src="https://lottie.host/8aafa4d0-c803-44b7-aa28-da98f308d71b/icFa4arM26.json" background="transparent"
+                speed="1" style="width: 277px; height: 277px" direction="1" mode="normal"></dotlottie-player>
+            </div>
+
+
+          </div>
+
+          <div class="modal-body">
+            <h3 class="modal-title">“50% Discount standard” Bonus</h3>
+            <span class="modal-text">Check your e-mail and get a promo code</span>
+            <p class="modal-text">
+              To get the prize send the request with
+              promo code to
+              <a class="link" href="#"> support@adrofx.com</a>
+            </p>
+
+            <button type="button" class="btn-base btn-base-small button-green">login to profile</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <button id="modal-button2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+      Launch demo modal
+    </button>
+
+        <!-- Modal -->
+        <div class="modal roulette" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+    
+            <div class="modal-content">
+    
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h2 class="modal-title" id="exampleModalLabel">congratulations!</h2>
+           
+    
+                <div class="position-relative animation-container">
+                  <div class="overflow-hidden">
+                    <img src="./themes/custom/adrofx_theme/img/gift.png" alt="" width="185" height="210">
+                  </div>
+                 
+                  <dotlottie-player id="lottie2" class="confetti-animation"
+                    src="https://lottie.host/8aafa4d0-c803-44b7-aa28-da98f308d71b/icFa4arM26.json" background="transparent"
+                    speed="1" style="width: 300px; height: 300px" direction="1" mode="normal"></dotlottie-player>
+                </div>
+    
+    
+              </div>
+    
+              <div class="modal-body">
+                <p class="modal-text">You Won!</p>
+                <h3 class="modal-title">“50% Discount standard” Bonus</h3>
+                
+                <span class="modal-text">Check your e-mail and get a promo code</span>
+                <p class="modal-text">
+                  To get the prize send the request with
+                  promo code to
+                  <a class="link" href="#"> support@adrofx.com</a>
+                </p>
+    
+                <button type="button" class="btn-base btn-base-small button-green">login to profile</button>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+    
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="themes/custom/adrofx_theme/js/roulette.js"></script>
+
+</body>
+
+</html>
