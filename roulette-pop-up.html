@@ -14,33 +14,130 @@
 
   <main>
 
-    <button id="modal-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
+    <section class="roulette-wheel section-padding">
 
-    <!-- Modal -->
-    <div class="modal roulette" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="myContainer">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <header class="section-header event">
+              <a class="logo" href="#">
+                <img class="img-fluid" src="./themes/custom/adrofx_theme/images/logo.png" alt="" width="235" height="83">
+              </a>
+    
+              <h1 class="section-header__title">
+                <div class="d-flex align-items-center"> happy
+
+                  <div class="button-container">
+                    <svg class="round-arrow" xmlns="http://www.w3.org/2000/svg" width="250" height="80" viewBox="0 0 279 151" fill="none">
+                      <path d="M278.366 36.3139C278.481 37.1342 277.91 37.8928 277.09 38.0083L263.721 39.8893C262.901 40.0047 262.142 39.4333 262.027 38.6129C261.911 37.7926 262.483 37.034 263.303 36.9185L275.186 35.2465L273.514 23.3636C273.399 22.5432 273.97 21.7846 274.79 21.6692C275.611 21.5538 276.369 22.1252 276.485 22.9456L278.366 36.3139ZM0.26506 150.946C-0.452154 96.9739 39.8736 46.1044 94.6805 19.7291C149.556 -6.67937 219.305 -8.72642 277.783 35.3248L275.978 37.721C218.558 -5.53298 150.043 -3.5841 95.9814 22.4324C41.8513 48.482 2.56795 98.4665 3.26481 150.906L0.26506 150.946Z" fill="white"/>
+                      </svg>
+
+                      <button type="button" class="btn-base button-yellow">
+                        click me to win
+                       </button>
+                  </div>
+                   
+                </div>
+    
+                <span class="d-block">new year!</span>
+              </h1>
+    
+              <p class="section-header__description">
+                welcome to our year promotion.
+              </p>
+    
+              <p class="section-header__description">
+                spin to win a prize to improve your with your trading journey
+              </p>
+    
+    
+            </header>
+
+            <ul class="grid roulette-benefits">
+
+              <li class="grid__item">
+                <h2 class="title">"Free VPS"</h2>
+                <p class="text">Bonus</p>
+              </li>
+    
+              <li class="grid__item">
+                <h2 class="title">80% off</h2>
+                <p class="text">on Pro account - 50%</p>
+              </li>
+    
+              <li class="grid__item">
+                <h2 class="title">50% off on</h2>
+                <p class="text">"100% Deposit" Bonus</p>
+              </li>
+    
+              <li class="grid__item">
+                <h2 class="title">80% off</h2>
+                <p class="text">on Premium account - 70%</p>
+              </li>
+    
+              <li class="grid__item">
+                <h2 class="title">“15% 20% or 30% Deposit"</h2>
+                <p class="text">Bonuses</p>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="item">
+            <div class="roulette-border"></div>
+            <div class="roulette-shadow"></div>
+            <div class="roulette-base"></div>
+          </div>
+            
+       
+        </div>
+
+      </div>
+
+      <div>
+
+      <div class="roulette-bg">
+      <dotlottie-player class="snow" src="https://lottie.host/c1dcf9a2-ad90-4c80-b457-6342d96ae308/zOaSog7eNw.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+      
+      <img class="img-fluid snow-texture" src="./themes/custom/adrofx_theme/images/snow.png" alt=""
+        width="1920" height="1080">
+
+      <img class="img-fluid" src="./themes/custom/adrofx_theme/images/roulette-background.jpg" alt=""
+        width="1920" height="1080">
+      </div>
+       
+
+
+    </section>
+
+    
+    <div class="modal roulette" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
       <div class="modal-dialog">
 
         <div class="modal-content">
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span class="d-block" aria-hidden="true">&times;</span>
             </button>
-            <h2 class="modal-title" id="exampleModalLabel">congratulations!</h2>
-            <p class="modal-text">You Won!</p>
+            <h2 class="modal-title" id="giftModalLabel">congratulations!</h2>
 
-            <div>
+            <div class="position-relative animation-container">
+              <div class="img-container">
+                <img class="is-animated" class="img-fluid" src="./themes/custom/adrofx_theme/img/gift.png" alt=""
+                  width="185" height="210">
+              </div>
+
               <dotlottie-player id="lottie" class="confetti-animation"
                 src="https://lottie.host/8aafa4d0-c803-44b7-aa28-da98f308d71b/icFa4arM26.json" background="transparent"
-                speed="1" style="width: 277px; height: 277px" direction="1" mode="normal"></dotlottie-player>
+                speed="1" style="width: 400px; height: 400px" direction="1" mode="normal"></dotlottie-player>
             </div>
 
 
           </div>
 
           <div class="modal-body">
+            <p class="modal-text">You Won!</p>
             <h3 class="modal-title">“50% Discount standard” Bonus</h3>
             <span class="modal-text">Check your e-mail and get a promo code</span>
             <p class="modal-text">
@@ -56,55 +153,6 @@
       </div>
     </div>
 
-    <button id="modal-button2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
-      Launch demo modal
-    </button>
-
-        <!-- Modal -->
-        <div class="modal roulette" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-    
-            <div class="modal-content">
-    
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h2 class="modal-title" id="exampleModalLabel">congratulations!</h2>
-           
-    
-                <div class="position-relative animation-container">
-                  <div class="overflow-hidden">
-                    <img src="./themes/custom/adrofx_theme/img/gift.png" alt="" width="185" height="210">
-                  </div>
-                 
-                  <dotlottie-player id="lottie2" class="confetti-animation"
-                    src="https://lottie.host/8aafa4d0-c803-44b7-aa28-da98f308d71b/icFa4arM26.json" background="transparent"
-                    speed="1" style="width: 400px; height: 400px" direction="1" mode="normal"></dotlottie-player>
-                </div>
-    
-    
-              </div>
-    
-              <div class="modal-body">
-                <p class="modal-text">You Won!</p>
-                <h3 class="modal-title">“50% Discount standard” Bonus</h3>
-                
-                <span class="modal-text">Check your e-mail and get a promo code</span>
-                <p class="modal-text">
-                  To get the prize send the request with
-                  promo code to
-                  <a class="link" href="#"> support@adrofx.com</a>
-                </p>
-    
-                <button type="button" class="btn-base btn-base-small button-green">login to profile</button>
-              </div>
-    
-            </div>
-          </div>
-        </div>
-    
-
   </main>
 
 
@@ -118,6 +166,7 @@
 
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
   <script src="themes/custom/adrofx_theme/js/roulette.js"></script>
+  
 
 </body>
 

@@ -1,26 +1,38 @@
-const button = document.getElementById('modal-button')
-const button2 = document.getElementById('modal-button2')
-const lottie = document.getElementById('lottie')
-const lottie2 = document.getElementById('lottie2')
- 
+const popup = document.getElementById('giftModal');
+const lottie = document.getElementById('lottie');
+const giftImage = document.querySelector('.is-animated')
+const spinButton = document.querySelector('.button-yellow')
+const rouletteBonus = document.querySelector('.roulette-base')
 
-window.addEventListener('DOMContentLoaded',()=>{
-    button.addEventListener('click',()=>{
-        lottie.stop()
+
+window.addEventListener('DOMContentLoaded', () => {
+    spinButton.addEventListener('click', () => {
+        rouletteBonus.style.setProperty("--target", `0`);
+        rouletteBonus.style.animation = "";
+        giftImage.classList.remove('animated');
+        lottie.stop();
+        $(popup).modal('hide');
+      
 
         setTimeout(() => {
+            rouletteBonus.style.setProperty("--target", `7200deg`);
+            rouletteBonus.style.animation = "spin-roulette 5s ease-in-out .2s forwards";
+        }, 10);
+     
+        setTimeout(() => {
+            $(popup).modal('show');
             lottie.play();
-        }, 10);
+            giftImage.classList.add('animated');
+        }, 5000);
+
     })
 
-    button2.addEventListener('click',()=>{
-        lottie2.stop()
 
-        setTimeout(() => {
-            lottie2.play();
-        }, 10);
-    })
 
 })
 
- 
+
+
+
+
+
