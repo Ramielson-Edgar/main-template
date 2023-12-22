@@ -70,7 +70,7 @@
 /* 
 roulette promo pop up font */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 
 [class^="icon-"],
 [class*=" icon-"] {
@@ -8257,7 +8257,7 @@ body {
 
 
 /*============= roulette modal============= */
- 
+
 
 .modal.roulette .modal-content {
     text-align: center;
@@ -8307,12 +8307,12 @@ body {
 }
 
 .modal.roulette .modal-header .modal-title {
-    font-size: 55px;
+    font-size: clamp(1.875rem, 1.0441rem + 2.3121vw, 3.125rem);
 }
 
 
 .modal.roulette .modal-body .modal-title {
-    font-size: 40px;
+    font-size: clamp(1.5rem, 0.8353rem + 1.8497vw, 2.5rem);
     color: #1F1F1F;
     line-height: 1.2;
     color: var(--blue500);
@@ -8392,6 +8392,8 @@ body {
 /* ============roulette section========== */
 
 
+
+
 .grid.roulette-benefits,
 .section-header.event {
     position: relative;
@@ -8406,8 +8408,7 @@ body {
 .section-header.event .section-header__title {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
-    /* font-size: clamp(3.125rem, -0.6142rem + 10.4046vw, 8.75rem); */
-    font-size: 100px;
+    font-size: clamp(2.5rem, 0.0072rem + 6.9364vw, 6.25rem);
     line-height: normal;
     margin-bottom: 12px;
 }
@@ -8416,11 +8417,18 @@ body {
     position: relative;
 }
 
+.section-header.event .button-container.lg {
+    display: block;
+}
+
+.section-header.event .button-container.xs {
+    display: none;
+}
+
 .section-header.event .button-container .round-arrow {
     position: absolute;
     top: -50%;
     left: 50%;
-
 }
 
 .section-header.event .section-header__description {
@@ -8430,20 +8438,19 @@ body {
 }
 
 .section-header.event .section-header__description {
-    /* font-size: clamp(1.5rem, 1.2507rem + 0.6936vw, 1.875rem); */
-    /* margin-bottom: 40px; */
-    font-size: 20px;
+    font-size: clamp(1.125rem, 1.0419rem + 0.2312vw, 1.25rem);
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
 
 
 .section-header.event .section-header__description+.section-header__description {
-    /* font-size: clamp(1.25rem, 0.4191rem + 2.3121vw, 2.5rem); */
-    font-size: 29px;
+    font-size: clamp(1.125rem, 0.668rem + 1.2717vw, 1.8125rem);
     line-height: 1.5;
     margin-bottom: 24px;
     max-width: 450px;
+
 }
 
 .section-header.event .section-header__description::first-letter,
@@ -8458,7 +8465,7 @@ body {
 
 .button-yellow {
     color: #352703;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.8338rem + 0.4624vw, 1.25rem);
     line-height: 1.3;
     font-weight: 600;
 
@@ -8476,136 +8483,103 @@ body {
 }
 
 
-.roulette-wheel {
-    overflow: hidden;
-    position: relative;
-}
-
-
-
 
 .myContainer {
-    max-width: 1400px;
-
+    max-width: 1800px;
     padding-right: 15px;
     padding-left: 15px;
-
     margin-left: auto;
     margin-right: auto;
 }
 
 
-.myContainer .item {
-    position: absolute;
-    bottom: 0;
-    right: 8%;
+.roulette-wheel {
+    position: relative;
+    background: url('../themes/custom/adrofx_theme/images/roulette-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    width: 50%;
-    aspect-ratio: 1/1;
-    z-index: 2;
+    padding: 70px 0 100px 0; 
 }
 
-.roulette-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
+.new-year {
+    overflow-x: hidden;
+    background: #2c3d5d;
     height: 100%;
-    z-index: 1;
 }
 
-.roulette-bg  .snow {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    z-index: 4;
-    filter: blur(3px);
-}
-
-.roulette-bg .snow-texture,
-.roulette-bg img {
+.snow {
     position: absolute;
     top: 0;
     left: 0;
     
+
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
-    object-position: center;
+    z-index: 4;
+}
+
+.snow > .snow-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+     filter: blur(3px);
+}
+
+.snow > .snow-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     z-index: 3;
 }
 
-.roulette-bg .snow-texture {
-    z-index: 4;
+.roulette-border {
+    position: relative;
+    z-index: 2;
 }
- 
 
+.roulette-gifts {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
 
-.roulette-shadow,
-.roulette-border,
-.roulette-base {
+    z-index: 3;
+}
+
+.roulette-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    width: 24%;
     aspect-ratio: 1/1;
-}
+    object-fit: contain;
 
+    filter: drop-shadow(0px 4px 50px rgba(0, 255, 110, 0.7));
 
-
-.roulette-border {
-    width: 100%;
-    background: url('../themes/custom/adrofx_theme/images/roulette-border.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    z-index: 2;
+    z-index: 6;
 }
 
 .roulette-base {
-    left: 55.8%;
-    top: 47.8%;
-
-    width: 82.8%;
-
-    background: url('../themes/custom/adrofx_theme/images/roulette-base.png'), #006f44;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    border-radius: 50%;
-
-    transform-origin: center;
-    z-index: -1;
-}
-
-.roulette-shadow {
-    top: unset;
-    left: 0;
-    bottom: 0;
-    transform: unset;
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    background: url('../themes/custom/adrofx_theme/images/roulette-shadow.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    aspect-ratio: 1/1;
     z-index: 1;
-}
 
+}
 
 @keyframes spin-roulette {
     from {
@@ -8618,14 +8592,10 @@ body {
 }
 
 
-
-
 .grid.roulette-benefits {
     display: flex;
     flex-wrap: wrap-reverse;
     gap: 7px;
-
-    max-width: 900px;
 }
 
 .grid.roulette-benefits .grid__item {
@@ -8649,7 +8619,25 @@ body {
     line-height: 1.5;
 }
 
+.greeting {
+    position: relative;
+}
+
+.greeting .section-title {
+    color: var(--white);
+    font-family: 'La Belle Aurore', cursive;
+    font-size: clamp(3.125rem, 1.0477rem + 5.7803vw, 6.25rem);
+    line-height: 1.5;
+}
+
 @media (max-width: 1199.98px) {
+
+    /*============NEW YEAR START HO-HO-HO ===============*/
+    .grid.roulette-benefits {
+        display: none;
+    }
+
+    /*============NEW YEAR NED HO-HO-HO ===============*/
 
     /*for ru version*/
     html[lang="ru"] .platforms .platforms-list {
@@ -9150,6 +9138,23 @@ body {
 }
 
 @media (max-width: 991.98px) {
+
+    /*============NEW YEAR START HO-HO-HO ===============*/
+    .section-header.event {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-header.event .button-container .round-arrow {
+        transform: rotate(45deg);
+    }
+
+
+
+    /*============NEW YEAR NED HO-HO-HO ===============*/
 
     .cash-back-hero {
         background: url('../themes/custom/adrofx_theme/images/cashback-banner-md.jpg');
@@ -10887,18 +10892,54 @@ body {
 
 @media (max-width: 575.98px) {
 
+    /*============NEW YEAR START HO-HO-HO ===============*/
+    .roulette-wheel {
+        background: url('../themes/custom/adrofx_theme/images/roulette-background-xs.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 
-    .section-header.test {
-        justify-content: center;
+    .section-header.event .section-header__title {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        text-align: center;
-        margin-top: 320px;
+        justify-content: center;
     }
 
-    .section-header.test .section-header__title {
-        font-size: 30px;
-        line-height: 1.1;
+    .section-header.event .button-container {
+        margin-bottom: 30px;
     }
+
+    .section-header.event .button-container .round-arrow {
+        top: 100%;
+        transform: rotate(107deg);
+    }
+
+    .modal.roulette .modal-content {
+        padding: 20px;
+    }
+
+    .modal.roulette .modal-body .modal-title+.modal-text {
+        font-size: 16px;
+        padding: 13px;
+    }
+
+    .modal.roulette .button-green {
+        padding: 10px 30px;
+    }
+
+    .section-header.event .button-container.lg {
+        display: none;
+    }
+
+
+    .section-header.event .button-container.xs {
+        display: block;
+    }
+
+
+    /*============NEW YEAR START HO-HO-HO ===============*/
 
     .cash-back-hero {
         background: url('../themes/custom/adrofx_theme/images/cashback-banner-xs.jpg');
