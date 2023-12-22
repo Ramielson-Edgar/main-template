@@ -8495,7 +8495,8 @@ body {
 
 .roulette-wheel {
     position: relative;
-    background: url('../themes/custom/adrofx_theme/images/roulette-background.jpg');
+    background: url('../themes/custom/adrofx_theme/images/bg10k.jpg');
+    /* background: url('../themes/custom/adrofx_theme/images/test.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -8503,7 +8504,8 @@ body {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
 
-    padding: 70px 0 100px 0; 
+    padding-top: 70px;
+   padding-bottom: 100px;
 }
 
 .new-year {
@@ -8620,7 +8622,8 @@ body {
 }
 
 .greeting {
-    position: relative;
+    position: relative; 
+    height: 100vh;
 }
 
 .greeting .section-title {
@@ -8629,6 +8632,8 @@ body {
     font-size: clamp(3.125rem, 1.0477rem + 5.7803vw, 6.25rem);
     line-height: 1.5;
 }
+
+ 
 
 @media (max-width: 1199.98px) {
 
@@ -9150,6 +9155,13 @@ body {
 
     .section-header.event .button-container .round-arrow {
         transform: rotate(45deg);
+    }
+
+    .roulette-wheel {
+        background: url('../themes/custom/adrofx_theme/images/roulette-background-xs.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
 
 
@@ -10893,12 +10905,7 @@ body {
 @media (max-width: 575.98px) {
 
     /*============NEW YEAR START HO-HO-HO ===============*/
-    .roulette-wheel {
-        background: url('../themes/custom/adrofx_theme/images/roulette-background-xs.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+  
 
     .section-header.event .section-header__title {
         display: flex;
