@@ -15,7 +15,7 @@
 
   <main class="new-year">
 
-    <section  class="roulette-wheel">
+    <section class="roulette-wheel">
 
       <div class="myContainer">
 
@@ -100,6 +100,14 @@
                 <p class="text">Bonuses</p>
               </li>
             </ul>
+
+            <a class="link" href="#">terms & Conditions
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 22 8" fill="none">
+                <path
+                  d="M21.3536 4.35355C21.5488 4.15829 21.5488 3.84171 21.3536 3.64645L18.1716 0.464466C17.9763 0.269204 17.6597 0.269204 17.4645 0.464466C17.2692 0.659728 17.2692 0.976311 17.4645 1.17157L20.2929 4L17.4645 6.82843C17.2692 7.02369 17.2692 7.34027 17.4645 7.53553C17.6597 7.7308 17.9763 7.7308 18.1716 7.53553L21.3536 4.35355ZM0.5 4.5L21 4.5L21 3.5L0.5 3.5L0.5 4.5Z"
+                  fill="#fff" />
+              </svg>
+            </a>
           </div>
 
           <div class="col-lg-6 position-relative d-flex flex-column justify-content-center align-items-center">
@@ -120,23 +128,20 @@
 
         </div>
 
-
         <div class="snow">
           <dotlottie-player class="snow-animation"
             src="https://lottie.host/c1dcf9a2-ad90-4c80-b457-6342d96ae308/zOaSog7eNw.json" background="transparent"
             speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
-  
+
           <img class="img-fluid snow-texture" src="./themes/custom/adrofx_theme/images/snow.png" alt="" width="1920"
             height="1080">
         </div>
 
       </div>
 
-    
-
     </section>
 
-    <section  class="greeting section-padding">
+    <section class="greeting section-padding">
       <h2 class="section-title text-center">happy new year</h2>
     </section>
 
@@ -154,7 +159,7 @@
 
             <div class="position-relative animation-container">
               <div class="img-container">
-                <img class="is-animated" class="img-fluid" src="./themes/custom/adrofx_theme/img/gift.png" alt=""
+                <img class="img-fluid is-animated"   src="./themes/custom/adrofx_theme/images/gift.png" alt=""
                   width="185" height="210">
               </div>
 
@@ -177,6 +182,51 @@
             </p>
 
             <button type="button" class="btn-base btn-base-small button-green">login to profile</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal roulette dark" id="notification" tabindex="-1" aria-labelledby="notificationLabel" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="d-block" aria-hidden="true">&times;</span>
+            </button>
+
+ 
+              <div class="img-container">
+                <img class="img-fluid is-animated" class="img-fluid" src="./themes/custom/adrofx_theme/images/notify-gift.png" alt=""
+                  width="237" height="237">
+              </div>
+       
+
+
+          </div>
+
+          <div class="modal-body">
+            <h3 class="modal-title">Welcome To The New year  Promotion!</h3>
+            <span class="modal-text">Spin to Win, To participate you will need to enter your email address to receive the code for your Prize</span>
+            
+            <label class="input email">
+              <input class="input-field" type="text" type="email" placeholder="Enter Your e-mail Here">
+
+              <svg class="round-arrow" xmlns="http://www.w3.org/2000/svg" width="108" height="32" viewBox="0 0 108 32" fill="none">
+                <path d="M106.32 2.00764C106.254 1.73953 105.983 1.57581 105.715 1.64194L101.346 2.71972C101.078 2.78586 100.914 3.05681 100.98 3.32492C101.046 3.59302 101.317 3.75675 101.585 3.69061L105.469 2.73259L106.427 6.61617C106.493 6.88428 106.764 7.048 107.032 6.98187C107.3 6.91573 107.464 6.64477 107.398 6.37667L106.32 2.00764ZM0.270149 1.00034C7.12104 18.7499 26.9937 30.1011 48.3944 31.5346C69.8205 32.9697 92.9124 24.4795 106.262 2.38598L105.407 1.86881C92.2849 23.5843 69.5867 31.9518 48.4612 30.5368C27.3103 29.1201 7.87 17.9132 1.20307 0.64026L0.270149 1.00034Z" fill="white"/>
+                </svg>
+            </label>
+
+            <button type="button" class="btn-base btn-base-small button-green">login to profile</button>
+
+            <p class="modal-text">
+              To get the prize send the request with
+              promo code to
+              <a class="link" href="#"> support@adrofx.com</a>
+            </p>
           </div>
 
         </div>

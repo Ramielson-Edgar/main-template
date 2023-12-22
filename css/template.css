@@ -8259,10 +8259,15 @@ body {
 /*============= roulette modal============= */
 
 
+.modal.roulette,
+.modal.roulette.dark {
+    position: absolute;
+} 
+
 .modal.roulette .modal-content {
     text-align: center;
     border-radius: 60px;
-    background: url('../themes/custom/adrofx_theme/img/roulette-pop-up-background.png'), var(--white);
+    background: url('../themes/custom/adrofx_theme/images/roulette-pop-up-background.png'), var(--white);
     background-repeat: no-repeat;
     background-position: tpp center;
     background-size: 540px 341px;
@@ -8389,6 +8394,88 @@ body {
     z-index: 1;
 }
 
+.modal.roulette.dark .modal-dialog {
+    max-width: 544px;
+}
+
+.modal.roulette.dark .modal-content{
+    color: var(--white);
+    background: url('../themes/custom/adrofx_theme/images/roulette-pop-up-background.png'),#123459;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-position: center -200px;
+    background-size: 544px;
+
+    padding: 20px;
+}
+
+.modal.roulette.dark .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.modal.roulette.dark  .modal-body .modal-title {
+    color: var(--white);
+    text-align: left
+}
+
+.modal.roulette.dark  .modal-body .modal-text {
+    display: inline-block;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    text-align: left;
+    color: var(--white);
+
+    padding: 0;
+    background: unset;
+    border-radius: unset;
+    border: unset;
+}
+
+.modal.roulette.dark  .modal-body .button-green + .modal-text,
+.modal.roulette.dark  .modal-body .button-green {
+    text-align: center;
+}
+
+.modal.roulette.dark  .modal-body .button-green + .modal-text {
+    margin-bottom: 0;
+}
+
+.modal.roulette.dark  .modal-body .button-green {
+    margin-bottom: 15px;
+}
+
+.input.email {
+    overflow:hidden;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.input.email .input-field {
+    background: var(--white);
+    border: unset;
+    border-radius: 100px;
+    width: 100%;
+    padding:20px 20px 20px 30px;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+}
+
+.input.email .input-field:hover,
+.input.email .input-field:focus {
+   border: 1px solid var(--green);
+   outline: unset;
+}
+
+.input.email .input-field::placeholder {
+    text-transform: capitalize;
+     color: var(--grey500);
+     font-size: 14px;
+}
+
 /* ============roulette section========== */
 
 
@@ -8463,6 +8550,8 @@ body {
     margin-bottom: 31px;
 }
 
+ 
+
 .button-yellow {
     color: #352703;
     font-size: clamp(1rem, 0.8338rem + 0.4624vw, 1.25rem);
@@ -8495,8 +8584,7 @@ body {
 
 .roulette-wheel {
     position: relative;
-    background: url('../themes/custom/adrofx_theme/images/bg10k.jpg');
-    /* background: url('../themes/custom/adrofx_theme/images/test.jpg'); */
+    background: url('../themes/custom/adrofx_theme/images/background-6k.jpg'), #000000;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -8505,7 +8593,7 @@ body {
     border-bottom-right-radius: 40px;
 
     padding-top: 70px;
-   padding-bottom: 100px;
+   padding-bottom: 150px;
 }
 
 .new-year {
@@ -8598,6 +8686,7 @@ body {
     display: flex;
     flex-wrap: wrap-reverse;
     gap: 7px;
+    margin-bottom: 40px;
 }
 
 .grid.roulette-benefits .grid__item {
@@ -8621,9 +8710,35 @@ body {
     line-height: 1.5;
 }
 
+.grid.roulette-benefits +.link {
+    position: relative;
+
+    font-size: 20px;
+    padding: 10px 30px;
+    color: var(--white);
+    text-transform: capitalize;
+
+    border-radius: 100px;
+    border: 1px solid var(--white);
+ 
+    z-index: 10;
+}
+
+.grid.roulette-benefits +.link:hover {
+    text-decoration: unset;
+}
+
+.grid.roulette-benefits +.link > svg {
+    transition: transform .3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.grid.roulette-benefits +.link:hover > svg {
+    transform: translateX(10px);
+}
+
 .greeting {
     position: relative; 
-    height: 100vh;
+    height: 30vh;
 }
 
 .greeting .section-title {
@@ -9151,6 +9266,7 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
+        margin-bottom: 0;
     }
 
     .section-header.event .button-container .round-arrow {
@@ -9162,6 +9278,18 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+    }
+
+    .grid.roulette-benefits + .link {
+ 
+        display: block;
+        text-align: center;
+        font-size: 16px;
+
+        padding: 10px 20px;
+        margin-inline: auto;
+        margin-bottom: 30px;
+        max-width: 250px;
     }
 
 
@@ -10905,7 +11033,14 @@ body {
 @media (max-width: 575.98px) {
 
     /*============NEW YEAR START HO-HO-HO ===============*/
+    .roulette-wheel {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
   
+    .section-header.event {
+        margin-bottom: 30px;
+    }
 
     .section-header.event .section-header__title {
         display: flex;
@@ -10943,8 +11078,33 @@ body {
 
     .section-header.event .button-container.xs {
         display: block;
+        margin-bottom: 0;
     }
 
+
+    .modal.roulette .modal-body,
+    .modal.roulette.dark .modal-body,
+    .modal.roulette.dark .modal-body .modal-text {
+    padding: 0;
+    }
+
+    .modal.roulette.dark .modal-content {
+        padding: 0 15px 30px 15px;
+    }
+ 
+    .modal.roulette.dark .modal-content {
+        border-radius: 30px;
+    }
+     
+    .modal.roulette .modal-body .modal-title+.modal-text,
+    .modal.roulette.dark .modal-body .modal-text {
+        font-size: 14px;
+    }
+
+    .input.email .input-field {
+        padding: 15px 15px 15px 20px;
+    }
+    
 
     /*============NEW YEAR START HO-HO-HO ===============*/
 
