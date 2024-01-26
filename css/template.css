@@ -9231,7 +9231,10 @@ body {
 .img-container.promo-100 .image-dollar {
     position: relative;
     z-index: 3;
+    animation: smooth-fly 6s linear 0s infinite;
 }
+
+
 
 .img-container.promo-100 .wrapper {
     position: relative;
