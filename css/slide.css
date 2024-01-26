@@ -1,0 +1,102 @@
+ 
+
+.slide {
+    background: url('../themes/custom/adrofx_theme/images/new-year-xl.jpg'), #1D365E;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 600px;
+    padding: 60px 0;
+}
+
+ 
+
+@media (max-width:1200px) {
+
+    .slide {
+        background: url('../themes/custom/adrofx_theme/images/new-year-lg.jpg'), #1D365E;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        height: 530px;
+        padding: 60px 0;
+    }
+
+}
+
+
+
+@media (max-width:991px) {
+
+    .slide {
+        background: url('../themes/custom/adrofx_theme/images/new-year-md.jpg'), #1D365E;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        height: 470px;
+        padding: 60px 0;
+    }
+
+    .slider-text .section-title.promo {
+        font-size: clamp(3.375rem, 2.091rem + 2.6786vw, 3.75rem);
+        line-height: 1.3;
+    }
+
+    .slider-text .section-title.promo .text + .text {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+
+}
+
+@media (max-width:767px) {
+
+    .slide {
+        background: url('../themes/custom/adrofx_theme/images/new-year-sm.jpg'), #1D365E;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        height: 360px;
+        padding: 60px 0;
+    }
+
+
+
+    .slider-text .section-title.promo {
+        font-size: clamp(1.5rem, -1.0916rem + 7.2115vw, 3.375rem);
+        line-height: 1.3;
+    }
+
+    .slider-text .section-title.promo > .text  {
+        font-size: 16px;
+    }
+ 
+}
+
+@media (max-width:575) {
+
+    .slide {
+        background: url('../themes/custom/adrofx_theme/images/new-year-xs.jpg'), #1D365E;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        height: 600px;
+        padding: 60px 0;
+    }
+
+    
+    .slider-text .section-title.promo > .text  {
+        font-size: 13px;
+    }
+    .slider-text .section-title.promo .text + .text   {
+        font-size: 16px;
+         line-height: 1.5;
+    }
+
+}

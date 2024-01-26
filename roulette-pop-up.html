@@ -14,7 +14,6 @@
 <body>
 
   <main class="new-year">
-
     <section class="roulette-wheel">
 
       <div class="myContainer">
@@ -116,12 +115,26 @@
                 height="329">
             </button>
 
-            <img class="img-fluid roulette-gifts" src="./themes/custom/adrofx_theme/images/roulette-gifts.png" alt=""
+            <picture>
+              <source media="(max-width:575px)" srcset="./themes/custom/adrofx_theme/images/roulette-gifts-xs.png">
+              <img class="img-fluid roulette-gifts" src="./themes/custom/adrofx_theme/images/roulette-gifts.png" alt=""
               width="1808" height="1960">
-            <img class="img-fluid roulette-base" src="./themes/custom/adrofx_theme/images/roulette-base.png" alt=""
+            </picture>
+
+            <picture>
+              <source media="(max-width: 575px)" srcset="./themes/custom/adrofx_theme/images/roulette-base-xs.png">
+              <img class="img-fluid roulette-base" src="./themes/custom/adrofx_theme/images/roulette-base.png" alt=""
               width="1630" height="1630">
-            <img class="img-fluid roulette-border" src="./themes/custom/adrofx_theme/images/roulette-border.png" alt=""
+            </picture>
+
+            <picture>
+              <source media="(max-width: 575px)" srcset="./themes/custom/adrofx_theme/images/roulette-border-xs.png">
+              <img class="img-fluid roulette-border" src="./themes/custom/adrofx_theme/images/roulette-border.png" alt=""
               width="1630" height="1630">
+            </picture>
+      
+           
+           
           </div>
 
 
@@ -140,13 +153,15 @@
       </div>
 
     </section>
+ 
+      <section class="greeting section-padding">
+        <h2 class="section-title text-center">happy new year</h2>
+      </section> 
+  
+    
 
-    <section class="greeting section-padding">
-      <h2 class="section-title text-center">happy new year</h2>
-    </section>
 
-
-    <div class="modal roulette" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
+   <div class="modal roulette" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
       <div class="modal-dialog">
 
         <div class="modal-content">
@@ -210,7 +225,17 @@
 
           <div class="modal-body">
             <h3 class="modal-title">Welcome To The New year  Promotion!</h3>
-            <span class="modal-text">Spin to Win, To participate you will need to enter your email address to receive the code for your Prize</span>
+            <!-- <span class="modal-text">
+              Spin to Win, To participate you will need to enter your email address to receive the code for your Prize</span>
+             -->
+
+             <span class="modal-text">
+              Each customer has only 3 attempts to spin the wheel. Choose one of the prizes, complete the required steps, and send a request to</span>
+
+
+              
+              
+              
             
             <label class="input email">
               <input class="input-field" type="text" type="email" placeholder="Enter Your e-mail Here">
@@ -231,7 +256,7 @@
 
         </div>
       </div>
-    </div>
+    </div> 
 
   </main>
 
