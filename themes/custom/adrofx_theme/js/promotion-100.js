@@ -52,14 +52,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
     })
 
     
-    gsap.to('.icons-back', {
-        scrollTrigger:{
-            trigger: ".icons-back",
-            scrub:true,
-        },
-        yPercent: -10,
+    // gsap.to('.icons-back', {
+    //     scrollTrigger:{
+    //         trigger: ".icons-back",
+    //         markers:true,
+    //         scrub:true,
+    //     },
+    //     y: -20,
        
-    })
+    // })
 
  
     gsap.to('.image-dollar', {

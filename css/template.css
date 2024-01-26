@@ -8906,11 +8906,11 @@ body {
     padding: 20px;
 }
 
-.mask{
+.mask {
     overflow: hidden;
 }
 
- 
+
 
 #marquee-dark {
     position: relative;
@@ -9231,7 +9231,7 @@ body {
 .img-container.promo-100 .image-dollar {
     position: relative;
     z-index: 3;
-    animation: smooth-fly 6s linear 0s infinite;
+    animation: smooth-fly 6s none 0s infinite;
 }
 
 
@@ -12088,7 +12088,7 @@ body {
 
     /* promotion $100 start */
     .promotion-100 {
-         padding:5px;
+        padding: 5px;
     }
 
     .hero.promo-100 {
@@ -12161,11 +12161,11 @@ body {
         margin-bottom: 50px;
     }
 
-    .promotion-100  .how-it-work {
+    .promotion-100 .how-it-work {
         padding: 30px 0;
         margin-bottom: 50px;
     }
-  
+
 
     .section-header.details .inner {
         flex-direction: column;
@@ -12187,6 +12187,7 @@ body {
         text-align: left;
         align-items: flex-start;
     }
+
     .section-header.how .section-header__text {
         text-align: left;
     }
@@ -12212,7 +12213,7 @@ body {
     .section-title.details+.list .list__item .title {
         margin-bottom: 16px;
     }
- 
+
 
     .social-media.details+.footer,
     .social-media.details {
@@ -12259,7 +12260,7 @@ body {
         width: 110vw;
         height: auto;
     }
-    
+
 
     /* promotion $100 end */
 
