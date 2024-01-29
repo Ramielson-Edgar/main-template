@@ -8973,14 +8973,14 @@ body {
   }
 
   .marquee.dark .list.marquee .list__item span::after {
-    background: url('/themes/custom/adrofx_theme/img/promotion-100/marquee-starr-green.svg'), transparent;
+    background: url('../themes/custom/adrofx_theme/img/promotion-100/marquee-starr-green.svg'), transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
   }
 
   .marquee.white .list.marquee .list__item span::after {
-    background: url('/themes/custom/adrofx_theme/img/promotion-100/marquee-starr-blue.svg'), transparent;
+    background: url('../themes/custom/adrofx_theme/img/promotion-100/marquee-starr-blue.svg'), transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
