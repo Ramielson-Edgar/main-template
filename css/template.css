@@ -8430,6 +8430,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     mix-blend-mode: multiply;
     filter: blur(25px);
     pointer-events: none;
+    padding: 0;
 }
 
 .hero.promo-100 .gradient.green {
@@ -8625,7 +8626,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
     border-radius: 500px;
 
-    background: radial-gradient(50% 50% at 50% 50%, #C9F67F 0%, rgba(217, 217, 217, 0.00) 60%);
+    background: radial-gradient(50% 50% at 50% 50%, #C9F67F 0%, rgba(217, 217, 217, 0.00) 25%);
     mix-blend-mode: overlay;
     z-index: 10;
 }
