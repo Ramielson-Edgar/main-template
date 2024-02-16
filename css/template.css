@@ -13870,6 +13870,17 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 @media (max-width: 320px) {
+
+        /*============ NEW START ==========*/
+        .img-container.promo-100::before {
+            top: 40px;
+            right: -20%;
+            width: 150px;
+            height: 150px;
+        }
+    
+        /*============ NEW end ==========*/
+        
     /* ACCOUNT TYPES SLIDER  */
 
     .top-markets__group {
