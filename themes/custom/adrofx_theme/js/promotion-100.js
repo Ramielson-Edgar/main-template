@@ -21,41 +21,4 @@ window.addEventListener('DOMContentLoaded', () => {
         duration: 10,
         ease: "linear"
      }).totalProgress(0.5)
-
-
-
-    // gsap.to('.icon-front', {
-    //     scrollTrigger: {
-    //         trigger: ".icon-front",
-    //         scrub: true,
-    //     },
-    //     yPercent: 10,
-
-    // })
-
-
-    // gsap.to('.icons-back', {
-    //     scrollTrigger:{
-    //         trigger: ".icons-back",
-    //         markers:true,
-    //         scrub:true,
-    //     },
-    //     y: -20,
-
-    // })
-
-
-    // gsap.to('.image-dollar', {
-    //     scrollTrigger: {
-    //         trigger: ".image-dollar",
-    //         scrub: true,
-    //     },
-    //     yPercent: -10,
-    //     duration: .3,
-
-    // })
-
-
-
-
 })
