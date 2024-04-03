@@ -1,0 +1,27 @@
+.copy-trading__wrapper-item {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+
+ /* .img-top-markets {
+    transform: scale(0);
+    -webkit-clip-path: circle(0.0% at 50% 50%);
+    clip-path: circle(0.0% at 50% 50%);
+    transform: translateY(0px);
+    opacity: 0;
+} */
+
+@media (max-width:768.98px) {
+
+    .copy-trading__wrapper-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* .img-top-markets {
+        clip-path: circle(80.50% at 50% 50%);
+        transform: translateY(0px);
+        opacity: 1;
+    } */
+}
