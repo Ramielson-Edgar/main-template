@@ -57,6 +57,15 @@
 }
 
 @font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/montserrat-latin-500-normal.woff") format("woff"),
+        url("../fonts/montserrat-latin-500-normal.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "icons";
     src: url("../fonts/icons.eot?mnd66p");
     src: url("../fonts/icons.eot?mnd66p#iefix") format("embedded-opentype"),
@@ -189,9 +198,8 @@ html,
 body {
     font-family: var(--header-font-family);
     font-size: var(--font-size-16);
+    line-height: 30px;
     font-weight: var(--font-weight-400);
-    line-height: normal;
-
     color: var(--dark-text);
     background-color: var(--white-bg-color);
 
@@ -353,7 +361,7 @@ a:hover {
 }
 
 .text-transform-none {
-    text-transform: none!important;
+    text-transform: none !important;
 }
 
 
@@ -737,7 +745,7 @@ a:hover {
 }
 
 .btn-white-red {
-    color: var(--blue500);
+    color: var(--dark-text);
     background-color: var(--white);
 }
 
@@ -752,7 +760,7 @@ a:hover {
 .btn-white-red:hover,
 .btn-white-red:focus,
 .btn-white-red:active {
-    color: #fff;
+    color: var(--white);
     background-color: var(--red500);
 }
 
@@ -2928,6 +2936,7 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 
 .advantage .advantage-list .advantage-list__item .advantage__desc {
     font-size: 0.813rem;
+    line-height: 20px;
     margin-bottom: 0;
 }
 
@@ -3820,27 +3829,37 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 
 
 
-.related-articles .articles-items .item+.item {
+/* .related-articles .articles-items .item+.item {
     padding-top: 15px;
     border-top: 1px solid var(--grey100);
+} */
+
+
+.related-articles .articles-items .item>.image {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 150px;
+
+    /* height: auto;
+    width: auto;
+    min-height: auto;
+    min-width: auto;
+    max-width: auto;
+    max-height: auto; */
+
+    margin-right: 10px;
+    border-radius: 4px;
 }
 
-.related-articles .articles-items .item .image {
-    min-width: 120px;
-    min-height: 90px;
-    max-height: 90px;
-    max-width: 120px;
-    margin-right: 15px;
-    overflow: hidden;
-    border-radius: 4px;
-    background: var(--grey200);
-}
 
 .related-articles .articles-items .item .image img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    object-position: center;
     display: block;
     margin: 0;
 }
@@ -3858,6 +3877,7 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 
 .related-articles .articles-items .item .info .date {
     margin-bottom: 5px;
+    display: inline-block;
 }
 
 .related-articles .articles-items .item .info .date span {
@@ -3871,7 +3891,8 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 }
 
 .related-articles .articles-items .item .info .description {
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 21px;
 }
 
 .right-sidebar {
@@ -4192,6 +4213,11 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
     grid-gap: 40px;
 }
 
+.blog .blog-item {
+    display: flex;
+    flex-direction: column;
+}
+
 .blog .blog-item .image {
     margin-bottom: 15px;
 }
@@ -4203,6 +4229,11 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
     border-radius: 4px;
     display: block;
     position: relative;
+}
+
+.blog .blog-item .info {
+    display: flex;
+    flex-direction: column;
 }
 
 .blog .blog-item .image a::before {
@@ -4240,14 +4271,20 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 .blog .blog-item .date {
     font-size: 12px;
     color: var(--grey500);
-    margin-bottom: 15px;
+    order: 2;
 }
 
 .blog .blog-item .title {
+    order: 0;
     font-size: 18px;
+    line-height: 27px;
     font-weight: 900;
     color: var(--blue500);
-    margin-bottom: 15px;
+}
+
+.blog .blog-item .title,
+.blog .blog-item .description {
+    margin-bottom: 10px;
 }
 
 .blog .blog-item .title a {
@@ -4259,8 +4296,20 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
     color: var(--blue700);
 }
 
+.blog .blog-item .description,
+.blog .blog-item .title {
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 .blog .blog-item .description {
+    -webkit-line-clamp: 3;
+
     font-size: 14px;
+    line-height: 20px;
 }
 
 
@@ -6872,7 +6921,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         "image article__text"
         "image links";
     grid-template-columns: 300px 1fr;
-    gap: 30px;
+    gap: 0 30px;
     background: var(--white-bg-color);
 
     padding: 30px 30px 30px 0;
@@ -7001,16 +7050,32 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     border-bottom: 1px solid var(--grey800);
 }
 
-.related-articles .articles-items div .article .item {
+/* .related-articles .articles-items div .article .item {
     display: flex;
     align-items: flex-start;
     margin-top: 15px;
+} */
+
+.related-articles .articles-items .article .item {
+    display: flex;
+    align-items: center;
 }
 
-.related-articles .articles-items div {
+
+.related-articles .articles-items .article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+
+
+/* .related-articles .articles-items div {
     display: grid;
     grid-template-columns: 1fr;
-}
+} */
 
 .pager {
     padding-top: 50px;
@@ -9159,6 +9224,262 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     margin-right: 30px;
 }
 
+.banner {
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 5.5%;
+    margin: 0;
+}
+
+.banner .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: auto;
+    height: auto;
+    min-height: auto;
+    background: none;
+}
+
+.banner.search {
+    background: url('../themes/custom/adrofx_theme/img/banner/support-benefits.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner.copy-trading {
+    background: url('../themes/custom/adrofx_theme/img/banner/copy-trading.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner.secured {
+    background: url('../themes/custom/adrofx_theme/img/banner/secured-xl.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right -90px;
+}
+
+
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .banner.search {
+        background: url('../themes/custom/adrofx_theme/img/banner/support-benefits@x2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner.copy-trading {
+        background: url('../themes/custom/adrofx_theme/img/banner/copy-trading@x2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner.secured {
+        background: url('../themes/custom/adrofx_theme/img/banner/secured-xl@x2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center right -90px;
+    }
+}
+
+
+
+
+.banner .wrapper .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 50%;
+    margin-bottom: 0;
+}
+
+.banner.copy-trading .wrapper .section-header {
+    flex-basis: 60%;
+}
+
+
+.banner .wrapper .section-header .section-header__title {
+    font-family: "Roboto-regular", sans-serif;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--dark-text);
+}
+
+
+.banner.secured .section-header .label,
+.banner .section-header .section-header__title,
+.banner .section-header .section-header__text {
+    margin-bottom: 24px;
+}
+
+
+.banner .section-header .btn-base {
+    line-height: normal;
+    padding: 20px 24px;
+    border-radius: 100px;
+}
+
+.banner .section-header .section-header__text {
+    font-size: clamp(1rem, 0.7838rem + 0.6015vi, 1.25rem);
+    line-height: 1.3;
+    color: var(--grey800);
+    text-transform: capitalize;
+}
+
+
+.banner.search .section-header {
+    position: relative;
+    z-index: 2;
+}
+
+.banner.search .section-header::before {
+    position: absolute;
+    bottom: -140px;
+    left: 30%;
+
+    display: block;
+    content: "";
+
+    width: 50%;
+    height: 190px;
+    transform: rotate(114deg) scale(-1);
+
+    background: url('../themes/custom/adrofx_theme/images/icons/round-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+}
+
+
+
+
+.banner.copy-trading .section-header>.icon-letter {
+    width: 4.583vw;
+    height: 2.031vw;
+}
+
+.banner.copy-trading .section-header .section-header__text {
+    max-width: 80%;
+    color: var(--dark-text);
+}
+
+.banner.search .section-header .section-header__text {
+    max-width: 300px;
+}
+
+
+.banner.search .section-header .section-header__title {
+    font-size: clamp(1.25rem, -1.4521rem + 7.5188vi, 4.375rem);
+}
+
+.banner.secured .section-header .section-header__title {
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+
+
+.banner.secured .section-header .label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--white);
+}
+
+
+.banner.secured .section-header .buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.banner.secured .section-header .buttons-container .text {
+    position: relative;
+    line-height: 1.3;
+    margin-bottom: 0;
+    margin-left: 15px;
+    padding-left: 60px;
+}
+
+.banner.secured .section-header .label svg {
+    fill: #FFC452;
+}
+
+
+.banner.secured .section-header .buttons-container .text::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    content: "";
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ffffff89;
+    z-index: 1;
+}
+
+.banner.secured .section-header .buttons-container .text::before {
+    position: absolute;
+    top: 11.25px;
+    left: 12px;
+
+
+    display: block;
+    content: "";
+
+    width: 21px;
+    height: 21px;
+
+    background: url('../themes/custom/adrofx_theme/images/icons/icon-shield.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+.banner.copy-trading .section-header .section-header__title {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    text-transform: uppercase;
+}
+
+
+.banner.copy-trading .section-header .section-header__title>.icon {
+    display: flex;
+    align-items: center;
+}
+
+.banner.copy-trading .section-header .section-header__title>.icon>img {
+    max-width: fit-content;
+    height: 2.865vw;
+}
+
+
+
+
 @media screen and (min-width:1441px) {
     .img-container.promo-100 .marquee.top {
         width: 1000px;
@@ -9184,12 +9505,44 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         height: auto;
     }
 
+    .banner.copy-trading .section-header .section-header__title>.icon>img {
+        height: 39px;
+    }
+
+
+
 
 
 }
 
-
 @media (max-width: 1199.98px) {
+    /* ========== Banner================ */
+
+
+    .banner.secured .section-header .section-header__title,
+    .banner.copy-trading .section-header .section-header__title {
+        font-size: 45px;
+    }
+
+    .banner.search {
+        background: url('../themes/custom/adrofx_theme/img/banner/support-benefits-900.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner .section-header .section-header__title,
+    .banner .section-header .section-header__text {
+        margin-bottom: 15px;
+    }
+
+    .banner.search .section-header::before {
+        left: unset;
+        right: 0;
+    }
+
+    /* ========== Banner================ */
+
 
     .slider-text .section-title.promo {
         font-size: 70px;
@@ -9402,12 +9755,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-bottom: 20px;
     }
 
-    .related-articles .articles-items .item .image {
+    /* .related-articles .articles-items .item .image {
         min-width: 150px;
         max-width: 150px;
         min-height: 110px;
         max-height: 110px;
-    }
+    } */
 
     .related-articles .articles-items .item .info .title a {
         font-size: 16px;
@@ -9418,9 +9771,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-bottom: 5px;
     }
 
-    .related-articles .articles-items .item .info .description {
+    /* .related-articles .articles-items .item .info .description {
         font-size: 12px;
-    }
+    } */
 
     .login-form .heading-image {
         max-width: 200px;
@@ -9791,6 +10144,47 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 @media (max-width: 991.98px) {
 
+    /*======== Banner block =========*/
+    .banner.search .section-header::before {
+        width: 40%;
+        height: 150px;
+        bottom: -100px;
+    }
+
+
+    .banner.copy-trading .section-header .section-header__title {
+        font-size: 40px;
+    }
+
+    .banner.copy-trading .section-header .section-header__text {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .banner.secured {
+        background: url('../themes/custom/adrofx_theme/img/banner/secured-md.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner.secured .section-header .buttons-container .text {
+        display: none;
+    }
+
+
+
+    .banner.copy-trading {
+        background: url('../themes/custom/adrofx_theme/img/banner/copy-trading-md.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+
+
+    /*======== Banner block =========*/
+
     .slider-text .section-title.promo {
         font-size: 54px;
         margin-bottom: 7px;
@@ -9815,7 +10209,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         font-size: 45px;
     }
 
-    
+
     html[lang="pt-pt"] .slider .carousel-item .slider-text .h3.copy-trading,
     html[lang="es"] .slider .carousel-item .slider-text .h3.copy-trading,
     html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
@@ -9826,7 +10220,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         line-height: normal;
     }
 
-    
+
     html[lang="es"] .slider .carousel-item .slider-text .h1.promotions,
     html[lang="pt-pt"] .slider .carousel-item .slider-text .h1.promotions,
     html[lang="pt-pt"] .slider .carousel-item .slider-text .cashback-title,
@@ -9839,7 +10233,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         max-width: 350px;
     }
 
- 
+
 
     html[lang="pt-pt"] .slider .carousel-item .slider-text .h1.copy-trading,
     html[lang="es"] .slider .carousel-item .slider-text .h1.copy-trading {
@@ -10661,6 +11055,39 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 @media (max-width: 767.98px) {
 
+    /*======== Banner block =========*/
+    .banner .section-header {
+        text-align: left;
+    }
+
+    .banner.search .section-header::before {
+        content: unset;
+    }
+
+    .banner.copy-trading .section-header .section-header__title {
+        font-size: clamp(1.5rem, -1.3076rem + 7.8125vi, 2.4375rem);
+    }
+
+    .banner.secured .section-header .section-header__title {
+        font-size: clamp(1.5rem, -0.5589rem + 5.7292vi, 2.1875rem);
+    }
+
+    .banner.copy-trading .section-header .section-header__text,
+    .banner .section-header .section-header__text+.btn-base {
+        font-size: 14px;
+    }
+
+    .banner .section-header .section-header__text+.btn-base {
+        padding: 15px 20px;
+    }
+
+    .banner.copy-trading .section-header .section-header__text {
+        max-width: 90%;
+    }
+
+    /*======== Banner block =========*/
+
+
     /* ENG */
     .slider-text .section-title.promo {
         font-size: 45px;
@@ -10727,7 +11154,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-    
+
     html[lang="es"] .slider .carousel-item .slider-text .title.promo-100,
     html[lang="pt-pt"] .slider .carousel-item .slider-text .title.promo-100 {
         font-size: 15px;
@@ -10739,15 +11166,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-bottom: 12px;
     }
 
-    
+
     html[lang="pt-pt"] .slider .carousel-item .slider-text .text.promo-100 .pl-3,
-    html[lang="es"] .slider .carousel-item .slider-text .text.promo-100  .pl-3 {
+    html[lang="es"] .slider .carousel-item .slider-text .text.promo-100 .pl-3 {
         font-size: 13px;
     }
 
-    
-    html[lang="es"] .slider .carousel-item .slider-text .text.promo-100 + .btn,
-    html[lang="pt-pt"] .slider .carousel-item .slider-text .text.promo-100 + .btn {
+
+    html[lang="es"] .slider .carousel-item .slider-text .text.promo-100+.btn,
+    html[lang="pt-pt"] .slider .carousel-item .slider-text .text.promo-100+.btn {
         padding: 13px;
     }
 
@@ -11796,6 +12223,87 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 @media (max-width: 575.98px) {
 
+    /*======== Banner block =========*/
+    .banner {
+        border-radius: 20px;
+    }
+
+    .banner .wrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .banner .wrapper .section-header {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        flex-basis: 100%;
+        margin-bottom: 64%;
+    }
+
+    .banner .wrapper .section-header .section-header__title {
+        font-size: 24px;
+    }
+
+    .banner.copy-trading .section-header .section-header__title>.icon {
+        justify-content: center;
+    }
+
+    .banner.copy-trading .section-header .section-header__title>.icon>img {
+        height: 17px;
+    }
+
+
+    .banner.copy-trading .wrapper .section-header .section-header__text {
+        max-width: 100%;
+    }
+
+    .banner.search .wrapper .section-header::before {
+        bottom: -110px;
+        right: -60px;
+    }
+
+    .banner.secured .section-header .label {
+        display:none;
+    }
+
+    .banner .section-header .btn-base {
+        padding: 15px 20px;
+        font-size: 13px;
+    }
+
+    .banner.search {
+        background: url('../themes/custom/adrofx_theme/img/banner/support-benefits-500.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banner.copy-trading {
+        background: url('../themes/custom/adrofx_theme/img/banner/copy-trading-xs.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    
+    .banner.secured {
+        background: url('../themes/custom/adrofx_theme/img/banner/secured-xs.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+
+
+    .banner.search .section-header::before {
+        content: "";
+    }
+
+    /*======== Banner block =========*/
+
+
     .slider-text .section-title.promo {
         font-size: 30px;
     }
@@ -12359,8 +12867,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .slider .carousel-item .slider-text .promo,
     .carousel-item .slider__copy-trading-header,
     html[lang="es"] .slider .carousel-item .slider-text .cashback-title,
-    html[lang="pt-pt"] .slider .carousel-item .slider-text .cashback-title
-    html[lang="ru"] .carousel-item .slider__copy-trading-header,
+    html[lang="pt-pt"] .slider .carousel-item .slider-text .cashback-title html[lang="ru"] .carousel-item .slider__copy-trading-header,
     html[lang="ru"] .slider .carousel-item .slider-text .promo,
     html[lang="ru"] .slider .carousel-item .slider-text .cashback-title,
     .slider .carousel-item .slider-text .cashback-title {
@@ -12542,12 +13049,13 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         height: auto;
     }
 
+    /* 
     .related-articles .articles-items .item .image {
         min-width: 120px;
         max-width: 120px;
         min-height: 80px;
         max-height: 80px;
-    }
+    } */
 
     .related-articles .articles-items .item .info .title {
         margin-bottom: 5px;
