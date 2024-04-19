@@ -9224,6 +9224,8 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     margin-right: 30px;
 }
 
+
+
 .banner {
     overflow: hidden;
     border-radius: 30px;
@@ -9241,25 +9243,28 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     background: none;
 }
 
-.banner.search {
-    background: url('../themes/custom/adrofx_theme/img/banner/support-benefits.jpg');
+ 
+
+.banner.search,
+.banner.copy-trading,
+.banner.secured{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+
+.banner.search {
+    background-image: url('../themes/custom/adrofx_theme/img/banner/support-xl.jpg');
 }
 
 .banner.copy-trading {
-    background: url('../themes/custom/adrofx_theme/img/banner/copy-trading.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url('../themes/custom/adrofx_theme/img/banner/copy-trading-xl.jpg');
 }
 
 .banner.secured {
-    background: url('../themes/custom/adrofx_theme/img/banner/secured-xl.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center right -90px;
+    background-image: url('../themes/custom/adrofx_theme/img/banner/secured-xl.jpg');
+    background-position: center;
 }
 
 
@@ -9268,23 +9273,17 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 (min-resolution: 192dpi),
 (min-resolution: 2dppx) {
     .banner.search {
-        background: url('../themes/custom/adrofx_theme/img/banner/support-benefits@x2.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url('../themes/custom/adrofx_theme/img/banner/support-benefits@x2.jpg');
         background-position: center;
     }
 
     .banner.copy-trading {
-        background: url('../themes/custom/adrofx_theme/img/banner/copy-trading@x2.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url('../themes/custom/adrofx_theme/img/banner/copy-trading@x2.jpg');
         background-position: center;
     }
 
     .banner.secured {
-        background: url('../themes/custom/adrofx_theme/img/banner/secured-xl@x2.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url('../themes/custom/adrofx_theme/img/banner/secured-xl@x2.jpg');
         background-position: center right -90px;
     }
 }
@@ -9292,20 +9291,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
 
-.banner .wrapper .section-header {
+.banner .wrapper .header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-basis: 50%;
     margin-bottom: 0;
 }
-
-.banner.copy-trading .wrapper .section-header {
-    flex-basis: 60%;
-}
-
-
-.banner .wrapper .section-header .section-header__title {
+ 
+.banner .wrapper .header .title {
     font-family: "Roboto-regular", sans-serif;
     font-weight: 500;
     line-height: normal;
@@ -9313,20 +9307,19 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
-.banner.secured .section-header .label,
-.banner .section-header .section-header__title,
-.banner .section-header .section-header__text {
+.banner .header .title,
+.banner .header .ext {
     margin-bottom: 24px;
 }
 
 
-.banner .section-header .btn-base {
+.banner .header .btn-base {
     line-height: normal;
     padding: 20px 24px;
     border-radius: 100px;
 }
 
-.banner .section-header .section-header__text {
+.banner .header .text {
     font-size: clamp(1rem, 0.7838rem + 0.6015vi, 1.25rem);
     line-height: 1.3;
     color: var(--grey800);
@@ -9334,12 +9327,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
-.banner.search .section-header {
+.banner.search .header {
     position: relative;
     z-index: 2;
 }
 
-.banner.search .section-header::before {
+.banner.search .header::before {
     position: absolute;
     bottom: -140px;
     left: 30%;
@@ -9358,53 +9351,72 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     z-index: 1;
 }
 
-
-
-
-.banner.copy-trading .section-header>.icon-letter {
-    width: 4.583vw;
-    height: 2.031vw;
-}
-
-.banner.copy-trading .section-header .section-header__text {
-    max-width: 80%;
-    color: var(--dark-text);
-}
-
-.banner.search .section-header .section-header__text {
+.banner.search .header .text {
     max-width: 300px;
 }
 
 
-.banner.search .section-header .section-header__title {
+.banner.search .header .title {
     font-size: clamp(1.25rem, -1.4521rem + 7.5188vi, 4.375rem);
 }
 
-.banner.secured .section-header .section-header__title {
-    font-size: 60px;
-    line-height: 1.1;
+
+.banner.secured .header {
+    position: relative;
+    padding-top: 60px;
 }
 
+.banner.secured .header::after {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-
-.banner.secured .section-header .label {
+    content: "";
+ 
     display: flex;
     align-items: center;
     justify-content: center;
 
     width: 45px;
     height: 45px;
+
     border-radius: 50%;
     background: var(--white);
+
+    z-index: 1;
+}
+
+.banner.secured .header::before {
+    position: absolute;
+    top: 11.25px;
+    left: 12px;
+
+    display: block;
+    content: "";
+    
+    width: 21px;
+    height: 21px;
+
+    background-image: url('../themes/custom/adrofx_theme/images/icons/icon-starr.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    z-index: 2;
 }
 
 
-.banner.secured .section-header .buttons-container {
+.banner.secured .header .title {
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+.banner.secured .header .buttons-container {
     display: flex;
     align-items: center;
 }
 
-.banner.secured .section-header .buttons-container .text {
+.banner.secured .header .buttons-container .text {
     position: relative;
     line-height: 1.3;
     margin-bottom: 0;
@@ -9412,12 +9424,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     padding-left: 60px;
 }
 
-.banner.secured .section-header .label svg {
-    fill: #FFC452;
-}
-
-
-.banner.secured .section-header .buttons-container .text::after {
+.banner.secured .header .buttons-container .text::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -9435,7 +9442,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     z-index: 1;
 }
 
-.banner.secured .section-header .buttons-container .text::before {
+.banner.secured .header .buttons-container .text::before {
     position: absolute;
     top: 11.25px;
     left: 12px;
@@ -9454,7 +9461,17 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     z-index: 2;
 }
 
-.banner.copy-trading .section-header .section-header__title {
+
+.banner.copy-trading .wrapper .header {
+    flex-basis: 60%;
+}
+
+.banner.copy-trading .header .text {
+    max-width: 80%;
+    color: var(--dark-text);
+}
+
+.banner.copy-trading .header .title {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -9467,12 +9484,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 
-.banner.copy-trading .section-header .section-header__title>.icon {
-    display: flex;
-    align-items: center;
-}
-
-.banner.copy-trading .section-header .section-header__title>.icon>img {
+.banner.copy-trading .header .wrap .icon-copy {
     max-width: fit-content;
     height: 2.865vw;
 }
@@ -9505,7 +9517,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         height: auto;
     }
 
-    .banner.copy-trading .section-header .section-header__title>.icon>img {
+    .banner.copy-trading .header .wrap .icon-copy {
         height: 39px;
     }
 
@@ -9519,24 +9531,24 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     /* ========== Banner================ */
 
 
-    .banner.secured .section-header .section-header__title,
-    .banner.copy-trading .section-header .section-header__title {
+    .banner.secured .header .title,
+    .banner.copy-trading .header .title {
         font-size: 45px;
     }
 
     .banner.search {
-        background: url('../themes/custom/adrofx_theme/img/banner/support-benefits-900.jpg');
+        background: url('../themes/custom/adrofx_theme/img/banner/support-md.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
 
-    .banner .section-header .section-header__title,
-    .banner .section-header .section-header__text {
+    .banner .header .title,
+    .banner .header .text {
         margin-bottom: 15px;
     }
 
-    .banner.search .section-header::before {
+    .banner.search .header::before {
         left: unset;
         right: 0;
     }
@@ -10145,21 +10157,12 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 @media (max-width: 991.98px) {
 
     /*======== Banner block =========*/
-    .banner.search .section-header::before {
+    .banner.search .header::before {
         width: 40%;
         height: 150px;
         bottom: -100px;
     }
 
-
-    .banner.copy-trading .section-header .section-header__title {
-        font-size: 40px;
-    }
-
-    .banner.copy-trading .section-header .section-header__text {
-        font-size: 16px;
-        max-width: 90%;
-    }
 
     .banner.secured {
         background: url('../themes/custom/adrofx_theme/img/banner/secured-md.jpg');
@@ -10168,10 +10171,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         background-position: center;
     }
 
-    .banner.secured .section-header .buttons-container .text {
+    .banner.secured .header .buttons-container .text {
         display: none;
     }
-
 
 
     .banner.copy-trading {
@@ -10179,6 +10181,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+
+    .banner.copy-trading .header .title {
+        font-size: 40px;
+    }
+
+    .banner.copy-trading .header .text {
+        font-size: 16px;
+        max-width: 90%;
     }
 
 
@@ -11056,32 +11067,32 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 @media (max-width: 767.98px) {
 
     /*======== Banner block =========*/
-    .banner .section-header {
+    .banner .header {
         text-align: left;
     }
 
-    .banner.search .section-header::before {
+    .banner.search -header::before {
         content: unset;
     }
 
-    .banner.copy-trading .section-header .section-header__title {
+    .banner.copy-trading .header .title {
         font-size: clamp(1.5rem, -1.3076rem + 7.8125vi, 2.4375rem);
     }
 
-    .banner.secured .section-header .section-header__title {
+    .banner.secured .header .title {
         font-size: clamp(1.5rem, -0.5589rem + 5.7292vi, 2.1875rem);
     }
 
-    .banner.copy-trading .section-header .section-header__text,
-    .banner .section-header .section-header__text+.btn-base {
+    .banner.copy-trading .header .text,
+    .banner .header .btn-base {
         font-size: 14px;
     }
 
-    .banner .section-header .section-header__text+.btn-base {
+    .banner .header .btn-base {
         padding: 15px 20px;
     }
 
-    .banner.copy-trading .section-header .section-header__text {
+    .banner.copy-trading .header .text {
         max-width: 90%;
     }
 
@@ -12233,7 +12244,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         flex-wrap: wrap;
     }
 
-    .banner .wrapper .section-header {
+    .banner .wrapper .header {
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -12242,39 +12253,50 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         margin-bottom: 64%;
     }
 
-    .banner .wrapper .section-header .section-header__title {
+    .banner .wrapper .header .title {
         font-size: 24px;
     }
 
-    .banner.copy-trading .section-header .section-header__title>.icon {
+    .banner .copy-trading .header .wrap {
         justify-content: center;
     }
 
-    .banner.copy-trading .section-header .section-header__title>.icon>img {
-        height: 17px;
-    }
-
-
-    .banner.copy-trading .wrapper .section-header .section-header__text {
-        max-width: 100%;
-    }
-
-    .banner.search .wrapper .section-header::before {
-        bottom: -110px;
-        right: -60px;
-    }
-
-    .banner.secured .section-header .label {
-        display:none;
-    }
-
-    .banner .section-header .btn-base {
+    .banner .header .btn-base {
         padding: 15px 20px;
         font-size: 13px;
     }
 
+    .banner.copy-trading .header .wrap .icon-copy {
+        height: 17px;
+    }
+
+    .banner.copy-trading .header .text {
+        max-width: 100%;
+    }
+
+    .banner.secured .header{
+        padding-top: 0;
+    }
+
+    .banner.secured .header::before,
+    .banner.secured .header::after {
+        content:unset;
+        
+    }
+
+
+
+    .banner.search  .header::before {
+        bottom: -110px;
+        right: -60px;
+    }
+
+    .banner.search .header::before {
+        content: "";
+    }
+
     .banner.search {
-        background: url('../themes/custom/adrofx_theme/img/banner/support-benefits-500.jpg');
+        background: url('../themes/custom/adrofx_theme/img/banner/support-xs.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -12287,7 +12309,6 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         background-position: center;
     }
 
-    
     .banner.secured {
         background: url('../themes/custom/adrofx_theme/img/banner/secured-xs.jpg');
         background-repeat: no-repeat;
@@ -12296,10 +12317,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     }
 
 
-
-    .banner.search .section-header::before {
-        content: "";
-    }
+ 
 
     /*======== Banner block =========*/
 
@@ -14311,6 +14329,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     .slider .carousel-item .slider-text .title.promo-100 {
         font-size: 20px;
     }
+
+
+    
 
 }
 
