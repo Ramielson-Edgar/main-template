@@ -9410,6 +9410,14 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         background-image: url('/themes/custom/adrofx_theme/img/banners/secured-xl@x2.jpg');
         background-position: center right -90px;
     }
+
+    .refer-hero {
+        background: url("../themes/custom/adrofx_theme/img/refer-a-friend/refer-hero-background-xxl.png"), linear-gradient(103deg, #D5ECFF 4.33%, #42A5F5 82.1%, #0C356A 177.15%);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
 }
 
 
@@ -9702,7 +9710,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 }
 
 .section-header.refer-start .section-header__description {
-    flex: .7;
+    flex: .3;
 }
 
 /* font size 45, need to update all section titles */
@@ -9825,8 +9833,8 @@ html[lang="ru"] .liquidity-providers .main-information-header {
     border-radius: 0px 0px 50px 50px;
     background: url('/themes/custom/adrofx_theme/img/refer-a-friend/tradin-chart.svg') var(--blue500);
     background-repeat: no-repeat;
-    background-position: top 70px right;
-    background-size: auto;
+    background-position: 100% 100px;
+    background-size: 40% 7%;
     z-index: 3;
 }
 
@@ -10351,14 +10359,11 @@ header.refer-expand::before {
     }
   
 
-
     .refer-expand .section-title {
         font-size: min(300px,15.625vw);
         max-width: fit-content;
     }
 
-
- 
     .planet {
         max-width: 1728px;
         max-height: 1728px;
@@ -10370,11 +10375,16 @@ header.refer-expand::before {
         max-height: 2000px;
         transform: translate(-50%, -10%);
     }
- 
 
-    
+    .refer-hero {
+        background: url("../themes/custom/adrofx_theme/img/refer-a-friend/refer-hero-background-xxl.png"), linear-gradient(103deg, #D5ECFF 4.33%, #42A5F5 82.1%, #0C356A 177.15%);
+        background-position: center,center;
+        background-size: 2560px 700px, cover;
+        background-repeat: no-repeat, no-repeat;
+    }
 
 }
+
 
 @media (max-width: 1199.98px) {
 
@@ -13491,6 +13501,16 @@ header.refer-expand::before {
     .refer-expand .top {
         position: static;
         top: 0;
+    }
+
+    .refer-how {
+        position: relative;
+        border-radius: 0px 0px 50px 50px;
+        background: url('') var(--blue500);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 3;
     }
 
 
