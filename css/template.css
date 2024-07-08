@@ -145,8 +145,6 @@
     --blob-gradient: linear-gradient(142.66deg, #7a9fff 6.63%, #98a2ff 102.07%);
     --blob-shades: inset -34px -12px 50px rgba(61, 92, 255, 0.74), inset 17px 27px 50px rgba(255, 255, 255, 0.51);
 
-    --scroll: 0;
-
     --blue50: #e3f2fd;
     --blue100: #bbdefb;
     --blue200: #90caf9;
@@ -788,7 +786,7 @@ a:hover {
 }
 
 .btn-white-red {
-    color: var(--blue500);
+    color: var(--grey900);
     background-color: var(--white);
 }
 
@@ -860,7 +858,7 @@ a:hover {
 }
 
 .btn-outline.fill::before {
-    transform: translateX(-100%);
+    transform: translateX(-105%);
 }
 
 .btn-outline.fill:hover::before {
@@ -872,7 +870,7 @@ a:hover {
 }
 
 .btn-outline:hover::before {
-    transform: translateX(-100%);
+    transform: translateX(-105%);
 }
 
 
@@ -978,6 +976,9 @@ a:hover {
     color: var(--grey900);
     border: 1px solid #C9F67F;
 }
+
+
+
 
 
 .btn-base .text-container {
@@ -1669,9 +1670,11 @@ a:hover {
 }
 
 .section-header .section-header__title {
-    font-family: "Roboto-bold";
-    font-size: var(--font-size-30);
-    line-height: 40px;
+    font-family: "Roboto-bold", sans-serif;
+    font-size: clamp(1.5rem, 0.3651rem + 3.1579vi, 2.8125rem);
+    line-height: 1.3;
+    font-weight: 500;
+
     margin-bottom: 25px;
 }
 
@@ -9831,7 +9834,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 .refer-how {
     position: relative;
     border-radius: 0px 0px 50px 50px;
-    background: url('../themes/custom/adrofx_theme/img/refer-a-friend/tradin-chart.svg') var(--blue500);
+    background: url('../themes/custom/adrofx_theme/img/refer-a-friend/trading-chart.svg') var(--blue500);
     background-repeat: no-repeat;
     background-position: 100% 100px;
     background-size: 40% 7%;
@@ -10027,15 +10030,15 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 .refer-expand::before {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     display: block;
     content: "";
 
-    width: 95%;
-    height: 1038px;
+    width: 90%;
+    height: 90%;
 
     background: url('../themes/custom/adrofx_theme/img/refer-a-friend/expand-icons.png');
     background-repeat: no-repeat;
@@ -10095,6 +10098,12 @@ header.refer-expand::before {
     margin-bottom: 25px;
 }
 
+.header.refer-expand .text+.btn-outline:hover {
+    color: var(--grey900);
+    background: var(--white);
+    border: 1px solid var(--white);
+}
+
 .refer-expand .section-title {
     font-family: "Roboto-black", sans-serif;
     font-size: 15.625vw;
@@ -10135,13 +10144,14 @@ header.refer-expand::before {
     position: relative;
     top: -10px;
     width: 100%;
-    height: 850px;
+    /* height: 850px; */
+    height: 750px;
 }
 
 
 .refer-expand>.bottom::after {
     position: absolute;
-    top: 0;
+    top: -10%;
     left: 50%;
     transform: translate(-50%, -10%);
 
@@ -10325,9 +10335,855 @@ header.refer-expand::before {
 }
 
 
+.eth-hero {
+    overflow: hidden;
+    background: radial-gradient(206.32% 89.29% at 45.13% 44.5%, #42A5F5 0%, #64B5F6 46.5%, #1E88E5 100%);
+}
+
+.eth-hero.section-padding {
+    padding-top: 0;
+    padding-bottom: 70px;
+}
+
+.video-container {
+    position: relative;
+}
+
+.eth-hero .lights {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+
+    filter: blur(50px);
+}
+
+.eth-hero .lights .bottom {
+    left: 0;
+    bottom: -50%;
+
+    width: 349px;
+    height: 569px;
+    transform: rotate(20deg);
+}
+
+.eth-hero .lights .top,
+.eth-hero .lights .mid,
+.eth-hero .lights .bottom {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    mix-blend-mode: lighten;
+}
+
+.eth-hero .lights .top {
+    top: 20%;
+    left: 10%;
+
+    width: 269px;
+    height: 445px;
+
+    opacity: .6;
+}
 
 
- 
+.eth-hero .lights .mid {
+    top: -50%;
+    left: 50%;
+
+    width: 300px;
+    height: 1500px;
+
+    transform: rotate(18deg);
+    border-radius: 100%;
+    mix-blend-mode: overlay;
+    opacity: .5;
+}
+
+
+
+.section-header.eth-hero {
+    background: transparent;
+}
+
+.section-header.eth-hero .section-header__title {
+    font-family: "Roboto-regular";
+    font-size: clamp(2.8125rem, 0.3806rem + 6.7669vi, 5.625rem);
+    line-height: 1.3;
+}
+
+
+.section-header.eth-hero .section-header__description {
+    font-size: clamp(1rem, 0.7838rem + 0.6015vi, 1.25rem);
+    font-size: 1.5;
+}
+
+.section-header.eth-banner .section-header__description,
+.section-header.eth-hero .section-header__description {
+    margin-bottom: 38px;
+}
+
+.section-header.eth-banner .section-header__title,
+.section-header.eth-hero .section-header__title,
+.section-header.eth-banner .section-header__description,
+.section-header.eth-hero .section-header__description {
+    color: var(--white);
+}
+
+.section-header.eth-hero .buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-header.eth-hero .buttons-container .apr {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--white);
+    font-size: 35px;
+    line-height: 1.1;
+
+    padding: 15px 21px;
+    border: 1px solid white;
+    border-radius: 12px;
+}
+
+.section-header.eth-hero .buttons-container .btn-white-red {
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 20px 50px;
+}
+
+.title.background {
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    color: var(--white);
+    font-weight: "Roboto-bold";
+    font-size: clamp(10rem, 2.9746rem + 19.5489vi, 18.125rem);
+    line-height: 1.1;
+
+    background: radial-gradient(109.6% 93.97% at 39.81% 52.6%, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+
+    z-index: 1;
+}
+
+
+.eth-video {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    z-index: 2;
+}
+
+.eth-video+.spin-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: spin 6s linear infinite;
+}
+
+
+
+
+.eth-benefits .section-title {
+    margin-bottom: 50px;
+}
+
+
+.list-features.eth-benefits {
+    gap: 18px;
+}
+
+
+.list-features.eth-benefits .list-features__item {
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    flex-basis: calc(100% / 2 - 18px);
+
+    border-radius: 40px;
+    padding: 50px;
+}
+
+
+
+.list-features.eth-benefits .list-features__header {
+    position: relative;
+
+    flex: .4;
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    border-radius: unset;
+}
+
+.list-features.eth-benefits .list-features__body {
+    flex: 1;
+}
+
+.list-features.eth-benefits .list-features__item .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    height: auto;
+
+
+    z-index: 1;
+}
+
+.list-features.eth-benefits .list-features__item.unlock {
+    background: #F0F8FF;
+}
+
+.list-features.eth-benefits .list-features__item.unlock .list-features__header {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.list-features.eth-benefits .list-features__item .network-01,
+.list-features.eth-benefits .list-features__item .income-01,
+.list-features.eth-benefits .list-features__item .unlock-01,
+.list-features.eth-benefits .list-features__item .freedom-01,
+.list-features.eth-benefits .list-features__item .freedom-02,
+.list-features.eth-benefits .list-features__item .freedom-03 {
+    transition: transform .5s var(--ease-in-out-smooth);
+}
+
+
+.list-features.eth-benefits .list-features__item .unlock-01 {
+    position: relative;
+    transform: translateX(300px);
+
+    filter: drop-shadow(4px 35px 30px rgba(57, 126, 182, .30));
+    z-index: 2;
+}
+
+.list-features.eth-benefits .list-features__item:hover .unlock-01 {
+    transform: translateX(0);
+}
+
+
+
+.list-features.eth-benefits .list-features__item .unlock-02 {
+    max-width: 216px;
+}
+
+.list-features.eth-benefits .list-features__item.income {
+    background: #F2F2FF;
+}
+
+.list-features.eth-benefits .list-features__item .income-01 {
+    max-width: 396px;
+    transform: translateX(70px);
+}
+
+.list-features.eth-benefits .list-features__item:hover .income-01 {
+    transform: translateX(0);
+}
+
+
+.list-features.eth-benefits .list-features__item.network {
+    background: #F8FFF0;
+}
+
+.list-features.eth-benefits .list-features__item .network-01 {
+    position: relative;
+    left: 30px;
+    transform: translateY(-250%);
+
+    z-index: 2;
+}
+
+.list-features.eth-benefits .list-features__item:hover .network-01 {
+    transform: translateY(0);
+
+}
+
+.list-features.eth-benefits .list-features__item .network-03 {
+    z-index: 3;
+}
+
+.list-features.eth-benefits .list-features__item .network-03,
+.list-features.eth-benefits .list-features__item .network-02 {
+    max-width: 247px;
+}
+
+.list-features.eth-benefits .list-features__item.freedom {
+    background: #F0F8FF;
+}
+
+.list-features.eth-benefits .list-features__item .freedom-01,
+.list-features.eth-benefits .list-features__item .freedom-02,
+.list-features.eth-benefits .list-features__item .freedom-03 {
+    top: unset;
+    max-width: 331px;
+}
+
+.list-features.eth-benefits .list-features__item .freedom-03 {
+    top: -20px;
+    left: 20px;
+}
+
+.list-features.eth-benefits .list-features__item .freedom-02 {
+    bottom: 10px;
+    left: 12px;
+
+    z-index: 2;
+}
+
+
+.list-features.eth-benefits .list-features__item .freedom-01 {
+    bottom: -30px;
+    left: 0;
+    z-index: 3;
+}
+
+.list-features.eth-benefits .list-features__item.freedom:hover .freedom-01 {
+    transform: translateY(5px);
+}
+
+.list-features.eth-benefits .list-features__item.freedom:hover .freedom-03 {
+    transform: translateY(-15px);
+}
+
+.list-features.eth-benefits .list-features__item.freedom:hover .freedom-02 {
+    transform: translateY(-12px);
+}
+
+
+
+.list-features.eth-benefits .list-features__title {
+    font-family: "Roboto-regular";
+    font-weight: 500;
+    font-size: clamp(1.5rem, 0.9055rem + 1.6541vi, 2.1875rem);
+    line-height: 1.3;
+    text-transform: capitalize;
+    margin-bottom: 19px;
+}
+
+
+
+.list-features.eth-benefits .list-features__text {
+    color: var(--grey900);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.splide.rewards .splide__slide .text::first-letter,
+.section-header.eth-banner .section-header__description::first-letter,
+.list-features.eth-benefits .list-features__text::first-letter {
+    text-transform: uppercase;
+}
+
+
+
+.frame.round {
+    position: relative;
+}
+
+.frame.round::before {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    content: "";
+    width: 100%;
+    height: 70%;
+
+    background: #F0F8FF;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    z-index: -1;
+}
+
+.eth-banner {
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.eth-banner .frame {
+    overflow: hidden;
+    position: relative;
+
+    background: url('../themes/custom/adrofx_theme/img/eth/banner-eth-01.png'),
+        url('../themes/custom/adrofx_theme/img/eth/banner-eth-02.png') var(--blue500);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 5% top 100px, center right 5%;
+    background-size: 100px, 60px;
+
+    border-radius: 15px;
+}
+
+.eth-banner .frame::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: block;
+    content: "";
+
+    width: 100%;
+    height: 40%;
+
+    background: radial-gradient(42.52% 407.56% at 48.7% 50.24%, rgba(255, 255, 255, 0.00) 51.5%, #2196F3 100%);
+    z-index: 10;
+}
+
+
+
+.eth-banner .container.xxl {
+    /* max-width: 1700px; */
+    max-width: 95%;
+}
+
+
+
+.section-header.eth-banner {
+    margin-bottom: 50px;
+    padding-top: 60px;
+}
+
+.section-header.eth-banner .section-header__title {
+    position: relative;
+    font-size: clamp(1.25rem, -1.2359rem + 6.9173vi, 4.125rem);
+}
+
+.section-header.eth-banner .section-header__title>.subscription {
+    position: absolute;
+    bottom: 13px;
+    left: 40%;
+
+    font-family: "Roboto-regular";
+    font-size: clamp(0.8125rem, -0.1062rem + 2.5564vi, 1.875rem);
+    font-weight: 400;
+    line-height: 1.1;
+    font-style: italic;
+
+    max-width: 250px;
+}
+
+.section-header.eth-banner .section-header__description {
+    font-size: clamp(1rem, 0.7838rem + 0.6015vi, 1.25rem);
+    max-width: 380px;
+    margin-bottom: 0;
+}
+
+.section-header.eth-banner .section-header__description>.link {
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.section-header.eth-banner .section-header__description>.link:hover svg {
+    transform: translateX(5px);
+}
+
+
+.section-header.eth-banner .section-header__description>.link svg {
+    stroke: var(--white);
+    fill: var(--white);
+    stroke-width: 3px;
+    transform: translateX(0);
+    transition: transform .3s var(--ease-in-out-smooth);
+}
+
+.section-header.eth-banner .buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.splide.marquee-offer {
+    z-index: 1;
+}
+
+.splide.rewards,
+.splide.marquee-offer>.splide__track {
+    overflow: unset;
+}
+
+.splide.marquee-offer .splide__slide {
+    display: flex;
+    align-items: center;
+
+    color: var(--white);
+    font-family: "Roboto-bold";
+    font-style: italic;
+    font-size: clamp(5rem, 0.8388rem + 11.5789vi, 9.8125rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+
+
+.eth-rewards {
+    overflow: hidden;
+
+    background: url('../themes/custom/adrofx_theme/img/eth/eth-rewards-liens.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+
+.eth-rewards .section-title {
+    margin-bottom: 50px;
+}
+
+
+.splide.rewards {
+    position: absolute;
+    top: 150px;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+
+    align-items: flex-end;
+
+    counter-reset: rewards;
+}
+
+.splide.rewards .splide__slide {
+    position: relative;
+    padding: 150px 50px 50px 50px;
+    border-radius: 40px;
+    background: var(--white);
+
+    transform: scale(.9);
+    transform-origin: right bottom;
+    transition: all .2s var(--ease-in-out-smooth);
+
+}
+
+.splide.rewards .splide__slide.is-active {
+    transform: scale(1);
+}
+
+.splide.rewards .splide__slide::before {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    counter-increment: rewards;
+    content: "/" counter(rewards);
+
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    border: 1px solid var(--grey700);
+
+    font-size: 20px;
+    color: var(--grey900);
+
+}
+
+
+.splide.rewards .splide__slide .title {
+    font-size: clamp(1rem, -0.0268rem + 2.8571vi, 2.1875rem);
+    margin-bottom: 24px;
+    font-family: "Roboto-reuglar", sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.splide.rewards .splide__slide .text {
+    font-size: clamp(0.8125rem, 0.5423rem + 0.7519vi, 1.125rem);
+    line-height: 1.5;
+    color: var(--grey900);
+}
+
+
+.slider-image {
+    position: absolute;
+}
+
+.slider-image.middle {
+    position: relative;
+}
+
+.slider-image.middle .phone-mockup {
+    position: relative;
+    z-index: 2;
+}
+
+.slider-image.middle .mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    mask-image: url("../themes/custom/adrofx_theme/img/eth/phone-mask.png");
+    background: transparent;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+
+    background: var(--grey900);
+}
+
+.slider-image.middle .mask .screens {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes screen-show {
+    0% {
+        opacity: .6;
+        transform: translateY(100%) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%) scale(1);
+    }
+
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(500px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+}
+
+
+
+.slider-image.middle .mask .screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 0.5s;
+    transform-origin: bottom top;
+
+    z-index: -1;
+}
+
+
+
+.slider-image.middle .mask .screen.is-active {
+    opacity: 1;
+    animation: fadeIn 0.5s var(--ease-in-out-smooth) forwards;
+}
+
+.slider-image.middle .mask .screen.is-hidden {
+    animation: fadeOut 0.5s var(--ease-in-out-smooth) forwards;
+}
+
+.slider-image.middle {
+    --rotate-angle: -15deg;
+
+    position: relative;
+    top: 30px;
+    left: 60px;
+
+    max-width: 221px;
+    max-height: 526px;
+
+    animation: fly--rotate 5s ease infinite;
+    z-index: 2;
+}
+
+
+@keyframes fly--rotate {
+    0% {
+        -webkit-transform: translateY(0) rotate(-15deg);
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    50% {
+        -webkit-transform: translateY(-20px) rotate(-15deg);
+        transform: translateY(-20px) rotate(-15deg);
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotate(-15deg);
+        transform: translateY(0) rotate(-15deg);
+    }
+}
+
+
+
+
+
+.slider-image.top {
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.slider-image.bottom {
+    bottom: 5%;
+    left: 0;
+    z-index: 3;
+}
+
+
+
+
+.eth-rewards .slider {
+    position: relative;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    z-index: 10;
+}
+
+
+.eth-rewards .slider .slider-images {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 calc(45% - 40px);
+
+    pointer-events: none;
+    margin-right: 40px;
+    z-index: 200;
+}
+
+
+.eth-rewards .slider .slider-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 55%;
+}
+
+.slider-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+
+.slider-buttons .slider-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    background: var(--white);
+}
+
+.slider-buttons .slider-button>svg {
+    stroke: var(--grey900);
+
+}
+
+.slider-buttons .slider-button.prev>svg {
+    transform: rotate(180deg);
+
+}
+
+
+.slider-buttons .slider-button::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+    will-change: transform;
+
+    background: var(--blue500);
+
+    transition: transform .3s var(--ease-in-out-smooth);
+    z-index: -1;
+}
+
+.slider-buttons .slider-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+
+
 @media screen and (min-width:1441px) {
     .img-container.promo-100 .marquee.top {
         width: 1000px;
@@ -10357,10 +11213,10 @@ header.refer-expand::before {
     .banner.copy-trading .header .wrap .icon-copy {
         height: 39px;
     }
-  
+
 
     .refer-expand .section-title {
-        font-size: min(300px,15.625vw);
+        font-size: min(300px, 15.625vw);
         max-width: fit-content;
     }
 
@@ -10371,24 +11227,103 @@ header.refer-expand::before {
 
     .refer-expand>.bottom::after {
         top: -10%;
-        max-width:  2000px;
+        max-width: 2000px;
         max-height: 2000px;
         transform: translate(-50%, -10%);
     }
 
     .refer-hero {
         background: url("../themes/custom/adrofx_theme/img/refer-a-friend/refer-hero-background-xxl.png"), linear-gradient(103deg, #D5ECFF 4.33%, #42A5F5 82.1%, #0C356A 177.15%);
-        background-position: center,center;
+        background-position: center, center;
         background-size: 2560px 700px, cover;
         background-repeat: no-repeat, no-repeat;
     }
 
+
+
+    .eth-banner .container.xxl {
+        max-width: 1700px;
+    }
+
+    .eth-hero {
+        background: radial-gradient(1920px 1000px at 50% 50%, #42A5F5 0%, #64B5F6 46.5%, #1E88E5 100%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 }
 
 
 @media (max-width: 1199.98px) {
 
-    /*================refer a friend ===========*/
+
+    /*================ETH===========*/
+    .section-header.eth-hero .section-header__title {
+        font-size: clamp(2.875rem, 1.3078rem + 4.3609vi, 4.6875rem);
+    }
+
+    .section-header.eth-hero .buttons-container .apr,
+    .section-header.eth-hero .buttons-container .btn-white-red {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px 40px;
+    }
+
+    .section-header.eth-hero .buttons-container .apr {
+        justify-content: flex-start;
+        padding: 14px 20px;
+    }
+
+
+    .title.background {
+        font-size: clamp(10.3125rem, 6.2594rem + 11.2782vi, 15rem);
+    }
+
+
+
+    .list-features.eth-benefits .list-features__title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .list-features.eth-benefits .list-features__item {
+        padding: 30px;
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01 {
+        max-width: 300px;
+    }
+
+    .list-features.eth-benefits .list-features__item .unlock-02 {
+        left: 20px;
+        max-width: 150px;
+    }
+
+    .list-features.eth-benefits .list-features__item .network-03,
+    .list-features.eth-benefits .list-features__item .network-02,
+    .list-features.eth-benefits .list-features__item .freedom-01,
+    .list-features.eth-benefits .list-features__item .freedom-02,
+    .list-features.eth-benefits .list-features__item .freedom-03 {
+        max-width: 200px;
+    }
+
+    .list-features.eth-benefits .list-features__item .freedom-03 {
+        top: 0;
+    }
+
+    .list-features.eth-benefits .list-features__item .freedom-01 {
+        bottom: -20px;
+    }
+
+    .section-header.eth-banner .section-header__title>.subscription {
+        left: 46%;
+    }
+
+    /*================ETH===========*/
+
+
+
+
     .list.refer-benefits .list__item .wrapper.refer-benefits {
         gap: 50px;
 
@@ -11076,7 +12011,133 @@ header.refer-expand::before {
 
 @media (max-width: 991.98px) {
 
-    /*================refer a friend ===========*/
+    /*================ETH===========*/
+    .eth-hero.section-padding {
+        padding-bottom: 50px;
+
+    }
+
+
+    .section-header.eth-hero .section-header__title {
+        font-size: clamp(2.8125rem, 2.5423rem + 0.7519vi, 3.125rem);
+    }
+
+    .section-header.eth-hero .section-header__description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .section-header.eth-hero .buttons-container .apr,
+    .section-header.eth-hero .buttons-container .btn-white-red {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 15px 30px;
+    }
+
+    .section-header.eth-hero .buttons-container .apr {
+        justify-content: flex-start;
+        padding: 16px 15px;
+    }
+
+    .section-header.eth-hero .buttons-container .apr svg {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .title.background {
+        font-size: clamp(10rem, 9.4596rem + 1.5038vi, 10.625rem);
+    }
+
+    .eth-hero .lights .mid {
+        left: 20%;
+    }
+
+    .eth-hero .lights .bottom {
+        bottom: -80%;
+        left: -100px;
+    }
+
+    .eth-hero .lights .top {
+        top: 0;
+        left: 0;
+        opacity: .8;
+    }
+
+
+    .list-features.eth-benefits .list-features__item {
+        flex-basis: 100%;
+        border-radius: 30px;
+    }
+
+    .list-features.eth-benefits .list-features__header {
+        flex: 1;
+    }
+
+
+    .list-features.eth-benefits .list-features__item .unlock-01 {
+        transform: translateX(500px);
+    }
+
+    .list-features.eth-benefits .list-features__item .unlock-02 {
+        max-width: 200px;
+        right: 10%;
+        left: unset;
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01 {
+        max-width: 250px;
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01 {
+        transform: translateX(150px);
+    }
+
+    .list-features.eth-benefits .list-features__item:hover .income-01 {
+        transform: translateX(50px);
+    }
+
+    .list-features.eth-benefits .list-features__item .network-02 {
+        right: 0;
+        left: unset;
+    }
+
+    .list-features.eth-benefits .list-features__item .freedom-01,
+    .list-features.eth-benefits .list-features__item .freedom-02,
+    .list-features.eth-benefits .list-features__item .freedom-03 {
+        max-width: 280px;
+    }
+
+    .list-features.eth-benefits .list-features__item .freedom-03 {
+        left: 50px;
+    }
+
+    .list-features.eth-benefits .list-features__item .freedom-02 {
+        left: 30px;
+    }
+
+    .list-features.eth-benefits .list-features__item .freedom-01 {
+        left: 24px;
+    }
+
+
+
+    .section-header.eth-banner .section-header__title {
+        font-size: clamp(1.5rem, -0.3142rem + 5.0481vi, 2.8125rem);
+    }
+
+    .section-header.eth-banner .section-header__title>.subscription {
+        bottom: 3px;
+        left: 40%;
+    }
+
+    .slider-image.bottom,
+    .slider-image.top {
+        display: none;
+    }
+
+    /*================ETH===========*/
+
     .section-header.refer-hero .section-header__title,
     .section-header.refer-hero .section-header__description {
         margin-bottom: 18px;
@@ -12059,7 +13120,93 @@ header.refer-expand::before {
 
 @media (max-width: 767.98px) {
 
-    /*================refer a friend ===========*/
+    /*================ETH===========*/
+    .section-header.eth-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 300px;
+        margin: 0 auto;
+
+        text-align: left;
+    }
+
+    .section-header.eth-hero .section-header__title {
+        font-size: 45px;
+        max-width: 300px;
+    }
+
+    .title.background {
+        font-size: 160px;
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+    }
+
+    .eth-video {
+        position: absolute;
+        top: -15%;
+    }
+
+    .eth-hero .video-container {
+        height: 500px;
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01 {
+        top: calc(100% / 2 - 60px);
+    }
+
+    .eth-banner .frame {
+        background-position: left -3% top 30px, center right -2%;
+        background-size: 80px, 40px;
+    }
+
+    .section-header.eth-banner {
+        display: block;
+        text-align: left;
+    }
+
+    .section-header.eth-banner .section-header__description {
+        max-width: 320px;
+    }
+
+    .section-header.eth-banner .section-header__title>.subscription {
+        position: static;
+        display: inline-block;
+        max-width: 200px;
+        margin-left: 10px;
+    }
+
+
+    .slider-buttons,
+    .eth-rewards .slider {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .eth-rewards .slider .slider-images {
+        display: none;
+    }
+
+    .eth-rewards .slider .slider-content {
+        flex-basis: 100%;
+    }
+
+    .splide.rewards {
+        position: static;
+    }
+
+    .splide.rewards .splide__track {
+        overflow: hidden;
+
+    }
+
+    .slider-buttons {
+        margin-top: 0;
+    }
+
+    /*================ETH===========*/
     .refer-hero {
         background: url("../themes/custom/adrofx_theme/img/refer-a-friend/refer-hero-background-md.png"), linear-gradient(120deg, #D5ECFF 0%, #42A5F5 72.13%, #0C356A 159.22%);
         background-position: center bottom -220px, center;
@@ -12148,24 +13295,24 @@ header.refer-expand::before {
     }
 
     .refer-expand .bottom .planet {
-         position: relative;
-         display: flex;
-         align-items: center;
-         justify-content: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-         width: calc(100% - 30px);
-         height: 100%;
-         margin: 0 auto;
+        width: calc(100% - 30px);
+        height: 100%;
+        margin: 0 auto;
 
-         top: unset;
-         left: unset;
-         transform: unset;
+        top: unset;
+        left: unset;
+        transform: unset;
     }
 
     .refer-expand .section-title {
         margin-bottom: 18px;
     }
-    
+
     .refer-expand .section-title {
         font-size: 14vw;
     }
@@ -12173,6 +13320,11 @@ header.refer-expand::before {
     .refer-expand>.bottom>.mask {
         height: 100%;
     }
+
+    .refer-expand>.bottom::after {
+        top: 20%;
+    }
+
 
 
 
@@ -13344,8 +14496,192 @@ header.refer-expand::before {
 }
 
 @media (max-width: 575.98px) {
-    /*================refer a friend ===========*/
 
+    /*================ETH===========*/
+    .eth-hero .video-container {
+        height: 300px;
+    }
+
+    .eth-hero {
+        padding-top: 30px;
+    }
+
+    .eth-video {
+        top: 0;
+    }
+
+    .eth-video+.spin-text {
+        bottom: 0;
+        left: -50%;
+    }
+
+    .eth-hero .lights .mid,
+    .list-features.eth-benefits .list-features__item .freedom-03 {
+        display: none;
+    }
+
+    .eth-hero .lights .top,
+    .eth-hero .lights .bottom {
+        opacity: .5;
+    }
+
+    .list-features.eth-benefits .list-features__text,
+    .section-header.eth-hero .section-header__description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .list-features.eth-benefits .list-features__title {
+        font-size: 18px;
+        line-height: 1.5;
+
+        margin-bottom: 12px;
+    }
+
+    .section-header.eth-hero .section-header__description {
+        margin-bottom: 15px;
+    }
+
+    .eth-benefits .section-title {
+        margin-bottom: 40px;
+    }
+
+    .list-features.eth-benefits .list-features__item {
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
+
+    .list-features.eth-benefits .list-features__item {
+        padding: 20px;
+    }
+
+
+
+    .list-features.eth-benefits .list-features__header {
+        flex: 1 0 90px;
+    }
+
+    .list-features.eth-benefits .list-features__item .unlock-02 {
+        right: 0;
+        max-width: 160px;
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01 {
+        max-width: 230px;
+        transform: translateX(100px);
+    }
+
+    .list-features.eth-benefits .list-features__item:hover .income-01 {
+        transform: translateX(23px);
+    }
+
+    .list-features.eth-benefits .list-features__item .network-01 {
+        left: 0;
+        transform: translateX(-300px);
+    }
+
+    .list-features.eth-benefits .list-features__item:hover .network-01 {
+        transform: translateX(0px);
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01,
+    .list-features.eth-benefits .list-features__item .freedom-01,
+    .list-features.eth-benefits .list-features__item .freedom-02 {
+        max-width: 200px;
+    }
+
+    .list-features.eth-benefits .list-features__item .income-01 {
+       top: calc(100% / 2 - 40px);
+    }
+
+    
+    .eth-banner .container.xxl {
+        max-width: 100%;
+    }
+
+    .frame.round::before {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .splide.rewards .splide__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 100px 20px 20px 20px;
+        border-radius: 20px;
+    }
+
+    .splide.rewards .splide__slide::before {
+        top: 20px;
+        left: 20px;
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 14px;
+    }
+
+    .section-header.eth-banner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .section-header.eth-banner .buttons-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    
+
+    .eth-banner .frame {
+        background: url(''),
+            url('../themes/custom/adrofx_theme/img/eth/banner-eth-02.png') var(--blue500);
+        background-repeat: no-repeat, no-repeat;
+        background-position: center center, right 50px bottom 100px;
+        background-size: 50px, 60px;
+        border-radius: 15px;
+    }
+
+    .section-header.eth-banner .buttons-container .btn-base {
+        padding: 12px 20px;
+    }
+
+
+    .section-header.eth-banner .section-header__title {
+        display: inline;
+        font-size: 20px;
+    }
+
+    .section-header.eth-banner .section-header__title,
+    .section-header.eth-banner .buttons-container {
+        margin-bottom: 20px;
+    }
+
+    .section-header.eth-banner .section-header__title>.subscription {
+        display: inline;
+        font-size: 18px;
+        margin-left: 0;
+    }
+
+    .section-header.eth-banner .section-header__description {
+        font-size: 14px;
+    }
+
+    .splide.rewards .splide__slide.is-active,
+    .splide.rewards .splide__slide {
+        transform: unset;
+    }
+
+    .eth-rewards .slider {
+        display: block;
+    }
+
+    /*================ETH===========*/
     .refer-hero.section-padding {
         padding-top: 50px;
     }
@@ -13512,7 +14848,6 @@ header.refer-expand::before {
         background-size: cover;
         z-index: 3;
     }
-
 
 
     /*================refer a friend ===========*/
