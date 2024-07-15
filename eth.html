@@ -49,7 +49,7 @@
                                 eth
                             </h2>
 
-                     
+
                             <video class="eth-video" autoplay loop muted playsinline>
                                 <source src="./themes/custom/adrofx_theme/img/eth/ETH_7.webm" type="video/mp4">
                                 sorry, your browesr do not support transparent video
@@ -250,7 +250,7 @@
                         <div class="slider-images">
                             <div class="slider-image top">
                                 <img class="img-fluid staking-earn"
-                                    src="./themes/custom/adrofx_theme/img/eth/Pop-up__earn.png" alt="" width="253"
+                                    src="./themes/custom/adrofx_theme/img/eth/Pop-up__earn-01.png" alt="" width="253"
                                     height="210">
                             </div>
 
@@ -264,15 +264,16 @@
                                             src="./themes/custom/adrofx_theme/img/eth/screen-01.png" alt="" width="193"
                                             height="508">
 
-                                        <img class="img-fluid screen"
+                                        <img class="img-fluid screen is-hidden"
                                             src="./themes/custom/adrofx_theme/img/eth/screen-02.png" alt="" width="193"
                                             height="508">
 
-                                        <img class="img-fluid screen"
+                                        <img class="img-fluid screen is-hidden"
                                             src="./themes/custom/adrofx_theme/img/eth/screen-03.png" alt="" width="193"
                                             height="508">
 
-                                        <img class="img-fluid screen"
+
+                                        <img class="img-fluid screen is-hidden"
                                             src="./themes/custom/adrofx_theme/img/eth/screen-04.png" alt="" width="193"
                                             height="508">
                                     </div>
@@ -282,8 +283,8 @@
 
                             <div class="slider-image bottom">
                                 <img class="img-fluid staking-earn"
-                                    src="./themes/custom/adrofx_theme/img/eth/Pop-up__earn-02.png" alt="" width="139"
-                                    height="69">
+                                    src="./themes/custom/adrofx_theme/img/eth/Pop-up__earn-02.png" alt="" width="100"
+                                    height="100">
                             </div>
                         </div>
 
@@ -315,29 +316,27 @@
                                     <ul class="splide__list rewards">
                                         <li class="splide__slide">
                                             <p class="title">hold and earn</p>
-                                            <p class="text">hold adro ETH in your wallet and watch the staking rewards
-                                                accumulate on your <a class="link" href="#">Dashboard</a> .</p>
+                                            <p class="text">hold ETH in your earn wallet and watch the staking rewards
+                                                porin.</p>
+                                        </li>
+
+
+                                        <li class="splide__slide">
+                                            <p class="title">send or trade</p>
+                                            <p class="text">ssend your Ethereum and rewards to any address or trader to
+                                                other currency.</p>
                                         </li>
 
                                         <li class="splide__slide">
-                                            <p class="title">earn more</p>
-                                            <p class="text">use liquid staking tokens to earn more on other defi
-                                                protocols with
-                                                strategies like yield farming and vaults, etc.</p>
-                                        </li>
-
-                                        <li class="splide__slide">
-                                            <p class="title">send adn trade</p>
-                                            <p class="text">send or trader you tokens with any ethereum address top pass
-                                                on
-                                                staking rewards to the new recipient.</p>
+                                            <p class="title">more yield</p>
+                                            <p class="text">use liquid staking to earn more Ethereum to secure
+                                                additional protocols, thereby earning more rewards.</p>
                                         </li>
 
                                         <li class="splide__slide">
                                             <p class="title">unstake</p>
-                                            <p class="text">unstake on adrofx and get your original eth back with
-                                                accumulated
-                                                rewards once ethereum 2.0 is released.</p>
+                                            <p class="text">unstake and get your Ethereum back with accumulated rewards
+                                                once Ethereum is released from the staking pool.</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -417,6 +416,7 @@
             const btnNext = document.getElementById("slider-button--next")
             const screens = document.querySelectorAll(".screen")
             const slides = document.querySelectorAll('.splide.rewards .splide__slide')
+            let timeoutID;
 
 
             function activeScreen() {
@@ -432,33 +432,46 @@
                                 screen.classList.remove('is-active');
                                 screen.classList.add('is-hidden');
                             }
-                        });
+                        })
+
+
                     });
                 }
             }
 
-            activeScreen();
+            activeScreen()
+
+            function loop() {
+                splideRewards.on('moved', function () {
+                    if (splideRewards.index >= 3) {
+                        let timeoutID = window.setTimeout(() => {
+                            splideRewards.go(0)
+                        }, 5000)
+                    } else {
+                        window.clearTimeout(timeoutID);
+                    }
+
+                });
+            }
+
+            loop()
 
 
 
+            // splideRewards.on('moved', function () {
+            //     splideRewards.go('+1')
 
-            splideRewards.on('move', function () {
-                console.log(splideRewards.index >= 3)
-                if (splideRewards.index >= 3) {
-                    splideRewards.go(0);
-                }
-            });
+            //     });
+
+
 
             btnNext.addEventListener('click', e => {
                 splideRewards.go('+1')
-
             })
 
             btnPrev.addEventListener('click', e => {
                 splideRewards.go('-1')
             })
-
-
         })
 
 
