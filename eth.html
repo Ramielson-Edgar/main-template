@@ -49,10 +49,10 @@
                                 eth
                             </h2>
 
-                            <video class="eth-video" loop muted autoplay playsline>
+                     
+                            <video class="eth-video" autoplay loop muted playsinline>
                                 <source src="./themes/custom/adrofx_theme/img/eth/ETH.webm" type="video/mp4">
-                                <!-- <source src="./themes/custom/adrofx_theme/img/eth/eth.hvc" type="video/mp4"> -->
-                                sorry, your browesr do not support video
+                                sorry, your browesr do not support transparent video
                             </video>
 
 
@@ -89,8 +89,8 @@
                                 <span class="d-block"> staked
                                     liquidity</span>
                             </p>
-                            <p class="list-features__text">stake etherum (ETH) for rewards and still have access to your
-                                assets with a liquid staking token from adrofx.</p>
+                            <p class="list-features__text">Stake Ethereum (ETH) for rewards and still have access to
+                                your assets With AdroFx.</p>
                         </div>
 
                         <div class="list-features__header">
@@ -104,11 +104,11 @@
                     <li class="list-features__item income">
 
                         <div class="list-features__body">
-                            <p class="list-features__title">income
+                            <p class="list-features__title">Rewards
                                 <span class="d-block">without hassle</span>
                             </p>
-                            <p class="list-features__text">No need to run own node or find a reliable validator - all
-                                hard work is done by adrofx.</p>
+                            <p class="list-features__text">No need to run node or find a validator - all hard work is
+                                done by us!</p>
                         </div>
 
                         <div class="list-features__header">
@@ -122,12 +122,12 @@
                     <li class="list-features__item network">
 
                         <div class="list-features__body">
-                            <p class="list-features__title">earn
-                                <span class="d-block">across
-                                    networks</span>
+                            <p class="list-features__title">Deserve
+                                <span class="d-block">The Top Network</span>
                             </p>
-                            <p class="list-features__text">explore more defi opportunities on other
-                                chains bridging liquid staking tokens.</p>
+
+                            <p class="list-features__text">Explore more with ETH staking from daily rewards and compound
+                                income.</p>
                         </div>
 
                         <div class="list-features__header">
@@ -142,11 +142,11 @@
                     <li class="list-features__item freedom">
 
                         <div class="list-features__body">
-                            <p class="list-features__title">complete
-                                <span class="d-block">freedom of action</span>
+                            <p class="list-features__title">Full
+                                <span class="d-block">Freedom Of Action</span>
                             </p>
-                            <p class="list-features__text">liquid staking tokens can be transferred, sold or gifted with
-                                rights for original ETH and rewards.</p>
+                            <p class="list-features__text">The staking process provides you access to your funds and
+                                rewards at all times.</p>
                         </div>
 
                         <div class="list-features__header">
@@ -168,41 +168,50 @@
 
         </section>
 
-
         <div class="frame round">
             <section class="eth-banner">
-
 
                 <div class="container xxl">
 
                     <div class="frame">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12">
-                                    <header class="section-header eth-banner">
-                                        <h1 class="section-header__title"><span class="d-xl-block d-lg-block d-md-block d-sm-block">confirm the
-                                                transaction</span>
-                                            <span class="text">and voila</span>
-                                            <span class="subscription">you just became a stacker.</span></span>
-                                        </h1>
+                                <div class="col-lg-9 col-md-11 col-sm-8 col-12 m-auto">
 
+                                    <header class="section-header eth-banner">
+
+                                        <div class="header-container">
+                                            <h1 class="section-header__title">became<span class="d-block">a
+                                                    stacker</span>
+                                            </h1>
+
+                                            <p
+                                                class="d-xl-block d-lg-block d-md-block d-none section-header__description sub">
+                                                Receive
+                                                full reward from stake and
+                                                simply pay 10% managed fees.
+                                            </p>
+                                        </div>
 
                                         <div class="buttons-container">
-                                            <p class="section-header__description">you can check your staking exposure
-                                                and
-                                                earned rewards on
-                                                the <a class="link text-white" href="#">dashboard
-                                                    <svg width="14" height="17">
-                                                        <use
-                                                            href="./themes/custom/adrofx_theme/images/icons/spryte.svg#arrow-curve-ears">
-                                                        </use>
-                                                    </svg>
-                                                </a>
+                                            <p
+                                                class="d-xl-block d-lg-block d-md-block d-none section-header__description">
+                                                For staking deposit & withdrawal
+                                                takes 3-5 business days.
                                             </p>
 
-                                            <a class="btn-base btn-base-lg btn-white-red" href="#">stake <span
+                                            <p class="d-xl-none d-lg-none d-md-none  section-header__description">
+                                                For staking deposit & withdrawal
+                                                takes 3-5 business days.
+                                                Receive
+                                                full reward from stake and
+                                                simply pay 10% managed fees.
+                                            </p>
+
+                                            <a class="btn-base btn-base-lg btn-white-red" href="#">stake<span
                                                     class="text-uppercase">eth</span></a>
                                         </div>
+
                                     </header>
 
                                 </div>
@@ -395,7 +404,7 @@
                     },
                     600: {
                         perPage: 1,
-                        gap:'1rem',
+                        gap: '1rem',
                         focus: 'center',
                     },
                 }
@@ -432,6 +441,13 @@
 
 
 
+
+            splideRewards.on('move', function () {
+                console.log(splideRewards.index >= 3)
+                if (splideRewards.index >= 3) {
+                    splideRewards.go(0);
+                }
+            });
 
             btnNext.addEventListener('click', e => {
                 splideRewards.go('+1')
