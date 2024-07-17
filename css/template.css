@@ -10493,7 +10493,7 @@ header.refer-expand::before {
     z-index: 2;
 }
 
-.eth-video+.spin-text {
+.eth-hero .video-container .spin-text {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -12018,7 +12018,7 @@ header.refer-expand::before {
         line-height: normal;
     }
 
-    
+
 
 
 
@@ -12060,7 +12060,7 @@ header.refer-expand::before {
         padding-bottom: 50px;
     }
 
-    .eth-video+.spin-text {
+    .eth-hero .video-container .spin-text{
         max-width: 150px;
         height: auto;
     }
@@ -13222,7 +13222,7 @@ header.refer-expand::before {
         top: 0;
     }
 
-    .eth-video+.spin-text {
+    .eth-hero .video-container .spin-text{
         top: 20px;
         bottom: unset;
         left: -19%;
@@ -13248,7 +13248,7 @@ header.refer-expand::before {
         flex-direction: column;
         align-items: flex-start;
         row-gap: 20px;
-       
+
     }
 
 
@@ -14588,6 +14588,53 @@ header.refer-expand::before {
 @media (max-width: 575.98px) {
 
     /*================ETH===========*/
+    .eth-hero .video-container .eth-bottom,
+    .eth-hero .video-container .eth-top {
+        position: relative;
+    }
+
+    .eth-hero .video-container .eth-top {
+        top: 0;
+        animation: smooth-fly 4s linear infinite;
+        z-index: 10;
+    }
+
+    .eth-hero .video-container .eth-bottom {
+        top: -50px;
+        animation: smooth-fly 4s linear infinite 0.5s;
+        z-index: 7;
+    }
+
+    .eth-hero .video-container .spin-text {
+        top: 20px;
+        bottom: unset;
+        left: -19%;
+        z-index: 1;
+    }
+
+
+
+    .eth-hero .video-container .eth-animation,
+    .eth-hero .video-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .eth-hero .video-container .eth-animation {
+        position: relative;
+        top: 100px;
+
+        justify-content: flex-end;
+    }
+
+
+
+    .eth-hero .video-container .eth-animation {
+        margin: 0 auto;
+    }
+
     .eth-hero .video-container {
         height: 250px;
     }
@@ -14602,7 +14649,7 @@ header.refer-expand::before {
         top: 0;
     }
 
- 
+
 
     .eth-hero .lights .mid,
     .list-features.eth-benefits .list-features__item .freedom-03 {
@@ -14722,7 +14769,7 @@ header.refer-expand::before {
         justify-content: flex-start;
         padding-top: 40px;
 
- 
+
     }
 
     .section-header.eth-banner,
@@ -14751,28 +14798,28 @@ header.refer-expand::before {
         padding: 12px 20px;
     }
 
-    
+
 
     .section-header.eth-banner .section-header__title {
         display: inline;
         font-size: 35px;
         margin-right: 0;
     }
- 
+
     .section-header.eth-banner .section-header__title,
     .section-header.eth-banner .section-header__description {
         margin-bottom: 12px;
     }
 
-    .section-header.eth-banner .buttons-container .section-header__description  {
+    .section-header.eth-banner .buttons-container .section-header__description {
         font-size: 13px;
         line-height: 1.5;
     }
 
-    .section-header.eth-banner .buttons-container  .btn-base {
+    .section-header.eth-banner .buttons-container .btn-base {
         margin-bottom: 0;
     }
- 
+
 
     .splide.rewards .splide__slide.is-active,
     .splide.rewards .splide__slide {

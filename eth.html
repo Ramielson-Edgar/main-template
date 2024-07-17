@@ -18,6 +18,7 @@
         <section class="eth-hero section-padding">
             <div class="container">
                 <div class="row align-items-center">
+
                     <div class="col-lg-6 col-md-6">
 
                         <header class="section-header eth-hero">
@@ -43,17 +44,27 @@
 
                     <div class="col-lg-6 col-md-6">
 
-                        <div class="video-container">
+                        <div id="video-inner" class="video-container">
 
-                            <h2 class="title background">
-                                eth
-                            </h2>
+                            <h2 class="title background"> eth </h2>
+
+                            <div class="eth-animation">
+                                <img class="img-fluid d-xl-non d-lg-none d-md-none d-sm-none eth-top"
+                                    src="/themes/custom/adrofx_theme/img/eth/eth-top.png" alt="eth" width="182"
+                                    height="205">
+                                <img class="img-fluid d-xl-non d-lg-none d-md-none d-sm-none eth-bottom"
+                                    src="/themes/custom/adrofx_theme/img/eth/eth-bottom.png" alt="eth" width="182"
+                                    height="165">
+                            </div>
 
 
-                            <video class="eth-video" autoplay loop muted playsinline>
+
+                            <video id="ethereum-video" class="eth-video d-lg-block d-md-block d-sm-block d-none"
+                                autoplay loop muted playsinline>
                                 <source src="./themes/custom/adrofx_theme/img/eth/ETH_7.webm" type="video/mp4">
                                 sorry, your browesr do not support transparent video
                             </video>
+
 
 
                             <img class="img-fluid spin-text" src="./themes/custom/adrofx_theme/img/eth/spin-text.png"
@@ -70,6 +81,7 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
         </section>
@@ -458,13 +470,6 @@
 
 
 
-            // splideRewards.on('moved', function () {
-            //     splideRewards.go('+1')
-
-            //     });
-
-
-
             btnNext.addEventListener('click', e => {
                 splideRewards.go('+1')
             })
@@ -472,6 +477,42 @@
             btnPrev.addEventListener('click', e => {
                 splideRewards.go('-1')
             })
+
+
+            function handleResize() {
+                const videoContainer = document.getElementById('video-inner');
+                const video = document.getElementById('ethereum-video');
+
+                if (window.innerWidth <= 575) {
+                    if (video) {
+                        videoContainer.removeChild(video);
+                    }
+                } else {
+                    if (!video) {
+                        const newVideo = document.createElement('video')
+                        newVideo.id = 'ethereum-video';
+                        newVideo.controls = false;
+                        newVideo.autoplay = true;
+                        newVideo.loop = true;
+                        newVideo.muted = true;
+                        newVideo.playsInline = true;
+
+                        const source = document.createElement('source');
+                        source.src = 'video.mp4';
+                        source.type = 'video/mp4';
+
+                        newVideo.appendChild(source);
+                        videoContainer.appendChild(newVideo);
+                    }
+                }
+            }
+
+            // Первоначальная проверка при загрузке страницы
+            handleResize();
+
+            // Добавление слушателя на изменение размера окна
+            window.addEventListener('resize', handleResize);
+
         })
 
 
