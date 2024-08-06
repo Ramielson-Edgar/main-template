@@ -10904,7 +10904,7 @@ header.refer-expand::before {
     justify-content: center;
 
     counter-increment: rewards;
-    content: "/" counter(rewards);
+    content: counter(rewards);
 
     width: 63px;
     height: 63px;
