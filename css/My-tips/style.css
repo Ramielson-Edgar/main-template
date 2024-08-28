@@ -18,7 +18,7 @@
 }
 
 
-.anim-move-right {
+.move-right {
     animation-name: anim-move-right;
     animation-duration: 5s;
     animation-timing-function: cubic-bezier(.6, .6, 0, 1);
