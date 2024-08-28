@@ -11369,8 +11369,8 @@ header.refer-expand::before {
 
 .allpips-banner .banner-container,
 .allpips-hero {
-    background: url('/themes/custom/adrofx_theme/img/allpips/grid-background-hero.png') top 30% center no-repeat,
-        url('/themes/custom/adrofx_theme/img/allpips/background-dots.png') 0% 0% / 117px 117px repeat,
+    background: url('../themes/custom/adrofx_theme/img/allpips/grid-background-hero.png') top 30% center no-repeat,
+        url('../themes/custom/adrofx_theme/img/allpips/background-dots.png') 0% 0% / 117px 117px repeat,
         radial-gradient(99.16% 74.42% at 90.91% -6.77%, #4F2CA6 0%, rgba(24, 14, 68, 0.00) 100%),
         radial-gradient(85.63% 74.12% at 11.98% 79.3%, rgba(79, 44, 166, 0.60) 0%, rgba(24, 14, 68, 0.00) 100%), #180E44;
 
@@ -11395,7 +11395,7 @@ header.refer-expand::before {
     width: 1000px;
     height: 197px;
 
-    background: url('/themes/custom/adrofx_theme/img/allpips/chart.svg');
+    background: url('../themes/custom/adrofx_theme/img/allpips/chart.svg');
     background-repeat: no-repeat;
     background-position: center bottom 20%;
     background-size: contain;
@@ -11783,10 +11783,7 @@ header.refer-expand::before {
     margin-bottom: 0;
 }
 
-.list.headers .list__item .text::first-letter {
-    text-transform: uppercase;
-}
-
+ 
 
 .list.sub-headers .list__item .title {
     font-family: "Roboto-light", sans-serif;
@@ -11823,7 +11820,7 @@ header.refer-expand::before {
 
     height: 400vh;
 
-    background: url('/themes/custom/adrofx_theme/img/allpips/grid-background-xl-why.png') var(--white);
+    background: url('../themes/custom/adrofx_theme/img/allpips/grid-background-xl-why.png') var(--white);
     background-repeat: repeat-y;
     background-position: center bottom -50px;
     background-size: 100vw 100vh;
@@ -11917,7 +11914,7 @@ header.refer-expand::before {
 
 .allpips-copy-trading {
     position: relative;
-    background: url('/themes/custom/adrofx_theme/img/allpips/grid-background-xl-copy-trading.png'),
+    background: url('../themes/custom/adrofx_theme/img/allpips/grid-background-xl-copy-trading.png'),
         linear-gradient(83deg, #6D4CC1 27.6%, #341D94 99.42%);
     background-blend-mode: normal, overlay;
     background-repeat: no-repeat;
@@ -11942,7 +11939,7 @@ header.refer-expand::before {
     aspect-ratio: 1/1;
 
     border-radius: 40px;
-    background: url('/themes/custom/adrofx_theme/img/allpips/grid-background-xl-copy.png'),
+    background: url('../themes/custom/adrofx_theme/img/allpips/grid-background-xl-copy.png'),
         radial-gradient(84.09% 83.97% at 100% 0%, #B2A2E1 11.76%, rgba(227, 221, 255, 0.00) 100%),
         radial-gradient(100.03% 99.89% at 3.62% 98.18%, #B2A2E1 5.61%, rgba(227, 221, 255, 0.00) 100%), #E3DDFF;
 
@@ -12073,6 +12070,7 @@ header.refer-expand::before {
     line-height: 1.2;
 }
 
+.list.headers .list__item .text::first-letter,
 .list-features.allpips-features .list-features__text::first-letter {
     text-transform: capitalize;
 }
@@ -12085,7 +12083,7 @@ header.refer-expand::before {
 
 
 .allpips-banner {
-    background: url('/themes/custom/adrofx_theme/img/allpips/banner-grid.png');
+    background: url('../themes/custom/adrofx_theme/img/allpips/banner-grid.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -12109,7 +12107,7 @@ header.refer-expand::before {
     width: 100%;
     height: 283px;
 
-    background: url('/themes/custom/adrofx_theme/img/allpips/banner-chart.svg');
+    background: url('../themes/custom/adrofx_theme/img/allpips/banner-chart.svg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
