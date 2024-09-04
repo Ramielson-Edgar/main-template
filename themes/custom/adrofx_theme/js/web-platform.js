@@ -1,9 +1,11 @@
-
 const animations = document.querySelectorAll('.animation');
 const infiniteScroll = document.querySelectorAll(".infinite-scroll");
 const sections = document.querySelectorAll('.list.allpips-headers .list__item');
 const cards = document.querySelectorAll('.list.allpips-cards .list__item');
 const bannerPhone = document.querySelector('.banner-container.allpisp-banner .phone-container .phone');
+const bodymovins = document.querySelectorAll('.bodymovin');
+const phone = document.querySelector('.js-phone');
+const platformSection = document.querySelector('.allpips-advantages');
 
 let throttleTimer = false;
 let mm = gsap.matchMedia();
@@ -14,21 +16,17 @@ const context = canvas.getContext("2d");
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    function onLoadAnimation () {
-        animations.forEach(animation => { 
+    function onLoadAnimation() {
+        animations.forEach(animation => {
             if (elementInView(animation)) {
                 animationOnScroll(animation);
             }
         })
     }
 
-    onLoadAnimation()
- 
-
-
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         addAnimation();
-        onLoadAnimation()
+        onLoadAnimation();
     }
 
     function addAnimation() {
@@ -47,6 +45,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    addAnimation();
+
     function addActiveClass(item) {
         item.classList.add('active');
     }
@@ -61,7 +61,34 @@ window.addEventListener('DOMContentLoaded', () => {
         return (elementOffsetTop <= (window.innerHeight || document.documentElement.clientHeight) - scrollOffset)
 
     }
-    
+
+
+    function initBodymovin() {
+
+        return bodymovins.forEach(bodymovin => {
+            const animationName = bodymovin.dataset.animation;
+            let path;
+
+            const instance = lottie.loadAnimation({
+                container: document.getElementById(animationName),
+                loop: true,
+                render: "svg",
+                autoplay: false,
+                path: `/themes/custom/adrofx_theme/data/${path = animationName === 'terminal' ? 'terminal.json' : animationName === "chart" ? 'chart.json' : 'uiux.json'}`,
+            })
+
+            bodymovin.addEventListener('mouseenter', () => {
+                instance.play();
+            });
+
+            bodymovin.addEventListener('mouseleave', () => {
+                instance.pause();
+            });
+        })
+    }
+
+    initBodymovin();
+
 
     function animationOnScroll() {
 
@@ -75,13 +102,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-
-
+ 
     function stackCard() {
         let elementOffsetTop = document.querySelector('.scroll-container.allpips-advantages').getBoundingClientRect().top;
         let startAnimation = 250;
 
         if (elementOffsetTop <= window.scrollY / window.innerHeight) {
+
+            const screen = document.querySelector('.screen.allpips').classList.add('scrolled');
 
             for (let i = 0; i < sections.length; i++) {
                 let title = sections[i].getBoundingClientRect().top;
@@ -93,15 +121,16 @@ window.addEventListener('DOMContentLoaded', () => {
                     cards.forEach((card, index) => {
                         let cardIndex = index + 1;
 
-                        if (sectionIndex === cardIndex) {
+                        if (elementInView(sections[i]) && sectionIndex === cardIndex) {
                             addActiveClass(card);
                             card.style.top = index * 80 + 100 + "px";
+                    
                         }
                     });
 
                 } else {
                     removActiveClass(sections[i]);
-
+                    
                     cards.forEach((card, index) => {
                         let cardIndex = index + 1;
 
@@ -112,6 +141,14 @@ window.addEventListener('DOMContentLoaded', () => {
                     })
                 }
             }
+
+        } else {
+
+            const screen = document.querySelector('.screen.allpips').classList.remove('scrolled');
+            
+            cards.forEach(card => {
+                removActiveClass(card)
+            })
         }
 
 
@@ -147,7 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 markers: false,
                 pin: false,
                 scrub: 1,
-                pinSapcing:false,
+                pinSapcing: false,
             },
             onUpdate: render
         });
@@ -169,35 +206,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function initAniamtion() {
         window.addEventListener('scroll', () => {
-            let scroll = window.scrollY;
-            let scrollPercent = (scroll / window.innerHeight) * 100;
-    
+
             stackCard();
             animationOnScroll();
         });
     }
-    
+
 
     const throttle = (callback, timer) => {
 
         if (!throttleTimer) return;
-    
+
         throttleTimer = true;
-    
+
         setTimeout(() => {
             callback()
             throttleTimer = false;
         }, timer);
-    
+
     }
-    
-    
+
+
     throttle(initAniamtion(), 250)
 
 })
-
-
-
- 
-
-
