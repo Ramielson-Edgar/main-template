@@ -7,6 +7,7 @@ const bodymovins = document.querySelectorAll('.bodymovin');
 const phone = document.querySelector('.js-phone');
 const platformSection = document.querySelector('.allpips-advantages');
 
+
 let throttleTimer = false;
 let mm = gsap.matchMedia();
 
@@ -74,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 loop: true,
                 render: "svg",
                 autoplay: false,
-                path: `../data/${path = animationName === 'terminal' ? 'terminal.json' : animationName === "chart" ? 'chart.json' : 'uiux.json'}`,
+                path: `./themes/custom/adrofx_theme/data/chart.json${path = animationName === 'terminal' ? 'terminal.json' : animationName === "chart" ? 'chart.json' : 'uiux.json'}`,
             })
 
             bodymovin.addEventListener('mouseenter', () => {
