@@ -70,25 +70,44 @@ window.addEventListener('DOMContentLoaded', () => {
             const animationName = bodymovin.dataset.animation;
             let path;
 
-            const instance = lottie.loadAnimation({
+            let params = {
                 container: document.getElementById(animationName),
                 loop: true,
                 render: "svg",
                 autoplay: false,
                 path: `./themes/custom/adrofx_theme/data/${path = animationName === 'terminal' ? 'terminal' : animationName === "chart" ? 'chart' : 'uiux'}.json`,
+            }
+
+            const instance = lottie.loadAnimation(params);
+
+            window.addEventListener('resize', () => {
+
+
+                if (window.innerWidth >= 576) {
+                    bodymovin.addEventListener('mouseenter', () => {
+                        instance.play();
+                    });
+    
+                    bodymovin.addEventListener('mouseleave', () => {
+                        instance.pause();
+                    });
+                } else {
+                    params.autoplay = true;
+                    params.loop = true;
+                    instance.play();
+                }
+    
             })
 
-            bodymovin.addEventListener('mouseenter', () => {
-                instance.play();
-            });
 
-            bodymovin.addEventListener('mouseleave', () => {
-                instance.pause();
-            });
+     
         })
+
     }
 
     initBodymovin();
+
+
 
 
     function animationOnScroll() {
@@ -103,7 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
- 
+
     function stackCard() {
         let elementOffsetTop = document.querySelector('.scroll-container.allpips-advantages').getBoundingClientRect().top;
         let startAnimation = 250;
@@ -125,13 +144,13 @@ window.addEventListener('DOMContentLoaded', () => {
                         if (elementInView(sections[i]) && sectionIndex === cardIndex) {
                             addActiveClass(card);
                             card.style.top = index * 80 + 100 + "px";
-                    
+
                         }
                     });
 
                 } else {
                     removActiveClass(sections[i]);
-                    
+
                     cards.forEach((card, index) => {
                         let cardIndex = index + 1;
 
@@ -146,7 +165,7 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
 
             const screen = document.querySelector('.screen.allpips').classList.remove('scrolled');
-            
+
             cards.forEach(card => {
                 removActiveClass(card)
             })
