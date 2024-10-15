@@ -26,9 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
             let currentIndex = splide.index;
 
             loadLottieAnimationForActiveSlide(currentIndex);
-            let slide = splide.Components.Slides.getAt(currentIndex).slide;
-            let delay = slide.querySelector('.bodymovin').dataset.delay;
-            animationDealy = delay;
 
             splide.on('moved', function (newIndex) {
                 idTimer = setTimeout(function () {
