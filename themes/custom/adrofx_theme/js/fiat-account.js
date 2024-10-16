@@ -51,16 +51,15 @@ window.addEventListener('DOMContentLoaded', () => {
         splide.on('mounted', function () {
             let currentIndex = splide.index;
 
-            console.log(currentIndex)
-
             loadLottieAnimationForActiveSlide(currentIndex);
 
+            splide.on('moved',function (newIndex){
+                splide.go(currentIndex + newIndex);
+                loadLottieAnimationForActiveSlide(newIndex)
+            })
         });
 
-        splide.on('moved', function (newIndex) {
-            loadLottieAnimationForActiveSlide(newIndex)
-        });
-
+ 
         function loadLottieAnimationForActiveSlide(currentIndex) {
             let slide = splide.Components.Slides.getAt(currentIndex).slide;
             let animation = slide.querySelector('.bodymovin');
