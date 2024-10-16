@@ -17,7 +17,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let throttleTimer = false;
     let idTimer;
-    let interval = 5000;
+    let interval;
+    let currentScroll = 0;
+
+
+
+    function onLoadRunScrollAnimation() {
+
+        return animations.forEach(animation => {
+
+            if (elementInView(animation) && window.scrollY === 0) {
+                animation.style.transitionDelay = animation.dataset.delay + 'ms';
+                animation.style.transitionDuration = 1000 + "ms";
+                animation.classList.add('scrolled');
+            }
+        })
+
+    }
+
+
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        onLoadRunScrollAnimation();
+    } else {
+        return
+    }
+
 
     var splide = new Splide('#fiat-splide', {
         type: "loop",
@@ -26,7 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
         pagination: true,
         autoplay: true,
         drag: false,
-        interval: interval,
         fixedHeight: '40.25rem',
         breakpoints: {
             1198: {
@@ -42,64 +66,62 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    function loadLottieAnimationForActiveSlid(currentIndex) {
+        let slide = splide.Components.Slides.getAt(currentIndex).slide;
+        let animation = slide.querySelector('.bodymovin');
 
- 
+        if (animation && !animation.dataset.loaded || animation.dataset.loaded === 'false') {
 
+            let name = animation.dataset.name;
+            let path = `./themes/custom/adrofx_theme/data/${name}.json`;
 
-    function lazyLoadLottieAnimation() {
+            let params = {
+                container: animation,
+                path: path,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+            };
 
-        splide.on('mounted', function () {
-            let currentIndex = splide.index;
-
-            loadLottieAnimationForActiveSlide(currentIndex);
-
-            splide.on('moved',function (newIndex){
-                splide.go(currentIndex + newIndex);
-                loadLottieAnimationForActiveSlide(newIndex)
-            })
-        });
-
- 
-        function loadLottieAnimationForActiveSlide(currentIndex) {
-            let slide = splide.Components.Slides.getAt(currentIndex).slide;
-            let animation = slide.querySelector('.bodymovin');
-
-            if (animation && !animation.dataset.loaded || animation.dataset.loaded === 'false') {
-
-                let name = animation.dataset.name;
-                let path = `./themes/custom/adrofx_theme/data/${name}.json`;
-
-                let params = {
-                    container: animation,
-                    path: path,
-                    renderer: 'svg',
-                    loop: true,
-                    autoplay: true,
-                };
-
-                animation.dataset.loaded = 'true';
-                lottie.loadAnimation(params);
-            }
+            animation.dataset.loaded = 'true';
+            lottie.loadAnimation(params);
         }
+    }
+
+
+    function lazyLottie() {
+
+        splide.on('mounted', () => {
+            loadLottieAnimationForActiveSlid(splide.index);
+        })
+ 
+
+        splide.on('active', (event) => {
+            if (event.slide.classList.contains('is-active')) {
+                loadLottieAnimationForActiveSlid(splide.index);
+                splide.go(splide.index)
+            }
+        })
 
 
     }
-
-    
-
-    if (elementInView(benefitsSlider)) {
-        lazyLoadLottieAnimation();
-    }
+ 
 
     splide.on('autoplay:playing', function (rate) {
         const progress = document.querySelector('.splide.fiat .splide__pagination .splide__pagination__page.is-active');
         progress.style.setProperty('--progress-bullet', rate);
     });
 
-    splide.mount();
-   
-
  
+
+    lazyLottie();
+    splide.mount();
+
+
+
+
+
+
 
 
     let compareAccounts = new Splide('#fiat-accounts', {
@@ -222,8 +244,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function initAniamtion() {
 
-        window.addEventListener('scroll', () => {
-            const scroll = window.scrollY;
+        window.addEventListener('scroll', (even) => {
+            // let scroll = window.scrollY;
+            let scroll;
             const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
 
             card.forEach(el => {
@@ -264,9 +287,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
             animationOnScroll(animations);
 
-
-
-
         });
 
     }
@@ -284,6 +304,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }, timer);
 
     }
+
+
+
+    window.addEventListener('resize', splide.on('updated', lazyLottie))
+
 
 
     throttle(initAniamtion(), 250)
