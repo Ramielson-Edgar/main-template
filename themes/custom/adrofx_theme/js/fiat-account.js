@@ -17,23 +17,56 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let throttleTimer = false;
     let idTimer;
-    let animationDealy;
+    let interval = 5000;
+
+    var splide = new Splide('#fiat-splide', {
+        type: "loop",
+        perPage: 1,
+        arrows: false,
+        pagination: true,
+        autoplay: true,
+        drag: false,
+        interval: interval,
+        fixedHeight: '40.25rem',
+        breakpoints: {
+            1198: {
+                perPage: 1,
+                fixedHeight: '35rem',
+            },
+            320: {
+                perPage: 1,
+                fixedHeight: '20.813rem',
+            }
+
+        },
+    });
+
+
+
+ 
+
 
     function lazyLoadLottieAnimation() {
-
 
         splide.on('mounted', function () {
             let currentIndex = splide.index;
 
             loadLottieAnimationForActiveSlide(currentIndex);
 
+
+
             splide.on('moved', function (newIndex) {
-                idTimer = setTimeout(function () {
-                    loadLottieAnimationForActiveSlide(newIndex)
-                }, animationDealy)
+                if (newIndex) {
+                    idTimer = setTimeout(function () {
+                        loadLottieAnimationForActiveSlide(newIndex)
+                    }, interval)
+                }
+
             });
 
         });
+
+
 
         function loadLottieAnimationForActiveSlide(currentIndex) {
             let slide = splide.Components.Slides.getAt(currentIndex).slide;
@@ -56,38 +89,54 @@ window.addEventListener('DOMContentLoaded', () => {
                 lottie.loadAnimation(params);
             }
         }
+
+
     }
 
-
-    var splide = new Splide('#fiat-splide', {
-        type: "loop",
-        perPage: 1,
-        arrows: false,
-        pagination: true,
-        autoplay: true,
-        drag: true,
-        interval: 5000,
-        fixedHeight: '40.25rem',
-        breakpoints: {
-            1198: {
-                perPage: 1,
-                fixedHeight: '35rem',
-            },
-            320: {
-                perPage: 1,
-                fixedHeight: '20.813rem',
-            }
-
-        },
-    });
+    
 
     if (elementInView(benefitsSlider)) {
         lazyLoadLottieAnimation();
     }
 
+    splide.on('autoplay:playing', function (rate) {
+        const progress = document.querySelector('.splide.fiat .splide__pagination .splide__pagination__page.is-active');
+        progress.style.setProperty('--progress-bullet', rate);
+    });
+
     splide.mount();
+   
+
+ 
 
 
+    let compareAccounts = new Splide('#fiat-accounts', {
+        type: "center",
+        perPage: 3,
+        pagination: false,
+        arrows: false,
+        autoplay: false,
+        drag: true,
+        interval: interval,
+        gap: '0.625rem',
+        breakpoints: {
+            1198: {
+                perPage: 2,
+                fixedHeight: '32rem',
+                pagination: true,
+            },
+            700: {
+                perPage: 1,
+                pagination: true,
+            },
+            320: {
+                perPage: 1,
+                fixedHeight: '24rem',
+                pagination: true,
+            }
+
+        },
+    }).mount()
 
 
 
@@ -179,14 +228,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
     function initAniamtion() {
 
         window.addEventListener('scroll', () => {
             const scroll = window.scrollY;
             const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
 
-            card.forEach(el =>  {
+            card.forEach(el => {
                 setAnimation(el, 500, scrollPerncetage)
             });
 
@@ -196,15 +244,15 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
 
-            if(elementInView(fiatSecurity)) {
-                document.querySelectorAll('.sticky-container .list .list__item .bodymovin').forEach(el => {              
+            if (elementInView(fiatSecurity)) {
+                document.querySelectorAll('.sticky-container .list .list__item .bodymovin').forEach((el, index) => {
 
                     if (elementInView(el) && el.dataset.loaded === 'false') {
                         addActiveClass(el);
 
                         let name = el.dataset.name;
                         let path = `./themes/custom/adrofx_theme/data/${name}.json`;
-        
+
                         let params = {
                             container: el,
                             path: path,
@@ -212,14 +260,13 @@ window.addEventListener('DOMContentLoaded', () => {
                             loop: true,
                             autoplay: true,
                         };
-        
+
                         el.dataset.loaded = 'true';
                         lottie.loadAnimation(params);
-
-                        console.log(params)
-          
                     }
                 })
+
+
             }
 
 
