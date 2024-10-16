@@ -18,9 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let throttleTimer = false;
     let idTimer;
     let interval;
-    let currentScroll = 0;
-
-
 
     function onLoadRunScrollAnimation() {
 
@@ -45,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     var splide = new Splide('#fiat-splide', {
-        type: "loop",
+        type: false,
         perPage: 1,
         arrows: false,
         pagination: true,
@@ -69,8 +66,10 @@ window.addEventListener('DOMContentLoaded', () => {
     function loadLottieAnimationForActiveSlid(currentIndex) {
         let slide = splide.Components.Slides.getAt(currentIndex).slide;
         let animation = slide.querySelector('.bodymovin');
+        const delay = slide.dataset.splideInterval;
+        interval = delay;
 
-        if (animation && !animation.dataset.loaded || animation.dataset.loaded === 'false') {
+        if (animation.dataset.loaded === 'false') {
 
             let name = animation.dataset.name;
             let path = `./themes/custom/adrofx_theme/data/${name}.json`;
@@ -93,8 +92,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         splide.on('mounted', () => {
             loadLottieAnimationForActiveSlid(splide.index);
+            splide.go(splide.index)
+
         })
- 
 
         splide.on('active', (event) => {
             if (event.slide.classList.contains('is-active')) {
@@ -103,18 +103,29 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
 
+        splide.on('moved', (prevIndex) => {
+
+            if (prevIndex === 3) {
+                idTimer = setTimeout(function () {
+                    splide.go(0);
+                    loadLottieAnimationForActiveSlid(splide.index);
+                }, interval)
+
+            }
+
+        })
+
 
     }
- 
+
 
     splide.on('autoplay:playing', function (rate) {
         const progress = document.querySelector('.splide.fiat .splide__pagination .splide__pagination__page.is-active');
         progress.style.setProperty('--progress-bullet', rate);
     });
 
- 
 
-    lazyLottie();
+    lazyLottie()
     splide.mount();
 
 
@@ -307,7 +318,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    window.addEventListener('resize', splide.on('updated', lazyLottie))
+    window.addEventListener('resize', () => {
+        splide.on('updated', lazyLottie());
+    })
+
 
 
 
