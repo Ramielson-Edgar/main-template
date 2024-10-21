@@ -332,7 +332,8 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("resize", () => {
-        fiatBenefitsSplider.on("updated", lazyLottie());
+        benefitsSlider.dataset.mounted = "true";
+        fiatBenefitsSplider.refresh() 
     });
 
     throttle(initAniamtion(), 250);
