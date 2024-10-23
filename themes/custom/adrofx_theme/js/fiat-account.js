@@ -1,30 +1,23 @@
 window.addEventListener("DOMContentLoaded", () => {
-    const card = document.querySelectorAll(".card-parallax__wrap");
+    const cards = document.querySelectorAll(".card-parallax__wrap");
     const copyTrade = document.querySelector(".fiat.account-strategies");
     const fiatSection = document.querySelector(".fiat.account-banner");
-    const fiatBanner = document.querySelector(
-        ".fiat.account-banner .img-container"
-    );
+    const fiatBanner = document.querySelector(".fiat.account-banner .img-container");
 
     const benefitsSlider = document.querySelector(".splide.fiat");
-    const buttonTabs = document.querySelectorAll(
-        ".nav.account-compare .nav-item .nav-link"
-    );
+    const buttonTabs = document.querySelectorAll(".nav.account-compare .nav-item .nav-link");
     const tabIndicator = document.querySelector(
         ".nav.account-compare .indicator"
     );
     const fiatSecurity = document.querySelector(".fiat-security");
 
     const animations = document.querySelectorAll(".animation");
-    const bodymovins = document.querySelectorAll(".bodymovin");
 
-    const headers = document.querySelectorAll(
-        ".header-container.security .list .list__item"
-    );
 
     let throttleTimer = false;
     let idTimer;
     let interval;
+
 
     function onLoadRunScrollAnimation() {
         return animations.forEach((animation) => {
@@ -39,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         onLoadRunScrollAnimation();
-    } 
+    }
 
     let fiatBenefitsSplider = new Splide("#fiat-splide", {
         type: false,
@@ -143,6 +136,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }).mount();
 
+
+
+
+
     function onHandleMoveIndicator() {
         buttonTabs.forEach((el) => {
             el.addEventListener("click", () => {
@@ -157,45 +154,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     onHandleMoveIndicator();
 
-    function setAnimation(el, offset, scroll = 0) {
-        let gap = offset;
-        let elementOffsetTop = copyTrade.getBoundingClientRect().top;
-        if (
-            elementOffsetTop <=
-            (window.innerHeight || document.documentElement.clientHeight) -
-                (scroll + gap)
-        ) {
-            addActiveClass(el);
-        }
-
-        copyTrade.addEventListener("mousemove", (event) => {
-            const delay = el.dataset.delay;
-
-            const value = event.clientX;
-            const percentages = window.innerWidth / 2;
-            const max = percentages - value;
-
-            if (el.classList.contains("left")) {
-                el.classList.add("active");
-                el.style.transform = `translate3d(0px, 0, 100px) scale3d(1, 1, 1) rotateX(${
-                    max / 70
-                }deg) rotateY(17deg) rotateZ(-7deg) skew(0deg, 0deg)`;
-            }
-
-            if (el.classList.contains("top")) {
-                el.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(15deg) rotateY(${
-                    max / 50
-                }deg) rotateZ(-15deg) skew(0deg, 0deg)`;
-            }
-
-            if (el.classList.contains("bottom")) {
-                el.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(${
-                    max / 100
-                }deg) rotateY(${max / 60}deg) rotateZ(30deg) skew(0deg, 0deg)`;
-            }
-        });
-    }
-
     function addActiveClass(item) {
         item.classList.add("active");
     }
@@ -209,7 +167,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return (
             elementOffsetTop <=
             (window.innerHeight || document.documentElement.clientHeight) -
-                scrollOffset
+            scrollOffset
         );
     }
 
@@ -234,25 +192,38 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     const itemVideo = document.querySelectorAll(
-        ".sticky-container .video-container .list .list__item"
+        ".video-container.fiat-security .list .list__item"
     );
     const titleItems = document.querySelectorAll(
         ".header-container.security .list .list__item"
     );
-    const title = document.querySelector(
-        ".header-container.security .list .list__item .section-header__title"
-    );
 
-    const text = document.querySelector(
-        ".header-container.security .list .list__item .section-header__text"
-    );
+
+    function onHandleRotateCards(card, event) {
+        const value = event.clientX;
+        const percentages = window.innerWidth / 2;
+        const max = percentages - value;
+
+        if (card.classList.contains("left")) {
+            card.classList.add("active");
+            card.style.transform = `translate3d(0px, 0, 100px) scale3d(1, 1, 1) rotateX(${max / 70
+                }deg) rotateY(17deg) rotateZ(-7deg) skew(0deg, 0deg)`;
+        }
+
+        if (card.classList.contains("top")) {
+            card.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(15deg) rotateY(${max / 50
+                }deg) rotateZ(-15deg) skew(0deg, 0deg)`;
+        }
+
+        if (card.classList.contains("bottom")) {
+            card.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(${max / 100
+                }deg) rotateY(${max / 60}deg) rotateZ(30deg) skew(0deg, 0deg)`;
+        }
+    }
 
     function setTextAnimation(videoItem, videoIndex) {
         titleItems.forEach((titleItem, titlIndex) => {
-            if (videoIndex === titlIndex && elementInView(videoItem)) {
-                const title = titleItem.querySelector(".section-header__title");
-                const text = titleItem.querySelector(".section-header__text");
-
+            if (videoItem.classList.contains('active') && videoIndex === titlIndex && elementInView(videoItem)) {
                 addActiveClass(titleItem);
             } else {
                 removActiveClass(titleItem);
@@ -262,57 +233,113 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function setActiveLottieContainer() {
         itemVideo.forEach((videoItem, videoIndex) => {
-            if (elementInView(videoItem, 610)) {
+            const itemHeight = videoItem.getBoundingClientRect().height;
+            const animationContainer = videoItem.querySelector('.animation')
+            const animation = videoItem.querySelector('.bodymovin')
+
+            if (elementInView(videoItem, itemHeight) && animation.dataset.loaded === "false") {
+
+                let name = animation.dataset.name;
+                let path = `./themes/custom/adrofx_theme/data/${name}.json`;
+
+                let params = {
+                    container: animation,
+                    path: path,
+                    renderer: "svg",
+                    loop: true,
+                    autoplay: true
+                };
+
+                animation.dataset.loaded = "true";
+                const instance = lottie.loadAnimation(params);
+
+
+                addActiveClass(animation);
                 addActiveClass(videoItem);
+
                 setTextAnimation(videoItem, videoIndex);
-                animationOnScroll(animations);
+                animationOnScroll(animationContainer);
             } else {
                 removActiveClass(videoItem);
+                removActiveClass(animation)
             }
         });
     }
 
+    function onScrolRunLottieSecurity() {
+        const cards = document.querySelectorAll('.cards.fiat-benefits .card-benefits');
+        const section = document.querySelector('.fiat-security').scrollHeight
+
+        cards.forEach(card => {
+            const bodymovin = card.querySelector('.bodymovin');
+
+            animationOnScroll(animations);
+ 
+
+            if (elementInView(card)) {
+                addActiveClass(card);
+
+                if (bodymovin.dataset.loaded === "false") {
+                    let name = bodymovin.dataset.name;
+                    let path = `./themes/custom/adrofx_theme/data/${name}.json`;
+
+                    let params = {
+                        container: bodymovin,
+                        path: path,
+                        renderer: "svg",
+                        loop: true,
+                        autoplay: true
+                    };
+
+                    bodymovin.dataset.loaded = "true";
+                    const instance = lottie.loadAnimation(params);
+                }
+
+
+            } else {
+                removActiveClass(card)
+            }
+
+
+        });
+    }
+
     function initAniamtion() {
-        window.addEventListener("scroll", (even) => {
+
+        window.addEventListener("scroll", () => {
             let scroll = window.scrollY;
             const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
 
-            card.forEach((el) => {
-                setAnimation(el, 500, scrollPerncetage);
-            });
+
+            if (elementInView(copyTrade, 100) && window.innerWidth > 768) {
+                cards.forEach(card => {
+                    if (elementInView(card)) {
+                        addActiveClass(card);
+                        copyTrade.addEventListener("mousemove", (event) => onHandleRotateCards(card, event));
+                    }
+                });
+            } else {
+                cards.forEach(card => {
+                    if(elementInView(card, 700)) {
+                        addActiveClass(card);
+                    }
+                    copyTrade.removeEventListener("mousemove", (event) => onHandleRotateCards(card, event));
+                });
+            }
+
 
             if (elementInView(fiatSection)) {
                 animationOnScroll(fiatBanner);
             }
 
             if (elementInView(fiatSecurity)) {
-                setActiveLottieContainer();
-
-                bodymovins.forEach((bodymovin, index) => {
-                    if (
-                        elementInView(bodymovin) &&
-                        bodymovin.dataset.loaded === "false"
-                    ) {
-                        addActiveClass(bodymovin);
-
-                        let name = bodymovin.dataset.name;
-                        let path = `./themes/custom/adrofx_theme/data/${name}.json`;
-
-                        let params = {
-                            container: bodymovin,
-                            path: path,
-                            renderer: "svg",
-                            loop: true,
-                            autoplay: true
-                        };
-
-                        bodymovin.dataset.loaded = "true";
-                        const instance = lottie.loadAnimation(params);
-                    }
-                });
+                onScrolRunLottieSecurity()
             }
 
-            if (elementInView(benefitsSlider, -240) && benefitsSlider.dataset.mounted === "false") {
+            if (
+                elementInView(benefitsSlider, -240) &&
+                benefitsSlider.dataset.mounted === "false"
+            ) {
                 lazyLottie();
                 fiatBenefitsSplider.mount();
                 benefitsSlider.dataset.mounted = "true";
@@ -332,11 +359,11 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("resize", () => {
-        benefitsSlider.dataset.mounted = "true";
-        fiatBenefitsSplider.refresh() 
+        fiatBenefitsSplider.refresh();
     });
 
     throttle(initAniamtion(), 250);
+
 });
 
 // function onHandleActiveBodymovin() {
@@ -485,3 +512,68 @@ window.addEventListener("DOMContentLoaded", () => {
 //         animationOnScroll(animations);
 //     });
 // }
+
+// function setAnimation(el, offset, scroll = 0) {
+//     let gap = offset;
+//     let elementOffsetTop = copyTrade.getBoundingClientRect().top;
+//     if (
+//         elementOffsetTop <=
+//         (window.innerHeight || document.documentElement.clientHeight) -
+//             (scroll + gap)
+//     ) {
+//         addActiveClass(el);
+//     }
+
+//     if(window.innerWidth < 768) {
+//         copyTrade.addEventListener("mousemove", (event) => {
+//             const delay = el.dataset.delay;
+
+//             const value = event.clientX;
+//             const percentages = window.innerWidth / 2;
+//             const max = percentages - value;
+
+//             if (el.classList.contains("left")) {
+//                 el.classList.add("active");
+//                 el.style.transform = `translate3d(0px, 0, 100px) scale3d(1, 1, 1) rotateX(${
+//                     max / 70
+//                 }deg) rotateY(17deg) rotateZ(-7deg) skew(0deg, 0deg)`;
+//             }
+
+//             if (el.classList.contains("top")) {
+//                 el.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(15deg) rotateY(${
+//                     max / 50
+//                 }deg) rotateZ(-15deg) skew(0deg, 0deg)`;
+//             }
+
+//             if (el.classList.contains("bottom")) {
+//                 el.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(${
+//                     max / 100
+//                 }deg) rotateY(${max / 60}deg) rotateZ(30deg) skew(0deg, 0deg)`;
+//             }
+//         });
+//     } else {
+
+//        return;
+//     }
+
+// }
+
+// bodymovins.forEach((bodymovin, index) => {
+//     if (videoItem.classList.contains('active') && elementInView(bodymovin) &&bodymovin.dataset.loaded === "false") {
+//         addActiveClass(bodymovin);
+
+//         let name = bodymovin.dataset.name;
+//         let path = `./themes/custom/adrofx_theme/data/${name}.json`;
+
+//         let params = {
+//             container: bodymovin,
+//             path: path,
+//             renderer: "svg",
+//             loop: true,
+//             autoplay: true
+//         };
+
+//         bodymovin.dataset.loaded = "true";
+//         const instance = lottie.loadAnimation(params);
+//     }
+// });
