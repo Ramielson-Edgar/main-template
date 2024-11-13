@@ -11992,7 +11992,7 @@ header.refer-expand::before {
 }
 
 .wrapper-cta .title,
-.accounnt-info table th,
+.account-info table th,
 .allpips-accounts .title,
 .allpips-accounts .section-header .section-header__title,
 .allpips-accounts .list-features .list-features__title,
@@ -12003,7 +12003,7 @@ header.refer-expand::before {
 }
 
 .allpips-accounts .text,
-.accounnt-info table td,
+.account-info table td,
 .allpips-accounts .section-header .section-header__text,
 .allpips-accounts .list-features .list-features__text {
     color: #6b7c94;
@@ -12110,13 +12110,14 @@ header.refer-expand::before {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
 
-    background: url("../themes/custom/adrofx_theme/img/fiat-account/beneftist-background.png"),
-        radial-gradient(50% 62.79% at 50% 50%,
-            rgba(255, 255, 255, 0.3) 0%,
-            rgba(255, 255, 255, 0) 100%),
-        linear-gradient(0deg, #f0b591 17.5%, #f9d3bc 99.99%);
+    border-radius: 36px;
+    background: radial-gradient(90.6% 86.2% at 12.86% 15.57%, rgba(67, 171, 255, 0.60) 0%, rgba(37, 59, 88, 0.00) 100%),
+    radial-gradient(116.35% 105.38% at 104.29% 93.83%, rgba(67, 171, 255, 0.70) 0%, rgba(37, 59, 88, 0.00) 100%),
+    url('../themes/custom/adrofx_theme/img/fiat-account/fiat-advantages-grid.png') #004E90;
+    background-blend-mode: screen, screen, normal;
+
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .img-container.fiat-advantages .company-stories {
@@ -12126,19 +12127,22 @@ header.refer-expand::before {
 }
 
 .img-container.fiat-advantages .title {
+    font-family: "Roboto-medium",sans-serif;
+    font-weight: 500;
+
     font-size: 18px;
-    color: #6c6668;
+    color: var(--white);
 }
 
 .img-container.fiat-advantages .text {
-    color: rgba(108, 102, 104, 0.3);
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.splide.fiat {
+.splide.fiat-advantages {
     margin-top: 2.5rem;
 }
 
-.splide.fiat .splide__pagination {
+.splide.fiat-advantages .splide__pagination {
     top: 0;
     bottom: unset;
     left: 0;
@@ -12152,12 +12156,12 @@ header.refer-expand::before {
     padding: 0;
 }
 
-.splide.fiat .splide__pagination li {
+.splide.fiat-advantages .splide__pagination li {
     display: inherit;
     flex-basis: calc(100% / 4 - 8px);
 }
 
-.splide.fiat .splide__pagination .splide__pagination__page {
+.splide.fiat-advantages .splide__pagination .splide__pagination__page {
     overflow: hidden;
     position: relative;
 
@@ -12169,12 +12173,12 @@ header.refer-expand::before {
     transition: transform 1s var(--ease-in-out-smooth);
 }
 
-.splide.fiat .splide__pagination .splide__pagination__page.is-active {
+.splide.fiat-advantages .splide__pagination .splide__pagination__page.is-active {
     width: 100%;
     transform: scale(1);
 }
 
-.splide.fiat .splide__pagination .splide__pagination__page::before {
+.splide.fiat-advantages .splide__pagination .splide__pagination__page::before {
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -12192,7 +12196,7 @@ header.refer-expand::before {
     transform: scaleX(0);
 }
 
-.splide.fiat .splide__pagination .splide__pagination__page.is-active::before {
+.splide.fiat-advantages .splide__pagination .splide__pagination__page.is-active::before {
     transform: scaleX(var(--progress-bullet));
 }
 
@@ -12277,18 +12281,16 @@ header.refer-expand::before {
     background: transparent;
 }
 
+
 .wrapper-cta,
-.accounnt-info {
+.account-info {
     padding: 3.125rem;
 }
 
-.fiat-accounts .accounnt-info {
+.fiat-accounts .account-info {
     padding: 20px;
 }
 
-.accounnt-info table tr:last-child td {
-    padding-bottom: 0;
-}
 
 .fiat-accounts table tbody th,
 .fiat-accounts table tbody td {
@@ -12296,11 +12298,11 @@ header.refer-expand::before {
     line-height: 1.2;
 }
 
-.fiat-accounts table thead th {
+.fiat-accounts thead th {
     padding: 1.125rem 0;
 }
 
-.fiat-accounts table thead th {
+.splide.fiat-accounts .account-info thead th {
     font-family: "Roboto-medium", sans-serif;
     font-weight: 500;
     font-size: 30px;
@@ -12308,28 +12310,29 @@ header.refer-expand::before {
 }
 
 .wrapper-cta,
-.accounnt-info,
+.account-info,
 .sticky-container .videos .list .list__item {
     border-radius: 1.25rem;
 }
 
-.accounnt-info table thead tr,
-.accounnt-info table tr:not(:last-child) {
+
+.splide.fiat-accounts .account-info thead th,
+.account-info table tr:not(:last-child) {
     border-bottom: 1px solid #eaeaea;
 }
 
-.accounnt-info table td {
+.account-info table td {
     font-size: clamp(0.6875rem, 0.4918rem + 0.9783vw, 1.25rem);
     padding: 1.125rem 0;
     line-height: 20px;
 }
 
-.account-info table thead tr th,
-.accounnt-info table th {
+.account-infotable tr th,
+.account-info table th {
     line-height: 1.3;
 }
 
-.accounnt-info table th {
+.account-info table th {
     font-size: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
     text-align: right;
 }
@@ -12436,7 +12439,6 @@ header.refer-expand::before {
 
 .fiat-security .card-inner {
     max-width: 1160px;
-    height: 100vh;
 
     margin-left: auto;
     margin-right: auto;
@@ -12480,9 +12482,8 @@ header.refer-expand::before {
 .fiat-security .card-benefits .video-inner {
     width: 1000px;
     max-width: 50vw;
-
-    height: 100vh;
-    margin-left: 60px;
+ 
+    margin-left: 9%;
 
     padding-top: 20px;
     padding-bottom: 20px;
@@ -12519,77 +12520,46 @@ header.refer-expand::before {
 
 
 
-
-
-/* .header-container.security .list .list__item {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-
-    opacity: 0;
-    transform: translateY(150%);
-
-    will-change: transform;
-    transition-duration: 1000ms;
-    transition-property: opacity, transform;
-    transition-timing-function: var(--ease-in-out-smooth);
-    transition-delay: 0;
-}
-
-
-
-.header-container.security .list .list__item.active {
-    opacity: 1;
-    transform: translateY(0);
-
-    will-change: transform;
-    transition-duration: .2s, 1s;
-    transition-property: opacity, transform;
-    transition-timing-function: var(--ease-in-out-smooth);
-    transition-delay: 0s, .1s;
-} */
-
-
-
 .fiat.account-strategies.section-padding {
-    padding-top: 100px;
-    padding-bottom: 70px;
+    padding-top: 0;
+    padding-bottom: 90px;
 }
 
 .fiat.account-strategies {
     background: url("../themes/custom/adrofx_theme/img/fiat-account/fiat-copy-trading-grid-background.png") #fafafa;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: contain;
 
     z-index: 10;
 }
 
 .fiat.account-strategies .img-container {
     position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: end;
 
-    width: 600px;
-    max-width: 100%;
-    min-height: 600px;
+    width: 100%;
+    height: 100%;
 
     perspective: 93rem;
 }
 
 .card-parallax {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    right: 0;
+
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    width: 600px;
+    width: 70%;
     max-width: 100%;
-    height: 600px;
+    height: 100%;
     max-height: 100%;
 
     transform-style: preserve-3d;
@@ -12599,22 +12569,24 @@ header.refer-expand::before {
     overflow: hidden;
     position: absolute;
 
+    -webkit-font-smoothing: antialiased;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    width: 22.688rem;
-    height: 12.25rem;
+    width: 20.25rem;
+    height: 10.313rem;
 
-    border-radius: 1.804rem;
+    border-radius: 1.129rem;
     will-change: transform;
-    transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
     transform-style: preserve-3d;
 }
 
 .card-parallax__wrap.top.active {
-    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(12deg) rotateY(15deg) rotateZ(-15deg) skew(0deg, 0deg);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(12deg) rotateY(0) rotateZ(0) skew(0deg, 0deg);
 }
 
 .card-parallax__wrap.left.active {
@@ -12626,35 +12598,32 @@ header.refer-expand::before {
 }
 
 .card-parallax__wrap.top {
-    top: 0;
+    top: 24%;
     left: 0;
 
-    transform: translate3d(0, -500px, 0) scale3d(1, 1, 1) rotateX(12deg) rotateY(15deg) rotateZ(-15deg) skew(0deg, 0deg);
+    transform: translate3d(0, -500px, 0) scale3d(1, 1, 1) rotateX(12.84deg) rotateY(0) rotateZ(0) skew(0deg, 0deg);
     transform-style: preserve-3d;
     z-index: 2;
 }
 
 .card-parallax__wrap.left {
-    top: 25%;
+    top: calc(50% - 61px);
     right: 0;
     transform: translate(-50%, -50%);
 
-    transform: translate3d(0, -700px, 100px) scale3d(1, 1, 1) rotateX(15deg) rotateY(17deg) rotateZ(-7deg) skew(0deg, 0deg);
+    transform: translate3d(0, -700px, 100px) scale3d(1, 1, 1) rotateX(20deg) rotateY(15deg) rotateZ(-7deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-    box-shadow: -200px 154px 101px 0px rgba(57, 81, 75, 0.02),
-        -112px 86px 85px 0px rgba(57, 81, 75, 0.05),
-        -50px 38px 63px 0px rgba(57, 81, 75, 0.1),
-        -12px 10px 35px 0px rgba(57, 81, 75, 0.13);
+    box-shadow: -211.374px 162.595px 74.523px 0px rgba(0, 52, 95, 0.00), -135.496px 104.332px 68.425px 0px rgba(0, 52, 95, 0.02), -75.878px 58.263px 57.586px 0px rgba(0, 52, 95, 0.08), -33.874px 25.744px 42.681px 0px rgba(0, 52, 95, 0.13), -8.13px 6.775px 23.712px 0px rgba(0, 52, 95, 0.15);
     z-index: 3;
 }
 
 .card-parallax__wrap.bottom {
-    top: 50%;
-    left: 5%;
-    transform: translateX(-50%);
+    bottom: 70px;
+    left: 0;
+
 
     transform-style: preserve-3d;
-    transform: translate3d(0, -1000px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(30deg) skew(0deg, 0deg);
+    transform: translate3d(0, -1000px, 0) scale3d(1, 1, 1) rotateX(-27deg) rotateY(0) rotateZ(0) skew(0deg, 0deg);
     z-index: 1;
 }
 
@@ -12672,23 +12641,23 @@ header.refer-expand::before {
     height: 100%;
 
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: center center;
+    background-size: 100% auto;
     transform-style: preserve-3d;
 }
 
 .card-parallax__img.left {
-    background-image: url("../themes/custom/adrofx_theme/img/fiat-account/card-01.svg");
+    background-image: url("../themes/custom/adrofx_theme/img/fiat-account/card-01.png");
     transform-style: preserve-3d;
 }
 
 .card-parallax__img.top {
-    background-image: url("../themes/custom/adrofx_theme/img/fiat-account/card-02.svg");
+    background-image: url("../themes/custom/adrofx_theme/img/fiat-account/card-02.png");
     transform-style: preserve-3d;
 }
 
 .card-parallax__img.bottom {
-    background-image: url("../themes/custom/adrofx_theme/img/fiat-account/card-03.svg");
+    background-image: url("../themes/custom/adrofx_theme/img/fiat-account/card-03.png");
     transform-style: preserve-3d;
 }
 
@@ -12741,6 +12710,7 @@ header.refer-expand::before {
 }
 
 
+ 
 
 @media screen and (min-width: 1441px) {
     .img-container.promo-100 .marquee.top {
@@ -12813,6 +12783,7 @@ header.refer-expand::before {
     }
 
 
+    /*=========== fiat account ================= */
 
     .fiat-security .container.xxl {
         max-width: 100%;
@@ -12834,8 +12805,8 @@ header.refer-expand::before {
         margin-bottom: 0;
     }
 
-    .accounnt-info table th,
-    .accounnt-info table td {
+    .account-info table th,
+    .account-info table td {
         font-size: 1rem;
     }
 
@@ -12847,7 +12818,7 @@ header.refer-expand::before {
 
     .fiat.account-strategies .section-header .section-header__title,
     .fiat-security .header .title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
 
@@ -12855,6 +12826,29 @@ header.refer-expand::before {
 
     .splide.fiat-accounts .splide__pagination {
         bottom: -50px;
+    }
+
+    .fiat.account-strategies.section-padding {
+        padding-bottom: 70px;
+    }
+
+    .card-parallax__wrap.left {
+        top: 40%;
+    }
+
+
+
+    .card-parallax__wrap {
+        width: 262px;
+        height: 134px;
+    }
+
+    .fiat-security .card-inner {
+        max-width: 960px;
+    }
+ 
+    .cards.fiat-benefits {
+        gap: 0;
     }
 
 
@@ -13755,7 +13749,7 @@ header.refer-expand::before {
         margin-bottom: 5rem;
     }
 
-
+    .fiat.account-banner,
     .sticky-container .videos .list .list__item:last-child {
         height: auto;
     }
@@ -13795,14 +13789,14 @@ header.refer-expand::before {
         bottom: unset;
     }
 
-    .splide.fiat .splide__slide .bodymovin {
+    .splide.fiat-advantages .splide__slide .bodymovin {
         position: relative;
         bottom: -50px;
         height: 100%;
     }
 
     .splide.fiat-accounts .splide__pagination {
-        bottom: 0;
+        bottom: -50px;
     }
 
     .header-container.security {
@@ -13817,6 +13811,61 @@ header.refer-expand::before {
         transform: unset;
         transition: unset;
     }
+
+    .fiat.account-strategies.section-padding {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .fiat-security .container.xxl {
+        max-width: 720px;
+    }
+
+    .fiat-accounts table tbody td {
+        font-size: 14px;
+    }
+
+    .fiat.account-strategies .img-container {
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 400px;
+    }
+
+
+    .fiat.account-strategies .card-parallax {
+        width: 100%;
+        height: 400px;
+    }
+
+
+    .card-parallax__wrap.bottom.active {
+        transform: translate3d(20px, 0, 0) scale3d(1, 1, 1) rotateX(10deg) rotateY(20deg) rotateZ(-15deg) skew(0deg, 0deg);
+    }
+
+    .card-parallax__wrap.left.active {
+        transform: translate3d(20px, 0, 0) scale3d(1, 1, 1) rotateX(10deg) rotateY(20deg) rotateZ(-15deg) skew(0deg, 0deg);
+    }
+
+
+    .card-parallax__wrap.top.active {
+        transform: translate3d(50px, 0, 0) scale3d(1, 1, 1) rotateX(10deg) rotateY(20deg) rotateZ(-15deg) skew(0deg, 0deg);
+    }
+
+    .card-parallax__wrap.top {
+        top: 0;
+        transition-delay: 200ms;
+    }
+
+    .card-parallax__wrap.left {
+        top: 80px;
+        transition-delay: 50ms;
+    }
+
+    .card-parallax__wrap.bottom {
+        bottom: 100px;
+        transition-delay: 0ms;
+    }
+
 
     /*================fiat acoount ===========*/
 
@@ -14968,6 +15017,8 @@ header.refer-expand::before {
     .fiat-security .card-benefits {
         flex-basis: 100%;
     }
+
+  
 
     /*=============== fiat accounts ==========================*/
 
@@ -16450,22 +16501,22 @@ header.refer-expand::before {
         line-height: 1.5;
     }
 
-    .splide.fiat {
+    .splide.fiat-advantages {
         border-radius: 18.624px;
         margin-top: 0;
     }
 
-    .splide.fiat .splide__pagination li {
+    .splide.fiat-advantages .splide__pagination li {
         flex-basis: calc(100% / 4 - 2px);
     }
 
-    .splide.fiat .splide__list .splide__slide img {
+    .splide.fiat-advantages .splide__list .splide__slide img {
         top: 20px;
     }
 
 
-    .splide.fiat .splide__pagination,
-    .splide.fiat .splide__pagination .splide__pagination__page {
+    .splide.fiat-advantages .splide__pagination,
+    .splide.fiat-advantages .splide__pagination .splide__pagination__page {
         height: 2px;
     }
 
@@ -16515,9 +16566,18 @@ header.refer-expand::before {
     }
 
     .fiat.account-strategies .card-parallax .card-parallax__wrap {
-        width: 240px;
-        height: 130px;
+        width: 260px;
+        height: 125px;
     }
+
+
+    .fiat.account-strategies {
+        background: url('../themes/custom/adrofx_theme/img/fiat-account/fiat-copy-trading-grid-background-xs.png') #fafafa;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+    }
+
 
     .fiat.account-banner.margin-inline,
     .fiat-about.margin-inline {
@@ -16529,16 +16589,16 @@ header.refer-expand::before {
         margin-inline: 0;
     }
 
-    .fiat-about .accounnt-info {
+    .fiat-about .account-info {
         padding: 20px;
     }
 
-    .fiat-about .accounnt-info td {
-        padding: 3px 0;
+    .fiat-about .account-info td {
+        padding: 8px 0;
     }
 
-    .fiat-about .accounnt-info td,
-    .fiat-about .accounnt-info th {
+    .fiat-about .account-info td,
+    .fiat-about .account-info th {
         font-size: 12px;
     }
 
@@ -16559,7 +16619,7 @@ header.refer-expand::before {
         padding: 24px 12px;
     }
 
-    .fiat-about .accounnt-info,
+    .fiat-about .account-info,
     .nav.account-compare {
         margin-bottom: 30px;
     }
@@ -16582,20 +16642,38 @@ header.refer-expand::before {
         height: auto;
     }
 
+
+    .fiat.account-strategies .card-parallax,
     .fiat.account-strategies .img-container {
-        min-height: 50vh;
-        height: fit-content;
+        height: 360px;
     }
 
+ 
     .card-parallax__wrap.top {
         transform: translate3d(0, -600px, 0) scale3d(1, 1, 1) rotateX(12deg) rotateY(15deg) rotateZ(-15deg) skew(0deg, 0deg);
     }
 
+
+    .card-parallax__wrap.top,
+    .card-parallax__wrap.left,
+    .card-parallax__wrap.bottom {
+        right: unset;
+        left: 0;
+    }
+
  
+    .splide.fiat-accounts .splide__pagination{
+        bottom: -20px;
+     }
 
     .sticky-container .sticky {
         position: relative;
     }
+
+    .card-parallax__wrap.bottom {
+        bottom: 70px;
+    }
+    
 
     /*================fiat acoount ===========*/
 
@@ -16614,6 +16692,7 @@ header.refer-expand::before {
     }
 
     /* NEW ADD UPDATED */
+    .fiat.account-strategies.section-padding,
     .allpips-accounts .section-padding,
     .allpips-platform .section-padding {
         padding: 50px 0;

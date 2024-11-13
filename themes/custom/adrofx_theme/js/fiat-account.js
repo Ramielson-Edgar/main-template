@@ -4,11 +4,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const fiatSection = document.querySelector(".fiat.account-banner");
     const fiatBanner = document.querySelector(".fiat.account-banner .img-container");
 
-    const benefitsSlider = document.querySelector(".splide.fiat");
+    const benefitsSlider = document.querySelector(".splide.fiat-advantages");
     const buttonTabs = document.querySelectorAll(".nav.account-compare .nav-item .nav-link");
-    const tabIndicator = document.querySelector(
-        ".nav.account-compare .indicator"
-    );
+    const tabIndicator = document.querySelector(".nav.account-compare .indicator");
     const fiatSecurity = document.querySelector(".fiat-security");
 
     const animations = document.querySelectorAll(".animation");
@@ -32,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         onLoadRunScrollAnimation();
+        animationOnScroll(animations)
     }
 
     let fiatBenefitsSplider = new Splide("#fiat-splide", {
@@ -104,7 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     fiatBenefitsSplider.on("autoplay:playing", function (rate) {
         const progress = document.querySelector(
-            ".splide.fiat .splide__pagination .splide__pagination__page.is-active"
+            ".splide.fiat-advantages .splide__pagination .splide__pagination__page.is-active"
         );
         progress.style.setProperty("--progress-bullet", rate);
     });
@@ -121,23 +120,25 @@ window.addEventListener("DOMContentLoaded", () => {
         breakpoints: {
             1198: {
                 perPage: 2,
-                fixedHeight: "32rem",
+                fixedHeight: "36rem",
                 pagination: true
             },
-            700: {
+            1024: {
+                perPage: 2,
+                pagination: true,
+            },
+            575:{
                 perPage: 1,
                 pagination: true
             },
+
             320: {
                 perPage: 1,
-                fixedHeight: "24rem",
+                fixedHeight: "36rem",
                 pagination: true
             }
         }
     }).mount();
-
-
-
 
 
     function onHandleMoveIndicator() {
@@ -191,14 +192,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const itemVideo = document.querySelectorAll(
-        ".video-container.fiat-security .list .list__item"
-    );
-    const titleItems = document.querySelectorAll(
-        ".header-container.security .list .list__item"
-    );
-
-
     function onHandleRotateCards(card, event) {
         const value = event.clientX;
         const percentages = window.innerWidth / 2;
@@ -207,7 +200,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (card.classList.contains("left")) {
             card.classList.add("active");
             card.style.transform = `translate3d(0px, 0, 100px) scale3d(1, 1, 1) rotateX(${max / 70
-                }deg) rotateY(17deg) rotateZ(-7deg) skew(0deg, 0deg)`;
+                }deg) rotateY(15deg) rotateZ(-7deg) skew(0deg, 0deg)`;
         }
 
         if (card.classList.contains("top")) {
@@ -219,51 +212,6 @@ window.addEventListener("DOMContentLoaded", () => {
             card.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(${max / 100
                 }deg) rotateY(${max / 60}deg) rotateZ(30deg) skew(0deg, 0deg)`;
         }
-    }
-
-    function setTextAnimation(videoItem, videoIndex) {
-        titleItems.forEach((titleItem, titlIndex) => {
-            if (videoItem.classList.contains('active') && videoIndex === titlIndex && elementInView(videoItem)) {
-                addActiveClass(titleItem);
-            } else {
-                removActiveClass(titleItem);
-            }
-        });
-    }
-
-    function setActiveLottieContainer() {
-        itemVideo.forEach((videoItem, videoIndex) => {
-            const itemHeight = videoItem.getBoundingClientRect().height;
-            const animationContainer = videoItem.querySelector('.animation')
-            const animation = videoItem.querySelector('.bodymovin')
-
-            if (elementInView(videoItem, itemHeight) && animation.dataset.loaded === "false") {
-
-                let name = animation.dataset.name;
-                let path = `./themes/custom/adrofx_theme/data/${name}.json`;
-
-                let params = {
-                    container: animation,
-                    path: path,
-                    renderer: "svg",
-                    loop: true,
-                    autoplay: true
-                };
-
-                animation.dataset.loaded = "true";
-                const instance = lottie.loadAnimation(params);
-
-
-                addActiveClass(animation);
-                addActiveClass(videoItem);
-
-                setTextAnimation(videoItem, videoIndex);
-                animationOnScroll(animationContainer);
-            } else {
-                removActiveClass(videoItem);
-                removActiveClass(animation)
-            }
-        });
     }
 
     function onScrolRunLottieSecurity() {
@@ -311,7 +259,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
 
 
-            if (elementInView(copyTrade, 100) && window.innerWidth > 768) {
+            if (elementInView(copyTrade, 100) && window.innerWidth > 991) {
                 cards.forEach(card => {
                     if (elementInView(card)) {
                         addActiveClass(card);
@@ -366,214 +314,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// function onHandleActiveBodymovin() {
-//     itemVideo.forEach((videoItem, videoIndex) => {
-//            if (elementInView(videoItem, 570)) {
-
-//                addActiveClass(videoItem);
-//                slideText(videoItem, videoIndex);
-
-//                let bodymovin = videoItem.querySelector('.bodymovin');
-
-//                if(bodymovin && (bodymovin.dataset.loaded || bodymovin.dataset.loaded === 'false')) {
-//                    let name = bodymovin.dataset.name;
-//                    let path =`./themes/custom/adrofx_theme/data/${name}.json`
-
-//                    let params = {
-//                        container: bodymovin,
-//                        autoplay:true,
-//                        loop:true,
-//                        render: 'svg',
-//                        path: path,
-//                    }
-
-//                    bodymovin.dataset.loaded = 'true';
-//                    lottie.loadAnimation(params);
-//                }
-
-//            } else {
-//                removActiveClass(videoItem);
-//                // title.classList.remove('animation','scrolled');
-//                // text.classList.remove('animation','scrolled');
-
-//            }
-//        });
-//    }
-
-// ============================================
-
-// function slideText(videoItem, videoIndex) {
-//     window.clearTimeout(id);
-
-//     titleItems.forEach((titleItem, titlIndex) => {
-//         if (videoIndex === titlIndex && elementInView(videoItem)) {
-//             const title = titleItem.querySelector(".section-header__title");
-//             const text = titleItem.querySelector(".section-header__text");
-
-//             addActiveClass(titleItem);
-
-//             title.addEventListener(
-//                 "transitionrun",
-//                 () => {
-//                     isAnimationRun = true;
-//                 },
-//                 { once: true }
-//             );
-
-//             id = setTimeout(function () {
-//                 addActiveClass(title);
-//                 addActiveClass(text);
-//             }, 50);
-
-//             title.addEventListener(
-//                 "transitionend",
-//                 () => {
-//                     isAnimationRun = false;
-//                 },
-//                 { once: true }
-//             );
-//         } else {
-//             removActiveClass(titleItem);
-//             title.classList.remove("animation", "scrolled");
-//             text.classList.remove("animation", "scrolled");
-//         }
-//     });
-// }
-
-// function setBodyMovin(bodymovins) {
-//     return bodymovins.forEach((bodymovin, index) => {
-//         if (
-//             (elementInView(bodymovin) && bodymovin.dataset.loaded) ||
-//             bodymovin.dataset.loaded === "false"
-//         ) {
-//             let name = bodymovin.dataset.name;
-//             let path = `./themes/custom/adrofx_theme/data/${name}.json`;
-
-//             let params = {
-//                 container: bodymovin,
-//                 path: path,
-//                 renderer: "svg",
-//                 loop: true,
-//                 autoplay: true
-//             };
-
-//             bodymovin.dataset.loaded = "true";
-//             lottie.loadAnimation(params);
-//         }
-//     });
-// }
-
-// function onHandleActiveBodymovin() {
-//     itemVideo.forEach((videoItem, videoIndex) => {
-//         if (elementInView(videoItem, 570) && isAnimationRun === true) {
-//             addActiveClass(videoItem);
-//             setBodyMovin(bodymovins);
-//             slideText(videoItem, videoIndex);
-//         } else {
-//             removActiveClass(videoItem);
-//             title.classList.remove("animation", "scrolled");
-//             text.classList.remove("animation", "scrolled");
-//         }
-//     });
-// }
-
-// function initAniamtion() {
-//     window.addEventListener("scroll", (even) => {
-//         let scroll = window.scrollY;
-//         const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
-
-//         card.forEach((el) => {
-//             setAnimation(el, 500, scrollPerncetage);
-//         });
-
-//         if (elementInView(fiatSection)) {
-//             animationOnScroll(fiatBanner);
-//         }
-
-//         if (elementInView(fiatSecurity, 800) && !isAnimationRun) {
-//             onHandleActiveBodymovin();
-//         } else {
-//             itemVideo.forEach((el) => removActiveClass(el));
-//             title.classList.remove("animation", "scrolled");
-//             text.classList.remove("animation", "scrolled");
-//         }
-
-//         if (
-//             elementInView(benefitsSlider, -240) &&
-//             benefitsSlider.dataset.mounted === "false"
-//         ) {
-//             benefitsSlider.dataset.mounted = "true";
-//             lazyLottie();
-//             splide.mount();
-//         } else {
-//             return;
-//         }
-
-//         animationOnScroll(animations);
-//     });
-// }
-
-// function setAnimation(el, offset, scroll = 0) {
-//     let gap = offset;
-//     let elementOffsetTop = copyTrade.getBoundingClientRect().top;
-//     if (
-//         elementOffsetTop <=
-//         (window.innerHeight || document.documentElement.clientHeight) -
-//             (scroll + gap)
-//     ) {
-//         addActiveClass(el);
-//     }
-
-//     if(window.innerWidth < 768) {
-//         copyTrade.addEventListener("mousemove", (event) => {
-//             const delay = el.dataset.delay;
-
-//             const value = event.clientX;
-//             const percentages = window.innerWidth / 2;
-//             const max = percentages - value;
-
-//             if (el.classList.contains("left")) {
-//                 el.classList.add("active");
-//                 el.style.transform = `translate3d(0px, 0, 100px) scale3d(1, 1, 1) rotateX(${
-//                     max / 70
-//                 }deg) rotateY(17deg) rotateZ(-7deg) skew(0deg, 0deg)`;
-//             }
-
-//             if (el.classList.contains("top")) {
-//                 el.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(15deg) rotateY(${
-//                     max / 50
-//                 }deg) rotateZ(-15deg) skew(0deg, 0deg)`;
-//             }
-
-//             if (el.classList.contains("bottom")) {
-//                 el.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(${
-//                     max / 100
-//                 }deg) rotateY(${max / 60}deg) rotateZ(30deg) skew(0deg, 0deg)`;
-//             }
-//         });
-//     } else {
-
-//        return;
-//     }
-
-// }
-
-// bodymovins.forEach((bodymovin, index) => {
-//     if (videoItem.classList.contains('active') && elementInView(bodymovin) &&bodymovin.dataset.loaded === "false") {
-//         addActiveClass(bodymovin);
-
-//         let name = bodymovin.dataset.name;
-//         let path = `./themes/custom/adrofx_theme/data/${name}.json`;
-
-//         let params = {
-//             container: bodymovin,
-//             path: path,
-//             renderer: "svg",
-//             loop: true,
-//             autoplay: true
-//         };
-
-//         bodymovin.dataset.loaded = "true";
-//         const instance = lottie.loadAnimation(params);
-//     }
-// });
+ 
