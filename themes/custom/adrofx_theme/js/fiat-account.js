@@ -1,13 +1,13 @@
 window.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card-parallax__wrap");
-    const copyTrade = document.querySelector(".fiat.account-strategies");
-    const fiatSection = document.querySelector(".fiat.account-banner");
-    const fiatBanner = document.querySelector(".fiat.account-banner .img-container");
+    const copyTrade = document.querySelector(".account-strategies.fiat");
+    const fiatSection = document.querySelector(".account-banner.fiat");
+    const fiatBanner = document.querySelector(".account-banner.fiat .img-container");
 
-    const benefitsSlider = document.querySelector(".splide.fiat-advantages");
+    const benefitsSlider = document.querySelector(".splide.account-advantages");
     const buttonTabs = document.querySelectorAll(".nav.account-compare .nav-item .nav-link");
     const tabIndicator = document.querySelector(".nav.account-compare .indicator");
-    const fiatSecurity = document.querySelector(".fiat-security");
+    const fiatSecurity = document.querySelector(".account-security.fiat");
 
     const animations = document.querySelectorAll(".animation");
 
@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     fiatBenefitsSplider.on("autoplay:playing", function (rate) {
         const progress = document.querySelector(
-            ".splide.fiat-advantages .splide__pagination .splide__pagination__page.is-active"
+            ".splide.account-advantages .splide__pagination .splide__pagination__page.is-active"
         );
         progress.style.setProperty("--progress-bullet", rate);
     });
@@ -215,8 +215,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function onScrolRunLottieSecurity() {
-        const cards = document.querySelectorAll('.cards.fiat-benefits .card-benefits');
-        const section = document.querySelector('.fiat-security').scrollHeight
+        const cards = document.querySelectorAll('.cards.account-benefits .card-benefits');
+        const section = document.querySelector('.account-security.fiat').scrollHeight
 
         cards.forEach(card => {
             const bodymovin = card.querySelector('.bodymovin');
