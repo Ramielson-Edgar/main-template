@@ -11935,7 +11935,13 @@ header.refer-expand::before {
     padding-top: 12rem;
 }
 
-.green-gradient,
+
+.account-hero.crypto.section-padding {
+    padding-top: 100px;
+}
+
+
+
 .account-hero.fiat {
     background: url("../themes/custom/adrofx_theme/img/fiat-account/hero-chart-fiat.svg"),
         url("../themes/custom/adrofx_theme/img/fiat-account/fiat-grid-background.png"),
@@ -11948,12 +11954,33 @@ header.refer-expand::before {
         linear-gradient(283deg, #46dfc6 -25.88%, #1b5148 106.26%);
 
     background-repeat: no-repeat, no-repeat, repeat, repeat, repeat;
-    background-size: 70.438rem 13.75rem, cover, cover, cover, cover;
-    background-position: center top 1rem, center top -50px, center, center,
-        center;
+    background-size: 70.438rem 13.75rem, contain, cover, cover, cover;
+    background-position: center top 1rem, center top, center center, center center, center center;
     background-blend-mode: normal, normal, lighten, lighten, normal;
 }
 
+
+
+.account-hero.crypto {
+    background: url("../themes/custom/adrofx_theme/img/fiat-account/hero-chart-fiat.svg"),
+        url("../themes/custom/adrofx_theme/img/fiat-account/fiat-grid-background.png"),
+        radial-gradient(100% 100% at 130% 100%,
+            #7378CD 0%,
+            rgba(47, 147, 130, 0) 100%),
+        radial-gradient(100% 100% at -30% -40%,
+            #7378CD 0%,
+            #3a3e8800 100%),
+        #3A3E88;
+
+    background-repeat: no-repeat, no-repeat, repeat, repeat, repeat;
+    background-size: 70.438rem 13.75rem, contain, cover, cover, cover;
+    background-position: center top 1rem, center top, center center, center center, center center;
+    background-blend-mode: normal, normal, lighten, lighten, normal;
+}
+
+
+
+.dark-blue-gradient,
 .green-gradient {
     background: radial-gradient(100% 100% at 130% 100%,
             #b1ffcf 0%,
@@ -11968,8 +11995,20 @@ header.refer-expand::before {
     background-blend-mode: lighten, lighten, normal;
 }
 
+
+
+.dark-blue-gradient {
+    background: radial-gradient(100% 100% at 130% 100%, #7378CD 0%, rgba(47, 147, 130, 0) 100%),
+        radial-gradient(100% 100% at -30% -40%, #7378CD 0%, #3a3e8800 100%), #3A3E88;
+}
+
+
 .account-hero .header {
     margin-top: -50px;
+}
+
+.account-hero.crypto .header {
+    margin-top: 0;
 }
 
 .account-hero .header .section-title {
@@ -11978,6 +12017,13 @@ header.refer-expand::before {
     line-height: 1.2;
     margin-bottom: var(--space);
 }
+
+.account-hero.crypto .header .section-title {
+    font-size: clamp(3.1875rem, 1.8365rem + 3.7594vw, 4.75rem);
+}
+
+
+
 
 .account-hero.fiat .icon-wallet-top {
     top: 3rem;
@@ -12089,6 +12135,63 @@ header.refer-expand::before {
     background-blend-mode: screen;
     filter: blur(50px);
     z-index: -1;
+}
+
+
+
+.img-container.crypto-benefits {
+    height: 650px;
+    max-height: 100%;
+    width: 100%;
+
+    top: -100px;
+}
+
+.img-container.crypto-benefits .icon-btc {
+    left: 0;
+    top: 60px;
+
+    width: 362px;
+    max-width: 63%;
+
+    filter:
+        drop-shadow(-77px 332px 95px rgba(38, 39, 75, 0.00)) drop-shadow(-49px 212px 87px rgba(38, 39, 75, 0.03)) drop-shadow(-28px 119px 74px rgba(38, 39, 75, 0.10)) drop-shadow(-12px 53px 54px rgba(38, 39, 75, 0.17)) drop-shadow(-3px 13px 30px rgba(38, 39, 75, 0.20));
+    z-index: 2;
+}
+
+.img-container.crypto-benefits .icon-eth {
+    top: 24%;
+    right: 0;
+
+    width: 360px;
+    max-width: 63%;
+
+    filter:
+        drop-shadow(155px 287px 91px rgba(0, 0, 0, 0.00)) drop-shadow(99px 184px 83px rgba(0, 0, 0, 0.01)) drop-shadow(56px 103px 70px rgba(0, 0, 0, 0.05)) drop-shadow(25px 46px 52px rgba(0, 0, 0, 0.09)) drop-shadow(6px 11px 29px 0px rgba(0, 0, 0, 0.10));
+
+    z-index: 1;
+}
+
+
+.img-container.crypto-benefits .icon-crypto-top {
+    top: 20%;
+    left: -50%;
+
+    width: 43%;
+}
+
+.img-container.crypto-benefits .icon-crypto-middle {
+    bottom: calc(10% - 15px);
+    left: 0;
+
+    width: 43%;
+}
+
+.img-container.crypto-benefits .icon-crypto-bottom {
+    bottom: 0;
+    right: 0;
+
+    width: 43%;
 }
 
 .account-advantages .section-title {
@@ -12491,6 +12594,8 @@ header.refer-expand::before {
 .account-security .card-benefits .video-inner {
     width: 1000px;
     max-width: 50vw;
+    height: 100vh;
+
 
     margin-left: 9%;
 
@@ -12527,7 +12632,63 @@ header.refer-expand::before {
     margin-bottom: var(--space);
 }
 
+ 
 
+#crypto-store .background path,
+#crypto-encrypted .background path,
+#crypto-protection .background path {
+    fill: #E7E8F6;
+}
+
+
+#crypto-encrypted .icon path,
+#crypto-protection .ring-xl path,
+#crypto-protection .ring-md path,
+#crypto-protection .ring-sm path,
+#crypto-protection .ring-xs path {
+    stroke:url(#crypto-account);
+}
+
+ 
+#crypto-store .user path,
+#crypto-store .label path,
+#crypto-store .sphere path,
+#crypto-encrypted .icon path,
+#crypto-encrypted .key path,
+#crypto-protection .error path,
+#crypto-store .lock-shape path,
+#crypto-store .lock-shape path,
+#crypto-protection .shield .shield-circle path,
+#crypto-protection .shield path {
+    fill: url(#crypto-account);
+}
+ 
+ 
+
+ 
+#crypto-encrypted .card-text path {
+    fill: #190F3A;
+}
+
+
+#crypto-encrypted .dot path,
+#crypto-store .label-text path,
+#crypto-encrypted .icon-whole path,
+#crypto-encrypted .medal .elips path,
+#crypto-protection .shield-icon path,
+#crypto-encrypted .card-background path {
+    fill: var(--white);
+} 
+
+
+
+#crypto-encrypted .planet-path path {
+    stroke: var(--white);
+}
+
+
+ 
+ 
 
 .account-strategies.section-padding {
     padding-top: 0;
@@ -12822,7 +12983,8 @@ header.refer-expand::before {
 
 @media screen and (max-width: 1199.98px) {
 
-    /*================fiat acoount ===========*/
+    /*================fiat + Crypto acoount ===========*/
+ 
     .account-hero .header .section-title {
         font-size: 5rem;
     }
@@ -12884,8 +13046,38 @@ header.refer-expand::before {
         gap: 0;
     }
 
+    .list.account-benefits {
+        column-gap: 0;
+    }
 
-    /*================fiat acoount ===========*/
+    .list.account-benefits .list__item {
+        flex-basis: calc(100% / 3 );
+    }
+
+    .list.account-benefits .list__item .title {
+        font-size: 16px;
+    }
+
+
+    .account-hero.crypto .header .section-title {
+        font-size:4rem;
+    }
+
+    .img-container.crypto-benefits .icon-crypto-top {
+        top: 5%;
+        left: 50%;
+    }
+
+    .img-container.crypto-benefits {
+        height: 600px;
+        /* top: 0; */
+    }
+
+    .img-container.crypto-benefits .icon-crypto-bottom {
+        bottom: -40px;
+    }
+
+    /*================fiat + Crypto acoount ===========*/
 
     /*================allpisp webplatform ===========*/
 
@@ -16545,6 +16737,8 @@ header.refer-expand::before {
 
     .splide.account-advantages .splide__list .splide__slide img {
         top: 20px;
+        width: 320px;
+        height: fit-content;
     }
 
 
@@ -16704,6 +16898,37 @@ header.refer-expand::before {
         bottom: 70px;
     }
 
+    .img-container.crypto-benefits .icon-btc {
+        top: 0;
+    }
+
+    .img-container.crypto-benefits {
+        height: auto;
+        width: auto;
+        top: 0;
+    }
+
+    .account-hero.crypto.section-padding {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .account-hero.crypto .header .section-title {
+        font-size: clamp(3.1875rem, 1.8365rem + 3.7594vw, 4.75rem);
+    }
+
+
+    .account-hero.crypto {
+        background: url(../themes/custom/adrofx_theme/img/fiat-account/hero-chart-fiat.svg),
+        url(../themes/custom/adrofx_theme/img/fiat-account/fiat-grid-background.png), 
+        radial-gradient(100% 100% at 130% 100%, #7378CD 0%, rgba(47, 147, 130, 0) 100%),
+        radial-gradient(100% 100% at -30% -40%, #7378CD 0%, #3a3e8800 100%), #3A3E88;
+        
+        background-repeat: no-repeat, no-repeat, repeat, repeat, repeat;
+        background-size: 320px, 500px, cover, cover, cover;
+        background-position: center top 1rem, center top 4rem, center center, center center, center center;
+        background-blend-mode: normal, normal, lighten, lighten, normal;
+    }
     /*     
         .sticky-container .sticky {
             position: relative;

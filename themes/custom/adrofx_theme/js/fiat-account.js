@@ -1,13 +1,13 @@
 window.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card-parallax__wrap");
-    const copyTrade = document.querySelector(".account-strategies.fiat");
-    const fiatSection = document.querySelector(".account-banner.fiat");
-    const fiatBanner = document.querySelector(".account-banner.fiat .img-container");
+    const copyTrade = document.querySelector(".account-strategies");
+    const fiatSection = document.querySelector(".account-banner");
+    const fiatBanner = document.querySelector(".account-banner .img-container");
 
     const benefitsSlider = document.querySelector(".splide.account-advantages");
     const buttonTabs = document.querySelectorAll(".nav.account-compare .nav-item .nav-link");
     const tabIndicator = document.querySelector(".nav.account-compare .indicator");
-    const fiatSecurity = document.querySelector(".account-security.fiat");
+    const fiatSecurity = document.querySelector(".account-security");
 
     const animations = document.querySelectorAll(".animation");
 
@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let throttleTimer = false;
     let idTimer;
     let interval;
+    let isInviewPort = false;
 
 
     function onLoadRunScrollAnimation() {
@@ -44,11 +45,11 @@ window.addEventListener("DOMContentLoaded", () => {
         breakpoints: {
             1198: {
                 perPage: 1,
-                fixedHeight: "35rem"
+                fixedHeight: "20%"
             },
             320: {
                 perPage: 1,
-                fixedHeight: "330px",
+                fixedHeight: "370px",
                 drag: true
             }
         }
@@ -61,7 +62,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const delay = slide.dataset.splideInterval;
         interval = delay;
 
-        if (animation.dataset.loaded === "false") {
+
+        if (elementInView(slide) && animation.dataset.loaded === "false") {
+            // addActiveClass(slide)
+
             let name = animation.dataset.name;
             let path = `./themes/custom/adrofx_theme/data/${name}.json`;
 
@@ -75,38 +79,72 @@ window.addEventListener("DOMContentLoaded", () => {
 
             animation.dataset.loaded = "true";
             const instance = lottie.loadAnimation(params);
+            console.log('вижу елемент запускаю:', name)
+
+        } else {
+            // removActiveClass(slide);
+            console.log('не вижу елемент  не запускаю:', name);
         }
+
     }
 
+
     function lazyLottie() {
+
         fiatBenefitsSplider.on("mounted", () => {
             loadLottieAnimationForActiveSlid(fiatBenefitsSplider.index);
             fiatBenefitsSplider.go(fiatBenefitsSplider.index);
         });
 
+
         fiatBenefitsSplider.on("active", (event) => {
-            if (event.slide.classList.contains("is-active")) {
+            fiatBenefitsSplider.on("active", () => {
                 loadLottieAnimationForActiveSlid(fiatBenefitsSplider.index);
-                fiatBenefitsSplider.go(fiatBenefitsSplider.index);
-            }
+            });
+            // if (event.slide.classList.contains("is-active")) {
+            //     loadLottieAnimationForActiveSlid(fiatBenefitsSplider.index);
+            //     fiatBenefitsSplider.go(fiatBenefitsSplider.index);
+            // }
         });
 
         fiatBenefitsSplider.on("moved", (prevIndex) => {
-            if (prevIndex === 3) {
-                idTimer = setTimeout(function () {
-                    fiatBenefitsSplider.go(0);
-                    loadLottieAnimationForActiveSlid(fiatBenefitsSplider.index);
-                }, interval);
-            }
+            fiatBenefitsSplider.on("moved", (prevIndex) => {
+                if (prevIndex === 3 && fiatBenefitsSplider.index === 0) {
+                    return; // Уже вернулись на первый слайд, ничего не делаем
+                }
+            
+                if (prevIndex === 3) {
+                    idTimer = setTimeout(() => {
+                        fiatBenefitsSplider.go(0);
+                        loadLottieAnimationForActiveSlid(fiatBenefitsSplider.index);
+                    }, interval);
+                }
+            });
+
+            // if (prevIndex === 3) {
+            //     idTimer = setTimeout(function () {
+            //         fiatBenefitsSplider.go(0);
+            //         loadLottieAnimationForActiveSlid(fiatBenefitsSplider.index);
+            //     }, interval);
+            // }
         });
     }
 
-    fiatBenefitsSplider.on("autoplay:playing", function (rate) {
+
+
+
+    function updateAutoplayProgress(rate) {
         const progress = document.querySelector(
             ".splide.account-advantages .splide__pagination .splide__pagination__page.is-active"
         );
-        progress.style.setProperty("--progress-bullet", rate);
-    });
+        if (progress) {
+            progress.style.setProperty("--progress-bullet", rate);
+        }
+    }
+    
+    fiatBenefitsSplider.on("autoplay:playing", updateAutoplayProgress);
+
+
 
     let compareAccounts = new Splide("#fiat-accounts", {
         type: "center",
@@ -127,7 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 perPage: 2,
                 pagination: true,
             },
-            575:{
+            575: {
                 perPage: 1,
                 pagination: true
             },
@@ -165,10 +203,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function elementInView(item, scrollOffset = 0) {
         let elementOffsetTop = item.getBoundingClientRect().top;
+        let elementOffsetBottom = item.getBoundingClientRect().bottom
+
+
         return (
             elementOffsetTop <=
             (window.innerHeight || document.documentElement.clientHeight) -
-            scrollOffset
+            scrollOffset  
         );
     }
 
@@ -216,13 +257,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function onScrolRunLottieSecurity() {
         const cards = document.querySelectorAll('.cards.account-benefits .card-benefits');
-        const section = document.querySelector('.account-security.fiat').scrollHeight
+        const section = document.querySelector('.account-security').scrollHeight
 
         cards.forEach(card => {
             const bodymovin = card.querySelector('.bodymovin');
 
             animationOnScroll(animations);
- 
+
 
             if (elementInView(card)) {
                 addActiveClass(card);
@@ -252,66 +293,149 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
+    // function initAniamtion() {
+
+    //     window.addEventListener("scroll", () => {
+    //         let scroll = window.scrollY;
+    //         const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
+
+
+    //         if (elementInView(copyTrade, 100) && window.innerWidth > 991) {
+    //             cards.forEach(card => {
+    //                 if (elementInView(card)) {
+    //                     addActiveClass(card);
+    //                     copyTrade.addEventListener("mousemove", (event) => onHandleRotateCards(card, event));
+    //                 }
+    //             });
+    //         } else {
+    //             cards.forEach(card => {
+    //                 if (elementInView(card, 700)) {
+    //                     addActiveClass(card);
+    //                 }
+    //                 copyTrade.removeEventListener("mousemove", (event) => onHandleRotateCards(card, event));
+    //             });
+    //         }
+
+
+    //         if (elementInView(fiatSection)) {
+    //             animationOnScroll(fiatBanner);
+    //         }
+
+    //         if (elementInView(fiatSecurity)) {
+    //             onScrolRunLottieSecurity()
+    //         }
+
+
+    //         if (elementInView(benefitsSlider, -240)) {
+    //             if (benefitsSlider.dataset.mounted === "false") {
+    //                 lazyLottie(); // Загружаем анимации
+    //                 fiatBenefitsSplider.mount(); // Монтируем слайдер
+    //                 benefitsSlider.dataset.mounted = "true"; // Фиксируем состояние
+    //                 console.log("в вьюпорте");
+    //             }
+    //         } else {
+    //             if (benefitsSlider.dataset.mounted === "true") {
+    //                 // fiatBenefitsSplider.destroy(); // Отключаем слайдер
+    //                 benefitsSlider.dataset.mounted = "false"; // Сбрасываем состояние
+    //             }
+            
+    //             window.clearTimeout(idTimer); // Очищаем таймер
+    //             console.log("вне вьюпорте");
+    //         }
+
+    //     });
+
+
+
+
+    // }
+
+    // const throttle = (callback, timer) => {
+    //     if (!throttleTimer) return;
+
+    //     throttleTimer = true;
+
+    //     setTimeout(() => {
+    //         callback();
+    //         throttleTimer = false;
+    //     }, timer);
+    // };
+
+    // throttle(initAniamtion(), 250);
+
+ 
+
     function initAniamtion() {
-
-        window.addEventListener("scroll", () => {
-            let scroll = window.scrollY;
-            const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
-
-
-            if (elementInView(copyTrade, 100) && window.innerWidth > 991) {
-                cards.forEach(card => {
-                    if (elementInView(card)) {
-                        addActiveClass(card);
-                        copyTrade.addEventListener("mousemove", (event) => onHandleRotateCards(card, event));
-                    }
-                });
-            } else {
-                cards.forEach(card => {
-                    if(elementInView(card, 700)) {
-                        addActiveClass(card);
-                    }
-                    copyTrade.removeEventListener("mousemove", (event) => onHandleRotateCards(card, event));
-                });
-            }
-
-
-            if (elementInView(fiatSection)) {
-                animationOnScroll(fiatBanner);
-            }
-
-            if (elementInView(fiatSecurity)) {
-                onScrolRunLottieSecurity()
-            }
-
-            if (
-                elementInView(benefitsSlider, -240) &&
-                benefitsSlider.dataset.mounted === "false"
-            ) {
+        let scroll = window.scrollY;
+        const scrollPerncetage = window.scrollY / copyTrade.scrollHeight;
+    
+        // Обработка карточек
+        if (elementInView(copyTrade, 100) && window.innerWidth > 991) {
+            cards.forEach((card) => {
+                if (elementInView(card)) {
+                    addActiveClass(card);
+                    copyTrade.addEventListener("mousemove", (event) =>
+                        onHandleRotateCards(card, event)
+                    );
+                }
+            });
+        } else {
+            cards.forEach((card) => {
+                if (elementInView(card, 700)) {
+                    addActiveClass(card);
+                }
+                copyTrade.removeEventListener("mousemove", (event) =>
+                    onHandleRotateCards(card, event)
+                );
+            });
+        }
+    
+        // Обработка fiatSection
+        if (elementInView(fiatSection)) {
+            animationOnScroll(fiatBanner);
+        }
+    
+        // Обработка безопасности
+        if (elementInView(fiatSecurity)) {
+            onScrolRunLottieSecurity();
+        }
+ 
+        // Обработка benefitsSlider
+        if (elementInView(benefitsSlider, -300)) {
+            if (benefitsSlider.dataset.mounted === "false") {
                 lazyLottie();
                 fiatBenefitsSplider.mount();
                 benefitsSlider.dataset.mounted = "true";
+                console.log("в вьюпорте");
             }
-        });
+        } else {
+            if (benefitsSlider.dataset.mounted === "true") {
+                fiatBenefitsSplider.destroy(); // Отключаем слайдер
+                benefitsSlider.dataset.mounted = "false"
+            }
+ 
+            console.log("вне вьюпорте");
+        }
     }
-
+    
+    // Троттлинг для события scroll
     const throttle = (callback, timer) => {
-        if (!throttleTimer) return;
-
-        throttleTimer = true;
-
-        setTimeout(() => {
-            callback();
-            throttleTimer = false;
-        }, timer);
+  
+        return () => {
+            if (throttleTimer) return; // Если таймер активен, выходим
+    
+            throttleTimer = true;
+            setTimeout(() => {
+                callback();
+                throttleTimer = false;
+            }, timer);
+        };
     };
-
-    window.addEventListener("resize", () => {
-        fiatBenefitsSplider.refresh();
-    });
-
-    throttle(initAniamtion(), 250);
+    
+    // Привязываем обработчик scroll с троттлингом
+    window.addEventListener("scroll", throttle(initAniamtion, 250));
+    window.addEventListener("resize", () => {fiatBenefitsSplider.refresh();});
 
 });
 
- 
