@@ -124,6 +124,7 @@
     --ease-out-slow: cubic-bezier(0.33, 1, 0.68, 1);
     --ease-in: cubic-bezier(0.12, 0, 0.39, 0);
     --ease-in-out: cubic-bezier(0.86, 0, 0.07, 1);
+    --ease-in-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
 
     --base-line-height: 24px;

@@ -475,6 +475,52 @@ a:hover {
 }
 
 
+.animation.transform-100 {
+    display: inline-block;
+    will-change: transform;
+    transform: translateY(calc(100% + var(--space, 0)));
+    transition-property: transform;
+    transition-timing-function: var(--ease-in-out-smooth);
+}
+
+
+.animation.transform-opacity {
+    display: inline-block;
+    will-change: transform;
+    transform: translateY(calc(100% + var(--space, 0)));
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-timing-function: var(--ease-in-out-smooth);
+}
+
+
+.animation.transform-opacity-scale {
+    will-change: transform;
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+    transition-property: transform, opacity, scale;
+    transition-timing-function: var(--ease-in-out-smooth);
+}
+
+.animation.scrolled {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+
+@media (prefers-reduced-motion) {
+    .animation {
+        transform: translate(0) scale(1);
+        opacity: 1;
+    }
+
+    .animation {
+        transition-property: none !important;
+        transition-timing-function: unset !important;
+    }
+}
+
+
 /*FlOW */
 .split {
     display: flex;
@@ -7597,7 +7643,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 
 .trophy__company {
-    font-family: "Roboto-regular";
+    font-family: "Roboto-Regular";
     font-size: var(--font-size-14);
     color: var(--grey500);
     font-weight: 300;
@@ -7646,6 +7692,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 }
 
+
 @keyframes smooth-fly {
     0% {
         -webkit-transform: translateY(0);
@@ -7664,6 +7711,9 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 }
 
+.smooth-fly {
+    animation: smooth-fly 6s ease-in-out infinite;
+}
 
 .awards-step-phone-left {
     animation: smooth-fly 6s ease-in-out -3s infinite;
@@ -8257,197 +8307,386 @@ body {
 
 
 /*============= roulette modal============= */
+.new-year {
+    background: linear-gradient(288deg, #CDE8FF -2.34%, #F6FBFF 98.86%);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.squada-one-regular {
+    font-family: "Squada One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.oswald-regular {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 .page-node-1029 {
     padding: 0;
 }
 
-.new-year {
-    overflow: hidden;
-}
-
+.new-year,
 .modal-open .modal.roulette {
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-.modal.roulette,
-.modal.roulette.dark {
+.modal.roulette {
     position: fixed;
     top: unset;
     left: 50%;
     bottom: 50%;
     transform: translate(-50%, 50%);
-    
+
     height: auto;
     padding: 0;
 }
 
-.modal.roulette .modal-content {
-    text-align: center;
-    border-radius: 60px;
-    background: url('/themes/custom/adrofx_theme/images/roulette-pop-up-background.png'), var(--white);
-    background-repeat: no-repeat;
-    background-position: tpp center;
-    background-size: 540px 341px;
-    padding: 30px;
+
+
+.modal.roulette.bonus-gift .modal-header {
+    background: linear-gradient(180deg, #9EDAD0 0%, #DDFFF9 100%);
 }
+
+.modal.roulette.bonus-gift .modal-header .header {
+    padding: 50px 50px 0 50px;
+}
+
 
 .modal.roulette .modal-header {
     position: relative;
-    flex-direction: column;
     align-items: center;
     padding: 0;
     border-bottom: unset;
 }
 
-.modal.roulette .modal-header .close {
-    float: unset;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    text-shadow: unset;
-    color: var(--white);
-    font-weight: 400;
-
-    border-radius: 50%;
-    background: rgba(255, 132, 132, 0.47);
-    margin: 0;
-    margin-left: auto;
-    z-index: 10;
-}
-
-
-.modal.roulette .modal-body .modal-title,
-.modal.roulette .modal-body .modal-title+.modal-text,
-.modal.roulette .modal-header .modal-title {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-}
 
 .modal.roulette .modal-header .modal-title {
     font-size: clamp(1.875rem, 1.0441rem + 2.3121vw, 3.125rem);
 }
 
 
+.modal.roulette.bonus-gift .model-header .modal-title {
+    font-size: clamp(1.5rem, 0.203rem + 3.609vw, 3rem);
+}
+
+
+
+.modal.roulette.bonus-gift .model-header .modal-title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 600;
+}
+
+
 .modal.roulette .modal-body .modal-title {
-    font-size: clamp(1.5rem, 0.8353rem + 1.8497vw, 2.5rem);
     color: #1F1F1F;
     line-height: 1.2;
     color: var(--blue500);
 
-    margin-bottom: 14px;
+    margin-bottom: 25px;
 }
 
-.modal.roulette .modal-body .modal-title+.modal-text {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #093D2C;
-    text-transform: capitalize;
-    padding: 13px 25px;
-    border-radius: 100px;
-    border: 2px dashed #4CD7AB;
-    background: rgba(76, 215, 171, 0.28);
-    margin-bottom: 15px;
-}
 
 .modal.roulette .modal-header .modal-text {
     color: #383838;
     font-size: 24px;
+    text-transform: capitalize;
     margin-bottom: 15px;
-    text-transform: capitalize;
 }
 
-.modal.roulette .button-green {
-    color: var(--white);
-    text-transform: capitalize;
-    border-radius: 100px;
-    border: 1px solid #4CD7AB;
-    background: #4CD7AB;
-    box-shadow: 0px 21px 50px -5px rgba(68, 206, 162, 0.50);
-}
-
-.modal.roulette .button-green:focus,
-.modal.roulette .button-green:hover {
-    transform: unset;
-}
 
 .modal.roulette .animation-container {
-    position: relative;
-    width: 100%;
-    height: 160px;
-}
-
-.modal.roulette .animation-container .img-container {
-    overflow: hidden;
-    position: absolute;
-    top: 40%;
+    bottom: -60px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
     width: 100%;
-    height: 210px;
-    z-index: 3;
+    height: 100%;
 }
 
-.modal.roulette .animation-container .is-animated {
-    transform: scale(0);
-    transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.5);
+
+
+.is-animated {
+    transform: scale(.7) rotate(0) translateY(100%);
+    opacity: 0;
+    transition-duration: .7s;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal.roulette .animation-container .is-animated.animated {
-    position: relative;
+.is-animated.animated {
     transform-origin: center;
-    transform: scale(1);
+    opacity: 1;
 }
+
+.is-animated.animated.gift-middle {
+    transform: scale(.9) rotate(-50deg) translateY(0);
+}
+
+
+.is-animated.animated.gift-front {
+    transform: scale(.9) rotate(15deg) translate(-50%, 0);
+    z-index: 4;
+}
+
+.is-animated.animated.gift-center {
+    transform: scale(.9) rotate(-15deg) translateY(0);
+}
+
+
+.is-animated.animated.gift-back {
+    transform: scale(.9) rotate(-30deg) translateY(0);
+}
+
+
+.gift-img.gift-middle {
+    bottom: 40px;
+    left: 10px;
+
+    width: 160px;
+    max-width: 100%;
+    height: 169px;
+    max-height: 100%;
+}
+
+.gift-img.gift-back,
+.gift-img.gift-middle,
+.gift-img.gift-front {
+    filter: blur(3px);
+}
+
+.gift-img.gift-front {
+    bottom: 40%;
+    left: 90%;
+    transform: translate(-50%, 100%);
+
+    width: 198px;
+    max-width: 100%;
+    height: 213px;
+    max-height: 100%;
+}
+
+.gift-img.gift-back {
+    bottom: 50%;
+    left: -10px;
+
+    width: 100px;
+    max-width: 100%;
+    height: 110px;
+    max-height: 100%;
+}
+
+
+.gift-img.gift-center {
+    width: 286px;
+    max-width: 100%;
+    height: 312px;
+    max-height: 100%;
+
+    z-index: 4;
+}
+
+.gift-img.gift-front,
+.gift-img.gift-middle,
+.gift-img.gift-back {
+    z-index: 3;
+    opacity: 1;
+}
+
 
 
 .confetti-animation {
-    position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
 
-.modal.roulette.dark .modal-dialog {
-    max-width: 544px;
+
+.modal.roulette .modal-dialog {
+    max-width: 80%;
 }
 
-.modal.roulette.dark .modal-content {
-    color: var(--white);
-    background: url('/themes/custom/adrofx_theme/images/roulette-pop-up-background.png'), #123459;
-    background-repeat: no-repeat;
-    background-clip: padding-box;
-    background-position: center -200px;
-    background-size: 544px;
-    padding: 20px;
+
+.modal.roulette.welcome .modal-content,
+.modal.roulette.bonus-gift .modal-content {
+    border-radius: 1.44vw;
+    padding: 0;
+    border: unset;
 }
 
-.modal.roulette.dark .close {
+.modal.roulette.welcome .modal-content {
+    background: linear-gradient(120deg, #ACDAFF 13.68%, #D9EEFF 108.06%);
+}
+
+.modal.roulette .modal-content .modal-body {
+    flex: 6;
+    padding: 3.125vw;
+}
+
+.modal.roulette .modal-content .modal-header {
+    flex: 5.5;
+}
+
+
+.modal.roulette.bonus-gift .modal-content .modal-body {
+    flex: unset;
+    width: 60%;
+    padding: 3.125vw;
+}
+
+
+.modal.roulette.bonus-gift .modal-content .modal-header {
+    width: 40%;
+    flex: unset;
+    padding: 2.60vw;
+}
+
+.modal.roulette.bonus-gift .modal-content .modal-close {
+    flex: .5;
+}
+
+
+.modal.roulette .modal-content .modal-close {
+    flex: 1;
+}
+
+
+.modal.roulette.bonus-gift .modal-header .close,
+.modal.roulette .close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 3.125vw;
+    right: 3.125vw;
+    opacity: 1;
+
+    transform: rotate(0);
+    transition-duration: 1s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.modal.roulette.dark .modal-body .modal-title {
-    color: var(--white);
-    text-align: left
+.modal.roulette.bonus-gift .modal-header .close:hover,
+.modal.roulette.bonus-gift .modal-header .close:focus,
+.modal.roulette .close:hover,
+.modal.roulette .close:focus {
+    transform: rotate(360deg);
 }
 
-.modal.roulette.dark .modal-body .modal-text {
-    display: inline-block;
 
-    font-family: "Roboto";
+.modal.roulette.bonus-gift .modal-header .close>svg,
+.modal.roulette .modal-content .modal-close svg {
+    fill: #113252;
+}
+
+
+
+.input.email button,
+.input.email .input-field,
+.section-header.event .link,
+.section-header.event .btn-red-green,
+.input.email .input-field::placeholder,
+.modal.roulette .modal-body .modal-title,
+.modal.roulette .modal-header .modal-title,
+.modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text,
+.modal.roulette.bonus-gift .buttons-container.bonus-gift button,
+.modal.roulette .modal-body .modal-title+.modal-text,
+.section-header.event .section-header__description,
+.modal.roulette.welcome .modal-body .modal-text,
+.modal.roulette.welcome .modal-body .modal-title {
+    font-family: "Roboto-Regular", sans-serif;
     font-weight: 400;
-    text-align: left;
-    color: var(--white);
+    line-height: 1.2;
+    color: #113252;
+
+    margin-bottom: 25px;
+}
+
+.modal.roulette .modal-body .modal-text,
+.modal.roulette .modal-body .modal-title {
+    max-width: 420px;
+}
+
+.modal.roulette.bonus-gift .modal-header .modal-title,
+.modal.roulette .modal-body .modal-title {
+    line-height: normal;
+}
+
+.modal.roulette.bonus-gift .modal-body .modal-title {
+    font-size: clamp(1.5rem, 0.203rem + 3.609vw, 3rem);
+}
+
+
+.modal.roulette.bonus-gift .modal-header .modal-title {
+    /* font-size: clamp(1.5rem, 0.3651rem + 3.1579vw, 2.8125rem); */
+    font-size: clamp(1.5rem, 0.6275rem + 2.4277vw, 2.8125rem);
+}
+
+
+.modal.roulette .modal-body .modal-title {
+    /* font-size: clamp(1.5rem, 0.3651rem + 3.1579vw, 2.8125rem); */
+    font-size: clamp(1.25rem, 0.4191rem + 2.3121vw, 2.5rem);
+}
+
+.modal.roulette .modal-body .modal-text>.link,
+.modal.roulette .modal-body .modal-title+.modal-text,
+.modal.roulette .modal-body .modal-title {
+    text-transform: none;
+}
+
+
+.input.email .input-field::placeholder,
+.modal.roulette .input.email+.modal-text::first-letter,
+.modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text::first-letter,
+.modal.roulette.bonus-gift .modal-header .modal-title::first-letter,
+.section-header.event .section-header__description::first-letter,
+.modal.roulette .modal-body .modal-title+.modal-text::first-letter,
+.modal.roulette .modal-body .modal-title::first-letter {
+    text-transform: capitalize;
+}
+
+
+
+.modal.roulette.bonus-gift .modal-body .modal-title,
+.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    margin-bottom: 5%;
+}
+
+
+
+
+
+.modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+    flex: 0 1 auto;
+}
+
+.modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
+    flex: 0 1 270px;
+}
+
+.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    color: #274766;
+
+    padding: 2vw 3.64vw;
+    border-radius: 10px;
+    border: 1px dashed #CBCBCB;
+}
+
+.modal.roulette.welcome .modal-body .modal-text,
+.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text,
+.modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
+    font-size: clamp(0.9375rem, 0.896rem + 0.1156vw, 1rem);
+}
+
+.modal.roulette.welcome .modal-body .modal-text {
+    line-height: 1.5;
 
     padding: 0;
     background: unset;
@@ -8455,140 +8694,188 @@ body {
     border: unset;
 }
 
-.modal.roulette.dark .modal-body .button-green+.modal-text,
-.modal.roulette.dark .modal-body .button-green {
-    text-align: center;
+.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text{
+    width: 100%;
+    max-width: 100%;
+}
+.modal.roulette .input.email+.modal-text {
+    max-width: 300px;
+    color: #113252;
 }
 
-.modal.roulette.dark .modal-body .button-green+.modal-text {
-    margin-bottom: 0;
+
+
+.modal.roulette .modal-body .modal-text>.link:hover {
+    color: var(--grey900);
 }
 
-.modal.roulette.dark .modal-body .button-green {
-    margin-bottom: 15px;
-}
+
 
 .input.email {
-    overflow: hidden;
-    display: block;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .input.email .input-field {
-    background: var(--white);
-    border: unset;
-    border-radius: 100px;
-    width: 100%;
+    font-size: 13px;
+    border: 2px solid transparent;
     padding: 20px 20px 20px 30px;
-    border: 1px solid transparent;
-    margin-bottom: 10px;
+    transition-duration: .3s;
+    transition-property: border;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .input.email .input-field:hover,
+.input.email .input-field:active,
 .input.email .input-field:focus {
-    border: 1px solid var(--green);
+    border: 2px solid var(--blue600);
     outline: unset;
 }
 
 .input.email .input-field::placeholder {
-    text-transform: capitalize;
-    color: var(--grey500);
-    font-size: 14px;
+    font-size: 13px;
+    color: rgba(107, 124, 148, 0.5);
 }
 
+.input.email button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
 
+    height: calc(100% - 10px);
+
+    line-height: 1.5;
+    /* padding: 10px 30px; */
+    padding: 0.625rem 1.875rem;
+}
+
+.input.email button::before {
+    content: unset;
+}
 
 /* ============roulette section========== */
-.grid.roulette-benefits,
+
 .section-header.event {
-    position: relative;
     z-index: 10;
 }
 
-.section-header.event .section-header__description,
-.section-header.event .section-header__title {
-    color: var(--white);
-}
 
 .section-header.event .section-header__title {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 0.0072rem + 6.9364vw, 6.25rem);
-    line-height: normal;
-    margin-bottom: 12px;
-}
-
-.section-header.event .button-container {
-    position: relative;
-}
-
-.section-header.event .button-container.lg {
-    display: block;
-}
-
-.section-header.event .button-container.xs {
-    display: none;
-}
-
-.section-header.event .button-container .round-arrow {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-}
-
-.section-header.event .section-header__description {
+    font-family: "Squada One", sans-serif;
     font-weight: 400;
-    max-width: 100%;
-    line-height: 1.3;
+    font-style: normal;
+
+    font-size: 9.844vw;
+    line-height: .8;
+    color: #113252;
+
+    margin-bottom: 2%;
 }
 
+
+.section-header.event .link,
 .section-header.event .section-header__description {
-    font-size: clamp(1.125rem, 1.0419rem + 0.2312vw, 1.25rem);
+    max-width: calc(40% + .3vw);
+
+    font-size: 1.44vw;
+    color: #113252;
     line-height: 1.5;
-    margin-bottom: 20px;
+
+    margin-right: 4.83%;
 }
 
 
-
-.section-header.event .section-header__description+.section-header__description {
-    font-size: clamp(1.125rem, 0.668rem + 1.2717vw, 1.8125rem);
-    line-height: 1.5;
-    margin-bottom: 24px;
-    max-width: 450px;
-
+.section-header.event .smooth-fly {
+    width: 7.44vw;
+    height: 6.61vw;
 }
 
-.section-header.event .section-header__description::first-letter,
-.section-header.event .section-header__description+.section-header__description::first-letter {
-    text-transform: capitalize;
+
+.modal.roulette .modal-body .modal-text>.link,
+.section-header.event .link {
+    color: #0022FF;
+    text-decoration: underline;
 }
+
+.section-header.event .link {
+    font-size: 1.11vw;
+    margin-top: 2.22vw;
+}
+
+.section-header.event .link>svg {
+    margin-right: 8px;
+    transform: translateY(0);
+    transition-duration: .4s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.section-header.event .link:hover>svg {
+    transform: translateY(-10px) rotate(-4deg) scale(1.1);
+}
+
 
 .section-header.event .logo {
     display: inline-block;
-    margin-bottom: 31px;
+    margin-bottom: 7%;
+}
+
+
+.section-header.event .btn-red-green {
+    font-size: 1.042vw;
+    line-height: 1.5;
+}
+
+.input.email button,
+.buttons-container.bonus-gift .btn-red-green,
+.section-header.event .btn-red-green {
+    background: #F44336;
+
+    transition-duration: .5s;
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.section-header.event .btn-red-green,
+.modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+    padding: 1.56vw 3.33vw;
+}
+
+.section-header.event .btn-red-green {
+    font-size: 1.11vw;
+    color: var(--white);
 }
 
 
 
-.button-yellow {
-    color: #352703;
-    font-size: clamp(1rem, 0.8338rem + 0.4624vw, 1.25rem);
-    line-height: 1.3;
-    font-weight: 600;
-
-    padding: 24px 50px;
-    border: unset;
-    border-radius: 100px;
-    background-image: linear-gradient(81deg, #FFB31F 2.72%, #FFB31F 2.74%, #EEC14C 87.23%, #FFFCEA 164.47%);
-    box-shadow: 0px -2.691px 0px 0px #987929 inset;
-    transition: all .3s ease-in;
+.input.email button:hover,
+.input.email button:focus,
+.buttons-container.bonus-gift .btn-red-green:hover,
+.buttons-container.bonus-gift .btn-red-green:focus,
+.section-header.event .btn-red-green:focus,
+.section-header.event .btn-red-green:hover {
+    background: var(--green);
+    color: var(--white);
 }
 
-.button-yellow:hover {
-    transform: translateY(-8px);
 
+.section-header.event .section-header__description+.icon-arrow::after {
+    position: absolute;
+    right: 2.604vw;
+    left: calc(80% + 2.24vw);
+    bottom: 30px;
+    transform: translate(-50%, 3.646%);
+
+    width: 8.229vw;
+    height: 7.76vw;
+
+    display: block;
+    content: "";
+
+    background: url('/themes/custom/adrofx_theme/images/button-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
 }
-
 
 
 .myContainer {
@@ -8602,70 +8889,108 @@ body {
 
 .roulette-wheel {
     position: relative;
-    background: url('/themes/custom/adrofx_theme/images/roulette-background-xl.jpg'), #000000;
+    background: url('/themes/custom/adrofx_theme/images/new-year-background.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 2600px;
+    background-size: cover;
 
-    padding-top: 70px;
-    padding-bottom: 150px;
+    padding-top: 2.23%;
+    padding-bottom: 2.23%;
 }
 
-.new-year {
-    background: #2c3d5d;
+.img-container.wheel {
+    /* border: 1px solid red; */
+    /* height: 875px; */
+    height: 45.57vw;
+
 }
 
-.snow {
-    width: 100%;
-    height: 100%;
+.img-container.wheel .wheel-base {
+    width: 39.47vw;
+    height: 39.73vw;
 
-    z-index: 4;
+    /* border: 1px solid red; */
 }
 
-
-
-.snow>.snow-texture,
-.snow>.snow-animation,
-.snow {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.snow>.snow-animation {
-    filter: blur(3px);
-}
-
-.snow>.snow-texture {
-    z-index: 3;
-}
-
+.roulette-tree,
+.roulette-base,
+.roulette-slide,
+.roulette-gifts,
 .roulette-border {
-    position: relative;
-    z-index: 2;
+    pointer-events: none;
 }
 
-.roulette-gifts {
-    position: absolute;
-    top: 55%;
+
+
+.roulette-border,
+.img-container.wheel .wheel-base {
+    top: 0;
     left: 50%;
-    bottom: 0;
-    transform: translate(-50%, -50%);
-
-    z-index: 3;
+    transform: translateX(-50%);
 }
 
+.roulette-base,
 .roulette-btn {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* border: 1px solid red; */
+}
 
-    width: 24%;
-    aspect-ratio: 1/1;
+.roulette-base {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+}
+
+.roulette-base,
+.roulette-border {
+    width: 39.47vw;
+    height: 39.73vw;
+    z-index: 3;
+}
+
+.roulette-slide,
+.roulette-gifts {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+
+.roulette-tree {
+    bottom: 0;
+    left: -45%;
+    z-index: 2;
+}
+
+.roulette-slide {
+    z-index: 1;
+}
+
+.roulette-btn,
+.roulette-gifts,
+.img-container.wheel .wheel-base {
+    z-index: 10;
+}
+
+
+
+.roulette-btn {
+    width: 9.42vw;
+    height: 9.42vw;
+    border-radius: 50%;
+
     object-fit: contain;
+    object-position: center;
 
-    filter: drop-shadow(0px 4px 50px rgba(0, 255, 110, 0.7));
+    filter:
+        drop-shadow(51px 226px 65px rgba(0, 0, 0, 0.00)) drop-shadow(33px 145px 59px rgba(0, 0, 0, 0.02)) drop-shadow(19px 81px 50px rgba(0, 0, 0, 0.08)) drop-shadow(8px 36px 37px rgba(0, 0, 0, 0.13)) drop-shadow(2px 9px 20px rgba(0, 0, 0, 0.15));
+
+    transition-duration: .5s;
+    transition-property: filter;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 
     z-index: 6;
 }
@@ -8673,19 +8998,10 @@ body {
 .roulette-btn:hover,
 .roulette-btn:focus {
     transform: translate(-50%, -50%);
+    filter:
+        drop-shadow(51px 226px 65px rgba(42, 139, 66, 0)) drop-shadow(33px 145px 59px rgba(42, 139, 66, 0.05)) drop-shadow(19px 81px 50px rgba(42, 139, 66, 0.10)) drop-shadow(8px 36px 37px rgba(42, 139, 66, 0.20)) drop-shadow(2px 9px 20px rgba(42, 139, 66, 0.30));
 }
 
-
-.roulette-base {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    aspect-ratio: 1/1;
-    z-index: 1;
-
-}
 
 @keyframes spin-roulette {
     from {
@@ -8698,72 +9014,73 @@ body {
 }
 
 
-.grid.roulette-benefits {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    gap: 7px;
-    margin-bottom: 40px;
-}
-
-.grid.roulette-benefits .grid__item {
-    flex-basis: calc(100% / 3 - 7px);
-
-    color: var(--white);
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(25, 118, 210, 0.98);
-}
-
-.grid.roulette-benefits .grid__item .title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px;
-    line-height: normal;
-}
-
-.grid.roulette-benefits .grid__item .text {
-    margin-bottom: 0;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.grid.roulette-benefits+.link {
-    position: relative;
-
-    font-size: 20px;
-    padding: 10px 30px;
-    color: var(--white);
-    text-transform: capitalize;
-
-    border-radius: 100px;
-    border: 1px solid var(--white);
-
+.ticket {
+    mask-image: url('/themes/custom/adrofx_theme/images/ticket-mask.svg');
+    mask-repeat: no-repeat;
+    mask-position: center left;
+    mask-size: contain;
     z-index: 10;
 }
 
-.grid.roulette-benefits+.link:hover {
-    text-decoration: unset;
-}
 
-.grid.roulette-benefits+.link>svg {
-    transition: transform .3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
 
-.grid.roulette-benefits+.link:hover>svg {
-    transform: translateX(10px);
-}
 
-.greeting {
-    position: relative;
-    height: 30vh;
-}
+@media screen and (min-width: 1441px) {
+    .section-header.event .section-header__title {
+        font-size: 140px;
+    }
 
-.greeting .section-title {
-    color: var(--white);
-    font-family: 'La Belle Aurore', cursive;
-    font-size: clamp(3.125rem, 1.0477rem + 5.7803vw, 6.25rem);
-    line-height: 1.5;
-}
+    .section-header.event .section-header__description {
+        font-size: 20px;
+    }
 
+    .section-header.event .link,
+    .section-header.event .btn-red-green {
+        font-size: 16px;
+    }
+
+
+    .modal.roulette.bonus-gift .buttons-container.bonus-gift button,
+    .section-header.event .btn-red-green {
+        padding: 22px 47px;
+    }
+
+    .img-container.wheel {
+        height: 690px;
+    }
+
+    .roulette-base,
+    .roulette-border,
+    .img-container.wheel .wheel-base {
+        width: 568px;
+        height: 572px;
+    }
+
+    .section-header.event .smooth-fly {
+        width: 107px;
+        height: 95px;
+    }
+
+    .section-header.event .section-header__description+.icon-arrow::after {
+        right: 130px;
+        bottom: 70px;
+        left: 570px;
+
+        width: 118px;
+        height: 117px;
+
+        transform: translate(-50%, 0);
+    }
+
+    .modal.roulette .modal-dialog {
+        max-width: 1140px;
+    }
+
+
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+        padding: 30px;
+    }
+}
 
 
 @media (max-width: 1199.98px) {
@@ -8772,6 +9089,17 @@ body {
     .grid.roulette-benefits {
         display: none;
     }
+
+
+    .gift-img.gift-center {
+        width: 25.22vw;
+        height: auto;
+    }
+
+    .gift-img.gift-front {
+        bottom: 30%;
+    }
+
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
 
@@ -9276,39 +9604,103 @@ body {
 @media (max-width: 991.98px) {
 
     /*============NEW YEAR START HO-HO-HO ===============*/
-    .section-header.event {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .section-header.event .button-container .round-arrow {
-        transform: rotate(45deg);
-    }
 
     .roulette-wheel {
-        background: url('/themes/custom/adrofx_theme/images/roulette-background-xs.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        height: 100vh;
     }
 
-    .grid.roulette-benefits+.link {
-
-        display: block;
-        text-align: center;
+    .section-header.event .link,
+    .section-header.event .btn-red-green,
+    .section-header.event .section-header__description {
         font-size: 16px;
+    }
 
-        padding: 10px 20px;
-        margin-inline: auto;
-        margin-bottom: 30px;
-        max-width: 250px;
+    .section-header.event .link {
+        max-width: 100%;
+    }
+
+    .section-header.event .section-header__description {
+        max-width: 80%;
+    }
+
+    .section-header.event .section-header__description+.icon-arrow::after {
+        content: unset;
+        display: none;
     }
 
 
+    .roulette-tree {
+        bottom: -5vw;
+    }
+
+    .modal.roulette .modal-content .modal-body {
+        order: 1;
+    }
+
+    .modal.roulette .modal-content .modal-body {
+        padding: 30px;
+    }
+
+    .modal.roulette .close {
+        position: static;
+    }
+
+
+    .modal.roulette .modal-content .modal-close {
+        width: 100%;
+        display: inherit;
+        order: 0;
+        padding-top: 30px;
+    }
+
+    .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
+        flex: 0 1 100%;
+    }
+
+
+    .modal.roulette.bonus-gift .modal-content .modal-header,
+    .modal.roulette.bonus-gift .modal-content .modal-body {
+        width: 100%;
+    }
+
+    .modal.roulette.bonus-gift .modal-content .modal-header {
+        flex-basis: 240px;
+    }
+
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+        max-width: 420px;
+    }
+
+    .is-animated.animated.gift-center {
+        transform: scale(.9) rotate(-15deg) translateY(10%);
+    }
+
+    .gift-img.gift-front {
+        width: 150px;
+        height: 150px;
+    }
+
+    .is-animated.animated.gift-front {
+        left: 80%;
+        transform: scale(.9) rotate(15deg) translate(-50%, 50px);
+
+    }
+
+    .is-animated.animated.gift-back {
+        left: 20%;
+    }
+
+
+    .modal.roulette.bonus-gift .modal-header .close {
+        top: 4vw;
+        right: 4vw;
+    }
+
+
+
+    /* .modal.roulette .modal-body .modal-text {
+        max-width: 100%;
+    } */
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
 
@@ -10002,19 +10394,67 @@ body {
 }
 
 @media (max-width: 767.98px) {
-    .section-header.test {
-        align-items: flex-start;
-        justify-content: flex-start;
+
+    /* ============new year promo 2025 =============*/
+
+    .section-header.event {
+        display: block;
         text-align: left;
     }
 
-    .section-header.test .section-header__title {
-        font-size: 25px;
+    .section-header.event .section-header__title {
+        font-size: clamp(4.625rem, 2.3597rem + 11.3264vw, 9.375rem);
     }
 
-    .section-header.test .section-header__description {
-        font-size: 1rem;
+    .img-container.wheel {
+        height: 78.227vw;
     }
+
+    .roulette-tree,
+    .roulette-base,
+    .roulette-border,
+    .img-container.wheel .wheel-base {
+        width: 62.581vw;
+        height: 62.581vw;
+    }
+
+
+    .roulette-tree {
+        bottom: 15.64vw;
+        left: -18.25vw;
+    }
+
+
+    .roulette-btn {
+        width: 15.64vw;
+        height: 15.64vw;
+    }
+
+
+    .modal.roulette .modal-dialog {
+        max-width: 90%;
+    }
+
+    .modal.roulette.bonus-gift .modal-body .modal-title {
+        max-width: 300px;
+    }
+
+    .gift-img.gift-center {
+        width: 200px;
+    }
+
+    .modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+        font-size: 14px;
+    }
+
+    .modal.roulette.bonus-gift .modal-content .modal-body,
+    .modal.roulette.bonus-gift .modal-content .modal-header {
+        padding: 4vw;
+    }
+
+
+    /* ============new year promo 2025 =============*/
+
 
     .cash-back-hero {
         background: url('/themes/custom/adrofx_theme/images/cashback-banner-sm.jpg');
@@ -11051,29 +11491,202 @@ body {
     /*============NEW YEAR START HO-HO-HO ===============*/
     .roulette-wheel {
         padding-top: 50px;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
+        height: auto;
     }
 
     .section-header.event {
         margin-bottom: 30px;
     }
 
+    .section-header.event .smooth-fly {
+        width: 55px;
+        height: 49px;
+    }
+
+    .section-header.event .section-header__description {
+        max-width: 100%;
+    }
+
     .section-header.event .section-header__title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 15px;
     }
 
-    .section-header.event .button-container {
-        margin-bottom: 30px;
+    .section-header.event .link,
+    .section-header.event .btn-red-green,
+    .modal.roulette.welcome .modal-body .modal-text,
+    .section-header.event .section-header__description,
+    .modal.roulette.bonus-gift .buttons-container.bonus-gift button,
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+        font-size: 13px;
+        line-height: 1.5;
     }
 
-    .section-header.event .button-container .round-arrow {
-        top: 100%;
-        transform: rotate(107deg);
+    .input.email button,
+    .section-header.event .btn-red-green,
+    .modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+        padding: 10px 20px;
     }
 
+    .section-header.event .link>svg {
+        margin-right: 3px;
+    }
+
+
+    .section-header.event .link {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    .section-header.event .logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 27px;
+    }
+
+
+    .roulette-wheel {
+
+        background: url('/themes/custom/adrofx_theme/images/new-year-background-xs.png') 160px 160px repeat,
+            linear-gradient(288deg, #CDE8FF -2.34%, #F6FBFF 98.86%);
+        background-position: center;
+        background-size: cover;
+    }
+
+
+
+    .modal.roulette .modal-dialog,
+    .modal.roulette .input.email+.modal-text,
+    .modal.roulette .modal-body .modal-text,
+    .modal.roulette .modal-body .modal-title {
+        max-width: 100%;
+    }
+
+    .modal.roulette .modal-body .modal-title {
+        font-size: 24px;
+    }
+
+
+
+
+    .input.email button {
+        position: static;
+    }
+
+    .input.email .input-field::placeholder,
+    .modal.roulette .input.email+.modal-text {
+        text-align: center;
+    }
+
+
+    .input.email .input-field::placeholder {
+        font-size: 8px;
+    }
+
+    .input.email .input-field {
+        padding: 17px;
+        margin-bottom: 9px;
+    }
+
+    .modal.roulette.welcome .modal-body .modal-text {
+        font-size: 14px;
+    }
+
+
+    .gift-img.gift-middle {
+        filter: blur(2px);
+    }
+
+    .gift-img.gift-back,
+    .gift-img.gift-front {
+        filter: blur(1.25px);
+    }
+
+
+    .gift-img.gift-center {
+        width: 121px;
+        height: 129px;
+    }
+
+    .is-animated.animated.gift-center {
+        transform: scale(.9) rotate(-15deg) translateY(-30%);
+    }
+
+
+    .gift-img.gift-front {
+        width: 72px;
+        height: 75px;
+    }
+
+    .is-animated.animated.gift-front {
+        left: 70%;
+        transform: scale(.9) rotate(15deg) translate(-50%, -70%);
+    }
+
+
+    .gift-img.gift-back {
+        width: 26px;
+        height: 28px;
+    }
+
+    .is-animated.animated.gift-back {
+        transform: scale(.9) rotate(-30deg) translateY(-90%);
+    }
+
+    .gift-img.gift-middle {
+        left: 30%;
+        width: 60px;
+        height: 63px;
+    }
+
+    .is-animated.animated.gift-middle {
+        transform: scale(.9) rotate(-50deg) translateY(-90%);
+    }
+
+    .modal.roulette.bonus-gift .modal-content .modal-body,
+    .modal.roulette.bonus-gift .modal-content .modal-header {
+        padding: 20px;
+
+    }
+
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text,
+    .modal.roulette.bonus-gift .modal-body .modal-title {
+        max-width: 100%;
+    }
+
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+        font-size: 12px;
+        padding: 19px;
+    }
+
+    .modal.roulette.bonus-gift .modal-body .modal-title {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+
+    .modal.roulette.bonus-gift .modal-body .modal-title,
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+        margin-bottom: 7%;
+    }
+
+    .modal.roulette.bonus-gift .modal-header .close {
+        top: 20px;
+        right: 20px;
+    }
+ 
+
+    /* .roulette-gifts {
+        top: 0;
+        transform: translate(-50%, 0);
+    } */
+
+    /* .roulette-slide {
+        transform: translate(-50%, 20%);
+        bottom: 0;
+    } */
+
+    /* 
     .modal.roulette .modal-content {
         padding: 20px;
     }
@@ -11081,9 +11694,10 @@ body {
     .modal.roulette .modal-body .modal-title+.modal-text {
         font-size: 16px;
         padding: 13px;
-    }
+    } */
 
-    .modal.roulette .button-green {
+
+    /* .modal.roulette .button-green {
         padding: 10px 30px;
     }
 
@@ -11132,7 +11746,7 @@ body {
 
     .modal.roulette.dark .close {
         top: 30px;
-    }
+    } */
 
 
     /*============NEW YEAR START HO-HO-HO ===============*/
