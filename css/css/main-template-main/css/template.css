@@ -8625,13 +8625,11 @@ body {
 
 
 .modal.roulette.bonus-gift .modal-header .modal-title {
-    /* font-size: clamp(1.5rem, 0.3651rem + 3.1579vw, 2.8125rem); */
     font-size: clamp(1.5rem, 0.6275rem + 2.4277vw, 2.8125rem);
 }
 
 
 .modal.roulette .modal-body .modal-title {
-    /* font-size: clamp(1.5rem, 0.3651rem + 3.1579vw, 2.8125rem); */
     font-size: clamp(1.25rem, 0.4191rem + 2.3121vw, 2.5rem);
 }
 
@@ -8871,7 +8869,7 @@ body {
     display: block;
     content: "";
 
-    background: url('/themes/custom/adrofx_theme/images/button-arrow.svg');
+    background: url('../../../../themes/custom/adrofx_theme/images/button-arrow.svg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -8889,7 +8887,7 @@ body {
 
 .roulette-wheel {
     position: relative;
-    background: url('/themes/custom/adrofx_theme/images/new-year-background.png');
+    background: url('../../../../themes/custom/adrofx_theme/images/new-year-background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9015,7 +9013,7 @@ body {
 
 
 .ticket {
-    mask-image: url('/themes/custom/adrofx_theme/images/ticket-mask.svg');
+    mask-image: url('../../../../themes/custom/adrofx_theme/images/ticket-mask.svg');
     mask-repeat: no-repeat;
     mask-position: center left;
     mask-size: contain;
@@ -11546,8 +11544,7 @@ body {
 
 
     .roulette-wheel {
-
-        background: url('/themes/custom/adrofx_theme/images/new-year-background-xs.png') 160px 160px repeat,
+        background: url('../../../../themes/custom/adrofx_theme/images/new-year-background-xs.png') 160px 160px repeat,
             linear-gradient(288deg, #CDE8FF -2.34%, #F6FBFF 98.86%);
         background-position: center;
         background-size: cover;
