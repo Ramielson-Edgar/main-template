@@ -7711,6 +7711,23 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 }
 
+/* NEED ADD */
+
+@keyframes promo-snow-spin {
+    0% {
+ 
+        transform: translate(-50%,-50%) rotate(0);
+    }
+
+    100% {
+ 
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+
+}
+
+
+/* NEED ADD */
 .smooth-fly {
     animation: smooth-fly 6s ease-in-out infinite;
 }
@@ -8511,9 +8528,7 @@ body {
 }
 
 
-.modal.roulette .modal-dialog {
-    max-width: 80%;
-}
+ 
 
 
 .modal.roulette.welcome .modal-content,
@@ -8521,7 +8536,56 @@ body {
     border-radius: 1.44vw;
     padding: 0;
     border: unset;
+
+    min-height: 500px;
 }
+
+.modal.roulette.welcome .modal-content {
+    min-height: auto;
+}
+
+.modal.roulette .modal-dialog {
+    max-width: 80%;
+}
+
+.modal.roulette.welcome .modal-header {
+    padding-left: 2.60vw;
+    padding-top: 2.60vw;
+}
+
+.modal.roulette.welcome .modal-header img {
+    z-index: 2;
+}
+
+.modal.roulette.welcome .modal-header::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: block;
+    content: "";
+
+    width: 446px;
+    max-width: 100%;
+    height: 477px;
+    max-height: 100%;
+
+    background: url('/themes/custom/adrofx_theme/images/snowflake.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    animation-duration: 100s;
+    animation-name: promo-snow-spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    z-index: 1;
+}
+
+ 
+
 
 .modal.roulette.welcome .modal-content {
     background: linear-gradient(120deg, #ACDAFF 13.68%, #D9EEFF 108.06%);
@@ -8529,25 +8593,31 @@ body {
 
 .modal.roulette .modal-content .modal-body {
     flex: 6;
-    padding: 3.125vw;
 }
 
 .modal.roulette .modal-content .modal-header {
     flex: 5.5;
 }
 
+.modal.roulette.bonus-gift .modal-content .modal-header{
+    padding: 3.125vw 3.125vw 0;
+}
+
+.modal.roulette .modal-content .modal-body,
+.modal.roulette.bonus-gift .modal-content .modal-body {
+    padding: 3.125vw;
+}
 
 .modal.roulette.bonus-gift .modal-content .modal-body {
     flex: unset;
     width: 60%;
-    padding: 3.125vw;
 }
+
 
 
 .modal.roulette.bonus-gift .modal-content .modal-header {
     width: 40%;
     flex: unset;
-    padding: 2.60vw;
 }
 
 .modal.roulette.bonus-gift .modal-content .modal-close {
@@ -8659,20 +8729,26 @@ body {
 
 
 
+.modal.roulette.bonus-gift .buttons-container.bonus-gift {
+    gap: 30px;
+}
 
 
 .modal.roulette.bonus-gift .buttons-container.bonus-gift button {
     flex: 0 1 auto;
+    padding: 0.938rem 1.875rem;
 }
 
+
+
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
-    flex: 0 1 270px;
+    flex: 0 1 314px;
 }
 
 .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
     color: #274766;
 
-    padding: 2vw 3.64vw;
+    padding:3.47vw;
     border-radius: 10px;
     border: 1px dashed #CBCBCB;
 }
@@ -8772,13 +8848,14 @@ body {
 
 .section-header.event .link,
 .section-header.event .section-header__description {
-    max-width: calc(40% + .3vw);
+    /* max-width: calc(40% + .3vw); */
+    max-width: calc(45% + .3vw);
 
     font-size: 1.44vw;
     color: #113252;
     line-height: 1.5;
 
-    margin-right: 4.83%;
+    /* margin-right: 4.83%; */
 }
 
 
@@ -8833,8 +8910,7 @@ body {
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.section-header.event .btn-red-green,
-.modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+.section-header.event .btn-red-green {
     padding: 1.56vw 3.33vw;
 }
 
@@ -9040,7 +9116,7 @@ body {
 
     .modal.roulette.bonus-gift .buttons-container.bonus-gift button,
     .section-header.event .btn-red-green {
-        padding: 22px 47px;
+        padding: 15px 30px;
     }
 
     .img-container.wheel {
@@ -9076,7 +9152,37 @@ body {
 
 
     .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
-        padding: 30px;
+        padding: 50px;
+    }
+
+    
+    .modal.roulette.welcome .modal-content .modal-body,
+    .modal.roulette.bonus-gift .modal-content .modal-body,
+    .modal.roulette.bonus-gift .modal-content .modal-header {
+        padding: 60px;
+    }
+
+    .modal.roulette.welcome .modal-content .modal-header {
+        padding-left: 60px;
+        padding-top: 60px;
+    }
+
+    .modal.roulette.bonus-gift .modal-header .close, .modal.roulette .close {
+        top: 60px;
+        right: 60px;
+    }
+    
+
+    .section-header.event .section-header__description {
+        max-width: 320px;
+    }
+
+    .modal.roulette.bonus-gift .modal-body .modal-title, .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+        margin-bottom: 34px;
+    }
+
+    .section-header.event .link {
+        margin-top: 40px;
     }
 }
 
@@ -9098,6 +9204,11 @@ body {
         bottom: 30%;
     }
 
+    .modal.roulette.bonus-gift .modal-content {
+        min-height: 400px;
+    }
+
+ 
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
 
@@ -9619,6 +9730,7 @@ body {
 
     .section-header.event .section-header__description {
         max-width: 80%;
+        margin-right: 4.83%;
     }
 
     .section-header.event .section-header__description+.icon-arrow::after {
@@ -9648,7 +9760,7 @@ body {
         width: 100%;
         display: inherit;
         order: 0;
-        padding-top: 30px;
+        padding: 30px 30px 0;
     }
 
     .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
@@ -9695,6 +9807,9 @@ body {
     }
 
 
+    .input.email {
+        max-width: 500px;
+    }
 
     /* .modal.roulette .modal-body .modal-text {
         max-width: 100%;
