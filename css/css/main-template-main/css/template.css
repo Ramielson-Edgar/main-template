@@ -8571,7 +8571,7 @@ body {
     height: 477px;
     max-height: 100%;
 
-    background: url('/themes/custom/adrofx_theme/images/snowflake.png');
+    background: url('../../../../themes/custom/adrofx_theme/images/snowflake.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
