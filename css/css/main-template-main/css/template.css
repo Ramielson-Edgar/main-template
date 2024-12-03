@@ -8356,16 +8356,36 @@ body {
     overflow-y: auto;
 }
 
-.modal.roulette {
+ 
+
+.modal.roulette.bonus-gift,
+.modal.roulette.welcome {
+    display: block;
     position: fixed;
     top: unset;
     left: 50%;
     bottom: 50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 100%);
+    opacity: 0;
 
     height: auto;
     padding: 0;
+
+    transition-duration: 1s, .5s;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
+ 
+.modal.roulette.show{
+    display: block;
+    transform: translate(-50%, 50%);
+    pointer-events: visible;
+    opacity: 1;
+}
+
+
+ 
 
 
 
@@ -8403,12 +8423,12 @@ body {
 }
 
 
+
+
 .modal.roulette .modal-body .modal-title {
     color: #1F1F1F;
     line-height: 1.2;
     color: var(--blue500);
-
-    margin-bottom: 25px;
 }
 
 
@@ -8679,6 +8699,7 @@ body {
     margin-bottom: 25px;
 }
 
+
 .modal.roulette .modal-body .modal-text,
 .modal.roulette .modal-body .modal-title {
     max-width: 420px;
@@ -8699,9 +8720,7 @@ body {
 }
 
 
-.modal.roulette .modal-body .modal-title {
-    font-size: clamp(1.25rem, 0.4191rem + 2.3121vw, 2.5rem);
-}
+ 
 
 .modal.roulette .modal-body .modal-text>.link,
 .modal.roulette .modal-body .modal-title+.modal-text,
@@ -8718,13 +8737,6 @@ body {
 .modal.roulette .modal-body .modal-title+.modal-text::first-letter,
 .modal.roulette .modal-body .modal-title::first-letter {
     text-transform: capitalize;
-}
-
-
-
-.modal.roulette.bonus-gift .modal-body .modal-title,
-.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
-    margin-bottom: 5%;
 }
 
 
@@ -8753,10 +8765,16 @@ body {
     border: 1px dashed #CBCBCB;
 }
 
+
+.modal.roulette .modal-body .modal-title {
+    font-size: clamp(1.25rem, 0.4191rem + 2.3121vw, 2.5rem);
+}
+
+
 .modal.roulette.welcome .modal-body .modal-text,
 .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text,
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
-    font-size: clamp(0.9375rem, 0.896rem + 0.1156vw, 1rem);
+    font-size: clamp(0.6771rem, 0.4624rem + 0.5973vw, 1rem);
 }
 
 .modal.roulette.welcome .modal-body .modal-text {
@@ -8773,11 +8791,9 @@ body {
     max-width: 100%;
 }
 .modal.roulette .input.email+.modal-text {
-    max-width: 300px;
+    max-width: 320px;
     color: #113252;
 }
-
-
 
 .modal.roulette .modal-body .modal-text>.link:hover {
     color: var(--grey900);
@@ -8818,7 +8834,6 @@ body {
     height: calc(100% - 10px);
 
     line-height: 1.5;
-    /* padding: 10px 30px; */
     padding: 0.625rem 1.875rem;
 }
 
@@ -8848,14 +8863,11 @@ body {
 
 .section-header.event .link,
 .section-header.event .section-header__description {
-    /* max-width: calc(40% + .3vw); */
     max-width: calc(45% + .3vw);
 
     font-size: 1.44vw;
     color: #113252;
     line-height: 1.5;
-
-    /* margin-right: 4.83%; */
 }
 
 
@@ -8973,17 +8985,12 @@ body {
 }
 
 .img-container.wheel {
-    /* border: 1px solid red; */
-    /* height: 875px; */
     height: 45.57vw;
-
 }
 
 .img-container.wheel .wheel-base {
     width: 39.47vw;
     height: 39.73vw;
-
-    /* border: 1px solid red; */
 }
 
 .roulette-tree,
@@ -9008,7 +9015,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* border: 1px solid red; */
 }
 
 .roulette-base {
@@ -9095,6 +9101,28 @@ body {
     mask-size: contain;
     z-index: 10;
 }
+
+.modal.roulette.welcome .modal-body .modal-text,
+.modal.roulette.welcome .modal-body .modal-title {
+    --space:25px;
+    margin-bottom: var(--space);
+}
+
+
+
+.modal.roulette.bonus-gift .modal-header button + .modal-title {
+    --space:0;
+    margin-bottom: var(--space);
+}
+ 
+
+
+.modal.roulette.bonus-gift .modal-body .modal-title,
+.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    --space:5%;
+    margin-bottom: var(--space);
+}
+
 
 
 
@@ -9208,6 +9236,9 @@ body {
         min-height: 400px;
     }
 
+    .modal.roulette .modal-dialog {
+        max-width: 90%;
+    }
  
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
@@ -9729,7 +9760,6 @@ body {
     }
 
     .section-header.event .section-header__description {
-        max-width: 80%;
         margin-right: 4.83%;
     }
 
