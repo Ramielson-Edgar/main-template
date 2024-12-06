@@ -167,7 +167,7 @@
 
     </section>
 
-    <!-- READY !!!!! -->
+ 
     <!-- BONUS -->
     <div class="container">
       <div class="row">
@@ -294,13 +294,13 @@
       </div>
     </div>
 
-    <!-- READY !!!!! -->
-    <!-- ERROR MODAL  -->
+  
+         <!-- ERROR LIMIT -->
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div class="modal roulette welcome error-limit" id="errorModal" tabindex="-1"
-            aria-labelledby="giftModalLabel" aria-hidden="true">
+            aria-labelledby="errorModalLabel" aria-hidden="true">
             <div class="modal-dialog">
 
               <div class="modal-content error overflow-hidden d-flex flex-wrap flex-lg-row flex-column">
@@ -318,7 +318,7 @@
 
                 <button type="button"
                   class="close d-lg-flex d-none position-absolute align-items-center justify-content-center bg-transparent mb-0"
-                  data-dismiss="modal" aria-label="Close">
+                  data-dismiss="modal" data-target="#errorModal" aria-label="Close">
                   <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path
                       d="M6.4 19.9464L5 18.5464L10.6 12.9464L5 7.34638L6.4 5.94638L12 11.5464L17.6 5.94638L19 7.34638L13.4 12.9464L19 18.5464L17.6 19.9464L12 14.3464L6.4 19.9464Z" />
@@ -370,13 +370,13 @@
       </div>
     </div>
 
-    <!-- READY !!!!! -->
-    <!-- ERROR EMAIL MODAL  -->
+ 
+         <!-- ERROR EMAIL -->
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div class="modal roulette welcome error-email" id="errorEmailModal" tabindex="-1"
-            aria-labelledby="giftModalLabel" aria-hidden="true">
+            aria-labelledby="errorEmailModalLabel" aria-hidden="true">
             <div class="modal-dialog">
 
               <div class="modal-content error overflow-hidden d-flex flex-wrap flex-lg-row flex-column">
@@ -394,7 +394,7 @@
 
                 <button type="button"
                   class="close d-lg-flex d-none position-absolute align-items-center justify-content-center bg-transparent mb-0"
-                  data-dismiss="modal" aria-label="Close">
+                  data-dismiss="modal" data-target="errorEmailModal" aria-label="Close">
                   <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path
                       d="M6.4 19.9464L5 18.5464L10.6 12.9464L5 7.34638L6.4 5.94638L12 11.5464L17.6 5.94638L19 7.34638L13.4 12.9464L19 18.5464L17.6 19.9464L12 14.3464L6.4 19.9464Z" />
@@ -458,8 +458,7 @@
     </div>
 
 
-    <!-- READY !!!!! -->
-    <!-- WELCOME -->
+     <!-- WELCOME -->
     <div class="container">
       <div class="row">
         <div class="col-xl-7">
@@ -500,8 +499,8 @@
                   <label
                     class="input email d-flex align-items-center justify-content-center flex-column d-sm-block rounded-pill position-relative">
 
-                    <input id="eml" class="input-field rounded-pill w-100 bg-white mb-sm-0 " type="text" type="email"
-                      placeholder="Enter Your e-mail Here">
+                    <input id="eml" class="input-field rounded-pill w-100 bg-white mb-sm-0" name="email" type="email"
+                      placeholder="Enter Your e-mail Here" required >
 
 
                     <button id="saveEmail" type="button" href="https://www.adrofx.club/user/login"

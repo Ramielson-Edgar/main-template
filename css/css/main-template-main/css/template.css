@@ -502,7 +502,7 @@ a:hover {
     transition-timing-function: var(--ease-in-out-smooth);
 }
 
- 
+
 .animation.scrolled {
     transform: translateY(0) scale(1);
     opacity: 1;
@@ -8362,7 +8362,7 @@ button:focus {
     transform: unset;
 }
 
- 
+
 .new-year .btn-base {
     background: #F44336;
     transition-duration: .5s;
@@ -8394,7 +8394,7 @@ button:focus {
     overflow-x: hidden;
     overflow-y: auto;
 }
- 
+
 
 .modal.roulette {
     display: block;
@@ -8402,7 +8402,7 @@ button:focus {
     top: unset;
     left: 50%;
     bottom: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 80%);
     opacity: 0;
 
     height: auto;
@@ -8418,7 +8418,7 @@ button:focus {
 .modal.roulette.show {
     display: block;
     transform: translate(-50%, 50%);
-    pointer-events: visible;
+    pointer-events: painted;
     opacity: 1;
     z-index: 1060;
 }
@@ -8489,7 +8489,7 @@ button:focus {
 }
 
 
-.is-animated{
+.is-animated {
     transform: scale(.7) rotate(0) translateY(100%);
     opacity: 0;
     transition-duration: .7s;
@@ -8576,9 +8576,9 @@ button:focus {
     opacity: 1;
 }
 
- 
 
- 
+
+
 /* NEED ADD  */
 .modal.roulette .modal-content {
     border-radius: 1.44vw;
@@ -8589,13 +8589,6 @@ button:focus {
 }
 
 
-/* .modal.roulette.welcome .modal-content {
-    min-height: auto;
-} */
-
-
-
-
 .modal.roulette .modal-dialog {
     max-width: 80%;
 }
@@ -8604,9 +8597,9 @@ button:focus {
     padding-left: 2.60vw;
     padding-top: 2.60vw;
 }
- 
- 
- 
+
+
+
 
 .modal.roulette.welcome .modal-header img {
     z-index: 2;
@@ -8714,6 +8707,7 @@ button:focus {
     transition-duration: 1s;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    z-index: 1060;
 }
 
 .modal.roulette.bonus-gift .modal-header .close:hover,
@@ -8754,7 +8748,7 @@ button:focus {
     line-height: 1.5;
 }
 
- 
+
 .modal.roulette .modal-body .modal-text,
 .modal.roulette .modal-body .modal-title {
     max-width: 420px;
@@ -8860,7 +8854,7 @@ button:focus {
 }
 
 
-
+/* NEED ADD */
 .input.email {
     margin-bottom: 60px;
     width: 100%;
@@ -8874,6 +8868,16 @@ button:focus {
     transition-property: border;
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
+
+.input.email .input-field:not(:placeholder-shown):required:valid {
+    border-color: var(--green);
+}
+
+.input.email .input-field:not(:placeholder-shown):required:invalid {
+    border-color: #F44336;
+}
+
+
 
 .input.email .input-field:hover,
 .input.email .input-field:active,
@@ -9280,8 +9284,8 @@ button:focus {
     }
 
     /* NEED ADD */
- 
-    .modal.roulette.welcome .modal-content  {
+
+    .modal.roulette.welcome .modal-content {
         max-height: 470px;
         min-height: 470px;
     }
@@ -9306,7 +9310,7 @@ button:focus {
     .gift-img.gift-front {
         bottom: 30%;
     }
- 
+
     .modal.roulette.bonus-gift .modal-content {
         min-height: 450px;
     }
@@ -9315,10 +9319,10 @@ button:focus {
         max-width: 90%;
     }
 
-    
+
     /* NEED TO ADD  */
- 
- 
+
+
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
 
@@ -9838,7 +9842,7 @@ button:focus {
         max-width: 100%;
     }
 
- 
+
 
     .section-header.event .section-header__description {
         max-width: 320px;
@@ -9916,22 +9920,22 @@ button:focus {
         top: 4vw;
         right: 4vw;
     }
- 
+
 
     .input.email {
         max-width: 500px;
     }
 
- 
+
     /* NEED ADD */
 
-    
-    .modal.roulette.welcome.error-email .modal-content  {
+
+    .modal.roulette.welcome.error-email .modal-content {
         min-height: 400px;
     }
 
     .modal.roulette.welcome.error-email .modal-body .modal-text {
-        font-size:  clamp(0.8125rem, 0.5533rem + 0.7212vw, 1rem);
+        font-size: clamp(0.8125rem, 0.5533rem + 0.7212vw, 1rem);
         max-width: 420px;
     }
 
@@ -11749,8 +11753,8 @@ button:focus {
         margin-bottom: 15px;
     }
 
-    
-        /* NEED ADD */
+
+    /* NEED ADD */
     .new-year .btn-base,
     .section-header.event .link,
     .modal.roulette .modal-body .modal-text,
@@ -11835,7 +11839,7 @@ button:focus {
         margin-bottom: 9px;
     }
 
- 
+
 
     .gift-img.gift-middle {
         filter: blur(2px);
