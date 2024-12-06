@@ -103,19 +103,19 @@ roulette promo pop up font */
     --font-size-16: 1rem;
     --font-size-14: 0.875rem;
 
-    /*TEXT COLOR */
+ 
     --white-text: #fff;
     --dark-text: #211d1d;
     --blue-text: #0e6ffd;
     --grey-text: #404040;
 
-    /*FONT WEIGHT */
+ 
     --font-weight-700: 700;
     --font-weight-400: 400;
 
-    /*FONT STYLE */
+  
     --font-style-normal: normal;
-
+ 
     /*BG COLOR */
     --white-bg-color: #fff;
     --blue-bg-color: #F4F7FE;
@@ -127,18 +127,18 @@ roulette promo pop up font */
     --blue-light-bg: #97d5ff;
     --allpips-bg-color: #3D3787;
 
-    /*TEXT LINE HEIGHT */
+ 
     --base-line-height: 24px;
 
-    /* Z INDEX */
+ 
     --z-index-top: 100;
     --z-index-minus: -1;
 
-    /* BLOB*/
+ 
     --blob-gradient: linear-gradient(142.66deg, #7a9fff 6.63%, #98a2ff 102.07%);
     --blob-shades: inset -34px -12px 50px rgba(61, 92, 255, 0.74), inset 17px 27px 50px rgba(255, 255, 255, 0.51);
 
-    /* NEUTRAL COLOR  */
+  
     --blue50: #e3f2fd;
     --blue100: #bbdefb;
     --blue200: #90caf9;
@@ -562,6 +562,49 @@ a:hover {
 
 
 
+.btn-base {
+    display: inline-block;
+    
+    font-family: "Roboto-Regular",sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    transition-duration: .4s , .2s , .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color, color, border-color;
+}
+
+.btn-base:hover,
+.btn-base:focus,
+.btn-base:active {
+    text-decoration: none;
+}
+
+
+.btn-base-lg {
+    padding: 10px 40px;
+}
+
+.btn-base-md {
+    padding: 10px 30px;
+}
+
+.btn-base-small {
+    padding: 10px 20px;
+}
+
+.btn-base-xl {
+    padding: 10px 60px;
+}
+
 
 .btn-red:hover,
 .btn-red:focus,
@@ -582,17 +625,20 @@ a:hover {
     color: #fff;
 }
 
+
+ 
 .btn-red-green {
-    background: var(--red400);
     color: #fff;
+    background: var(--red500);
 }
 
-/* .btn-red-green:hover,
+
+.btn-red-green:hover,
 .btn-red-green:focus,
 .btn-red-green:active {
     background: var(--green);
     color: #fff;
-} */
+}
 
 
 .btn-green {
@@ -634,8 +680,8 @@ a:hover {
 }
 
 .btn-border-blue-green {
-    background: none;
     color: var(--blue500);
+    border: 1px solid var(--green);
     border-color: var(--blue500);
 }
 
@@ -673,102 +719,43 @@ a:hover {
 .btn-border-lg-blue-green:active {
     background: var(--green);
     border-color: var(--green);
-    color: #fff;
+    color: var(--white);
+}
+
+ 
+.btn-border-red-green {
+    color: var(--red500);
+    border-color: var(--red500);
 }
 
 
-.btn-base-lg {
-    padding: 10px 40px;
+ 
+.btn-border-red-green:focus,
+.btn-border-red-green:hover {
+    color: var(--white);
+    background: var(--green);
+     border-color: var(--green);
 }
 
-.btn-base-md {
-    padding: 10px 30px;
+.btn-border-red {
+    color: var(--red500);
+    border-color: var(--red500);
 }
 
-.btn-base-small {
-    padding: 10px 20px;
+.btn-border-red:hover,
+.btn-border-red:focus {
+    color: var(--white);
+    background: var(--red500);
 }
 
-.btn-base-xl {
-    padding: 10px 60px;
+.btn-border-red:hover,
+.btn-border-red:focus{
+    color: var(--white);
+    background: var(--red500);
 }
+ 
 
-.btn-base {
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-
-    font-weight: 400;
-    text-align: center;
-    text-decoration: none;
-    text-transform: capitalize;
-    line-height: 30px;
-    color: #fff;
-
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    background-color: transparent;
-
-    transition: .4s ease-in-out;
-    transition-property: background-color, color;
-    z-index: 2;
-
-    /* transform: translateY(0);
-    transition: all 0.3s ease; */
-}
-
-
-
-.btn-base::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    content: "";
-    display: block;
-    width: 110%;
-    height: 100%;
-
-    background-color: var(--green);
-    border-radius: 0 40px 40px 0px;
-
-    transform: translateX(-105%);
-    transition: transform .4s ease-in-out;
-    transform-origin: left center;
-
-    z-index: 1;
-}
-
-.btn-base:hover {
-    text-decoration: none;
-}
-
-
-/* .btn-base:hover::before {
-    transform: translateX(0);
-} */
-
-/* .btn-base:focus .btn-text span,
-.btn-base:hover .btn-text span {
-    transform: translateY(-100%);
-}
-
-.btn-text {
-    overflow: hidden;
-    height: 30px;
-}
-
-.btn-text span {
-    position: relative;
-    display: inline-block;
-
-    transition: .3s ease-in-out;
-    transition-property: color, transform;
-    z-index: 2;
-} */
-
-
+ 
 
 .btn-blue-white {
     background-color: var(--blue400);
@@ -833,22 +820,6 @@ a:hover {
     color: var(--blue500);
     background-color: var(--white);
 }
-
-.btn-red-green {
-    background-color: #EA6C6C;
-    color: var(--white);
-}
-
-/* .btn-red-green::before {
-    background: var(--green);
-} */
-
-.btn-red-green:hover,
-.btn-red-green:active {
-    color: var(--white);
-    background-color: var(--green);
-}
-
 
 
 .btn-white-red:hover,
@@ -8355,20 +8326,44 @@ body {
     height: 100%;
 }
 
-.new-year .btn-base:hover,
-button:hover,
-.new-year .btn-base:focus,
-button:focus {
-    transform: unset;
-}
 
-
+/* .new-year .link,
 .new-year .btn-base {
-    background: #F44336;
-    transition-duration: .5s;
+    transition-duration: .3s;
     transition-property: background-color, color, filter;
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+} */
+
+
+
+.new-year .link,
+.new-year .btn-base,
+.new-year .section-header .section-header__title,
+.new-year .section-header .section-header__description,
+.new-year .modal-title,
+.new-year .modal-text {
+    font-family: "Roboto-Regular",sans-serif;
+    font-weight: 400;
 }
+
+
+
+/* .new-year .link,
+.new-year .btn-base {
+    line-height: 1.5;
+} */
+
+ 
+
+.modal.roulette .modal-text,
+.modal.roulette .modal-title,
+.section-header.event .section-header__title,
+.section-header.event .section-header__description {
+    margin-bottom: 25px;
+    color: #113252;
+}
+ 
+ 
 
 .squada-one-regular {
     font-family: "Squada One", sans-serif;
@@ -8382,6 +8377,13 @@ button:focus {
     font-weight: 400;
     font-style: normal;
 }
+
+.modal.roulette.bonus-gift .model-header .modal-title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 600;
+}
+
+
 
 
 .new-year {
@@ -8455,26 +8457,13 @@ button:focus {
 }
 
 
-
-.modal.roulette.bonus-gift .model-header .modal-title {
-    font-family: "Roboto-Medium", sans-serif;
-    font-weight: 600;
-}
-
-
-
-
-.modal.roulette .modal-body .modal-title {
-    color: #1F1F1F;
-    line-height: 1.2;
-    color: var(--blue500);
-}
+ 
 
 
 .modal.roulette .modal-header .modal-text {
-    color: #383838;
     font-size: 24px;
-    text-transform: capitalize;
+    line-height: 1.5;
+
     margin-bottom: 15px;
 }
 
@@ -8606,7 +8595,6 @@ button:focus {
 }
 
 .modal.roulette.welcome.error-email .modal-header::before,
-.modal.roulette.welcome.error-limit .modal-header::before,
 .modal.roulette.welcome .modal-header::before {
     position: absolute;
     top: 50%;
@@ -8634,8 +8622,7 @@ button:focus {
     z-index: 1;
 }
 
-.modal.roulette.welcome.error-email .modal-header::before,
-.modal.roulette.welcome.error-limit .modal-header::before {
+.modal.roulette.welcome.error-email .modal-header::before {
     background: url('../../../../themes/custom/adrofx_theme/images/snowflake-error.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -8645,7 +8632,7 @@ button:focus {
 
 
 .modal.roulette.welcome .modal-content {
-    background: linear-gradient(120deg, #ACDAFF 13.68%, #D9EEFF 108.06%);
+    background: linear-gradient(111deg, #ACDAFF 1.5%, #E4F3FF 73.43%);
 }
 
 
@@ -8724,30 +8711,6 @@ button:focus {
     fill: #113252;
 }
 
-.new-year .btn-base,
-.input.email .input-field,
-.section-header.event .link,
-.input.email .input-field::placeholder,
-.modal.roulette .modal-body .modal-title,
-.modal.roulette .modal-header .modal-title,
-.modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text,
-.modal.roulette .modal-body .modal-title+.modal-text,
-.section-header.event .section-header__description,
-.modal.roulette.welcome .modal-body .modal-text,
-.modal.roulette.welcome .modal-body .modal-title {
-    font-family: "Roboto-Regular", sans-serif;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #113252;
-
-    margin-bottom: 25px;
-}
-
-/* NEED ADD  */
-.new-year .btn-base {
-    line-height: 1.5;
-}
-
 
 .modal.roulette .modal-body .modal-text,
 .modal.roulette .modal-body .modal-title {
@@ -8811,8 +8774,6 @@ button:focus {
 }
 
 .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
-    color: #274766;
-
     padding: 3.47vw;
     border-radius: 10px;
     border: 1px dashed #CBCBCB;
@@ -8846,7 +8807,6 @@ button:focus {
 
 .modal.roulette .input.email+.modal-text {
     max-width: 320px;
-    color: #113252;
 }
 
 .modal.roulette .modal-body .modal-text>.link:hover {
@@ -8873,8 +8833,12 @@ button:focus {
     border-color: var(--green);
 }
 
+.input.email .input-field:not(:placeholder-shown):required:valid + button {
+    background: var(--green);
+}
+
 .input.email .input-field:not(:placeholder-shown):required:invalid {
-    border-color: #F44336;
+    border-color: var(--red500);
 }
 
 
@@ -8929,10 +8893,7 @@ button:focus {
 .section-header.event .link,
 .section-header.event .section-header__description {
     max-width: calc(42% + .3vw);
-
     font-size: 1.354vw;
-    color: #113252;
-    line-height: 1.5;
 }
 
 
@@ -8974,18 +8935,9 @@ button:focus {
 
 .section-header.event .btn-base {
     font-size: 1.042vw;
-    /* line-height: 1.5; */
 }
 
-/* .input.email .btn-base,
-.buttons-container.bonus-gift .btn-base,
-.section-header.event .btn-base {
-    background: #F44336;
-
-    transition-duration: .5s;
-    transition-property: background-color, color;
-    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-} */
+ 
 
 .section-header.event .btn-base {
     padding: 1.458vw 3.073vw;
@@ -8993,20 +8945,10 @@ button:focus {
 
 .section-header.event .btn-base {
     font-size: 1.11vw;
-    color: var(--white);
 }
 
 
 
-.input.email .btn-base:hover,
-.input.email .btn-base:focus,
-.buttons-container.bonus-gift .btn-base:hover,
-.buttons-container.bonus-gift .btn-base:focus,
-.section-header.event .btn-base:focus,
-.section-header.event .btn-base:hover {
-    background: var(--green);
-    color: var(--white);
-}
 
 
 .section-header.event .section-header__description+.icon-arrow::after {

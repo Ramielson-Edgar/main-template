@@ -25,6 +25,12 @@ window.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    document.querySelector('#prize_error + .buttons-container .btn-base').addEventListener('click', () => {
+        $("#notification").modal('show');
+        $("#errorEmailModal").modal('hide');
+    })
+    
+
     function elementInView(item, scrollOffset = 0) {
         const elementOffsetTop = item.getBoundingClientRect().top;
         return (elementOffsetTop <= (window.innerHeight || document.documentElement.clientHeight) - scrollOffset);
