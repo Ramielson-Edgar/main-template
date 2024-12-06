@@ -502,6 +502,7 @@ a:hover {
     transition-timing-function: var(--ease-in-out-smooth);
 }
 
+ 
 .animation.scrolled {
     transform: translateY(0) scale(1);
     opacity: 1;
@@ -746,9 +747,9 @@ a:hover {
 
 /* .btn-base:hover::before {
     transform: translateX(0);
-}
+} */
 
-.btn-base:focus .btn-text span,
+/* .btn-base:focus .btn-text span,
 .btn-base:hover .btn-text span {
     transform: translateY(-100%);
 }
@@ -7713,15 +7714,37 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
 /* NEED ADD */
 
-@keyframes promo-snow-spin {
+
+@-webkit-keyframes promo-snow-spin {
     0% {
- 
-        transform: translate(-50%,-50%) rotate(0);
+
+        -webkit-transform: translate(-50%, -50%) rotate(0);
+
+        transform: translate(-50%, -50%) rotate(0);
     }
 
     100% {
- 
-        transform: translate(-50%,-50%) rotate(360deg);
+
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+}
+
+@keyframes promo-snow-spin {
+    0% {
+
+        -webkit-transform: translate(-50%, -50%) rotate(0);
+
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    100% {
+
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 
 }
@@ -8332,6 +8355,21 @@ body {
     height: 100%;
 }
 
+.new-year .btn-base:hover,
+button:hover,
+.new-year .btn-base:focus,
+button:focus {
+    transform: unset;
+}
+
+ 
+.new-year .btn-base {
+    background: #F44336;
+    transition-duration: .5s;
+    transition-property: background-color, color, filter;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
 .squada-one-regular {
     font-family: "Squada One", sans-serif;
     font-weight: 400;
@@ -8346,20 +8384,19 @@ body {
 }
 
 
-.page-node-1029 {
-    padding: 0;
-}
-
-.new-year,
-.modal-open .modal.roulette {
+.new-year {
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+
+.modal-open .modal.roulette {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
  
 
-.modal.roulette.bonus-gift,
-.modal.roulette.welcome {
+.modal.roulette {
     display: block;
     position: fixed;
     top: unset;
@@ -8375,17 +8412,19 @@ body {
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+    z-index: -1;
 }
- 
-.modal.roulette.show{
+
+.modal.roulette.show {
     display: block;
     transform: translate(-50%, 50%);
     pointer-events: visible;
     opacity: 1;
+    z-index: 1060;
 }
 
 
- 
+
 
 
 
@@ -8450,8 +8489,7 @@ body {
 }
 
 
-
-.is-animated {
+.is-animated{
     transform: scale(.7) rotate(0) translateY(100%);
     opacity: 0;
     transition-duration: .7s;
@@ -8538,31 +8576,25 @@ body {
     opacity: 1;
 }
 
-
-
-.confetti-animation {
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-
  
 
-
-.modal.roulette.welcome .modal-content,
-.modal.roulette.bonus-gift .modal-content {
+ 
+/* NEED ADD  */
+.modal.roulette .modal-content {
     border-radius: 1.44vw;
     padding: 0;
     border: unset;
 
-    min-height: 500px;
+    min-height: calc(470px + .5vw);
 }
 
-.modal.roulette.welcome .modal-content {
+
+/* .modal.roulette.welcome .modal-content {
     min-height: auto;
-}
+} */
+
+
+
 
 .modal.roulette .modal-dialog {
     max-width: 80%;
@@ -8572,16 +8604,21 @@ body {
     padding-left: 2.60vw;
     padding-top: 2.60vw;
 }
+ 
+ 
+ 
 
 .modal.roulette.welcome .modal-header img {
     z-index: 2;
 }
 
+.modal.roulette.welcome.error-email .modal-header::before,
+.modal.roulette.welcome.error-limit .modal-header::before,
 .modal.roulette.welcome .modal-header::before {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
     display: block;
     content: "";
@@ -8604,12 +8641,25 @@ body {
     z-index: 1;
 }
 
- 
+.modal.roulette.welcome.error-email .modal-header::before,
+.modal.roulette.welcome.error-limit .modal-header::before {
+    background: url('../../../../themes/custom/adrofx_theme/images/snowflake-error.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 
 
 .modal.roulette.welcome .modal-content {
     background: linear-gradient(120deg, #ACDAFF 13.68%, #D9EEFF 108.06%);
 }
+
+
+.modal.roulette.welcome .modal-content.error {
+    background: var(--white);
+}
+
 
 .modal.roulette .modal-content .modal-body {
     flex: 6;
@@ -8619,14 +8669,17 @@ body {
     flex: 5.5;
 }
 
-.modal.roulette.bonus-gift .modal-content .modal-header{
+
+.modal.roulette.bonus-gift .modal-content .modal-header {
     padding: 3.125vw 3.125vw 0;
 }
 
 .modal.roulette .modal-content .modal-body,
+.modal.roulette.welcome.error-email .modal-header,
 .modal.roulette.bonus-gift .modal-content .modal-body {
     padding: 3.125vw;
 }
+
 
 .modal.roulette.bonus-gift .modal-content .modal-body {
     flex: unset;
@@ -8671,22 +8724,19 @@ body {
 }
 
 
-.modal.roulette.bonus-gift .modal-header .close>svg,
-.modal.roulette .modal-content .modal-close svg {
+/* NEED ADD */
+
+.modal.roulette .close>svg {
     fill: #113252;
 }
 
-
-
-.input.email button,
+.new-year .btn-base,
 .input.email .input-field,
 .section-header.event .link,
-.section-header.event .btn-red-green,
 .input.email .input-field::placeholder,
 .modal.roulette .modal-body .modal-title,
 .modal.roulette .modal-header .modal-title,
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text,
-.modal.roulette.bonus-gift .buttons-container.bonus-gift button,
 .modal.roulette .modal-body .modal-title+.modal-text,
 .section-header.event .section-header__description,
 .modal.roulette.welcome .modal-body .modal-text,
@@ -8699,10 +8749,19 @@ body {
     margin-bottom: 25px;
 }
 
+/* NEED ADD  */
+.new-year .btn-base {
+    line-height: 1.5;
+}
 
+ 
 .modal.roulette .modal-body .modal-text,
 .modal.roulette .modal-body .modal-title {
     max-width: 420px;
+}
+
+.modal.roulette.welcome.error-email .modal-body .modal-text {
+    max-width: 360px;
 }
 
 .modal.roulette.bonus-gift .modal-header .modal-title,
@@ -8720,7 +8779,7 @@ body {
 }
 
 
- 
+
 
 .modal.roulette .modal-body .modal-text>.link,
 .modal.roulette .modal-body .modal-title+.modal-text,
@@ -8746,7 +8805,7 @@ body {
 }
 
 
-.modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+.modal.roulette.bonus-gift .buttons-container.bonus-gift .btn-base {
     flex: 0 1 auto;
     padding: 0.938rem 1.875rem;
 }
@@ -8754,13 +8813,13 @@ body {
 
 
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
-    flex: 0 1 314px;
+    flex: 0 1 320px;
 }
 
 .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
     color: #274766;
 
-    padding:3.47vw;
+    padding: 3.47vw;
     border-radius: 10px;
     border: 1px dashed #CBCBCB;
 }
@@ -8786,10 +8845,11 @@ body {
     border: unset;
 }
 
-.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text{
+.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
     width: 100%;
     max-width: 100%;
 }
+
 .modal.roulette .input.email+.modal-text {
     max-width: 320px;
     color: #113252;
@@ -8803,6 +8863,7 @@ body {
 
 .input.email {
     margin-bottom: 60px;
+    width: 100%;
 }
 
 .input.email .input-field {
@@ -8826,7 +8887,7 @@ body {
     color: rgba(107, 124, 148, 0.5);
 }
 
-.input.email button {
+.input.email .btn-base {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -8837,7 +8898,7 @@ body {
     padding: 0.625rem 1.875rem;
 }
 
-.input.email button::before {
+.input.email .btn-base::before {
     content: unset;
 }
 
@@ -8863,9 +8924,9 @@ body {
 
 .section-header.event .link,
 .section-header.event .section-header__description {
-    max-width: calc(45% + .3vw);
+    max-width: calc(42% + .3vw);
 
-    font-size: 1.44vw;
+    font-size: 1.354vw;
     color: #113252;
     line-height: 1.5;
 }
@@ -8907,38 +8968,38 @@ body {
 }
 
 
-.section-header.event .btn-red-green {
+.section-header.event .btn-base {
     font-size: 1.042vw;
-    line-height: 1.5;
+    /* line-height: 1.5; */
 }
 
-.input.email button,
-.buttons-container.bonus-gift .btn-red-green,
-.section-header.event .btn-red-green {
+/* .input.email .btn-base,
+.buttons-container.bonus-gift .btn-base,
+.section-header.event .btn-base {
     background: #F44336;
 
     transition-duration: .5s;
     transition-property: background-color, color;
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+} */
+
+.section-header.event .btn-base {
+    padding: 1.458vw 3.073vw;
 }
 
-.section-header.event .btn-red-green {
-    padding: 1.56vw 3.33vw;
-}
-
-.section-header.event .btn-red-green {
+.section-header.event .btn-base {
     font-size: 1.11vw;
     color: var(--white);
 }
 
 
 
-.input.email button:hover,
-.input.email button:focus,
-.buttons-container.bonus-gift .btn-red-green:hover,
-.buttons-container.bonus-gift .btn-red-green:focus,
-.section-header.event .btn-red-green:focus,
-.section-header.event .btn-red-green:hover {
+.input.email .btn-base:hover,
+.input.email .btn-base:focus,
+.buttons-container.bonus-gift .btn-base:hover,
+.buttons-container.bonus-gift .btn-base:focus,
+.section-header.event .btn-base:focus,
+.section-header.event .btn-base:hover {
     background: var(--green);
     color: var(--white);
 }
@@ -9010,8 +9071,7 @@ body {
     transform: translateX(-50%);
 }
 
-.roulette-base,
-.roulette-btn {
+.roulette-base {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -9041,7 +9101,7 @@ body {
 
 .roulette-tree {
     bottom: 0;
-    left: -45%;
+    left: -40%;
     z-index: 2;
 }
 
@@ -9061,6 +9121,7 @@ body {
     width: 9.42vw;
     height: 9.42vw;
     border-radius: 50%;
+    background: transparent;
 
     object-fit: contain;
     object-position: center;
@@ -9078,6 +9139,7 @@ body {
 .roulette-btn:hover,
 .roulette-btn:focus {
     transform: translate(-50%, -50%);
+    background: transparent;
     filter:
         drop-shadow(51px 226px 65px rgba(42, 139, 66, 0)) drop-shadow(33px 145px 59px rgba(42, 139, 66, 0.05)) drop-shadow(19px 81px 50px rgba(42, 139, 66, 0.10)) drop-shadow(8px 36px 37px rgba(42, 139, 66, 0.20)) drop-shadow(2px 9px 20px rgba(42, 139, 66, 0.30));
 }
@@ -9104,22 +9166,22 @@ body {
 
 .modal.roulette.welcome .modal-body .modal-text,
 .modal.roulette.welcome .modal-body .modal-title {
-    --space:25px;
+    --space: 25px;
     margin-bottom: var(--space);
 }
 
 
 
-.modal.roulette.bonus-gift .modal-header button + .modal-title {
-    --space:0;
-    margin-bottom: var(--space);
+.modal.roulette.bonus-gift .modal-header>button+.modal-title {
+    --space: 0px;
+    margin: var(--space);
 }
- 
+
 
 
 .modal.roulette.bonus-gift .modal-body .modal-title,
 .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
-    --space:5%;
+    --space: 5%;
     margin-bottom: var(--space);
 }
 
@@ -9137,13 +9199,13 @@ body {
     }
 
     .section-header.event .link,
-    .section-header.event .btn-red-green {
+    .section-header.event .btn-base {
         font-size: 16px;
     }
 
 
     .modal.roulette.bonus-gift .buttons-container.bonus-gift button,
-    .section-header.event .btn-red-green {
+    .section-header.event .btn-base {
         padding: 15px 30px;
     }
 
@@ -9183,34 +9245,50 @@ body {
         padding: 50px;
     }
 
-    
     .modal.roulette.welcome .modal-content .modal-body,
     .modal.roulette.bonus-gift .modal-content .modal-body,
+    .modal.roulette.welcome.error-email .modal-content .modal-header,
+    .modal.roulette.welcome.error-email .modal-content .modal-body,
     .modal.roulette.bonus-gift .modal-content .modal-header {
         padding: 60px;
     }
 
+    .modal.roulette.welcome.error-limit .modal-content .modal-body,
     .modal.roulette.welcome .modal-content .modal-header {
         padding-left: 60px;
         padding-top: 60px;
     }
 
-    .modal.roulette.bonus-gift .modal-header .close, .modal.roulette .close {
+    .modal.roulette.bonus-gift .modal-header .close,
+    .modal.roulette .close {
         top: 60px;
         right: 60px;
     }
-    
+
 
     .section-header.event .section-header__description {
         max-width: 320px;
     }
 
-    .modal.roulette.bonus-gift .modal-body .modal-title, .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title,
+    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
         margin-bottom: 34px;
     }
 
     .section-header.event .link {
         margin-top: 40px;
+    }
+
+    /* NEED ADD */
+ 
+    .modal.roulette.welcome .modal-content  {
+        max-height: 470px;
+        min-height: 470px;
+    }
+
+    .modal.roulette.bonus-gift .modal-content {
+        max-height: 500px;
+        min-height: 500px;
     }
 }
 
@@ -9218,9 +9296,6 @@ body {
 @media (max-width: 1199.98px) {
 
     /*============NEW YEAR START HO-HO-HO ===============*/
-    .grid.roulette-benefits {
-        display: none;
-    }
 
 
     .gift-img.gift-center {
@@ -9231,14 +9306,18 @@ body {
     .gift-img.gift-front {
         bottom: 30%;
     }
-
+ 
     .modal.roulette.bonus-gift .modal-content {
-        min-height: 400px;
+        min-height: 450px;
     }
 
     .modal.roulette .modal-dialog {
         max-width: 90%;
     }
+
+    
+    /* NEED TO ADD  */
+ 
  
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
@@ -9750,7 +9829,7 @@ body {
     }
 
     .section-header.event .link,
-    .section-header.event .btn-red-green,
+    .section-header.event .btn-base,
     .section-header.event .section-header__description {
         font-size: 16px;
     }
@@ -9759,8 +9838,10 @@ body {
         max-width: 100%;
     }
 
+ 
+
     .section-header.event .section-header__description {
-        margin-right: 4.83%;
+        max-width: 320px;
     }
 
     .section-header.event .section-header__description+.icon-arrow::after {
@@ -9835,15 +9916,24 @@ body {
         top: 4vw;
         right: 4vw;
     }
-
+ 
 
     .input.email {
         max-width: 500px;
     }
 
-    /* .modal.roulette .modal-body .modal-text {
-        max-width: 100%;
-    } */
+ 
+    /* NEED ADD */
+
+    
+    .modal.roulette.welcome.error-email .modal-content  {
+        min-height: 400px;
+    }
+
+    .modal.roulette.welcome.error-email .modal-body .modal-text {
+        font-size:  clamp(0.8125rem, 0.5533rem + 0.7212vw, 1rem);
+        max-width: 420px;
+    }
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
 
@@ -10593,6 +10683,10 @@ body {
     .modal.roulette.bonus-gift .modal-content .modal-body,
     .modal.roulette.bonus-gift .modal-content .modal-header {
         padding: 4vw;
+    }
+
+    .modal.roulette.welcome.error-email .modal-content {
+        min-height: 350px;
     }
 
 
@@ -11655,21 +11749,32 @@ body {
         margin-bottom: 15px;
     }
 
+    
+        /* NEED ADD */
+    .new-year .btn-base,
     .section-header.event .link,
-    .section-header.event .btn-red-green,
-    .modal.roulette.welcome .modal-body .modal-text,
+    .modal.roulette .modal-body .modal-text,
     .section-header.event .section-header__description,
-    .modal.roulette.bonus-gift .buttons-container.bonus-gift button,
     .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
         font-size: 13px;
         line-height: 1.5;
     }
 
-    .input.email button,
-    .section-header.event .btn-red-green,
-    .modal.roulette.bonus-gift .buttons-container.bonus-gift button {
+
+    .new-year .btn-base {
         padding: 10px 20px;
     }
+
+    /* NEED ADD */
+
+
+
+    /* .input.email .btn-base,
+    .section-header.event .btn-base,
+    .modal.roulette.bonus-gift .buttons-container.bonus-gift .btn-base {
+        padding: 10px 20px;
+    } */
+
 
     .section-header.event .link>svg {
         margin-right: 3px;
@@ -11711,7 +11816,7 @@ body {
 
 
 
-    .input.email button {
+    .input.email .btn-base {
         position: static;
     }
 
@@ -11730,10 +11835,7 @@ body {
         margin-bottom: 9px;
     }
 
-    .modal.roulette.welcome .modal-body .modal-text {
-        font-size: 14px;
-    }
-
+ 
 
     .gift-img.gift-middle {
         filter: blur(2px);
@@ -11816,79 +11918,7 @@ body {
         top: 20px;
         right: 20px;
     }
- 
 
-    /* .roulette-gifts {
-        top: 0;
-        transform: translate(-50%, 0);
-    } */
-
-    /* .roulette-slide {
-        transform: translate(-50%, 20%);
-        bottom: 0;
-    } */
-
-    /* 
-    .modal.roulette .modal-content {
-        padding: 20px;
-    }
-
-    .modal.roulette .modal-body .modal-title+.modal-text {
-        font-size: 16px;
-        padding: 13px;
-    } */
-
-
-    /* .modal.roulette .button-green {
-        padding: 10px 30px;
-    }
-
-    .section-header.event .button-container.lg {
-        display: none;
-    }
-
-
-    .section-header.event .button-container.xs {
-        display: block;
-        margin-bottom: 0;
-    }
-
-
-    .modal.roulette .modal-body,
-    .modal.roulette.dark .modal-body,
-    .modal.roulette.dark .modal-body .modal-text {
-        padding: 0;
-    }
-
-
-    .modal.roulette.dark .modal-content {
-        padding: 0 15px 30px 15px;
-    }
-
-    .modal.roulette .modal-content {
-        padding: 15px;
-    }
-
-    .modal.roulette .modal-content {
-        border-radius: 30px;
-    }
-
-    .modal.roulette .modal-body .modal-title+.modal-text,
-    .modal.roulette.dark .modal-body .modal-text {
-        font-size: 14px;
-    }
-
-    .input.email .input-field {
-        padding: 15px 15px 15px 20px;
-    }
-
-    .modal.roulette.show {
-        padding-left: 0;
-    }
-
-    .modal.roulette.dark .close {
-        top: 30px;
-    } */
 
 
     /*============NEW YEAR START HO-HO-HO ===============*/

@@ -1,128 +1,122 @@
+const email = document.getElementById('eml');
+const email_error_popup = document.getElementById('errorEmailModal');
 
-const lottie = document.getElementById("lottie");
 const giftImage = document.querySelectorAll(".is-animated");
 const spinButton = document.querySelectorAll(".js-spin");
 const rouletteBonus = document.querySelector(".roulette-base");
-const animations = document.querySelectorAll(".animation");
-
-const modalNotify = document.getElementById("notification");
-const modalBonus = document.getElementById("giftModal");
+const popup = document.getElementById('giftModal');
 const modals = document.querySelectorAll('.modal.roulette')
-
-
-let throttleTimer = false;
+const animations = document.querySelectorAll('.animation')
 
 
 window.addEventListener("DOMContentLoaded", () => {
 
+
+    function hideAllModals() {
+        return modals.forEach(modal => {
+            $(modal).modal('hide');
+            $("#notification").modal('show');
+        })
+    }
+
+    hideAllModals()
+
+
     function onLoadRunScrollAnimation(animations) {
-        return animations.forEach((animation) => {
-            if (elementInView(animation) && window.scrollY === 0) {
-                animation.style.transitionDelay =
-                    animation.dataset.delay + "ms";
-                animation.style.transitionDuration = 1000 + "ms";
-                animation.classList.add("scrolled");
+
+        if (animations.length) {
+            animations.forEach((animation) => {
+                if (elementInView(animation) && window.scrollY === 0) {
+                    animation.style.transitionDelay =
+                        animation.dataset.delay + "ms";
+                    animation.style.transitionDuration = 1000 + "ms";
+                    animation.classList.add("scrolled");
+                } else {
+                    animation.classList.remove("scrolled");
+                    animation.classList.remove("animation");
+                }
+            });
+
+        } else if (!animations.length) {
+            if (elementInView(animations) && window.scrollY === 0) {
+                animations.style.transitionDelay =
+                    animations.dataset.delay + "ms";
+                animations.style.transitionDuration = 1000 + "ms";
+                animations.classList.add("scrolled");
+            } else {
+                animations.classList.remove("scrolled");
+                animations.classList.remove("animation");
+
             }
-        });
+        }
     }
 
-    // if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    //     onLoadRunScrollAnimation();
-    //     // animationOnScroll(animations)
-    // }
 
-    function addActiveClass(item) {
-        item.classList.add("active");
-    }
-
-    function removActiveClass(item) {
-        item.classList.remove("active");
-    }
 
     function elementInView(item, scrollOffset = 0) {
         let elementOffsetTop = item.getBoundingClientRect().top;
-        let elementOffsetBottom = item.getBoundingClientRect().bottom;
 
-        return (
-            elementOffsetTop <=
-            (window.innerHeight || document.documentElement.clientHeight) -
-            scrollOffset
-        );
+        return (elementOffsetTop <= (window.innerHeight || document.documentElement.clientHeight) - scrollOffset);
     }
- 
 
 
-    $('#notification').modal('show');
-    $('#giftModal').modal('hide');
 
-    function runModalAniamtion () {
-      return  modals.forEach(el => {
-        
-            if(el.classList.contains('show')) {
-    
-            const animation = el.querySelectorAll('.animation');
-            onLoadRunScrollAnimation(animation)
+
+    function onModalOpenRunAnimationFonrModal() {
+        return modals.forEach(modal => {
+           
+            if ($(modal).hasClass('show')) {
+                const anim = modal.querySelectorAll('.animation');
+                onLoadRunScrollAnimation(anim);
             } else {
-               return
+                $(modal).modal('hide');
             }
-    
-    
         })
-    
+
     }
-    
-    runModalAniamtion()
- 
+
+    onModalOpenRunAnimationFonrModal()
+
 
     spinButton.forEach((button) => {
-
 
         button.addEventListener("click", () => {
             rouletteBonus.style.setProperty("--target", `0`);
             rouletteBonus.style.animation = "";
 
-            giftImage.forEach(el => {
-                el.classList.remove('animated')
-            })
+            giftImage.forEach(el => { el.classList.remove('animated')})
 
- 
-        
 
             setTimeout(() => {
                 rouletteBonus.style.setProperty("--target", `7200deg`);
-                rouletteBonus.style.animation =
-                    "spin-roulette 5s ease-in-out .2s forwards";
+                rouletteBonus.style.animation = "spin-roulette 5s cubic-bezier(0.4, 0, 0.2, 1) forwards";
             }, 10);
 
             setTimeout(() => {
-                $(modalBonus).modal('show');
-                giftImage.forEach(el => {
-                    el.classList.add('animated')
-                });
-                
-                runModalAniamtion()
+                $('#giftModal').modal('show');
 
+                onModalOpenRunAnimationFonrModal()
+
+                giftImage.forEach(el => {el.classList.add('animated')});
             }, 5000);
         });
     });
 
-    function initAniamtion() {
-        let scroll = window.scrollY;
-    }
 
-    const throttle = (callback, timer) => {
-        return () => {
-            if (throttleTimer) return; // Если таймер активен, выходим
 
-            throttleTimer = true;
-            setTimeout(() => {
-                callback();
-                throttleTimer = false;
-            }, timer);
-        };
-    };
 
-    window.addEventListener("scroll", throttle(initAniamtion, 250));
+    // const throttle = (callback, timer) => {
+    //     return () => {
+    //         if (throttleTimer) return; // Если таймер активен, выходим
+
+    //         throttleTimer = true;
+    //         setTimeout(() => {
+    //             callback();
+    //             throttleTimer = false;
+    //         }, timer);
+    //     };
+    // };
+
 });
 
 // window.addEventListener('DOMContentLoaded', () => {
