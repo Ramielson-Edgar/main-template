@@ -1,10 +1,10 @@
 @font-face {
     font-family: "Roboto-Regular";
-    src: url("../../../fonts/Roboto-Regular.eot");
-    src: url("../../../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
-        url("../../../fonts/Roboto-Regular.svg#Roboto-Regular") format("svg"),
-        url("../../../fonts/Roboto-Regular.ttf") format("truetype"), url("../fonts/Roboto-Regular.woff") format("woff"),
-        url("../../../fonts/Roboto-Regular.woff2") format("woff2");
+    src: url("/fonts/Roboto-Regular.eot");
+    src: url("/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+        url("/fonts/Roboto-Regular.svg#Roboto-Regular") format("svg"),
+        url("/fonts/Roboto-Regular.ttf") format("truetype"), url("/fonts/Roboto-Regular.woff") format("woff"),
+        url("/fonts/Roboto-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: "Roboto-Italic";
-    src: url("../../../fonts/Roboto-Italic.eot");
-    src: url("../../../fonts/Roboto-Italic.eot?#iefix") format("embedded-opentype"),
-        url("../../../fonts/Roboto-Italic.svg#Roboto-Italic") format("svg"),
-        url("../../../fonts/Roboto-Italic.ttf") format("truetype"), url("../fonts/Roboto-Italic.woff") format("woff"),
-        url("../../../fonts/Roboto-Italic.woff2") format("woff2");
+    src: url("/fonts/Roboto-Italic.eot");
+    src: url("/fonts/Roboto-Italic.eot?#iefix") format("embedded-opentype"),
+        url("/fonts/Roboto-Italic.svg#Roboto-Italic") format("svg"),
+        url("/fonts/Roboto-Italic.ttf") format("truetype"), url("/fonts/Roboto-Italic.woff") format("woff"),
+        url("/fonts/Roboto-Italic.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -24,10 +24,10 @@
 
 @font-face {
     font-family: "Roboto-Black";
-    src: url("../../../fonts/Roboto-Black.eot");
-    src: url("../../../fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"),
-        url("../../../fonts/Roboto-Black.svg#Roboto-Black") format("svg"), url("../fonts/Roboto-Black.ttf") format("truetype"),
-        url("../../../fonts/Roboto-Black.woff") format("woff"), url("../fonts/Roboto-Black.woff2") format("woff2");
+    src: url("/fonts/Roboto-Black.eot");
+    src: url("/fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"),
+        url("/fonts/Roboto-Black.svg#Roboto-Black") format("svg"), url("/fonts/Roboto-Black.ttf") format("truetype"),
+        url("/fonts/Roboto-Black.woff") format("woff"), url("/fonts/Roboto-Black.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -35,14 +35,25 @@
 
 @font-face {
     font-family: "Roboto-Bold";
-    src: url("../../../fonts/Roboto-Bold.eot");
-    src: url("../../../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-        url("../../../fonts/Roboto-Bold.svg#Roboto-Bold") format("svg"), url("../fonts/Roboto-Bold.ttf") format("truetype"),
-        url("../../../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.woff2") format("woff2");
+    src: url("/fonts/Roboto-Bold.eot");
+    src: url("/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+        url("/fonts/Roboto-Bold.svg#Roboto-Bold") format("svg"), url("/fonts/Roboto-Bold.ttf") format("truetype"),
+        url("/fonts/Roboto-Bold.woff") format("woff"), url("/fonts/Roboto-Bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("/fonts/roboto-latin-500-normal.woff");
+    src: url("/fonts/roboto-latin-500-normal.woff2") format("woff"), url("/fonts/roboto-latin-500-normal.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 @font-face {
     font-family: "Akrobat-Regular";
@@ -103,19 +114,19 @@ roulette promo pop up font */
     --font-size-16: 1rem;
     --font-size-14: 0.875rem;
 
- 
+
     --white-text: #fff;
     --dark-text: #211d1d;
     --blue-text: #0e6ffd;
     --grey-text: #404040;
 
- 
+
     --font-weight-700: 700;
     --font-weight-400: 400;
 
-  
+
     --font-style-normal: normal;
- 
+
     /*BG COLOR */
     --white-bg-color: #fff;
     --blue-bg-color: #F4F7FE;
@@ -127,18 +138,18 @@ roulette promo pop up font */
     --blue-light-bg: #97d5ff;
     --allpips-bg-color: #3D3787;
 
- 
+
     --base-line-height: 24px;
 
- 
+
     --z-index-top: 100;
     --z-index-minus: -1;
 
- 
+
     --blob-gradient: linear-gradient(142.66deg, #7a9fff 6.63%, #98a2ff 102.07%);
     --blob-shades: inset -34px -12px 50px rgba(61, 92, 255, 0.74), inset 17px 27px 50px rgba(255, 255, 255, 0.51);
 
-  
+
     --blue50: #e3f2fd;
     --blue100: #bbdefb;
     --blue200: #90caf9;
@@ -564,8 +575,8 @@ a:hover {
 
 .btn-base {
     display: inline-block;
-    
-    font-family: "Roboto-Regular",sans-serif;
+
+    font-family: "Roboto-Regular", sans-serif;
     font-weight: 400;
     line-height: 1.5;
     text-decoration: none;
@@ -577,7 +588,7 @@ a:hover {
     border-radius: 10px;
     border: 1px solid transparent;
 
-    transition-duration: .4s , .2s , .2s;
+    transition-duration: .4s, .2s, .2s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: background-color, color, border-color;
 }
@@ -626,7 +637,7 @@ a:hover {
 }
 
 
- 
+
 .btn-red-green {
     color: #fff;
     background: var(--red500);
@@ -722,19 +733,19 @@ a:hover {
     color: var(--white);
 }
 
- 
+
 .btn-border-red-green {
     color: var(--red500);
     border-color: var(--red500);
 }
 
 
- 
+
 .btn-border-red-green:focus,
 .btn-border-red-green:hover {
     color: var(--white);
     background: var(--green);
-     border-color: var(--green);
+    border-color: var(--green);
 }
 
 .btn-border-red {
@@ -749,13 +760,13 @@ a:hover {
 }
 
 .btn-border-red:hover,
-.btn-border-red:focus{
+.btn-border-red:focus {
     color: var(--white);
     background: var(--red500);
 }
- 
 
- 
+
+
 
 .btn-blue-white {
     background-color: var(--blue400);
@@ -8317,22 +8328,20 @@ body {
 }
 
 
-/*============= roulette modal============= */
+/*============= roulette modal============= 01*/
+
+
+
 .new-year {
-    background: linear-gradient(288deg, #CDE8FF -2.34%, #F6FBFF 98.86%);
-    background-repeat: repeat;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: linear-gradient(283deg, #4F89B9 27.35%, #26445E 81.15%);
     background-position: center;
+    background-repeat: repeat;
     background-size: cover;
     height: 100%;
 }
-
-
-/* .new-year .link,
-.new-year .btn-base {
-    transition-duration: .3s;
-    transition-property: background-color, color, filter;
-    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-} */
 
 
 
@@ -8342,18 +8351,10 @@ body {
 .new-year .section-header .section-header__description,
 .new-year .modal-title,
 .new-year .modal-text {
-    font-family: "Roboto-Regular",sans-serif;
+    font-family: "Roboto-Regular", sans-serif;
     font-weight: 400;
 }
 
-
-
-/* .new-year .link,
-.new-year .btn-base {
-    line-height: 1.5;
-} */
-
- 
 
 .modal.roulette .modal-text,
 .modal.roulette .modal-title,
@@ -8362,8 +8363,8 @@ body {
     margin-bottom: 25px;
     color: #113252;
 }
- 
- 
+
+
 
 .squada-one-regular {
     font-family: "Squada One", sans-serif;
@@ -8383,13 +8384,6 @@ body {
     font-weight: 600;
 }
 
-
-
-
-.new-year {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
 
 
 .modal-open .modal.roulette {
@@ -8457,7 +8451,7 @@ body {
 }
 
 
- 
+
 
 
 .modal.roulette .modal-header .modal-text {
@@ -8833,7 +8827,7 @@ body {
     border-color: var(--green);
 }
 
-.input.email .input-field:not(:placeholder-shown):required:valid + button {
+.input.email .input-field:not(:placeholder-shown):required:valid+button {
     background: var(--green);
 }
 
@@ -8870,10 +8864,28 @@ body {
     content: unset;
 }
 
+
 /* ============roulette section========== */
+
+.roulette-wheel {
+    background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
+        url('/themes/custom/adrofx_theme/images/new-year-snowflake.png'),
+        radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+    background-repeat: repeat, no-repeat, repeat, no-repeat;
+    background-position: center, top 100px right -120px, center, center;
+    background-size: 50px 50px, 68.75% auto, cover, cover;
+
+    padding-top: 2.23%;
+    padding-bottom: 2.23%;
+}
+
+
+
+
 
 .section-header.event {
     z-index: 10;
+    margin-bottom: 3.646vw;
 }
 
 
@@ -8884,8 +8896,6 @@ body {
 
     font-size: 9.844vw;
     line-height: .8;
-    color: #113252;
-
     margin-bottom: 2%;
 }
 
@@ -8903,16 +8913,46 @@ body {
 }
 
 
-.modal.roulette .modal-body .modal-text>.link,
-.section-header.event .link {
+.modal.roulette .modal-body .modal-text>.link {
     color: #0022FF;
     text-decoration: underline;
 }
 
+/* NEED ADD */
+
 .section-header.event .link {
     font-size: 1.11vw;
-    margin-top: 2.22vw;
+    color: var(--grey900);
+
+    /* margin-top: 2.22vw; */
+    margin-top: 5.104vw;
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2)
 }
+
+.section-header.event .link.btn-base-lg {
+    padding: 0.99vw 1.5vw;
+}
+
+
+
+
+@supports (backdrop-filter: blur(20px)) {
+    .section-header.event .link {
+        color: var(--white);
+        background-color: rgba(255, 255, 255, 0.20);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+.section-header.event .link>svg {
+    stroke: var(--white);
+}
+
+
+
 
 .section-header.event .link>svg {
     margin-right: 8px;
@@ -8929,7 +8969,7 @@ body {
 
 .section-header.event .logo {
     display: inline-block;
-    margin-bottom: 7%;
+    margin-bottom: 3.75vw;
 }
 
 
@@ -8937,7 +8977,7 @@ body {
     font-size: 1.042vw;
 }
 
- 
+
 
 .section-header.event .btn-base {
     padding: 1.458vw 3.073vw;
@@ -8980,16 +9020,6 @@ body {
 }
 
 
-.roulette-wheel {
-    position: relative;
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year-background.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    padding-top: 2.23%;
-    padding-bottom: 2.23%;
-}
 
 .img-container.wheel {
     height: 45.57vw;
@@ -9064,6 +9094,10 @@ body {
 
 
 .roulette-btn {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+
     width: 9.42vw;
     height: 9.42vw;
     border-radius: 50%;
@@ -9084,7 +9118,7 @@ body {
 
 .roulette-btn:hover,
 .roulette-btn:focus {
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(0);
     background: transparent;
     filter:
         drop-shadow(51px 226px 65px rgba(42, 139, 66, 0)) drop-shadow(33px 145px 59px rgba(42, 139, 66, 0.05)) drop-shadow(19px 81px 50px rgba(42, 139, 66, 0.10)) drop-shadow(8px 36px 37px rgba(42, 139, 66, 0.20)) drop-shadow(2px 9px 20px rgba(42, 139, 66, 0.30));
@@ -9102,13 +9136,6 @@ body {
 }
 
 
-.ticket {
-    mask-image: url('../../../../themes/custom/adrofx_theme/images/ticket-mask.svg');
-    mask-repeat: no-repeat;
-    mask-position: center left;
-    mask-size: contain;
-    z-index: 10;
-}
 
 .modal.roulette.welcome .modal-body .modal-text,
 .modal.roulette.welcome .modal-body .modal-title {
@@ -9133,6 +9160,167 @@ body {
 
 
 
+.ticket .qr-code .title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-family: 500;
+
+    font-size: 0.938vw;
+    line-height: 1.2;
+}
+
+.ticket .ticket-content .line {
+    height: 1px;
+    border-bottom: 1px solid #E8E8E8;
+    margin-bottom: 2.656vw;
+}
+
+.ticket .qr-code,
+.ticket .ticket-content {
+    padding: 2.083vw;
+}
+
+.ticket .qr-code .title {
+    margin-bottom: 3.229vw;
+}
+
+
+.ticket .qr-code {
+    width: 25%;
+}
+
+.ticket .ticket-content {
+    width: 75%;
+}
+
+
+.bonuses .header {
+    z-index: 1040;
+}
+
+
+
+
+.ticket .ticket-content .line .label {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(107, 124, 148, 0.4);
+}
+
+
+.ticket-inner {
+    border-radius: 10px;
+    filter:
+        drop-shadow(356px 241px 121px rgba(8, 28, 48, 0.00)) drop-shadow(228px 154px 110px rgba(8, 28, 48, 0.01)) drop-shadow(128px 87px 93px rgba(8, 28, 48, 0.03)) drop-shadow(57px 39px 69px rgba(8, 28, 48, 0.04)) drop-shadow(14px 10px 38px rgba(8, 28, 48, 0.05));
+
+    z-index: 10;
+}
+
+
+
+.ticket {
+    width: 1054px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+
+    mask-image: url('/themes/custom/adrofx_theme/images/ticket-mask.svg');
+    mask-repeat: no-repeat;
+    mask-position: -1.563rem;
+    mask-size: contain;
+
+    background: var(--white);
+
+}
+
+
+
+
+
+.ticket .ticket-content .header .title {
+    display: flex;
+    flex: 1 1 auto;
+
+    font-family: "Roboto-bold", sans-serif;
+    font-weight: 700;
+    font-size: 1.823vw;
+    color: #0E365D;
+
+    margin-bottom: 10px;
+    border-right: 1px solid #E8E8E8;
+}
+
+.ticket .header .title .font-weight-normal {
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+}
+
+.ticket>.ticket-footer {
+    width: 321px;
+    max-width: 10%;
+    height: 317px;
+
+
+    border-left: 1px dashed #E8E8E8;
+    z-index: 1060;
+}
+
+
+
+.ticket .ticket-content .header svg {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+
+
+.list.gift-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto;
+    align-content: space-between;
+    gap: 30px;
+}
+
+
+.list.gift-benefits .item.border-right {
+    border-right: 1px dashed #E8E8E8;
+}
+
+
+
+.list.gift-benefits .item .title {
+    font-size: 1.8vw;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    color: #0E365D;
+}
+
+.list.gift-benefits .item .title::after {
+    position: relative;
+    left: -4px;
+    top: -12px;
+
+    display: inline-block;
+    content: "";
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    background: url('/themes/custom/adrofx_theme/images/icon-discount.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.list.gift-benefits .text {
+    font-family: "Roboto-Regular", sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #6B7C94;
+}
 
 
 @media screen and (min-width: 1441px) {
@@ -9221,11 +9409,7 @@ body {
         margin-bottom: 34px;
     }
 
-    .section-header.event .link {
-        margin-top: 40px;
-    }
 
-    /* NEED ADD */
 
     .modal.roulette.welcome .modal-content {
         max-height: 470px;
@@ -9235,6 +9419,64 @@ body {
     .modal.roulette.bonus-gift .modal-content {
         max-height: 500px;
         min-height: 500px;
+    }
+
+    /* NEED ADD */
+
+    .ticket {
+        mask-position: -1rem;
+        mask-size: 100% 100%;
+    }
+
+    .list.gift-benefits .item .title {
+        font-size: 25px;
+    }
+
+    .list.gift-benefits .text {
+        font-size: 16px;
+    }
+
+    .ticket .ticket-content .header .title {
+        font-size: 26px;
+    }
+
+    .ticket .qr-code .title {
+        font-size: 13px;
+    }
+
+    .roulette-wheel {
+        background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
+            url('/themes/custom/adrofx_theme/images/new-year-snowflake-xl.png'),
+            radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+
+        background-position: center, top 150px center, center, center;
+        background-size: 50px 50px, 2600px, cover;
+        background-repeat: repeat, no-repeat, no-repeat;
+    }
+
+    .section-header.event .link.btn-base-lg {
+        padding: 14px 21px;
+    }
+
+    .section-header.event {
+        margin-bottom: 0;
+    }
+
+    .section-header.event .link {
+        margin-top: 70px;
+    }
+
+    .ticket .qr-code,
+    .ticket .ticket-content {
+        padding: 40px;
+    }
+
+    .ticket .ticket-content .line {
+        margin-bottom: 40px;
+    }
+
+    .ticket .qr-code .title {
+        margin-bottom: 60px;
     }
 }
 
@@ -9869,7 +10111,7 @@ body {
     }
 
 
-    /* NEED ADD */
+
 
 
     .modal.roulette.welcome.error-email .modal-content {
@@ -9879,6 +10121,22 @@ body {
     .modal.roulette.welcome.error-email .modal-body .modal-text {
         font-size: clamp(0.8125rem, 0.5533rem + 0.7212vw, 1rem);
         max-width: 420px;
+    }
+
+    /* NEED ADD */
+
+
+    .roulette-wheel {
+        background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
+            url('/themes/custom/adrofx_theme/images/new-year-snowflake.png'),
+            radial-gradient(500px 500px at 640px 220px, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+        background-repeat: repeat, no-repeat, repeat, no-repeat;
+        background-position: center, top 100px right -120px, center, center;
+        background-size: 50px 50px, 68.75% auto, cover, cover;
+    }
+
+    .section-header.event .section-header__description + .icon-arrow {
+        gap: 8px;
     }
 
     /*============NEW YEAR NED HO-HO-HO ===============*/
@@ -10633,6 +10891,22 @@ body {
 
     .modal.roulette.welcome.error-email .modal-content {
         min-height: 350px;
+    }
+
+
+
+
+
+    .roulette-wheel {
+        background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
+            url('../../../../themes/custom/adrofx_theme/images/new-year-background-md.png'),
+            radial-gradient(146.1% 76.95% at 68.5% 78.5%, #EFF8FF 0%, #4F89B9 40.63%, #26445E 100%);
+
+        background-repeat: repeat, no-repeat, no-repeat;
+        background-position: center, bottom 60px right -100px;
+        background-size: cover, 80%, cover;
+
+        height: auto;
     }
 
 
@@ -11699,6 +11973,7 @@ body {
     /* NEED ADD */
     .new-year .btn-base,
     .section-header.event .link,
+    .section-header.event .btn-base,
     .modal.roulette .modal-body .modal-text,
     .section-header.event .section-header__description,
     .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
@@ -11707,19 +11982,11 @@ body {
     }
 
 
-    .new-year .btn-base {
+    .new-year .btn-base,
+    .section-header.event .btn-base,
+    .section-header.event .link.btn-base-lg {
         padding: 10px 20px;
     }
-
-    /* NEED ADD */
-
-
-
-    /* .input.email .btn-base,
-    .section-header.event .btn-base,
-    .modal.roulette.bonus-gift .buttons-container.bonus-gift .btn-base {
-        padding: 10px 20px;
-    } */
 
 
     .section-header.event .link>svg {
@@ -11737,15 +12004,6 @@ body {
         height: auto;
         margin-bottom: 27px;
     }
-
-
-    .roulette-wheel {
-        background: url('../../../../themes/custom/adrofx_theme/images/new-year-background-xs.png') 160px 160px repeat,
-            linear-gradient(288deg, #CDE8FF -2.34%, #F6FBFF 98.86%);
-        background-position: center;
-        background-size: cover;
-    }
-
 
 
     .modal.roulette .modal-dialog,
@@ -11865,6 +12123,21 @@ body {
         right: 20px;
     }
 
+
+
+    /* NEED ADD */
+
+    .roulette-wheel {
+        background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
+            url('../../../../themes/custom/adrofx_theme/images/new-year-snowflake-xs.png'),
+            radial-gradient(146.1% 76.95% at 68.5% 78.5%, #EFF8FF 0%, #4F89B9 40.63%, #26445E 100%);
+
+        background-repeat: repeat, no-repeat, no-repeat;
+        background-position: center, center, center;
+        background-size: cover, cover, cover;
+
+        height: auto;
+    }
 
 
     /*============NEW YEAR START HO-HO-HO ===============*/
