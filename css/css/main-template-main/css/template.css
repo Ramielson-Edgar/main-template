@@ -8869,7 +8869,7 @@ body {
 
 .roulette-wheel {
     background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
-        url('/themes/custom/adrofx_theme/images/new-year-snowflake.png'),
+        url('../../../../themes/custom/adrofx_theme/images/new-year-snowflake.png'),
         radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
     background-repeat: repeat, no-repeat, repeat, no-repeat;
     background-position: center, top 100px right -120px, center, center;
@@ -9224,7 +9224,7 @@ body {
     max-width: 100%;
     border-radius: 10px;
 
-    mask-image: url('/themes/custom/adrofx_theme/images/ticket-mask.svg');
+    mask-image: url('../../../../themes/custom/adrofx_theme/images/ticket-mask.svg');
     mask-repeat: no-repeat;
     mask-position: -1.563rem;
     mask-size: contain;
@@ -9308,7 +9308,7 @@ body {
     height: 20px;
 
     border-radius: 50%;
-    background: url('/themes/custom/adrofx_theme/images/icon-discount.svg');
+    background: url('../../../../themes/custom/adrofx_theme/images/icon-discount.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -9446,7 +9446,7 @@ body {
 
     .roulette-wheel {
         background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
-            url('/themes/custom/adrofx_theme/images/new-year-snowflake-xl.png'),
+            url('../../../../themes/custom/adrofx_theme/images/new-year-snowflake-xl.png'),
             radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
 
         background-position: center, top 150px center, center, center;
@@ -10128,7 +10128,7 @@ body {
 
     .roulette-wheel {
         background: url('../../../../themes/custom/adrofx_theme/images/new-year-dots.png'),
-            url('/themes/custom/adrofx_theme/images/new-year-snowflake.png'),
+            url('../../../../themes/custom/adrofx_theme/images/new-year-snowflake.png'),
             radial-gradient(500px 500px at 640px 220px, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
         background-repeat: repeat, no-repeat, repeat, no-repeat;
         background-position: center, top 100px right -120px, center, center;
