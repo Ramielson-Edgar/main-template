@@ -181,7 +181,22 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+
+    
  
+    let animation = document.getElementById('lottie-gift')
+ 
+    let params = {
+        container: animation,
+        path: './themes/custom/adrofx_theme/data/new-year-promo.json',
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+    };
+
+    const instance = lottie.loadAnimation(params);
+ 
+    instance.setSpeed(1.5)
 
 })
 

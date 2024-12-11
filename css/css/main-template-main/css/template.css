@@ -10910,9 +10910,6 @@ body {
     }
 
 
-    /* ============new year promo 2025 =============*/
-
-
     .cash-back-hero {
         background: url('/themes/custom/adrofx_theme/images/cashback-banner-sm.jpg');
         background-position: center center;
@@ -10922,7 +10919,7 @@ body {
     }
 
 
-    /* PROMO  */
+ 
     .insurance-promo-slider__header {
         font-size: 27px;
         line-height: 1.1;
