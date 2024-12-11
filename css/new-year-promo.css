@@ -3,20 +3,22 @@
     src: url("/fonts/Roboto-Regular.eot");
     src: url("/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
         url("/fonts/Roboto-Regular.svg#Roboto-Regular") format("svg"),
-        url("/fonts/Roboto-Regular.ttf") format("truetype"), url("/fonts/Roboto-Regular.woff") format("woff"),
+        url("/fonts/Roboto-Regular.ttf") format("truetype"),
+        url("/fonts/Roboto-Regular.woff") format("woff"),
         url("/fonts/Roboto-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-
 @font-face {
     font-family: "Roboto-Bold";
     src: url("/fonts/Roboto-Bold.eot");
     src: url("/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-        url("/fonts/Roboto-Bold.svg#Roboto-Bold") format("svg"), url("/fonts/Roboto-Bold.ttf") format("truetype"),
-        url("/fonts/Roboto-Bold.woff") format("woff"), url("/fonts/Roboto-Bold.woff2") format("woff2");
+        url("/fonts/Roboto-Bold.svg#Roboto-Bold") format("svg"),
+        url("/fonts/Roboto-Bold.ttf") format("truetype"),
+        url("/fonts/Roboto-Bold.woff") format("woff"),
+        url("/fonts/Roboto-Bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -25,12 +27,12 @@
 @font-face {
     font-family: "Roboto-Medium";
     src: url("/fonts/roboto-latin-500-normal.woff");
-    src: url("/fonts/roboto-latin-500-normal.woff2") format("woff"), url("/fonts/roboto-latin-500-normal.woff2") format("woff2");
+    src: url("/fonts/roboto-latin-500-normal.woff2") format("woff"),
+        url("/fonts/roboto-latin-500-normal.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-
 
 :root {
     --blue50: #e3f2fd;
@@ -82,7 +84,6 @@
     --darkgreen: #00b27d;
 }
 
-
 html {
     box-sizing: border-box;
 }
@@ -114,14 +115,12 @@ link:hover {
     text-decoration: none;
 }
 
-
 a:focus,
 link:focus,
 button:focus {
     outline: 2px solid var(--blue500);
     outline-offset: 5px;
 }
-
 
 a:visited,
 link:visited {
@@ -139,8 +138,6 @@ h2 {
     text-transform: capitalize;
 }
 
-
-
 .animation.transform-100 {
     display: inline-block;
     will-change: transform;
@@ -148,7 +145,6 @@ h2 {
     transition-property: transform;
     transition-timing-function: var(--ease-in-out-smooth);
 }
-
 
 .animation.transform-opacity {
     display: inline-block;
@@ -159,7 +155,6 @@ h2 {
     transition-timing-function: var(--ease-in-out-smooth);
 }
 
-
 .animation.transform-opacity-scale {
     will-change: transform;
     opacity: 0;
@@ -168,12 +163,10 @@ h2 {
     transition-timing-function: var(--ease-in-out-smooth);
 }
 
-
 .animation.scrolled {
     transform: translateY(0) scale(1);
     opacity: 1;
 }
-
 
 @media (prefers-reduced-motion) {
     .animation {
@@ -186,8 +179,6 @@ h2 {
         transition-timing-function: unset !important;
     }
 }
-
-
 
 .btn-base {
     display: inline-block;
@@ -204,7 +195,7 @@ h2 {
     border-radius: 10px;
     border: 1px solid transparent;
 
-    transition-duration: .4s, .2s, .2s;
+    transition-duration: 0.4s, 0.2s, 0.2s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: background-color, color, border-color;
 }
@@ -214,7 +205,6 @@ h2 {
 .btn-base:active {
     text-decoration: none;
 }
-
 
 .btn-base-lg {
     padding: 10px 40px;
@@ -232,7 +222,6 @@ h2 {
     padding: 10px 60px;
 }
 
-
 .btn-red-green {
     color: var(--white);
     background: var(--red500);
@@ -244,8 +233,6 @@ h2 {
     background: var(--green);
     color: #fff;
 }
-
-
 
 .btn-border-blue-green {
     color: var(--blue500);
@@ -261,14 +248,10 @@ h2 {
     color: #fff;
 }
 
-
-
 .btn-border-red-green {
     color: var(--red500);
     border-color: var(--red500);
 }
-
-
 
 .btn-border-red-green:focus,
 .btn-border-red-green:hover {
@@ -276,7 +259,6 @@ h2 {
     background: var(--green);
     border-color: var(--green);
 }
-
 
 .btn-border-red {
     color: var(--red500);
@@ -295,8 +277,6 @@ h2 {
     background: var(--red500);
 }
 
-
-
 .section-title,
 .section-header .section-header__title {
     font-family: "Roboto-bold";
@@ -310,12 +290,10 @@ h2 {
     margin-bottom: 40px;
 }
 
-
 .section-header .section-header__description {
     color: var(--grey-text);
     line-height: 1.5;
 }
-
 
 @-webkit-keyframes smooth-fly {
     0% {
@@ -332,9 +310,7 @@ h2 {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
-
 }
-
 
 @keyframes smooth-fly {
     0% {
@@ -351,45 +327,35 @@ h2 {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
-
 }
-
 
 @-webkit-keyframes promo-snow-spin {
     0% {
-
         -webkit-transform: translate(-50%, -50%) rotate(0);
 
         transform: translate(-50%, -50%) rotate(0);
     }
 
     100% {
-
         -webkit-transform: translate(-50%, -50%) rotate(360deg);
 
         transform: translate(-50%, -50%) rotate(360deg);
     }
-
 }
 
 @keyframes promo-snow-spin {
     0% {
-
         -webkit-transform: translate(-50%, -50%) rotate(0);
 
         transform: translate(-50%, -50%) rotate(0);
     }
 
     100% {
-
         -webkit-transform: translate(-50%, -50%) rotate(360deg);
 
         transform: translate(-50%, -50%) rotate(360deg);
     }
-
 }
-
-
 
 .smooth-fly {
     animation: smooth-fly 6s ease-in-out infinite;
@@ -403,22 +369,16 @@ h2 {
     animation: smooth-fly 6s ease-in-out -6s infinite;
 }
 
-
-
-
-
 .new-year {
     overflow-x: hidden;
     overflow-y: auto;
 
-    background: linear-gradient(283deg, #4F89B9 27.35%, #26445E 81.15%);
+    background: linear-gradient(283deg, #4f89b9 27.35%, #26445e 81.15%);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
     height: 100%;
 }
-
-
 
 .new-year .link,
 .new-year .btn-base,
@@ -430,7 +390,6 @@ h2 {
     font-weight: 400;
 }
 
-
 .modal.roulette .modal-text,
 .modal.roulette .modal-title,
 .section-header.event .section-header__title,
@@ -438,8 +397,6 @@ h2 {
     margin-bottom: 25px;
     color: #113252;
 }
-
-
 
 .squada-one-regular {
     font-family: "Squada One", sans-serif;
@@ -459,13 +416,10 @@ h2 {
     font-weight: 600;
 }
 
-
-
 .modal-open .modal.roulette {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 
 .modal.roulette {
     display: block;
@@ -479,7 +433,7 @@ h2 {
     height: auto;
     padding: 0;
 
-    transition-duration: 1s, .5s;
+    transition-duration: 1s, 0.5s;
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
@@ -494,9 +448,8 @@ h2 {
     z-index: 1060;
 }
 
-
 .modal.roulette.bonus-gift .modal-header {
-    background: linear-gradient(180deg, #9EDAD0 0%, #DDFFF9 100%);
+    background: linear-gradient(180deg, #9edad0 0%, #ddfff9 100%);
 }
 
 .modal.roulette.bonus-gift .modal-header .header {
@@ -509,7 +462,6 @@ h2 {
     padding: 0;
     border-bottom: unset;
 }
-
 
 .modal.roulette .modal-header .modal-title {
     font-size: clamp(1.875rem, 1.0441rem + 2.3121vw, 3.125rem);
@@ -526,7 +478,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-
 .modal.roulette .animation-container {
     bottom: -60px;
     left: 50%;
@@ -536,11 +487,10 @@ h2 {
     height: 100%;
 }
 
-
 .is-animated {
-    transform: scale(.7) rotate(0) translateY(100%);
+    transform: scale(0.7) rotate(0) translateY(100%);
     opacity: 0;
-    transition-duration: .7s;
+    transition-duration: 0.7s;
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -551,24 +501,21 @@ h2 {
 }
 
 .is-animated.animated.gift-middle {
-    transform: scale(.9) rotate(-50deg) translateY(0);
+    transform: scale(0.9) rotate(-50deg) translateY(0);
 }
 
-
 .is-animated.animated.gift-front {
-    transform: scale(.9) rotate(15deg) translate(-50%, 0);
+    transform: scale(0.9) rotate(15deg) translate(-50%, 0);
     z-index: 4;
 }
 
 .is-animated.animated.gift-center {
-    transform: scale(.9) rotate(-15deg) translateY(0);
+    transform: scale(0.9) rotate(-15deg) translateY(0);
 }
-
 
 .is-animated.animated.gift-back {
-    transform: scale(.9) rotate(-30deg) translateY(0);
+    transform: scale(0.9) rotate(-30deg) translateY(0);
 }
-
 
 .gift-img.gift-middle {
     bottom: 40px;
@@ -607,7 +554,6 @@ h2 {
     max-height: 100%;
 }
 
-
 .gift-img.gift-center {
     width: 286px;
     max-width: 100%;
@@ -624,26 +570,22 @@ h2 {
     opacity: 1;
 }
 
-
-
 .modal.roulette .modal-content {
     border-radius: 1.44vw;
     padding: 0;
     border: unset;
 
-    min-height: calc(470px + .5vw);
+    min-height: calc(470px + 0.5vw);
 }
-
 
 .modal.roulette .modal-dialog {
     max-width: 80%;
 }
 
 .modal.roulette.welcome .modal-header {
-    padding-left: 2.60vw;
-    padding-top: 2.60vw;
+    padding-left: 2.6vw;
+    padding-top: 2.6vw;
 }
-
 
 .modal.roulette.welcome .modal-header img {
     z-index: 2;
@@ -664,7 +606,7 @@ h2 {
     height: 477px;
     max-height: 100%;
 
-    background: url('../themes/custom/adrofx_theme/images/new-year/snowflake.png');
+    background: url("../themes/custom/adrofx_theme/images/new-year/snowflake.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -678,23 +620,19 @@ h2 {
 }
 
 .modal.roulette.welcome.error-email .modal-header::before {
-    background: url('../themes/custom/adrofx_theme/images/new-year/snowflake-error.png');
+    background: url("../themes/custom/adrofx_theme/images/new-year/snowflake-error.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
-
-
 .modal.roulette.welcome .modal-content {
-    background: linear-gradient(111deg, #ACDAFF 1.5%, #E4F3FF 73.43%);
+    background: linear-gradient(111deg, #acdaff 1.5%, #e4f3ff 73.43%);
 }
-
 
 .modal.roulette.welcome .modal-content.error {
     background: var(--white);
 }
-
 
 .modal.roulette .modal-content .modal-body {
     flex: 6;
@@ -703,7 +641,6 @@ h2 {
 .modal.roulette .modal-content .modal-header {
     flex: 5.5;
 }
-
 
 .modal.roulette.bonus-gift .modal-content .modal-header {
     padding: 3.125vw 3.125vw 0;
@@ -715,13 +652,10 @@ h2 {
     padding: 3.125vw;
 }
 
-
 .modal.roulette.bonus-gift .modal-content .modal-body {
     flex: unset;
     width: 60%;
 }
-
-
 
 .modal.roulette.bonus-gift .modal-content .modal-header {
     width: 40%;
@@ -729,14 +663,12 @@ h2 {
 }
 
 .modal.roulette.bonus-gift .modal-content .modal-close {
-    flex: .5;
+    flex: 0.5;
 }
-
 
 .modal.roulette .modal-content .modal-close {
     flex: 1;
 }
-
 
 .modal.roulette.bonus-gift .modal-header .close,
 .modal.roulette .close {
@@ -759,13 +691,9 @@ h2 {
     transform: rotate(360deg);
 }
 
-
-
-
-.modal.roulette .close>svg {
+.modal.roulette .close > svg {
     fill: #113252;
 }
-
 
 .modal.roulette .modal-body .modal-text,
 .modal.roulette .modal-body .modal-title {
@@ -785,61 +713,53 @@ h2 {
     font-size: clamp(1.5rem, 0.203rem + 3.609vw, 3rem);
 }
 
-
 .modal.roulette.bonus-gift .modal-header .modal-title {
     font-size: clamp(1.5rem, 0.6275rem + 2.4277vw, 2.8125rem);
 }
 
-
-.modal.roulette .modal-body .modal-text>.link,
-.modal.roulette .modal-body .modal-title+.modal-text,
+.modal.roulette .modal-body .modal-text > .link,
+.modal.roulette .modal-body .modal-title + .modal-text,
 .modal.roulette .modal-body .modal-title {
     text-transform: none;
 }
 
-
 .input.email .input-field::placeholder,
-.modal.roulette .input.email+.modal-text::first-letter,
-.modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text::first-letter,
+.modal.roulette .input.email + .modal-text::first-letter,
+.modal.roulette.bonus-gift
+    .buttons-container.bonus-gift
+    .modal-text::first-letter,
 .modal.roulette.bonus-gift .modal-header .modal-title::first-letter,
 .section-header.event .section-header__description::first-letter,
-.modal.roulette .modal-body .modal-title+.modal-text::first-letter,
+.modal.roulette .modal-body .modal-title + .modal-text::first-letter,
 .modal.roulette .modal-body .modal-title::first-letter {
     text-transform: capitalize;
 }
 
-
-
 .modal.roulette.bonus-gift .buttons-container.bonus-gift {
     gap: 30px;
 }
-
 
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .btn-base {
     flex: 0 1 auto;
     padding: 0.938rem 1.875rem;
 }
 
-
-
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
     flex: 0 1 320px;
 }
 
-.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+.modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
     padding: 3.47vw;
     border-radius: 10px;
-    border: 1px dashed #CBCBCB;
+    border: 1px dashed #cbcbcb;
 }
-
 
 .modal.roulette .modal-body .modal-title {
     font-size: clamp(1.25rem, 0.4191rem + 2.3121vw, 2.5rem);
 }
 
-
 .modal.roulette.welcome .modal-body .modal-text,
-.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text,
+.modal.roulette.bonus-gift .modal-body .modal-title + .modal-text,
 .modal.roulette.bonus-gift .buttons-container.bonus-gift .modal-text {
     font-size: clamp(0.6771rem, 0.4624rem + 0.5973vw, 1rem);
 }
@@ -853,19 +773,18 @@ h2 {
     border: unset;
 }
 
-.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+.modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
     width: 100%;
     max-width: 100%;
 }
 
-.modal.roulette .input.email+.modal-text {
+.modal.roulette .input.email + .modal-text {
     max-width: 320px;
 }
 
-.modal.roulette .modal-body .modal-text>.link:hover {
+.modal.roulette .modal-body .modal-text > .link:hover {
     color: var(--grey900);
 }
-
 
 .input.email {
     margin-bottom: 60px;
@@ -876,7 +795,7 @@ h2 {
     font-size: 13px;
     border: 2px solid transparent;
     padding: 20px 20px 20px 30px;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-property: border;
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -885,14 +804,13 @@ h2 {
     border-color: var(--green);
 }
 
-.input.email .input-field:not(:placeholder-shown):required:valid+button {
+.input.email .input-field:not(:placeholder-shown):required:valid + button {
     background: var(--green);
 }
 
 .input.email .input-field:not(:placeholder-shown):required:invalid {
     border-color: var(--red500);
 }
-
 
 .input.email .input-field:hover,
 .input.email .input-field:active,
@@ -921,12 +839,15 @@ h2 {
     content: unset;
 }
 
-
-
 .roulette-wheel {
-    background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-        url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
-        radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+    background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+        url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
+        radial-gradient(
+            65% 100% at 76% 50%,
+            #eff8ff 0%,
+            #4f89b9 50%,
+            rgba(38, 68, 94, 0) 100%
+        );
     background-repeat: repeat, no-repeat, repeat, no-repeat;
     background-position: center, top 100px right -120px, center, center;
     background-size: 50px 50px, 68.75% auto, cover, cover;
@@ -935,94 +856,79 @@ h2 {
     padding-bottom: 2.23%;
 }
 
-
 .section-header.event {
     z-index: 10;
     margin-bottom: 3.646vw;
 }
 
-
 .section-header.event .section-header__title {
     font-size: 9.844vw;
-    line-height: .8;
+    line-height: 0.8;
     margin-bottom: 2%;
 }
 
-
 .section-header.event .link,
 .section-header.event .section-header__description {
-    max-width: calc(42% + .3vw);
+    max-width: calc(42% + 0.3vw);
     font-size: 1.354vw;
 }
-
 
 .section-header.event .smooth-fly {
     width: 7.44vw;
     height: 6.61vw;
 }
 
-
-.modal.roulette .modal-body .modal-text>.link {
-    color: #0022FF;
+.modal.roulette .modal-body .modal-text > .link {
+    color: #0022ff;
     text-decoration: underline;
 }
 
-
-
 .section-header.event .link {
-    font-size: 1.11vw;
+    font-size: clamp(0.8125rem, 0.5217rem + 0.8092vw, 1.25rem);
     color: var(--grey900);
 
     margin-top: 5.104vw;
     background: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2)
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .section-header.event .link.btn-base-lg {
-    padding: 0.99vw 1.5vw;
+    padding: 0.99vw 1vw;
 }
-
-
 
 @supports (backdrop-filter: blur(20px)) {
     .section-header.event .link {
         color: var(--white);
-        background-color: rgba(255, 255, 255, 0.20);
+        background-color: rgba(255, 255, 255, 0.2);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
 }
 
-
-.section-header.event .link>svg {
+.section-header.event .link > svg {
     stroke: var(--white);
 }
 
-
-
-.section-header.event .link>svg {
-    margin-right: 8px;
+.section-header.event .link > svg {
+    margin-right: 2px;
     transform: translateY(0);
-    transition-duration: .4s;
+    transition-duration: 0.4s;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.section-header.event .link:hover>svg {
+.section-header.event .link:hover > svg {
     transform: translateY(-10px) rotate(-4deg) scale(1.1);
 }
-
 
 .section-header.event .logo {
     display: inline-block;
     margin-bottom: 3.75vw;
 }
 
-
 .section-header.event .btn-base {
     font-size: 1.042vw;
 }
-
 
 .section-header.event .btn-base {
     padding: 1.458vw 3.073vw;
@@ -1032,8 +938,7 @@ h2 {
     font-size: 1.11vw;
 }
 
-
-.section-header.event .section-header__description+.icon-arrow::after {
+.section-header.event .section-header__description + .icon-arrow::after {
     position: absolute;
     right: 2.604vw;
     left: calc(80% + 2.24vw);
@@ -1046,12 +951,11 @@ h2 {
     display: block;
     content: "";
 
-    background: url('../themes/custom/adrofx_theme/images/new-year/button-arrow.svg');
+    background: url("../themes/custom/adrofx_theme/images/new-year/button-arrow.svg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
 }
-
 
 .myContainer {
     max-width: 1800px;
@@ -1060,8 +964,6 @@ h2 {
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 .img-container.wheel {
     height: 45.57vw;
@@ -1079,8 +981,6 @@ h2 {
 .roulette-border {
     pointer-events: none;
 }
-
-
 
 .roulette-border,
 .img-container.wheel .wheel-base {
@@ -1116,7 +1016,6 @@ h2 {
     z-index: 3;
 }
 
-
 .roulette-tree {
     bottom: 0;
     left: -40%;
@@ -1133,8 +1032,6 @@ h2 {
     z-index: 10;
 }
 
-
-
 .roulette-btn {
     top: 50%;
     left: 50%;
@@ -1148,10 +1045,13 @@ h2 {
     object-fit: contain;
     object-position: center;
 
-    filter:
-        drop-shadow(51px 226px 65px rgba(0, 0, 0, 0.00)) drop-shadow(33px 145px 59px rgba(0, 0, 0, 0.02)) drop-shadow(19px 81px 50px rgba(0, 0, 0, 0.08)) drop-shadow(8px 36px 37px rgba(0, 0, 0, 0.13)) drop-shadow(2px 9px 20px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(51px 226px 65px rgba(0, 0, 0, 0))
+        drop-shadow(33px 145px 59px rgba(0, 0, 0, 0.02))
+        drop-shadow(19px 81px 50px rgba(0, 0, 0, 0.08))
+        drop-shadow(8px 36px 37px rgba(0, 0, 0, 0.13))
+        drop-shadow(2px 9px 20px rgba(0, 0, 0, 0.15));
 
-    transition-duration: .5s;
+    transition-duration: 0.5s;
     transition-property: filter;
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 
@@ -1162,10 +1062,12 @@ h2 {
 .roulette-btn:focus {
     transform: translate(-50%, -50%) rotate(0);
     background: transparent;
-    filter:
-        drop-shadow(51px 226px 65px rgba(42, 139, 66, 0)) drop-shadow(33px 145px 59px rgba(42, 139, 66, 0.05)) drop-shadow(19px 81px 50px rgba(42, 139, 66, 0.10)) drop-shadow(8px 36px 37px rgba(42, 139, 66, 0.20)) drop-shadow(2px 9px 20px rgba(42, 139, 66, 0.30));
+    filter: drop-shadow(51px 226px 65px rgba(42, 139, 66, 0))
+        drop-shadow(33px 145px 59px rgba(42, 139, 66, 0.05))
+        drop-shadow(19px 81px 50px rgba(42, 139, 66, 0.1))
+        drop-shadow(8px 36px 37px rgba(42, 139, 66, 0.2))
+        drop-shadow(2px 9px 20px rgba(42, 139, 66, 0.3));
 }
-
 
 @keyframes spin-roulette {
     from {
@@ -1177,64 +1079,89 @@ h2 {
     }
 }
 
-
-
 .modal.roulette.welcome .modal-body .modal-text,
 .modal.roulette.welcome .modal-body .modal-title {
     --space: 25px;
     margin-bottom: var(--space);
 }
 
-.modal.roulette.bonus-gift .modal-header>button+.modal-title {
+.modal.roulette.bonus-gift .modal-header > button + .modal-title {
     --space: 0px;
     margin: var(--space);
 }
 
-
 .modal.roulette.bonus-gift .modal-body .modal-title,
-.modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+.modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
     --space: 5%;
     margin-bottom: var(--space);
 }
 
-
-.ticket .qr-code .title {
+.ticket .ticket-banner .title {
     font-family: "Roboto-Medium", sans-serif;
     font-family: 500;
 
-    font-size: 0.938vw;
+    font-size: 1.875vw;
     line-height: 1.2;
+}
+
+.ticket .ticket-banner .text {
+    font-size: 1.25vw;
 }
 
 .ticket .ticket-content .line {
     height: 1px;
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid #e8e8e8;
     margin-bottom: 2.656vw;
 }
 
-.ticket .qr-code,
+.ticket .ticket-banner {
+    width: 100%;
+    height: 100%;
+}
+
+.ticket .ticket-banner .header {
+    top: 2.083vw;
+
+    width: 100%;
+    height: 3.229vw;
+
+    z-index: 2;
+}
+
+.ticket .ticket-banner .header .text + div {
+    height: 190px;
+}
+
+.ticket .ticket-banner .header + img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.ticket .ticket-banner {
+    width: 24.8%;
+    height: 100%;
+}
+
 .ticket .ticket-content {
-    padding: 2.083vw;
-}
-
-.ticket .qr-code .title {
-    margin-bottom: 3.229vw;
-}
-
-
-.ticket .qr-code {
-    width: 25%;
+    width: 70%;
 }
 
 .ticket .ticket-content {
-    width: 75%;
+    padding: 2.083vw 3vw;
 }
-
 
 .bonuses .header {
     z-index: 1040;
 }
-
 
 .ticket .ticket-content .line .label {
     font-family: "Roboto-Regular", sans-serif;
@@ -1245,8 +1172,11 @@ h2 {
 
 .ticket-inner {
     border-radius: 10px;
-    filter:
-        drop-shadow(356px 241px 121px rgba(8, 28, 48, 0.00)) drop-shadow(228px 154px 110px rgba(8, 28, 48, 0.01)) drop-shadow(128px 87px 93px rgba(8, 28, 48, 0.03)) drop-shadow(57px 39px 69px rgba(8, 28, 48, 0.04)) drop-shadow(14px 10px 38px rgba(8, 28, 48, 0.05));
+    filter: drop-shadow(356px 241px 121px rgba(8, 28, 48, 0))
+        drop-shadow(228px 154px 110px rgba(8, 28, 48, 0.01))
+        drop-shadow(128px 87px 93px rgba(8, 28, 48, 0.03))
+        drop-shadow(57px 39px 69px rgba(8, 28, 48, 0.04))
+        drop-shadow(14px 10px 38px rgba(8, 28, 48, 0.05));
 
     z-index: 10;
 }
@@ -1257,13 +1187,12 @@ h2 {
     max-width: 100%;
     border-radius: 10px;
 
-    mask-image: url('../themes/custom/adrofx_theme/images/new-year/ticket-mask.svg');
+    mask-image: url("../themes/custom/adrofx_theme/images/new-year/ticket-mask.svg");
     mask-repeat: no-repeat;
-    mask-position: -1.563rem;
+    mask-position: 0;
     mask-size: contain;
 
     background: var(--white);
-
 }
 
 .ticket .ticket-content .header .title {
@@ -1273,10 +1202,10 @@ h2 {
     font-family: "Roboto-bold", sans-serif;
     font-weight: 700;
     font-size: 1.823vw;
-    color: #0E365D;
+    color: #0e365d;
 
     margin-bottom: 10px;
-    border-right: 1px solid #E8E8E8;
+    border-right: 1px solid #e8e8e8;
 }
 
 .ticket .header .title .font-weight-normal {
@@ -1284,13 +1213,12 @@ h2 {
     font-weight: 400;
 }
 
-.ticket>.ticket-footer {
+.ticket > .ticket-footer {
     width: 321px;
-    max-width: 10%;
+    max-width: 8%;
     height: 317px;
 
-
-    border-left: 1px dashed #E8E8E8;
+    border-left: 1px dashed #e8e8e8;
     z-index: 1060;
 }
 
@@ -1305,18 +1233,20 @@ h2 {
     grid-template-rows: 1fr auto;
     align-content: space-between;
     gap: 30px;
+
+    padding: 0;
+    margin: 0;
 }
 
 .list.gift-benefits .item.border-right {
-    border-right: 1px dashed #E8E8E8;
+    border-right: 1px dashed #e8e8e8;
 }
-
 
 .list.gift-benefits .item .title {
     font-size: 1.8vw;
     line-height: 1.2;
     margin-bottom: 5px;
-    color: #0E365D;
+    color: #0e365d;
 }
 
 .list.gift-benefits .item .title::after {
@@ -1331,22 +1261,18 @@ h2 {
     height: 20px;
 
     border-radius: 50%;
-    background: url('../themes/custom/adrofx_theme/images/new-year/icon-discount.svg');
+    background: url("../themes/custom/adrofx_theme/images/new-year/icon-discount.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
 }
 
 .list.gift-benefits .text {
     font-family: "Roboto-Regular", sans-serif;
     line-height: 1.5;
     font-size: 1rem;
-    color: #6B7C94;
+    color: #6b7c94;
 }
-
- 
-
 
 .fly-action.promo {
     bottom: 100px;
@@ -1354,40 +1280,38 @@ h2 {
 
     gap: 20px;
 
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png') 69px 69px repeat,
-        linear-gradient(89deg, #F44336 24.06%, #9E2B22 136.56%);
+    background: url("../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png")
+            69px 69px repeat,
+        linear-gradient(89deg, #f44336 24.06%, #9e2b22 136.56%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
     padding: 6px;
 
-    transition-duration: .5s;
+    transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: padding;
 
     z-index: 2050;
 }
 
- 
 .fly-action.promo .icon {
     width: 80px;
     height: 80px;
- 
 }
 
 .fly-action.promo .content {
     display: none;
 }
 
-.fly-action.promo:hover::after ,
-.fly-action.promo:hover::before{
-      opacity: 0;
-      top: 0;
-      left: 0;
-      transform: translate(0,0);
+.fly-action.promo:hover::after,
+.fly-action.promo:hover::before {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
 }
-
 
 .fly-action.promo:hover {
     padding: 6px 40px 6px 6px;
@@ -1396,7 +1320,6 @@ h2 {
 .fly-action.promo:hover .content {
     display: block;
 }
-
 
 .fly-action.promo .content .title {
     font-family: "Roboto-Medium", sans-serif;
@@ -1409,10 +1332,6 @@ h2 {
     font-size: 12px;
     line-height: 1.5;
 }
-
-
-
-
 
 @media screen and (min-width: 1441px) {
     .section-header.event .section-header__title {
@@ -1427,7 +1346,6 @@ h2 {
     .section-header.event .btn-base {
         font-size: 16px;
     }
-
 
     .modal.roulette.bonus-gift .buttons-container.bonus-gift button,
     .section-header.event .btn-base {
@@ -1450,7 +1368,7 @@ h2 {
         height: 95px;
     }
 
-    .section-header.event .section-header__description+.icon-arrow::after {
+    .section-header.event .section-header__description + .icon-arrow::after {
         right: 130px;
         bottom: 70px;
         left: 570px;
@@ -1465,8 +1383,7 @@ h2 {
         max-width: 1140px;
     }
 
-
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
         padding: 50px;
     }
 
@@ -1490,17 +1407,14 @@ h2 {
         right: 60px;
     }
 
-
     .section-header.event .section-header__description {
         max-width: 320px;
     }
 
     .modal.roulette.bonus-gift .modal-body .modal-title,
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
         margin-bottom: 34px;
     }
-
-
 
     .modal.roulette.welcome .modal-content {
         max-height: 470px;
@@ -1515,7 +1429,7 @@ h2 {
     /* NEED ADD */
 
     .ticket {
-        mask-position: -1rem;
+        mask-position: 0;
         mask-size: 100% 100%;
     }
 
@@ -1531,29 +1445,37 @@ h2 {
         font-size: 26px;
     }
 
-    .ticket .qr-code .title {
+    .ticket .ticket-banner .title {
         font-size: 13px;
     }
 
-
     .roulette-wheel {
-        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
-            radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
+            radial-gradient(
+                65% 100% at 76% 50%,
+                #eff8ff 0%,
+                #4f89b9 50%,
+                rgba(38, 68, 94, 0) 100%
+            );
 
         background-position: center, top 150px center, center, center;
         background-size: 50px 50px, 2600px, cover;
         background-repeat: repeat, no-repeat, no-repeat;
     }
 
-
     @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
         .roulette-wheel {
-            background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-                url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xl.png'),
-                radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+            background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+                url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xl.png"),
+                radial-gradient(
+                    65% 100% at 76% 50%,
+                    #eff8ff 0%,
+                    #4f89b9 50%,
+                    rgba(38, 68, 94, 0) 100%
+                );
 
             background-position: center, top 150px center, center, center;
             background-size: 50px 50px, 2600px, cover;
@@ -1562,7 +1484,7 @@ h2 {
     }
 
     .section-header.event .link.btn-base-lg {
-        padding: 14px 21px;
+        padding: 22px 29px;
     }
 
     .section-header.event {
@@ -1573,7 +1495,6 @@ h2 {
         margin-top: 70px;
     }
 
-    .ticket .qr-code,
     .ticket .ticket-content {
         padding: 40px;
     }
@@ -1582,8 +1503,12 @@ h2 {
         margin-bottom: 40px;
     }
 
-    .ticket .qr-code .title {
-        margin-bottom: 60px;
+    .ticket .ticket-banner .title {
+        font-size: 30px;
+    }
+
+    .ticket .ticket-banner .text {
+        font-size: 20px;
     }
 }
 
@@ -1604,6 +1529,10 @@ h2 {
     .modal.roulette .modal-dialog {
         max-width: 90%;
     }
+
+    .section-header.event .link {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 991.98px) {
@@ -1621,17 +1550,14 @@ h2 {
         max-width: 100%;
     }
 
-
-
     .section-header.event .section-header__description {
         max-width: 320px;
     }
 
-    .section-header.event .section-header__description+.icon-arrow::after {
+    .section-header.event .section-header__description + .icon-arrow::after {
         content: unset;
         display: none;
     }
-
 
     .roulette-tree {
         bottom: -5vw;
@@ -1649,7 +1575,6 @@ h2 {
         position: static;
     }
 
-
     .modal.roulette .modal-content .modal-close {
         width: 100%;
         display: inherit;
@@ -1661,7 +1586,6 @@ h2 {
         flex: 0 1 100%;
     }
 
-
     .modal.roulette.bonus-gift .modal-content .modal-header,
     .modal.roulette.bonus-gift .modal-content .modal-body {
         width: 100%;
@@ -1671,12 +1595,12 @@ h2 {
         flex-basis: 240px;
     }
 
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
         max-width: 420px;
     }
 
     .is-animated.animated.gift-center {
-        transform: scale(.9) rotate(-15deg) translateY(10%);
+        transform: scale(0.9) rotate(-15deg) translateY(10%);
     }
 
     .gift-img.gift-front {
@@ -1686,20 +1610,17 @@ h2 {
 
     .is-animated.animated.gift-front {
         left: 80%;
-        transform: scale(.9) rotate(15deg) translate(-50%, 50px);
-
+        transform: scale(0.9) rotate(15deg) translate(-50%, 50px);
     }
 
     .is-animated.animated.gift-back {
         left: 20%;
     }
 
-
     .modal.roulette.bonus-gift .modal-header .close {
         top: 4vw;
         right: 4vw;
     }
-
 
     .input.email {
         max-width: 500px;
@@ -1714,23 +1635,26 @@ h2 {
         max-width: 420px;
     }
 
-
     .roulette-wheel {
-        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
-            radial-gradient(500px 500px at 640px 220px, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
+        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
+            radial-gradient(
+                500px 500px at 640px 220px,
+                #eff8ff 0%,
+                #4f89b9 50%,
+                rgba(38, 68, 94, 0) 100%
+            );
         background-repeat: repeat, no-repeat, repeat, no-repeat;
         background-position: center, top 50px right -120px, center, center;
         background-size: 50px 50px, 68.75% auto, cover, cover;
     }
 
-    .section-header.event .section-header__description+.icon-arrow {
+    .section-header.event .section-header__description + .icon-arrow {
         gap: 8px;
     }
 }
 
 @media screen and (max-width: 767.98px) {
-
     .section-header.event {
         display: block;
         text-align: left;
@@ -1752,18 +1676,15 @@ h2 {
         height: 62.581vw;
     }
 
-
     .roulette-tree {
         bottom: 15.64vw;
         left: -18.25vw;
     }
 
-
     .roulette-btn {
         width: 15.64vw;
         height: 15.64vw;
     }
-
 
     .modal.roulette .modal-dialog {
         max-width: 90%;
@@ -1790,14 +1711,15 @@ h2 {
         min-height: 350px;
     }
 
-
-
-
-
     .roulette-wheel {
-        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png'),
-            radial-gradient(146.1% 76.95% at 68.5% 78.5%, #EFF8FF 0%, #4F89B9 40.63%, #26445E 100%);
+        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png"),
+            radial-gradient(
+                146.1% 76.95% at 68.5% 78.5%,
+                #eff8ff 0%,
+                #4f89b9 40.63%,
+                #26445e 100%
+            );
 
         background-repeat: repeat, no-repeat, no-repeat;
         background-position: center, bottom 60px right -100px;
@@ -1805,11 +1727,7 @@ h2 {
 
         height: auto;
     }
-
-
-
 }
-
 
 @media (max-width: 575.98px) {
     body {
@@ -1836,7 +1754,11 @@ h2 {
     .roulette-wheel {
         padding-top: 50px;
         padding-bottom: 50px;
-        height: auto;
+    }
+
+    .new-year,
+    .roulette-wheel {
+        height: 100vh;
     }
 
     .section-header.event {
@@ -1856,19 +1778,16 @@ h2 {
         margin-bottom: 15px;
     }
 
-
-
     .new-year .btn-base,
     .section-header.event .link,
     .section-header.event .btn-base,
     .input.email .input-field::placeholder,
     .modal.roulette .modal-body .modal-text,
     .section-header.event .section-header__description,
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
         font-size: 13px;
         line-height: 1.5;
     }
-
 
     .new-year .btn-base,
     .section-header.event .btn-base,
@@ -1876,11 +1795,9 @@ h2 {
         padding: 10px 20px;
     }
 
-
-    .section-header.event .link>svg {
+    .section-header.event .link > svg {
         margin-right: 3px;
     }
-
 
     .section-header.event .link {
         margin-top: 0;
@@ -1893,9 +1810,8 @@ h2 {
         margin-bottom: 27px;
     }
 
-
     .modal.roulette .modal-dialog,
-    .modal.roulette .input.email+.modal-text,
+    .modal.roulette .input.email + .modal-text,
     .modal.roulette .modal-body .modal-text,
     .modal.roulette .modal-body .modal-title {
         max-width: 100%;
@@ -1905,24 +1821,19 @@ h2 {
         font-size: 24px;
     }
 
-
     .input.email .btn-base {
         position: static;
     }
 
     .input.email .input-field::placeholder,
-    .modal.roulette .input.email+.modal-text {
+    .modal.roulette .input.email + .modal-text {
         text-align: center;
     }
-
-
 
     .input.email .input-field {
         padding: 17px;
         margin-bottom: 9px;
     }
-
-
 
     .gift-img.gift-middle {
         filter: blur(2px);
@@ -1933,16 +1844,14 @@ h2 {
         filter: blur(1.25px);
     }
 
-
     .gift-img.gift-center {
         width: 121px;
         height: 129px;
     }
 
     .is-animated.animated.gift-center {
-        transform: scale(.9) rotate(-15deg) translateY(-30%);
+        transform: scale(0.9) rotate(-15deg) translateY(-30%);
     }
-
 
     .gift-img.gift-front {
         width: 72px;
@@ -1951,9 +1860,8 @@ h2 {
 
     .is-animated.animated.gift-front {
         left: 70%;
-        transform: scale(.9) rotate(15deg) translate(-50%, -70%);
+        transform: scale(0.9) rotate(15deg) translate(-50%, -70%);
     }
-
 
     .gift-img.gift-back {
         width: 26px;
@@ -1961,7 +1869,7 @@ h2 {
     }
 
     .is-animated.animated.gift-back {
-        transform: scale(.9) rotate(-30deg) translateY(-90%);
+        transform: scale(0.9) rotate(-30deg) translateY(-90%);
     }
 
     .gift-img.gift-middle {
@@ -1971,21 +1879,20 @@ h2 {
     }
 
     .is-animated.animated.gift-middle {
-        transform: scale(.9) rotate(-50deg) translateY(-90%);
+        transform: scale(0.9) rotate(-50deg) translateY(-90%);
     }
 
     .modal.roulette.bonus-gift .modal-content .modal-body,
     .modal.roulette.bonus-gift .modal-content .modal-header {
         padding: 20px;
-
     }
 
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text,
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text,
     .modal.roulette.bonus-gift .modal-body .modal-title {
         max-width: 100%;
     }
 
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
         font-size: 12px;
         padding: 19px;
     }
@@ -1995,9 +1902,8 @@ h2 {
         font-size: 16px;
     }
 
-
     .modal.roulette.bonus-gift .modal-body .modal-title,
-    .modal.roulette.bonus-gift .modal-body .modal-title+.modal-text {
+    .modal.roulette.bonus-gift .modal-body .modal-title + .modal-text {
         --space: 7%;
         margin-bottom: var(--space);
     }
@@ -2008,9 +1914,14 @@ h2 {
     }
 
     .roulette-wheel {
-        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png'),
-            radial-gradient(146.1% 76.95% at 68.5% 78.5%, #EFF8FF 0%, #4F89B9 40.63%, #26445E 100%);
+        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png"),
+            radial-gradient(
+                146.1% 76.95% at 68.5% 78.5%,
+                #eff8ff 0%,
+                #4f89b9 40.63%,
+                #26445e 100%
+            );
 
         background-repeat: repeat, no-repeat, no-repeat;
         background-position: center, center, center;
@@ -2019,11 +1930,9 @@ h2 {
         height: auto;
     }
 
-
     .roulette-btn {
         width: 100px;
         height: 100px;
-
     }
 
     .input.email .input-field {
@@ -2043,16 +1952,12 @@ h2 {
         bottom: -50px;
     }
 
- 
-
     .roulette-tree {
         bottom: -50px;
         left: -110px;
     }
 
-
-    .fly-action.promo:hover .content 
-    .fly-action.promo .content {
+    .fly-action.promo:hover .content .fly-action.promo .content {
         display: none;
     }
 
