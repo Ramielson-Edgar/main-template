@@ -1353,7 +1353,7 @@ h2 {
     gap: 20px;
 
 
-    background: url('/themes/custom/adrofx_theme/images/new-year/new-year-dots.png') 69px 69px repeat,
+    background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png') 69px 69px repeat,
         linear-gradient(89deg, #F44336 24.06%, #9E2B22 136.56%);
     background-repeat: no-repeat;
     background-position: center;
@@ -1542,7 +1542,7 @@ h2 {
 
     .roulette-wheel {
         background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
+            url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
             radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
 
         background-position: center, top 150px center, center, center;
