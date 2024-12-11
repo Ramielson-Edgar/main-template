@@ -411,11 +411,7 @@ h2 {
     font-style: normal;
 }
 
-.modal.roulette.bonus-gift .model-header .modal-title {
-    font-family: "Roboto-Medium", sans-serif;
-    font-weight: 600;
-}
-
+ 
 .modal-open .modal.roulette {
     overflow-x: hidden;
     overflow-y: auto;
@@ -1209,8 +1205,8 @@ h2 {
 }
 
 .ticket .header .title .font-weight-normal {
-    font-family: "Roboto-Regular", sans-serif;
-    font-weight: 400;
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 500;
 }
 
 .ticket > .ticket-footer {
