@@ -1348,6 +1348,71 @@ h2 {
  
 
 
+.fly-action.promo {
+    bottom: 100px;
+    right: 15px;
+
+    gap: 20px;
+
+    background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png') 69px 69px repeat,
+        linear-gradient(89deg, #F44336 24.06%, #9E2B22 136.56%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    padding: 6px;
+
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: padding;
+
+    z-index: 2050;
+}
+
+ 
+.fly-action.promo .icon {
+    width: 80px;
+    height: 80px;
+ 
+}
+
+.fly-action.promo .content {
+    display: none;
+}
+
+.fly-action.promo:hover::after ,
+.fly-action.promo:hover::before{
+      opacity: 0;
+      top: 0;
+      left: 0;
+      transform: translate(0,0);
+}
+
+
+.fly-action.promo:hover {
+    padding: 6px 40px 6px 6px;
+}
+
+.fly-action.promo:hover .content {
+    display: block;
+}
+
+
+.fly-action.promo .content .title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 1.042vw;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.fly-action.promo .content .text {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+
+
 
 @media screen and (min-width: 1441px) {
     .section-header.event .section-header__title {
@@ -1975,11 +2040,24 @@ h2 {
 
     .roulette-slide,
     .roulette-gifts {
-        bottom: unset;
+        bottom: -50px;
     }
+
+ 
 
     .roulette-tree {
         bottom: -50px;
         left: -110px;
+    }
+
+
+    .fly-action.promo:hover .content 
+    .fly-action.promo .content {
+        display: none;
+    }
+
+    .fly-action.promo .icon {
+        width: 60px;
+        height: 60px;
     }
 }
