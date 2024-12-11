@@ -664,7 +664,7 @@ h2 {
     height: 477px;
     max-height: 100%;
 
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/snowflake.png');
+    background: url('../themes/custom/adrofx_theme/images/new-year/snowflake.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -678,7 +678,7 @@ h2 {
 }
 
 .modal.roulette.welcome.error-email .modal-header::before {
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/snowflake-error.png');
+    background: url('../themes/custom/adrofx_theme/images/new-year/snowflake-error.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -924,8 +924,8 @@ h2 {
 
 
 .roulette-wheel {
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-        url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
+    background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
+        url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
         radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
     background-repeat: repeat, no-repeat, repeat, no-repeat;
     background-position: center, top 100px right -120px, center, center;
@@ -1046,7 +1046,7 @@ h2 {
     display: block;
     content: "";
 
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/button-arrow.svg');
+    background: url('../themes/custom/adrofx_theme/images/new-year/button-arrow.svg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -1257,7 +1257,7 @@ h2 {
     max-width: 100%;
     border-radius: 10px;
 
-    mask-image: url('../../../../themes/custom/adrofx_theme/images/new-year/ticket-mask.svg');
+    mask-image: url('../themes/custom/adrofx_theme/images/new-year/ticket-mask.svg');
     mask-repeat: no-repeat;
     mask-position: -1.563rem;
     mask-size: contain;
@@ -1331,7 +1331,7 @@ h2 {
     height: 20px;
 
     border-radius: 50%;
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/icon-discount.svg');
+    background: url('../themes/custom/adrofx_theme/images/new-year/icon-discount.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -1345,76 +1345,7 @@ h2 {
     color: #6B7C94;
 }
 
-
-.fly-action.promo {
-    bottom: 100px;
-    right: 15px;
-
-    gap: 20px;
-
-
-    background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png') 69px 69px repeat,
-        linear-gradient(89deg, #F44336 24.06%, #9E2B22 136.56%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    padding: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: padding;
-
-    z-index: 2050;
-
-  
-}
-
  
-.fly-action.promo .icon {
-    width: 80px;
-    height: 80px;
- 
-}
-
-
-.fly-action.promo .content {
-    display: none;
-}
-
-.fly-action.promo:hover::after ,
-.fly-action.promo:hover::before{
-      opacity: 0;
-      top: 0;
-      left: 0;
-      transform: translate(0,0);
-}
-
-
-.fly-action.promo:hover {
-    padding: 6px 40px 6px 6px;
-}
-
-.fly-action.promo:hover .content {
-    display: block;
-
-}
-
-
-
-.fly-action.promo .content .title {
-    font-family: "Roboto-Medium", sans-serif;
-    /* 20 */
-    font-size: 1.042vw;
-    line-height: 1.2;
-    margin-bottom: 5px;
-}
-
-.fly-action.promo .content .text {
-    font-size: 12px;
-    line-height: 1.5;
-}
 
 
 
@@ -1541,8 +1472,8 @@ h2 {
 
 
     .roulette-wheel {
-        background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
+        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
+            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
             radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
 
         background-position: center, top 150px center, center, center;
@@ -1555,8 +1486,8 @@ h2 {
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         .roulette-wheel {
-            background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-                url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xl.png'),
+            background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
+                url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xl.png'),
                 radial-gradient(65% 100% at 76% 50%, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
 
             background-position: center, top 150px center, center, center;
@@ -1720,8 +1651,8 @@ h2 {
 
 
     .roulette-wheel {
-        background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
+        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
+            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png'),
             radial-gradient(500px 500px at 640px 220px, #EFF8FF 0%, #4F89B9 50%, rgba(38, 68, 94, 0.00) 100%);
         background-repeat: repeat, no-repeat, repeat, no-repeat;
         background-position: center, top 50px right -120px, center, center;
@@ -1799,8 +1730,8 @@ h2 {
 
 
     .roulette-wheel {
-        background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png'),
+        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
+            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png'),
             radial-gradient(146.1% 76.95% at 68.5% 78.5%, #EFF8FF 0%, #4F89B9 40.63%, #26445E 100%);
 
         background-repeat: repeat, no-repeat, no-repeat;
@@ -2012,8 +1943,8 @@ h2 {
     }
 
     .roulette-wheel {
-        background: url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
-            url('../../../../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png'),
+        background: url('../themes/custom/adrofx_theme/images/new-year/new-year-dots.png'),
+            url('../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png'),
             radial-gradient(146.1% 76.95% at 68.5% 78.5%, #EFF8FF 0%, #4F89B9 40.63%, #26445E 100%);
 
         background-repeat: repeat, no-repeat, no-repeat;
