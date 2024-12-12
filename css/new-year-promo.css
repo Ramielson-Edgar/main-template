@@ -1396,18 +1396,19 @@ h2 {
  
 
 
-    .fly-action.promo .content .text,
-    .list.gift-benefits .text {
+    .fly-action.promo .content .text {
         font-size: 16px;
+    }
+
+    .fly-action.promo .content .title {
+        font-size: 20px;
     }
 
     .ticket .ticket-content .header .title {
         font-size: 26px;
     }
 
-    .fly-action.promo .content .title {
-        font-size: 20px;
-    }
+  
 
 
     .ticket .ticket-banner .title {
@@ -1453,7 +1454,8 @@ h2 {
     }
 
     .section-header.event .link {
-        margin-top: 70px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     /* .ticket .ticket-content {
