@@ -147,6 +147,8 @@
     margin-bottom: 48px;
 }
 
+.trading-forex .fx-pairs .hint .title + .text::first-letter,
+.trading-forex .fx-pairs .hint .title::first-letter,
 .trading-forex .fx-pairs .subtitle::first-letter,
 .intro-subtitle::first-letter {
     text-transform: capitalize;
@@ -189,10 +191,11 @@
     border-top-right-radius: 8px;
 }
 
+
+/*NEED ADD */
 .trading-forex .fx-pairs .tabs .nav-item {
     margin-bottom: -2px;
-
-    flex-basis: 33.33%;
+    flex-basis: calc(100% / 3);
 }
 
 .trading-forex .fx-pairs .tabs .nav-link {
@@ -741,6 +744,7 @@
         font-size: 14px;
         line-height: normal;
     }
+    
     
 }
 
@@ -2879,6 +2883,77 @@
     .metatrader4-accounts__item-link {transform: translateY(60px);}
 
     .intro-meta-trader__list {margin-bottom: 30px;}
+
+    /* NEED ADD */
+    .trading-forex .fx-pairs .subtitle,
+    .trading-forex .intro .intro-subtitle,
+    .trading-forex .fx-pairs .hint .title,
+    .trading-forex .fx-pairs .tabs .nav-link,
+    .tabs-contract-details .nav-pills .nav-link,
+    .trading-forex .fx-pairs .hint .title + .text,
+    .trading-forex .fx-pairs .tabs .nav-link.active,
+    .trading-forex .fx-pairs .table.trading-tools thead tr th,
+    .trading-forex .fx-pairs .table.trading-tools thead tr td,
+    .trading-forex .fx-pairs .table.trading-tools tbody tr td,
+    .trading-forex .fx-pairs .table.trading-tools .second-header th {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .trading-forex .fx-pairs .tabs .nav-link,
+    .trading-forex .fx-pairs .tabs .nav-link.active {
+        height: auto;
+        text-align: center;
+    }
+
+    .trading-forex .fx-pairs .tabs .nav-link span {
+        display: none;
+    }
+ 
+    .nav.nav-tabs.tabs  {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    } 
+
+    .nav.nav-tabs.tabs .nav-item {
+        flex: 1 0 auto;
+    }
+
+    .nav.nav-tabs.tabs .nav-item .nav-link {
+        padding: 10px 7px;
+    }
+
+    .nav.nav-tabs.tabs .nav-item .nav-link,
+    .tabs-contract-details .nav-pills .nav-link {
+        text-transform: capitalize;
+    }
+
+
+    .tabs-contract-details .nav-pills {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+
+    .trading-forex .fx-pairs .table thead tr th{
+        padding: 10px;
+    }
+
+
+    .trading-forex .fx-pairs .heading {
+        margin-bottom: 12px;
+    }
+ 
+    .trading-forex .intro{
+        margin-bottom: 20px;
+    }
+ 
+    .trading-forex .fx-pairs .subtitle {
+        margin-bottom: 40px;
+    }
 
 }
 /* END OF DEPOSITS & WITHDRAWALS */
