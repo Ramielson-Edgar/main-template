@@ -272,6 +272,8 @@ a:hover {
     border-radius: 16px;
 }
 
+
+
 .box-shadow-medium {
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
 }
@@ -450,9 +452,9 @@ a:hover {
 
 /* NEW NEED TO CHANGE */
 .text-bold {
-    font-family: "Roboto-bold", sans-serif;
+    font-family: "Roboto-Bold", sans-serif;
     font-weight: 700;
-    font-family: var(--header-font-family);
+    /* font-family: var(--header-font-family); */
     /* font-weight: 700; */
 }
 
@@ -5223,6 +5225,8 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 .trading-forex tr td {
     font-size: 14px;
 }
+
+/* NEED ADD */
 
 .trading-forex .fx-pairs .table .flags-wrapper {
     display: flex;
@@ -10669,11 +10673,14 @@ header.refer-expand::before {
     flex: 1;
 }
 
+
+/* NEED AAD  */
+
 .section-header.eth-banner .buttons-container>.section-header__description {
     display: flex;
     flex-grow: 1;
 
-    font-size: clamp(1.125rem, 0.4765rem + 1.8045vi, 1.875rem);
+    font-size: clamp(0.8125rem, 0.3328rem + 1.335vw, 1.5rem);
     font-style: italic;
     line-height: 1.1;
 
@@ -13204,8 +13211,9 @@ header.refer-expand::before {
         margin-bottom: 20%;
     }
 
+    /* NEED ADD */
     .section-header.eth-banner .buttons-container .section-header__description {
-        font-size: clamp(1rem, 0.5677rem + 1.203vi, 1.5rem);
+        font-size:  clamp(0.8125rem, 0.4094rem + 1.1218vw, 1.25rem);
     }
 
     .title.background {
@@ -13892,6 +13900,8 @@ header.refer-expand::before {
     .taxonomy .article__text {
         max-width: 100%;
     }
+
+    
 }
 
 @media screen and (max-width: 991.98px) {

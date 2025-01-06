@@ -88,6 +88,10 @@ html {
     box-sizing: border-box;
 }
 
+.page-noder-1029.fixed-navbar {
+    padding: 0;
+}
+
 *,
 *::after,
 *::before {
@@ -122,7 +126,7 @@ button:focus {
     outline-offset: 5px;
 }
 
-a:visited,
+
 link:visited {
     color: var(--blue900);
 }
@@ -204,6 +208,7 @@ h2 {
 .btn-base:focus,
 .btn-base:active {
     text-decoration: none;
+    transform: unset;
 }
 
 .btn-base-lg {
@@ -369,9 +374,10 @@ h2 {
     animation: smooth-fly 6s ease-in-out -6s infinite;
 }
 
+
+
 .new-year {
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 
     background: linear-gradient(283deg, #4f89b9 27.35%, #26445e 81.15%);
     background-position: center;
@@ -583,6 +589,8 @@ h2 {
     padding-top: 2.6vw;
 }
 
+
+
 .modal.roulette.welcome .modal-header img {
     z-index: 2;
 }
@@ -602,7 +610,7 @@ h2 {
     height: 477px;
     max-height: 100%;
 
-    background: url("../themes/custom/adrofx_theme/images/new-year/snowflake.png");
+    background: url("/themes/custom/adrofx_theme/images/new-year/snowflake.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -616,7 +624,7 @@ h2 {
 }
 
 .modal.roulette.welcome.error-email .modal-header::before {
-    background: url("../themes/custom/adrofx_theme/images/new-year/snowflake-error.png");
+    background: url("/themes/custom/adrofx_theme/images/new-year/snowflake-error.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -834,15 +842,15 @@ h2 {
 }
 
 .roulette-wheel {
-    background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
-        url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
+    background: url("/themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+        url("/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
         radial-gradient(65% 100% at 76% 50%,
             #eff8ff 0%,
             #4f89b9 50%,
             rgba(38, 68, 94, 0) 100%);
     background-repeat: repeat, no-repeat, repeat, no-repeat;
-    background-position: center, top 100px right -120px, center, center;
-    background-size: 50px 50px, 68.75% auto, cover, cover;
+    background-position: center, center top, center;
+    background-size: 50px 50px, contain, cover, cover;
 
     padding-top: 2.23%;
     padding-bottom: 2.23%;
@@ -877,11 +885,11 @@ h2 {
 
 
 
-.section-header.event  {
+.section-header.event {
     z-index: 1030;
 }
 
- 
+
 
 .section-header.event .link {
     font-size: clamp(0.8125rem, 0.5217rem + 0.8092vw, 1.25rem);
@@ -942,7 +950,7 @@ h2 {
     display: block;
     content: "";
 
-    background: url("../../../themes/custom/adrofx_theme/images/new-year/button-arrow.svg");
+    background: url("../..//themes/custom/adrofx_theme/images/new-year/button-arrow.svg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -1085,219 +1093,105 @@ h2 {
     max-width: 56.844vw;
 
     border-top-left-radius: 10px;
-    border-bottom-left-radius:10px;
+    border-bottom-left-radius: 10px;
 
     filter: drop-shadow(356px 241px 121px rgba(8, 28, 48, 0)) drop-shadow(228px 154px 110px rgba(8, 28, 48, 0.01)) drop-shadow(128px 87px 93px rgba(8, 28, 48, 0.03)) drop-shadow(57px 39px 69px rgba(8, 28, 48, 0.04)) drop-shadow(14px 10px 38px rgba(8, 28, 48, 0.05));
 }
 
 
-.fly-action.promo {
-    bottom: 100px;
-    right: 15px;
+/* PROMO TOAST */
 
-    gap: 20px;
-
-    background: url("../../../../themes/custom/adrofx_theme/images/new-year/new-year-dots.png") 69px 69px repeat,
-        linear-gradient(89deg, #f44336 24.06%, #9e2b22 136.56%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    padding: 6px;
-
-    transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: padding;
-
-    z-index: 2050;
+.toast.roulette-promo.is-show {
+    transform: translateX(0) scale(1);
 }
 
-.fly-action.promo .icon {
-    width: 80px;
-    height: 80px;
+
+.toast.roulette-promo.is-hide {
+    transform: translateX(0) scale(1);
+    border-radius: 100px;
+    padding: 16px;
 }
 
-.fly-action.promo .content {
+.toast.roulette-promo.is-hide .toast-body {
     display: none;
 }
 
-.fly-action.promo:hover::after,
-.fly-action.promo:hover::before {
-    opacity: 0;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
+
+.toast.roulette-promo {
+    right: 20px;
+    bottom: 120px;
+
+    gap: 17px;
+
+    border-radius: 25px;
+    background: var(--white);
+    padding: 16px 40px 16px 16px;
+
+    transform: translateX(100%) scale(.7);
+
+    transition-duration: 1s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+
+    z-index: 1060;
 }
 
-.fly-action.promo:hover {
-    padding: 6px 40px 6px 6px;
+
+
+
+
+
+.toast.roulette-promo .toast-header {
+    width: 70px;
+    height: 70px;
+    flex: 1 0 70px;
+
+    background: #DCEFFF;
+
+    border: unset;
+    padding: unset;
 }
 
-.fly-action.promo:hover .content {
+
+
+.toast.roulette-promo .toast-header::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     display: block;
-}
-
-.fly-action.promo .content .title {
-    font-family: "Roboto-Medium", sans-serif;
-    font-size: 1.042vw;
-    line-height: 1.2;
-    margin-bottom: 5px;
-}
-
-.fly-action.promo .content .text {
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-
-
-
-
-
-/* .ticket-inner { */
-    /* width: 912px;
-    max-width: 54.844vw; */
-
-    /* filter: drop-shadow(356px 241px 121px rgba(8, 28, 48, 0)) drop-shadow(228px 154px 110px rgba(8, 28, 48, 0.01)) drop-shadow(128px 87px 93px rgba(8, 28, 48, 0.03)) drop-shadow(57px 39px 69px rgba(8, 28, 48, 0.04)) drop-shadow(14px 10px 38px rgba(8, 28, 48, 0.05));
-
-    z-index: 1060; */
-/* } */
-
-
-
-/* 
-.ticket {
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-} */
-
-
-/* .ticket + .ticket-end {
-    top: 0;
-    right: 0px;
-    height: 100%;
-} */
-
-
-
-/* 
-
-.ticket .ticket-banner {
-    width: 100%;
-    height: 100%;
-
-    background: linear-gradient(180deg, #9EDAD0 0%, #DDFFF9 100%);
-    background-size: contain;
-    background-repeat: repeat;
-    background-position: center;
-}
-
-
-.ticket .ticket-banner {
-    width: 30%;
-}
-
-.ticket .ticket-content {
-    width: 70%;
-}
-
-
-
-.ticket .ticket-banner .title {
-    font-size: 1.8vw;
-    line-height: 1.2;
-}
-
-.ticket .ticket-banner .text {
-    font-family: "Roboto-Regular", sans-serif;
-    font-weight: 400;
-    font-size: 0.833vw;
-}
-
-
-
-
-.ticket .ticket-banner .header{
-    padding: 2.4vw;
-}
-
-.ticket .ticket-content  {
-    padding: 2.4vw 1vw 2.4vw 2.4vw;
-}
-
-
-.ticket .ticket-content .line .label {
-    font-family: "Roboto-Regular", sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(107, 124, 148, 0.4);
-}
-
-
-
-
-.list.gift-benefits {
-   display: grid;
-   grid-template-columns: repeat(3,auto);
-}
- 
-
-.list.gift-benefits .item {
-    row-gap: 50px;
-}
-
-
-
-.list.gift-benefits .item.padding-left {
-    padding-left:1.5vw;
-}
-
-.list.gift-benefits .item.padding-right {
-    padding-right: 1.5vw;
-}
-
-
-
-
-
-.list.gift-benefits .item.border-dashed {
-    border-right: dashed;
-    border-width: 1.2px;
-    border-color: #CCCCCC;
-}
-
-.list.gift-benefits .item .title {
-    font-size: 1.8vw;
-    line-height: 1.2;
-    margin-bottom: 5px;
-    color: #0e365d;
-}
-
-.list.gift-benefits .item .title::after {
-    position: relative;
-    left: -4px;
-    top: -12px;
-
-    display: inline-block;
     content: "";
 
-    width: 20px;
-    height: 20px;
-
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    background: url("../themes/custom/adrofx_theme/images/new-year/icon-discount.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+
+    background: conic-gradient(var(--blue700) var(--progress), #DCEFFF 0%);
+    z-index: -1;
 }
 
-.list.gift-benefits .text {
-    font-family: "Roboto-Regular", sans-serif;
-    font-size: 0.833vw;
+.toast.roulette-promo .toast-body .title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #113252;
+
+    margin-bottom: 7px;
+}
+
+.toast.roulette-promo .toast-body .text {
+    font-family: "Roboto-regular", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    font-style: normal;
     line-height: 1.5;
-    color: #6b7c94;
-} */
+    color: #6B7C94;
+
+    max-width: 160px;
+}
+
+
 
 
 
@@ -1393,7 +1287,7 @@ h2 {
         max-height: 500px;
         min-height: 500px;
     }
- 
+
 
 
     .fly-action.promo .content .text {
@@ -1408,40 +1302,42 @@ h2 {
         font-size: 26px;
     }
 
-  
-
 
     .ticket .ticket-banner .title {
         font-size: 13px;
     }
 
+    .section-header.event .logo {
+        margin-bottom: 70px;
+    }
+
+
     .roulette-wheel {
-        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
-            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
+        background: url("/themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
             radial-gradient(65% 100% at 76% 50%,
                 #eff8ff 0%,
                 #4f89b9 50%,
                 rgba(38, 68, 94, 0) 100%);
 
-        background-position: center, top 150px center, center, center;
-        background-size: 50px 50px, 2600px, cover;
-        background-repeat: repeat, no-repeat, no-repeat;
+        background-repeat: repeat, no-repeat, repeat, no-repeat;
+        background-position: center, center top, center;
+        background-size: 50px 50px, 2600px auto, cover, cover;
     }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         .roulette-wheel {
-            background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
-                url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xl.png"),
+            background: url("/themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+                url("/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xl.png"),
                 radial-gradient(65% 100% at 76% 50%,
                     #eff8ff 0%,
                     #4f89b9 50%,
                     rgba(38, 68, 94, 0) 100%);
-
-            background-position: center, top 150px center, center, center;
-            background-size: 50px 50px, 2600px, cover;
-            background-repeat: repeat, no-repeat, no-repeat;
+            background-repeat: repeat, no-repeat, repeat, no-repeat;
+            background-position: center, center top, center;
+            background-size: 50px 50px, 2600px auto, cover, cover;
         }
     }
 
@@ -1457,33 +1353,6 @@ h2 {
         margin-top: 50px;
         margin-bottom: 50px;
     }
-
-    /* .ticket .ticket-content {
-        padding: 40px;
-    }
-
-    .ticket .ticket-content .line {
-        margin-bottom: 40px;
-    }
-
-    .ticket .ticket-banner .title {
-        font-size: 30px;
-    }
-
-    .ticket .ticket-banner .text {
-        font-size: 16px;
-    } */
-
-        /* .ticket {
-        mask-position: 0;
-        mask-size: 100% 100%;
-    }
-
-    .list.gift-benefits .item .title {
-        font-size: 25px;
-    } */
-
-
 }
 
 @media screen and (max-width: 1199.98px) {
@@ -1520,7 +1389,7 @@ h2 {
         font-size: 16px;
     }
 
- 
+
     .section-header.event .section-header__description {
         max-width: 320px;
     }
@@ -1607,8 +1476,8 @@ h2 {
     }
 
     .roulette-wheel {
-        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
-            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
+        background: url("/themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-lg.png"),
             radial-gradient(500px 500px at 640px 220px,
                 #eff8ff 0%,
                 #4f89b9 50%,
@@ -1628,8 +1497,35 @@ h2 {
         margin-bottom: 0;
         margin-top: 0;
     }
- 
- 
+
+
+
+    .input.email {
+        margin-bottom: 25px;
+    }
+
+    .modal.roulette.welcome .modal-content {
+        background: url/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-modal-lg.png'),
+            linear-gradient(111deg, #acdaff 1.5%, #e4f3ff 73.43%);
+        background-repeat: no-repeat, no-repeat;
+        background-position: center, center;
+        background-size: 100.908vw 60.545vw, cover;
+    }
+
+
+    .modal.roulette.welcome.error-email .modal-content .modal-header::before,
+    .roulette.welcome.error-limit::before {
+        width: 107px;
+        height: 114px;
+        max-width: unset;
+        max-height: unset;
+    }
+
+    .modal.roulette.welcome .modal-content .modal-header {
+        padding-left: 2.6vw;
+        padding-right: 2.6vw;
+        padding-top: 0;
+    }
 
 }
 
@@ -1691,8 +1587,8 @@ h2 {
     }
 
     .roulette-wheel {
-        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
-            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png"),
+        background: url/themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png"),
             radial-gradient(146.1% 76.95% at 68.5% 78.5%,
                 #eff8ff 0%,
                 #4f89b9 40.63%,
@@ -1705,7 +1601,7 @@ h2 {
         height: auto;
     }
 
- 
+
 }
 
 @media (max-width: 575.98px) {
@@ -1735,10 +1631,6 @@ h2 {
         padding-bottom: 50px;
     }
 
-    .new-year,
-    .roulette-wheel {
-        height: 100vh;
-    }
 
     .section-header.event {
         margin-bottom: 30px;
@@ -1895,8 +1787,8 @@ h2 {
     }
 
     .roulette-wheel {
-        background: url("../themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
-            url("../themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png"),
+        background: url("/themes/custom/adrofx_theme/images/new-year/new-year-dots.png"),
+            url("/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-xs.png"),
             radial-gradient(146.1% 76.95% at 68.5% 78.5%,
                 #eff8ff 0%,
                 #4f89b9 40.63%,
@@ -1912,6 +1804,10 @@ h2 {
     .roulette-btn {
         width: 100px;
         height: 100px;
+    }
+
+    .input.email {
+        margin-bottom: 1rem;
     }
 
     .input.email .input-field {
@@ -1936,12 +1832,58 @@ h2 {
         left: -110px;
     }
 
-    .fly-action.promo:hover .content .fly-action.promo .content {
-        display: none;
+
+    .modal.roulette.welcome.error-limit .modal-content {
+        min-height: 400px;
     }
 
-    .fly-action.promo .icon {
-        width: 60px;
-        height: 60px;
+    .modal.roulette.welcome.error-email .modal-content {
+        min-height: 450px;
     }
+
+    .toast.roulette-promo {
+        right: 10px;
+        padding: 10px 15px 10px 10px;
+        border-radius: 15px;
+    }
+
+    .toast.roulette-promo.is-hide {
+        padding: 10px;
+    }
+
+    .toast.roulette-promo .toast-header {
+        width: 48px;
+        height: 48px;
+        flex: 1 1 48px;
+    }
+
+    .toast.roulette-promo .toast-header::after {
+        width: 55px;
+        height: 55px;
+    }
+
+    .toast.roulette-promo .toast-body .title {
+        font-size: 13px;
+    }
+
+    .toast.roulette-promo .toast-body .text {
+        font-size: 11px;
+        max-width: 120px;
+    }
+
+
+    .modal.roulette.welcome.error-email .modal-header::before,
+    .modal.roulette.welcome .modal-header::before {
+        top: 70px;
+    }
+
+    .modal.roulette.welcome .modal-content {
+        background: url('/themes/custom/adrofx_theme/images/new-year/new-year-snowflake-modal-xs.png'),
+            linear-gradient(111deg, #acdaff 1.5%, #e4f3ff 73.43%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+
 }

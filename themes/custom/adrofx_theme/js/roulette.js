@@ -2,7 +2,7 @@ const email = document.getElementById('eml');
 const popup = document.getElementById('giftModal');
 const email_error_popup = document.getElementById('errorEmailModal');
 const error_popup = document.getElementById('errorModal');
-// const lottie = document.getElementById('lottie');
+ 
 const giftImage = document.querySelectorAll('.is-animated')
 const spinButton = document.querySelectorAll('.js-spin')
 const rouletteBonus = document.querySelector('.roulette-base')
@@ -182,8 +182,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    
- 
     let animation = document.getElementById('lottie-gift')
  
     let params = {
@@ -197,7 +195,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const instance = lottie.loadAnimation(params);
  
     instance.setSpeed(1.5)
-
+    
+ 
+ 
+  
+ 
 })
 
 

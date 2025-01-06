@@ -124,17 +124,32 @@
 
 .trading-forex .intro {
     margin-bottom: 30px;
-
     border-bottom: 1px solid #EEEEEE;
 }
 
-.trading-forex .intro .intro-subtitle {
-    margin-top: 28px;
-    margin-bottom: 48px;
+/* NEED ADD */
+.trading-forex .fx-pairs .heading {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 18px;
+}
 
-    font-weight: bold;
+.trading-forex .intro .intro-subtitle,
+.trading-forex .fx-pairs .heading {
+    font-family: "Roboto-bold",sans-serif;
+    font-weight: 700;
+}
+
+.trading-forex .intro .intro-subtitle {
     font-size: 18px;
     color: var(--grey900);
+    margin-top: 28px;
+    margin-bottom: 48px;
+}
+
+.trading-forex .fx-pairs .subtitle::first-letter,
+.intro-subtitle::first-letter {
+    text-transform: capitalize;
 }
 
 @media (max-width: 767px) {
@@ -151,13 +166,7 @@
     }
 }
 
-.trading-forex .fx-pairs .heading {
-    margin-bottom: 18px;
-
-    text-align: center;
-    font-weight: bold;
-    font-size: 36px;
-}
+ 
 
 @media (max-width: 767px) {
     .trading-forex .fx-pairs .heading {
@@ -225,6 +234,10 @@
     border-top-right-radius: 8px;
 
     color: var(--white);
+
+    transition-duration: .4s;
+    transition-property: bacgkround;
+    transition-timing-function: var(--ease-in-out-smooth);
 }
 
 .trading-forex .fx-pairs .tabs .nav-link span {
@@ -257,6 +270,10 @@
     }
 }
 
+.trading-forex .fx-pairs .table thead tr {
+    border-bottom: 1px solid #BCD8EE;
+}
+
 .trading-forex .fx-pairs .table thead tr th {
     font-size: 14px;
     color: var(--grey900);
@@ -272,6 +289,11 @@
 
 .trading-forex .fx-pairs .table thead tr th:not(:first-child) {
     text-align: center;
+}
+
+/* NEED ADD 2025 */
+.trading-forex .fx-pairs .table td {
+    border-collapse: collapse;
 }
 
 .trading-forex .fx-pairs .table td {
@@ -310,7 +332,12 @@
 
 .trading-forex .fx-pairs .table .flags-wrapper {
     font-size: 18px;
+    line-height: 24px;
 }
+
+/* .trading-forex .fx-pairs .table .flags-wrapper {
+    font-size: 14px;
+} */
 
 @media (max-width: 767px) {
     .trading-forex .fx-pairs .table .flags-wrapper {
@@ -670,19 +697,21 @@
 
  
 .trading-forex .fx-pairs .table.trading-tools thead tr th {
-    border: none;
-    text-align: center;
     /* font-size: 18px; */
-
-    font-size: 16px;
+    font-family: "Roboto-Regular",sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
     text-transform: capitalize;
+    text-align: left;
+    border: none;
 
-    color: var(--white);
+    color: #113252;
 }
 
-.trading-forex .fx-pairs .table.trading-tools thead tr th:not(:first-child) {
+/* .trading-forex .fx-pairs .table.trading-tools thead tr th:not(:first-child) {
     font-weight: 500;
-}
+} */
 
 @media screen and (max-width:991.98px) {
     .trading-forex .fx-pairs .table.trading-tools thead tr th {
@@ -727,11 +756,29 @@
 }
 
 .trading-forex .fx-pairs .table.trading-tools tbody tr .description-icon span {
-    margin-right: 12px;
-
     font-size: 36px;
+    margin-right: 12px;
 }
 
+/* NEED ADD */
+
+.trading-forex .fx-pairs .table.trading-tools td {
+    border-top:none;
+}
+
+
+.trading-forex .fx-pairs .table.trading-tools .br-right {
+    border-right: 1px solid #BCD8EE;
+}
+
+.trading-forex .fx-pairs .table.trading-tools .br-top {
+    border-top: 1px solid #BCD8EE;
+}
+ 
+.trading-forex .fx-pairs .table.trading-tools .br-bottom {
+    border-bottom: 1px solid #BCD8EE;
+}
+ 
  
 
 .trading-forex .fx-pairs .table.trading-tools tbody tr .description-icon p {
@@ -739,8 +786,15 @@
     margin-bottom: 0;
 }
 
+/* NEED ADD */
+ 
 .trading-forex .fx-pairs .table.trading-tools .second-header th {
+    font-family: "Roboto-medium",sans-serif;
+    font-weight: 500;
+    text-align: center;
+
     font-size: 14px;
+    line-height: 1.5;
     color: var(--grey900);
 }
 
