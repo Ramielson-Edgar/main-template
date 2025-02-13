@@ -6708,7 +6708,7 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 /*===== NEED ADD NEW =====*/
 
 .banner.company-news {
-    background: url('/themes/custom/adrofx_theme/images/company-news-banner.jpg'), #1C538A;
+    background: url('../themes/custom/adrofx_theme/images/company-news-banner.jpg'), #1C538A;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
