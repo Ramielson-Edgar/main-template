@@ -4487,14 +4487,14 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 
 .right-sidebar .banner.start-your-journey {
     background: linear-gradient(180deg, rgba(9, 28, 45, 0.00) 20%, rgba(9, 28, 45, 0.70) 80%),
-    url('/themes/custom/adrofx_theme/images/start-your-journey-360.png'), #1C538A;
+    url('../themes/custom/adrofx_theme/images/start-your-journey-360.png'), #1C538A;
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
 }
 
 .right-sidebar .banner.cashback {
-    background: url('/themes/custom/adrofx_theme/images/the-power-of-cashback-360.png'), var(--white);
+    background: url('../themes/custom/adrofx_theme/images/the-power-of-cashback-360.png'), var(--white);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4502,7 +4502,7 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 }
 
 .right-sidebar .banner.copy-trading {
-    background: url('/themes/custom/adrofx_theme/images/trading-made-easy-360.png'), var(--grey100);
+    background: url('../themes/custom/adrofx_theme/images/trading-made-easy-360.png'), var(--grey100);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9803,7 +9803,7 @@ html[lang="ru"] .liquidity-providers .main-information-header {
 
         /* NEW NEED ADD */
     .banner.company-news.bottom {
-        background: url('/themes/custom/adrofx_theme/images/compnay-news-banner-bottom-background-2320.png');
+        background: url('../themes/custom/adrofx_theme/images/compnay-news-banner-bottom-background-2320.png');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
