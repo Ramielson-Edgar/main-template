@@ -875,7 +875,7 @@ a:hover {
 .btn-red-green:focus,
 .btn-red-green:active {
     background: var(--green);
-    color: #fff;
+    color: #071522;
 }
 
 .btn-green {
@@ -6790,11 +6790,18 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 
 .blog-category .item {
     flex-basis: 100%;
+}
+ 
+.blog-category .item .link {
+    width: inherit;
+    height: inherit;
     column-gap: 2.5rem;
     padding: 2rem;
     border-radius: 1rem;
     border: 1px solid #B5BFC9;
+    text-decoration: none;
 }
+
 
 .blog-category .item .title {
     font-family: "Roboto-Regular", sans-serif;
@@ -6827,14 +6834,11 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
     border-radius: 8px;
 }
 
-.blog-category .item .text+.btn-blue:hover {
+.blog-category .item .text + .btn-blue:hover {
     color: var(--white);
     background: var(--blue600);
 }
 
-.blog-category .item .text::first-letter {
-    text-transform: capitalize;
-}
 
 .blog-category .item .item-media {
     border-radius: 1rem;
@@ -16858,7 +16862,7 @@ header.refer-expand::before {
     }
 
     /* NEED ADD */
-    .blog-category .item {
+    .blog-category .item .link {
         padding: 16px;
     }
 
