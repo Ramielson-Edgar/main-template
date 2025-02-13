@@ -174,9 +174,9 @@
     --blob-shades: inset -34px -12px 50px rgba(61, 92, 255, 0.74),
         inset 17px 27px 50px rgba(255, 255, 255, 0.51);
 
-    /* need add  */
+
     --blueBlack: #190f3a;
-    /* need add  */
+
 
     --blue50: #e3f2fd;
     --blue100: #bbdefb;
@@ -234,16 +234,10 @@ html,
 body {
     font-family: var(--header-font-family);
     font-size: var(--font-size-16);
-    /* changed */
     line-height: 24px;
     font-weight: var(--font-weight-400);
-    color: var(--dark-text);
+    color: #071522;
     background-color: var(--white-bg-color);
-
-    margin: 0;
-    height: 100%;
-    min-height: 100%;
-    position: relative;
 }
 
 .link,
@@ -394,9 +388,123 @@ a:hover {
     background-color: var(--blue-bg-color);
 }
 
+
 .pagination {
     flex-wrap: wrap;
 }
+
+
+/*===Splide Component pagination=== NEED ADD*/
+
+.splide__pagination{
+    gap: 4px;
+}
+
+.splide__pagination li .splide__pagination__page {
+    background: #E7EBEE;
+    opacity: 1;
+    border-radius: 8px;
+}
+
+.splide__pagination li .splide__pagination__page {
+    transform-origin: center;
+    transition-property: width;
+    transition-timing-function: var(--ease-in-out-smooth);
+    transition-duration: .3s;
+}
+
+.splide__pagination li .splide__pagination__page:focus {
+   outline: 1px solid var(--white);
+   outline-offset: 1px;
+}
+
+.splide__pagination li .splide__pagination__page.is-active {
+    background-color: var(--blue700);
+    width: 18px;
+    height: 8px;
+}
+
+ 
+/*===Splide Component pagination===*/
+
+/*========== NEED ADD NEW ==========*/
+
+.pagination.company-news {
+    border: 2px solid #E7EBEE;
+    margin-top: 3rem;
+    border-radius: 8px;
+}
+
+
+.pagination .page-item .page-link {
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #0F2E4B;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-right: 2px solid #E7EBEE;
+}
+
+.pagination .page-item.next-page .page-link {
+    border-right: 2px solid transparent;
+    transform: scale(-1);
+}
+
+.pagination .page-item.previous-page .page-link {
+    border-right: 2px solid #E7EBEE;
+}
+
+
+.pagination .page-item.previous-page .page-link,
+.pagination .page-item.next-page .page-link {
+    padding: 1.125rem;
+}
+
+
+.pagination .page-item .page-link:hover,
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+}
+
+
+.pagination .page-item.active::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    content: "";
+    width: calc(100% - 2px);
+    height: 100%;
+    border: 2px solid var(--blue600);
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.pagination .page-item.active .page-link {
+    color: var(--blue600);
+    background: transparent;
+}
+
+.pagination .page-item.active svg {
+    fill: var(--blue600);
+}
+
+/* Remove prev border from active */
+.pagination .page-item:has(+ *.active) .page-link {
+    border-right: 2px solid transparent;
+}
+
+/* Remove next border active*/
+.pagination .page-item.active .page-link {
+    border-right: 2px solid transparent;
+}
+
+/*========== NEED ADD NEW ==========*/
+
+
 
 .margin-inline {
     margin-right: 10px;
@@ -893,6 +1001,33 @@ a:hover {
     border: 1px solid var(--blue400);
     background: transparent;
 }
+
+
+/* ADD NEW */
+
+.btn-blue-red {
+    color: var(--white);
+    background: var(--blue600);
+}
+
+.btn-blue-red:hover,
+.btn-blue-red:focus {
+    color: var(--white);
+    background: var(--red500);
+}
+
+.btn-blue-light {
+    color: #1C538A;
+    background: #E7EBEE;
+}
+
+.btn-blue-light:hover,
+.btn-blue-light:focus {
+    color: var(--white);
+    background: var(--blue600);
+}
+
+
 
 .btn-white-ghost {
     color: var(--white);
@@ -2331,15 +2466,70 @@ a:hover {
     border-left: 8px solid #006f44;
 }
 
-/* NEW NEED TO CHANGE */
-h1,
+/*=== NEW NEED TO CHANGE ===*/
+/* h1,
 h2,
 h3,
 h4 {
     font-family: "Roboto-regular", sans-serif;
     font-weight: 400;
     text-transform: capitalize;
+} */
+
+h1,
+h2,
+h3,
+h4,
+.title,
+.section-title,
+.section-header__title,
+.list-features__title,
+.list__item .title {
+    font-family: "Roboto-regular", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #071522;
+    text-transform: capitalize;
 }
+
+p::first-letter {
+    text-transform: capitalize;
+}
+
+.text,
+.list__item .text,
+.list-features__text,
+.section-header__description {
+   color: #415B75;
+   line-height: 1.5;
+}
+
+
+/* COMPONNENTS */
+.list.shares .list__item {
+    transition-property: background-color;
+    transition-duration: .2s;
+}
+
+.list.shares .list__item svg,
+.list.shares .list__item {
+    transition-timing-function: var(--ease-in-out);
+}
+
+.list.shares .list__item svg {
+    transition-property: fill;
+    transition-duration: .2s;
+}
+ 
+
+.list.shares .list__item:hover svg {
+    fill: var(--white);
+}
+
+.list.shares .list__item:hover {
+    background-color: var(--blue600);
+}
+
 
 .h1 {
     font-size: 40px;
@@ -4253,6 +4443,77 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
     border-top: 1px solid var(--grey200);
 }
 
+/*NEED ADD NEW*/
+
+
+
+.right-sidebar .modulatable {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 280px 350px;
+    justify-content: space-between;
+    row-gap: 24px;
+    height: 100%;
+}
+
+
+.right-sidebar .banner {
+    width: auto;
+    min-height: 100%;
+
+    border-radius: 1rem;
+    padding: 11.42%;
+}
+
+.right-sidebar .banner .title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+ 
+
+.right-sidebar .banner.start-your-journey .title {
+    color: var(--white);
+    margin-bottom: 2.5rem;
+}
+
+.right-sidebar .banner .buttons-container {
+    row-gap: 8px;
+}
+ 
+ 
+
+.right-sidebar .banner.start-your-journey {
+    background: linear-gradient(180deg, rgba(9, 28, 45, 0.00) 20%, rgba(9, 28, 45, 0.70) 80%),
+    url('/themes/custom/adrofx_theme/images/start-your-journey-360.png'), #1C538A;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+.right-sidebar .banner.cashback {
+    background: url('/themes/custom/adrofx_theme/images/the-power-of-cashback-360.png'), var(--white);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ 
+}
+
+.right-sidebar .banner.copy-trading {
+    background: url('/themes/custom/adrofx_theme/images/trading-made-easy-360.png'), var(--grey100);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+
+
 #block-views-block-blogs-news-widgets-block-4 .latest-description {
     display: none;
 }
@@ -5260,7 +5521,7 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 }
 
 .trading-forex .fx-pairs .table.trading-tools thead tr th {
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .trading-forex .fx-pairs .table.trading-tools tbody tr td {
@@ -6444,13 +6705,157 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
     height: auto;
 }
 
-.blog-category .item {
-    padding: 40px 0;
+/*===== NEED ADD NEW =====*/
+
+.banner.company-news {
+    background: url('/themes/custom/adrofx_theme/images/company-news-banner.jpg'), #1C538A;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: unset;
+    padding: 4.68% 0;
 }
 
-.blog-category .item+.item {
-    border-top: 1px solid var(--grey200);
+.banner.company-news.overlay::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(258deg, rgba(9, 28, 45, 0.00) -0.23%, rgba(9, 28, 45, 0.70) 57.46%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    z-index: 1;
 }
+
+
+.banner.company-news .section-header {
+    z-index: 1;
+}
+
+.banner.company-news .section-header__title {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: clamp(2rem, 0.2707rem + 4.812vw, 4rem);
+    font-weight: 500;
+    line-height: 1.2;
+
+    margin-bottom: 1rem;
+}
+
+.banner.company-news .section-header__description {
+    max-width: 400px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.banner.company-news .section-header__description::first-letter {
+    text-transform: capitalize;
+}
+
+
+.banner.company-news.bottom {
+    background: url('/themes/custom/adrofx_theme/images/compnay-news-banner-bottom-background-1160.png'), #1C538A;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 1rem;
+    padding: 4.31% 0;
+    margin-top: 7.5%;
+}
+
+.banner.company-news.bottom .section-header .section-header__title {
+    font-size: clamp(0.75rem, -1.6278rem + 6.6165vw, 3.5rem);
+    background: linear-gradient(135deg, #FFF 24.83%, rgba(255, 255, 255, 0.00) 179.28%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.banner.company-news.bottom .section-header .section-header__description {
+    margin-bottom: 2.5rem;
+}
+
+
+
+.blog-category {
+    row-gap: 24px;
+}
+
+.blog-category .item {
+    flex-basis: 100%;
+    column-gap: 2.5rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #B5BFC9;
+}
+
+.blog-category .item .title {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: clamp(1rem, 0.5677rem + 1.203vw, 1.5rem);
+    line-height: 1.2;
+    text-transform: capitalize;
+    color: #071522;
+
+    margin-bottom: 1rem;
+}
+
+.blog-category .item .text {
+    max-width: 300px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: #415B75;
+
+    margin-bottom: 1.5rem;
+}
+
+.blog-category .item .text+.btn-blue {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1.25;
+    color: #071522;
+    background: #E7EBEE;
+    padding: 8px 24px;
+    border-radius: 8px;
+}
+
+.blog-category .item .text+.btn-blue:hover {
+    color: var(--white);
+    background: var(--blue600);
+}
+
+.blog-category .item .text::first-letter {
+    text-transform: capitalize;
+}
+
+.blog-category .item .item-media {
+    border-radius: 1rem;
+}
+
+
+.blog-category .item .item-media img {
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: var(--ease-in-out-smooth);
+}
+
+
+.blog-category .item .item-media:hover img {
+    transform: scale(1.05);
+}
+
+/* .blog-category .item +.item {
+    border-top: 1px solid var(--grey200);
+} */
+
 
 .blog-category .item .heading {
     margin-bottom: 15px;
@@ -6474,6 +6879,29 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 .blog-category .item .description {
     margin-bottom: 15px;
 }
+
+/* NEW NEED ADD */
+
+.blog-category.article .article-image {
+    border-radius: 8px;
+    height: 450px;
+}
+
+.blog-category.article .header {
+    margin-bottom: 3.5rem;
+}
+
+.blog-category.article .header .title {
+    font-family: "Roboto-Regular",sans-serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 1.5677rem + 1.203vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+
+
+/*===== NEED ADD NEW =====*/
 
 .web-trading-platform {
     background-image: url("../img/web-trading-platform/web_trading_platforms_lg.jpg");
@@ -9372,6 +9800,14 @@ html[lang="ru"] .liquidity-providers .main-information-header {
         background-size: contain;
         background-repeat: no-repeat;
     }
+
+        /* NEW NEED ADD */
+    .banner.company-news.bottom {
+        background: url('/themes/custom/adrofx_theme/images/compnay-news-banner-bottom-background-2320.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    } 
 }
 
 .banner .wrapper .header {
@@ -12639,7 +13075,7 @@ header.refer-expand::before {
     margin-bottom: var(--space);
 }
 
- 
+
 
 #crypto-store .background path,
 #crypto-encrypted .background path,
@@ -12653,10 +13089,10 @@ header.refer-expand::before {
 #crypto-protection .ring-md path,
 #crypto-protection .ring-sm path,
 #crypto-protection .ring-xs path {
-    stroke:url(#crypto-account);
+    stroke: url(#crypto-account);
 }
 
- 
+
 #crypto-store .user path,
 #crypto-store .label path,
 #crypto-store .sphere path,
@@ -12669,10 +13105,10 @@ header.refer-expand::before {
 #crypto-protection .shield path {
     fill: url(#crypto-account);
 }
- 
- 
 
- 
+
+
+
 #crypto-encrypted .card-text path {
     fill: #190F3A;
 }
@@ -12685,7 +13121,7 @@ header.refer-expand::before {
 #crypto-protection .shield-icon path,
 #crypto-encrypted .card-background path {
     fill: var(--white);
-} 
+}
 
 
 
@@ -12694,8 +13130,8 @@ header.refer-expand::before {
 }
 
 
- 
- 
+
+
 
 .account-strategies.section-padding {
     padding-top: 0;
@@ -12990,8 +13426,17 @@ header.refer-expand::before {
 
 @media screen and (max-width: 1199.98px) {
 
+    /*=== company-news new need add === */
+
+    .blog-category .item .text {
+        font-size: 14px;
+    }
+
+    /*=== company-news new need add === */
+
+
     /*================fiat + Crypto acoount ===========*/
- 
+
     .account-hero .header .section-title {
         font-size: 5rem;
     }
@@ -13058,7 +13503,7 @@ header.refer-expand::before {
     }
 
     .list.account-benefits .list__item {
-        flex-basis: calc(100% / 3 );
+        flex-basis: calc(100% / 3);
     }
 
     .list.account-benefits .list__item .title {
@@ -13067,7 +13512,7 @@ header.refer-expand::before {
 
 
     .account-hero.crypto .header .section-title {
-        font-size:4rem;
+        font-size: 4rem;
     }
 
     .img-container.crypto-benefits .icon-crypto-top {
@@ -13213,7 +13658,7 @@ header.refer-expand::before {
 
     /* NEED ADD */
     .section-header.eth-banner .buttons-container .section-header__description {
-        font-size:  clamp(0.8125rem, 0.4094rem + 1.1218vw, 1.25rem);
+        font-size: clamp(0.8125rem, 0.4094rem + 1.1218vw, 1.25rem);
     }
 
     .title.background {
@@ -13901,10 +14346,90 @@ header.refer-expand::before {
         max-width: 100%;
     }
 
-    
+
 }
 
 @media screen and (max-width: 991.98px) {
+
+
+    /* .right-sidebar .modulatable {
+        display: none;
+    }
+
+    
+    .right-sidebar .banner.company-news.bottom,
+    .right-sidebar .banner {
+        padding: 5.55%;
+    }
+
+    
+    .right-sidebar .banner.company-news.bottom .title,
+    .right-sidebar .banner .title {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+
+    .right-sidebar .banner .buttons-container .btn {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .right-sidebar .banner.start-your-journey {
+        background: url('/themes/custom/adrofx_theme/images/start-your-journey-720.jpg'), #1C538A;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+
+    .right-sidebar .banner.cashback {
+        background: url('/themes/custom/adrofx_theme/images/the-power-of-cashback-720.jpg'), #1C538A;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+
+    .right-sidebar .banner.copy-trading {
+        background: url('/themes/custom/adrofx_theme/images/trading-made-easy-720.jpg'), #1C538A;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+ 
+
+    .right-sidebar .banner.cashback .title {
+        background: linear-gradient(180deg, #FFF 0%, #2EAF5D 354.56%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .right-sidebar .banner.copy-trading .title {
+        background: linear-gradient(157deg, #FFF 45.59%, #5AADEB 204.09%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    .right-sidebar .banner.cashback img {
+        width: 67px;
+    }
+
+    .right-sidebar .banner.company-news.bottom .title {
+      margin-bottom: 1rem;
+    } */
+
+    .right-sidebar .banner{
+        padding: 0;
+        background-size: cover;
+    }
+    
+    .right-sidebar .banner.company-news.bottom{
+        margin-top: 0;
+    }
 
     /*================fiat acoount ===========*/
     .account-about .section-header {
@@ -15244,6 +15769,10 @@ header.refer-expand::before {
 
 @media screen and (max-width: 767.98px) {
 
+    .banner.company-news.bottom .section-header .section-header__title {
+        font-size: 24px;
+    }
+
     /*=============== fiat accounts ==========================*/
     .account-security .cards.account-benefits {
         gap: 20px;
@@ -16317,8 +16846,50 @@ header.refer-expand::before {
         height: 40px;
     }
 
-    .blog-category .item {
+    /* NEED ADD */
+
+    /* .blog-category .item {
         padding: 30px 0;
+    } */
+
+    .blog-category .item .item-content {
+        margin-bottom: 32px;
+        width: 100%;
+    }
+
+    /* NEED ADD */
+    .blog-category .item {
+        padding: 16px;
+    }
+
+    .blog-category .item .title {
+        font-size: 16px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .blog-category .item .text {
+        margin-bottom: 24px;
+    }
+
+    .blog-category .item .text + .btn-blue{
+        padding: 8px 16px;
+    }
+
+    .blog-category .item .text + .btn-blue,
+    .blog-category .item .text {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .blog-category .item .item-media .link img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 260px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        object-position: center;
     }
 
     .blog-category .item .heading {
@@ -16671,6 +17242,67 @@ header.refer-expand::before {
 
 @media (max-width: 575.98px) {
 
+    .blog-category .item .item-media .link img {
+        height: 180px;
+    }
+
+    .banner.company-news {
+        padding: 72px 0;
+    }
+
+    .pagination.company-news {
+        width: 100%;
+    }
+ 
+    .pagination .page-item .page-link {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 13px 20px;
+    }
+
+    .pagination .page-item .page-link svg {
+       width: 16px;
+       height: 16px;
+    }
+
+    .blog-category.article .header .article-image {
+        height: 300px;
+    }
+ 
+ 
+    .banner.company-news .section-header__title,
+    .blog-category.article .header .title {
+        font-size: 24px;
+    }
+
+    .banner.company-news.bottom {
+        padding: 32px;
+        min-height: 320px;
+    }
+
+    .banner.company-news.bottom .section-header__description + .buttons-container .btn {
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 8px 16px;
+    }
+
+    .banner.company-news.bottom .section-header .section-header__title {
+        margin-bottom: 16px;
+    }
+
+    .banner.company-news.bottom .section-header .section-header__description {
+        font-size: 13px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+
+    .list.shares.article .list__item .link svg {
+         width: 22px;
+         height: 22px;
+    }
+
+
     /* UPDATE ALL STYLE */
     html,
     body {
@@ -16930,15 +17562,16 @@ header.refer-expand::before {
 
     .account-hero.crypto {
         background: url(../themes/custom/adrofx_theme/img/fiat-account/hero-chart-fiat.svg),
-        url(../themes/custom/adrofx_theme/img/fiat-account/fiat-grid-background.png), 
-        radial-gradient(100% 100% at 130% 100%, #7378CD 0%, rgba(47, 147, 130, 0) 100%),
-        radial-gradient(100% 100% at -30% -40%, #7378CD 0%, #3a3e8800 100%), #3A3E88;
-        
+            url(../themes/custom/adrofx_theme/img/fiat-account/fiat-grid-background.png),
+            radial-gradient(100% 100% at 130% 100%, #7378CD 0%, rgba(47, 147, 130, 0) 100%),
+            radial-gradient(100% 100% at -30% -40%, #7378CD 0%, #3a3e8800 100%), #3A3E88;
+
         background-repeat: no-repeat, no-repeat, repeat, repeat, repeat;
         background-size: 320px, 500px, cover, cover, cover;
         background-position: center top 1rem, center top 4rem, center center, center center, center center;
         background-blend-mode: normal, normal, lighten, lighten, normal;
     }
+
     /*     
         .sticky-container .sticky {
             position: relative;

@@ -698,19 +698,33 @@
     margin-bottom: 30px;
 }
 
+
+/* NEED ADD */
  
+.trading-forex .fx-pairs .table.trading-tools thead th,
 .trading-forex .fx-pairs .table.trading-tools thead tr th {
-    /* font-size: 18px; */
     font-family: "Roboto-Regular",sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.5;
     text-transform: capitalize;
     text-align: left;
-    border: none;
 
     color: #113252;
 }
+
+ 
+
+.trading-forex .fx-pairs .table.trading-tools thead,
+.trading-forex .fx-pairs .table.trading-tools .allpips-accounts {
+    background: #E4F2FE;
+}
+
+.trading-forex .fx-pairs .table.trading-tools thead tr th,
+.trading-forex .fx-pairs .table.trading-tools th {
+    border: none;
+}
+ 
 
 /* .trading-forex .fx-pairs .table.trading-tools thead tr th:not(:first-child) {
     font-weight: 500;
@@ -2845,6 +2859,17 @@
     text-decoration: none;
 }
 
+.nav.nav-tabs.tabs  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  } 
+
+  .nav.nav-tabs.tabs .tab-content {
+    width: 100%;
+  }
+
 @media (max-width: 575.98px) {
     .about-meta-trader__title  .about-meta-trader__button {padding: 20px 20px;}
 
@@ -2910,12 +2935,12 @@
         display: none;
     }
  
-    .nav.nav-tabs.tabs  {
+    /* .nav.nav-tabs.tabs  {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-    } 
+    }  */
 
     .nav.nav-tabs.tabs .nav-item {
         flex: 1 0 auto;
