@@ -266,6 +266,10 @@ a:hover {
     border-radius: 16px;
 }
 
+.border-radius-large {
+    border-radius: 16px;
+}
+
 
 
 .box-shadow-medium {
@@ -393,9 +397,7 @@ a:hover {
     flex-wrap: wrap;
 }
 
-
-/*===Splide Component pagination=== NEED ADD*/
-
+ 
 .splide__pagination{
     gap: 4px;
 }
@@ -425,9 +427,9 @@ a:hover {
 }
 
  
-/*===Splide Component pagination===*/
+ 
 
-/*========== NEED ADD NEW ==========*/
+ 
 
 .pagination.company-news {
     border: 2px solid #E7EBEE;
@@ -2172,10 +2174,16 @@ a:hover {
     margin-right: 10px;
 }
 
-.btn-lg {
+/* .btn-lg {
     font-size: 16px;
     padding: 12px 24px;
+} */
+
+
+.btn-lg {
+    padding: 8px 24px;
 }
+
 
 .btn-primary-light {
     background: none;
@@ -2476,6 +2484,15 @@ h4 {
     text-transform: capitalize;
 } */
 
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 500;
+}
+
 h1,
 h2,
 h3,
@@ -2485,11 +2502,19 @@ h4,
 .section-header__title,
 .list-features__title,
 .list__item .title {
-    font-family: "Roboto-regular", sans-serif;
-    font-weight: 400;
     line-height: 1.2;
-    color: #071522;
     text-transform: capitalize;
+}
+ 
+.title,
+.section-title,
+.section-header__title,
+.list-features__title,
+.list__item .title {
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    color: #071522;
+ 
 }
 
 p::first-letter {
@@ -2497,6 +2522,7 @@ p::first-letter {
 }
 
 .text,
+.card-text,
 .list__item .text,
 .list-features__text,
 .section-header__description {
@@ -4184,7 +4210,7 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 .article .heading h3,
 .article .heading h1 {
     font-size: 32px;
-    font-weight: 900;
+    /* font-weight: 900; */
     margin-bottom: 0;
     margin-top: 0;
 }
@@ -6840,8 +6866,14 @@ html[lang="pt-pt"] .slider-text .section-title.promo+.text+.text {
 }
 
 
+
+.blog-category .item .item-content {
+    flex-basis: 50%;
+}
+
 .blog-category .item .item-media {
     border-radius: 1rem;
+    flex-basis:40%; 
 }
 
 
@@ -14355,77 +14387,6 @@ header.refer-expand::before {
 
 @media screen and (max-width: 991.98px) {
 
-
-    /* .right-sidebar .modulatable {
-        display: none;
-    }
-
-    
-    .right-sidebar .banner.company-news.bottom,
-    .right-sidebar .banner {
-        padding: 5.55%;
-    }
-
-    
-    .right-sidebar .banner.company-news.bottom .title,
-    .right-sidebar .banner .title {
-        font-size: 32px;
-        margin-bottom: 0;
-    }
-
-    .right-sidebar .banner .buttons-container .btn {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .right-sidebar .banner.start-your-journey {
-        background: url('/themes/custom/adrofx_theme/images/start-your-journey-720.jpg'), #1C538A;
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: cover;
-    }
-
-
-    .right-sidebar .banner.cashback {
-        background: url('/themes/custom/adrofx_theme/images/the-power-of-cashback-720.jpg'), #1C538A;
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: cover;
-    }
-
-
-    .right-sidebar .banner.copy-trading {
-        background: url('/themes/custom/adrofx_theme/images/trading-made-easy-720.jpg'), #1C538A;
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: cover;
-    }
-
- 
-
-    .right-sidebar .banner.cashback .title {
-        background: linear-gradient(180deg, #FFF 0%, #2EAF5D 354.56%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .right-sidebar .banner.copy-trading .title {
-        background: linear-gradient(157deg, #FFF 45.59%, #5AADEB 204.09%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-
-    .right-sidebar .banner.cashback img {
-        width: 67px;
-    }
-
-    .right-sidebar .banner.company-news.bottom .title {
-      margin-bottom: 1rem;
-    } */
-
     .right-sidebar .banner{
         padding: 0;
         background-size: cover;
@@ -14435,7 +14396,6 @@ header.refer-expand::before {
         margin-top: 0;
     }
 
-    /*================fiat acoount ===========*/
     .account-about .section-header {
         margin-bottom: 5rem;
     }
@@ -15775,6 +15735,21 @@ header.refer-expand::before {
 
     .banner.company-news.bottom .section-header .section-header__title {
         font-size: 24px;
+    }
+
+    .blog-category .item .item-content {
+        flex-basis: 100%;
+    }
+    
+    .blog-category .item .item-media {
+        flex-basis:100%; 
+    }
+
+    .blog-category .item .item-media img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        aspect-ratio: 16/9;
     }
 
     /*=============== fiat accounts ==========================*/

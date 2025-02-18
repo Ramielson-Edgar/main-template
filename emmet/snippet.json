@@ -1,7 +1,7 @@
 {
     "html": {
         "snippets":{
-            "shd": "header.section-header>.h1.section-header__title+p.section-header__text"
+            "shd": "header.section-header>.h1.section-header__title+p.section-header__description"
         }
     }
 }
